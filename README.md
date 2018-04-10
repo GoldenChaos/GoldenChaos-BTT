@@ -14,3 +14,5 @@ Nifty features:
 - Reminders widget grabs latest reminder
 
 Requires Location Helper and JSON Helper for weather widget to work properly.
+
+Uses some widgets from https://github.com/vas3k/btt-touchbar-presets and inspired by [this blog post](http://vas3k.com/blog/touchbar/).
