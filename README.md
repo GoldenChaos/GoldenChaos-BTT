@@ -9,7 +9,7 @@ My BetterTouchTool preset that makes the touch bar not suck
 ![Screenshot 1](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/Screenshot%201.png?raw=true)
 ![Screenshot 2](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/Screenshot%202.png?raw=true)
 
-[Right click -> Save as...](https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/goldenchaos-btt.json)
+# [Download latest version (right click -> save as)](https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/goldenchaos-btt.json)
 
 Nifty features:
 
