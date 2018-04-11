@@ -14,8 +14,8 @@ Nifty features:
 - Date and Time widget opens Fantastical 2 mini view when pressed
 - Media controls and iTunes widget disappear when iTunes isn’t running
 - iTunes Now Playing widget shows currently playing song or "Paused" if iTunes is not playing anything
-- Due Today widget shows reminders from Reminders.app that are due today
-- Reminders without a due date keep the Due Today widget open persistently and show the most recently added reminder
+- Due Today widget shows reminders from Reminders.app that are due today, overdue, or without a due date
+- Reminders without a due date persist and automatically show the most recently added reminder
 - Tap on any widget to open its parent app
 - More context-sensitive widgets coming in the future? Who knows...
 
