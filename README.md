@@ -7,13 +7,15 @@ My BetterTouchTool preset that makes the touch bar not suck
 ![Screenshot 2](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/Screenshot%202.png?raw=true)
 ![Screenshot 3](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/Screenshot%203.png?raw=true)
 ![Screenshot 4](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/Screenshot%204.png?raw=true)
+![Screenshot 5](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/Screenshot%205.png?raw=true)
 
 Nifty features:
 
 - Fullscreen button also acts as esc key
 - Date and Time widget toggles Fantastical 2 menu bar when pressed (uses Fantastical 2's default keyboard shortcut)
 - Weather widget toggles Carrot menu bar when pressed (uses Carrot's default keyboard shortcut)
-- Media controls and iTunes widget disappear when iTunes isn’t running
+- Back, Forward, and Refresh buttons appear only if Safari is open
+- Media controls and iTunes widget appear only when iTunes is running
 - iTunes Now Playing widget shows currently playing song or "Paused" if iTunes is not playing anything
 - Due Today widget shows reminders from Reminders.app that are due today, overdue, or without a due date
 - Reminders without a due date persist and automatically show the most recently added reminder
