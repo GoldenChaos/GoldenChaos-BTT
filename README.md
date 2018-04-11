@@ -11,7 +11,8 @@ My BetterTouchTool preset that makes the touch bar not suck
 Nifty features:
 
 - Fullscreen button also acts as esc key
-- Date and Time widget opens Fantastical 2 mini view when pressed
+- Date and Time widget toggles Fantastical 2 menu bar when pressed (uses Fantastical 2's default keyboard shortcut)
+- Weather widget toggles Carrot menu bar when pressed (uses Carrot's default keyboard shortcut)
 - Media controls and iTunes widget disappear when iTunes isn’t running
 - iTunes Now Playing widget shows currently playing song or "Paused" if iTunes is not playing anything
 - Due Today widget shows reminders from Reminders.app that are due today, overdue, or without a due date
