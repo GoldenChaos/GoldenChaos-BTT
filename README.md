@@ -12,8 +12,9 @@ Nifty features:
 
 - Fullscreen button also acts as esc key
 - Media controls disappear when iTunes isn’t running
-- iTunes Now Playing widget doubles as play/pause button
-- Reminders widget grabs latest reminder
+- iTunes Now Playing widget shows currently playing song or "Paused" if iTunes is not playing anything
+- Next Reminder widget grabs your next reminder by due date
+- Tap on a widget to open its parent app
 
 Requires Location Helper and JSON Helper for weather widget to work properly.
 
