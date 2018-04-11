@@ -11,11 +11,11 @@ My BetterTouchTool preset that makes the touch bar not suck
 Nifty features:
 
 - Fullscreen button also acts as esc key
-- Media controls disappear when iTunes isn’t running
+- Media controls and iTunes widget disappear when iTunes isn’t running
 - iTunes Now Playing widget shows currently playing song or "Paused" if iTunes is not playing anything
-- Next Reminder widget grabs your next reminder by due date
+- Persistent Next Reminder widget that grabs your next reminder by due date
 - Tap on a widget to open its parent app
 
 Requires Location Helper and JSON Helper for weather widget to work properly.
 
-Uses some widgets from https://github.com/vas3k/btt-touchbar-presets and inspired by [this blog post](http://vas3k.com/blog/touchbar/).
+Uses some widgets from https://github.com/vas3k/btt-touchbar-presets and inspired by [this blog post](http://vas3k.com/blog/touchbar/). Feel free to add your own widgets via PR, would love to see more supported apps!
