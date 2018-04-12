@@ -16,8 +16,8 @@ Nifty features:
 - Date and Time widget toggles Fantastical 2 menu bar when pressed (uses Fantastical 2's default keyboard shortcut)
 - Weather widget toggles Carrot menu bar when pressed (uses Carrot's default keyboard shortcut)
 - Refresh button appears next to Forward and Back buttons if Safari is open
-- Media controls and iTunes widget appear only when iTunes is running
-- iTunes Now Playing widget shows currently playing song or "Paused" if iTunes is not playing anything
+- Media controls and iTunes/Spotify widgets appear only when iTunes or Spotify is running
+- Now Playing widgets show currently playing song or "Paused" if iTunes/Spotify are not playing anything
 - Due Today widget shows reminders from Reminders.app that are due today, overdue, or without a due date
 - Reminders without a due date persist and automatically show the most recently added reminder
 - Persistent Show Finder widget provides easy finder access
