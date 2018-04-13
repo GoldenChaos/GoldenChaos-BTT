@@ -12,16 +12,16 @@ My BetterTouchTool preset that makes the touch bar not suck
 
 Supported apps:
 
-    - Finder
-    - Safari
-    - Chrome
-    - Firefox
-    - iTunes
-    - Spotify
-    - Reminders
-    - Carrot Weather
-    - Fantastical 2
-    - More to come...
+- Finder
+- Safari
+- Chrome
+- Firefox
+- iTunes
+- Spotify
+- Reminders
+- Carrot Weather
+- Fantastical 2
+- More to come...
 
 Nifty features:
 
