@@ -12,7 +12,7 @@ My BetterTouchTool preset that makes the touch bar not suck
 
 Nifty features:
 
-- Fullscreen button also acts as esc key
+- Fullscreen button also acts as esc key, stays docked to the left
 - Date and Time widget toggles Fantastical 2 menu bar when pressed (uses Fantastical 2's default keyboard shortcut)
 - Weather widget toggles Carrot menu bar when pressed (uses Carrot's default keyboard shortcut)
 - Refresh button appears next to Forward and Back buttons if Safari is open
