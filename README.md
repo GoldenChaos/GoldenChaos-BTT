@@ -3,11 +3,11 @@ My BetterTouchTool preset that makes the touch bar not suck
 
 ![Photo](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/cool-photo.jpg?raw=true)
 
-![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/Screenshot%2010.png?raw=true)
-![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/Screenshot%2014.png?raw=true)
-![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/Screenshot%2015.png?raw=true)
-![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/Screenshot%2016.png?raw=true)
-![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/Screenshot%2017.png?raw=true)
+![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-1.png?raw=true)
+![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-2.png?raw=true)
+![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-3.png?raw=true)
+![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-4.png?raw=true)
+![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-5.png?raw=true)
 
 # [Download latest version (right click -> save as)](https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/goldenchaos-btt.json)
 
