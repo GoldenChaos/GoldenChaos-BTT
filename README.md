@@ -20,6 +20,7 @@ Supported apps:
 - Spotify
 - Reminders
 - Carrot Weather
+- Calendar
 - Fantastical 2
 - More to come...
 
@@ -35,8 +36,12 @@ Nifty features:
 - Now Playing widgets show currently playing song or "Paused" if iTunes/Spotify are not playing anything
 - Due Today widget shows reminders from Reminders.app that are due today, overdue, or without a due date
 - Reminders without a due date persist and automatically show the most recently added reminder
+- Next Event widget uses icalBuddy to get just today's upcoming calendar events (requires extra configuration)
 - Tap on any widget to open its parent app
 
-Requires Location Helper and JSON Helper for weather widget to work properly.
+Requires Location Helper, JSON Helper, and icalBuddy for the weather and calendar widgets to work properly.
 
-Uses some widgets from https://github.com/vas3k/btt-touchbar-presets and inspired by [this blog post](http://vas3k.com/blog/touchbar/). Feel free to add your own widgets via PR, would love to see more supported apps!
+###Calendar Widget Configuration
+For the Calendar widget to work properly, it must first be edited to include the names of calendars you wish to display. Replace my personal defaults with yours, and make sure you've installed icalBuddy. You can also configure the widget to display events for additional days, for example for up to a week, by changing "eventsToday" to "eventsToday+7".
+
+Uses modified versions of a bunch of widgets from https://github.com/vas3k/btt-touchbar-presets and inspired by [this blog post](http://vas3k.com/blog/touchbar/). Feel free to add your own widgets via PR, would love to see more supported apps!
