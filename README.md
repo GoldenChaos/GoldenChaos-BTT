@@ -1,5 +1,5 @@
 # GoldenChaos-BTT
-A full-featured BetterTouchTool preset that makes the MacBoo Pro Touch Bar not suck
+A full-featured BetterTouchTool preset that makes the MacBook Pro Touch Bar not suck
 
 ![Photo](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/cool-photo.jpg?raw=true)
 
