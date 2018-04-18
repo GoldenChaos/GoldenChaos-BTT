@@ -4,7 +4,8 @@ My BetterTouchTool preset that makes the touch bar not suck
 ![Photo](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/Cool%20Photo.jpg?raw=true)
 
 ![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/Screenshot%2010.png?raw=true)
-![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/Screenshot%2011.png?raw=true)
+![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/Screenshot%2014.png?raw=true)
+![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/Screenshot%2015.png?raw=true)
 ![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/Screenshot%2012.png?raw=true)
 ![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/Screenshot%2013.png?raw=true)
 
