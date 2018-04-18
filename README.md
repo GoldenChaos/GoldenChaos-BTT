@@ -19,6 +19,7 @@ My BetterTouchTool preset that makes the touch bar not suck
 - iTunes
 - Spotify
 - Reminders
+- Things 3
 - Carrot Weather
 - Calendar
 - Fantastical 2
@@ -36,6 +37,7 @@ My BetterTouchTool preset that makes the touch bar not suck
 - Now Playing widgets show currently playing song or "Paused" if iTunes/Spotify are not playing anything
 - Due Today widget shows reminders from Reminders.app that are due today, overdue, or without a due date
 - Reminders without a due date persist and automatically show the most recently added reminder
+- Next Thing widget grabs your next reminder from Things 3
 - Next Event widget uses icalBuddy to get just today's upcoming calendar events (requires extra configuration)
 - Tap on any widget to open its parent app
 
