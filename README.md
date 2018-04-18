@@ -10,7 +10,7 @@ My BetterTouchTool preset that makes the touch bar not suck
 
 # [Download latest version (right click -> save as)](https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/goldenchaos-btt.json)
 
-Supported apps:
+### Supported apps:
 
 - Finder
 - Safari
@@ -24,7 +24,7 @@ Supported apps:
 - Fantastical 2
 - More to come...
 
-Nifty features:
+### Nifty features:
 
 - Fullscreen button also acts as esc key, stays docked to the left
 - Date and Time widget toggles Fantastical 2 menu bar when pressed (uses Fantastical 2's default keyboard shortcut)
@@ -45,4 +45,4 @@ Requires Location Helper, JSON Helper, and icalBuddy for the weather and calenda
 
 For the Calendar widget to work properly, it must first be edited to include the names of calendars you wish to display. Replace my personal defaults with yours, and make sure you've installed icalBuddy. You can also configure the widget to display events for additional days, for example for up to a week, by changing "eventsToday" to "eventsToday+7".
 
-Uses modified versions of a bunch of widgets from https://github.com/vas3k/btt-touchbar-presets and inspired by [this blog post](http://vas3k.com/blog/touchbar/). Feel free to add your own widgets via PR, would love to see more supported apps!
+#### Uses modified versions of a bunch of widgets from https://github.com/vas3k/btt-touchbar-presets and inspired by [this blog post](http://vas3k.com/blog/touchbar/). Feel free to add your own widgets via PR, would love to see more supported apps!
