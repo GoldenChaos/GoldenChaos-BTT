@@ -45,4 +45,4 @@ Requires Location Helper, JSON Helper, and icalBuddy for the weather and calenda
 
 For the Calendar widget to work properly, it must first be edited to include the names of calendars you wish to display. Replace my personal defaults with yours, and make sure you've installed icalBuddy. You can also configure the widget to display events for additional days, for example for up to a week, by changing "eventsToday" to "eventsToday+7".
 
-#### Uses modified versions of a bunch of widgets from https://github.com/vas3k/btt-touchbar-presets and inspired by [this blog post](http://vas3k.com/blog/touchbar/). Feel free to add your own widgets via PR, would love to see more supported apps!
+#### Uses modified versions of a bunch of widgets from https://github.com/vas3k/btt-touchbar-presets and inspired by [this blog post](http://vas3k.com/blog/touchbar/).
