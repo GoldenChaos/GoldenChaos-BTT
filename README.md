@@ -19,6 +19,7 @@ A full-featured BetterTouchTool preset that makes the MacBook Pro Touch Bar not 
 - Firefox
 - iTunes
 - Spotify
+- YouTube (in Safari and as a Fluid app)
 - Reminders
 - Things 3
 - Carrot Weather
