@@ -8,6 +8,7 @@ A full-featured BetterTouchTool preset that makes the MacBook Pro Touch Bar not 
 ![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-4.png?raw=true)
 ![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-3.png?raw=true)
 ![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-5.png?raw=true)
+![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-6.png?raw=true)
 
 # [Download latest version (right click -> save as)](https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/goldenchaos-btt.json)
 
@@ -30,6 +31,7 @@ A full-featured BetterTouchTool preset that makes the MacBook Pro Touch Bar not 
 ### Nifty features:
 
 - Fullscreen button also acts as esc key, stays docked to the left
+- Hold down Option/Alt to reveal additional controls
 - Emoji button toggles a scrollable emoji widget
 - Date and Time widget toggles Fantastical 2 menu bar when pressed (uses Fantastical 2's default keyboard shortcut)
 - Weather widget shows condition emoji + temperature in Fahrenheit, toggles Carrot menu bar when pressed (uses Carrot's default keyboard shortcut)
