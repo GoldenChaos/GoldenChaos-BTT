@@ -31,7 +31,7 @@ A full-featured BetterTouchTool preset that makes the MacBook Pro Touch Bar not 
 ### Nifty features:
 
 - Fullscreen button also acts as esc key, stays docked to the left
-- Hold down Option/Alt to reveal additional controls
+- Hold down Option/Alt to expand the function shelf
 - Emoji button toggles a scrollable emoji widget
 - Date and Time widget toggles Fantastical 2 menu bar when pressed (uses Fantastical 2's default keyboard shortcut)
 - Weather widget shows condition emoji + temperature in Fahrenheit, toggles Carrot menu bar when pressed (uses Carrot's default keyboard shortcut)
