@@ -9,6 +9,7 @@ A feature-rich BetterTouchTool preset that makes the MacBook Pro Touch Bar not s
 ![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-5.png?raw=true)
 ![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-3.png?raw=true)
 ![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-6.png?raw=true)
+![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-7.png?raw=true)
 
 # [Download latest version (right click -> save as)](https://github.com/GoldenChaos/GoldenChaos-BTT/raw/master/goldenchaos-btt.bttpreset)
 
@@ -44,7 +45,7 @@ A feature-rich BetterTouchTool preset that makes the MacBook Pro Touch Bar not s
 - Persistent Maximize Left, Center Window, and Maximize Right controls for window management
 - Refresh button appears next to Forward and Back buttons if Safari, Chrome, or Firefox is open
 - Media controls and iTunes/Spotify widgets appear only when iTunes or Spotify is running
-- Now Playing widgets show currently playing song or "Paused" if iTunes/Spotify are not playing anything
+- Now Playing widgets show currently playing track info (with album art for iTunes!) or "Paused" if iTunes/Spotify are paused
 - Due Today widget shows reminders from Reminders.app that are due today, overdue, or without a due date
 - Reminders without a due date persist and automatically show the most recently added reminder
 - Next Thing widget grabs your next reminder from Things 3
