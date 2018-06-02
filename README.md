@@ -3,28 +3,28 @@ A complete replacement for the stock Touch Bar interface wrapped up in a nice Be
 
 ![Photo](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/cool-photo.jpg?raw=true)
 
-# [Download the latest version](https://github.com/GoldenChaos/GoldenChaos-BTT/raw/master/goldenchaos-btt.bttpresetcompressed)
+# [Download the latest version](https://github.com/GoldenChaos/GoldenChaos-BTT/raw/master/goldenchaos-btt.bttpresetcompressed?raw=true)
 Make sure you're using the latest alpha version of BetterTouchTool before importing.
 
 ## Screenshot tour
 <p align="center"><sub>The default set of keys if nothing is open; Fullscreen button doubles as escape key and always stays docked to the left</sub></p>
 
-![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-1.png)
+![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-1.png?raw=true)
 
 <p align="center"><sub>Contextual buttons and widgets populate the scrollable container as you open and close corresponding apps; Tap on any widget to open its parent app</sub></p>
 
-![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-2.png)
-![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-4.png)
-![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-3.png)
+![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-2.png?raw=true)
+![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-4.png?raw=true)
+![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-3.png?raw=true)
 
 <p align="center"><sub>Emoji and app switcher widgets take over the scrollable container</sub></p>
 
-![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-5.png)
-![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-6.png)
+![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-5.png?raw=true)
+![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-6.png?raw=true)
 
 <p align="center"><sub>Hold down alt/option for an expanded control strip</sub></p>
 
-![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-7.png)
+![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-7.png?raw=true)
 
 ## Currently supported apps
 
