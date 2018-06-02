@@ -8,6 +8,7 @@ Make sure you're using the latest alpha version of BetterTouchTool before import
 
 ## Screenshots
 <p align="center"><sub><sup>The default set of keys if nothing is open</sup></sub></p>
+
 ![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-1.png?raw=true)
 
 
