@@ -6,7 +6,7 @@ A complete replacement for the stock Touch Bar interface wrapped up in a nice Be
 # [Download the latest version](https://github.com/GoldenChaos/GoldenChaos-BTT/raw/master/goldenchaos-btt.bttpresetcompressed)
 Make sure you're using the latest alpha version of BetterTouchTool before importing.
 
-## Screenshots
+## Screenshot tour
 <p align="center"><sub>The default set of keys if nothing is open; Fullscreen button doubles as escape key and always stays docked to the left</sub></p>
 
 ![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-1.png)
