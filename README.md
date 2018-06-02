@@ -26,7 +26,7 @@ Make sure you're using the latest alpha version of BetterTouchTool before import
 
 ![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-7.png)
 
-## Supported apps
+## Currently supported apps
 
 - Finder
 - Safari
@@ -40,9 +40,8 @@ Make sure you're using the latest alpha version of BetterTouchTool before import
 - Carrot Weather
 - Calendar
 - Fantastical 2
-- More to come...
 
-## Full feature list
+## Full list of features
 
 - Designed to *completely* replace the stock Touch Bar interface
 - Fullscreen button doubles as esc key, always docked to the left
