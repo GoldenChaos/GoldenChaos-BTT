@@ -7,23 +7,23 @@ A feature-rich BetterTouchTool preset that makes the MacBook Pro Touch Bar not s
 
 ## Screenshots
 ![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-1.png?raw=true)
-^Default set of keys
+<p align="center">Default set of keys</p>
 
 ![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-2.png?raw=true)
-^Contextual buttons appear and disappear as you open/close corresponding apps^
+^Contextual buttons appear and disappear as you open/close corresponding apps</p>
 
 ![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-4.png?raw=true)
-^Critically, the esc/fullscreen key stays docked to the left at all times^
+<p align="center">Critically, the esc/fullscreen key stays docked to the left at all times</p>
 
 ![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-3.png?raw=true)
-^Widgets for Reminders, Fantastical, Things 3, and more apps added on a regular basis^
+<p align="center">Widgets for Reminders, Fantastical, Things 3, and more apps added on a regular basis</p>
 
 ![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-5.png?raw=true)
 ![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-6.png?raw=true)
-^Emoji and app switcher widgets take over the scrollable container^
+<p align="center">Emoji and app switcher widgets take over the scrollable container</p>
 
 ![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-7.png?raw=true)
-^Hold down alt/option to expand the control strip^
+<p align="center">Hold down alt/option to expand the control strip</p>
 
 ## Supported apps:
 
