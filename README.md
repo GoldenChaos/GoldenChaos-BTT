@@ -1,5 +1,5 @@
 # GoldenChaos-BTT
-A feature-rich BetterTouchTool preset that makes the MacBook Pro Touch Bar not suck
+A feature-rich BetterTouchTool preset that completely replaces the stock Touch Bar interface
 
 ![Photo](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/cool-photo.jpg?raw=true)
 
@@ -7,23 +7,23 @@ A feature-rich BetterTouchTool preset that makes the MacBook Pro Touch Bar not s
 
 ## Screenshots
 ###### *The default set of keys*
-![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-1.png?raw=true)
+![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-1.png?raw=true)
 
 ###### *Contextual buttons and widgets appear and disappear as you open/close corresponding apps*
-![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-2.png?raw=true)
+![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-2.png?raw=true)
 
 ###### *Critically, the esc/fullscreen key stays docked to the left at all times*
-![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-4.png?raw=true)
+![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-4.png?raw=true)
 
 ###### *New app widgets added on a regular basis; Shown: Reminders, Fantastical, Finder*
-![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-3.png?raw=true)
+![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-3.png?raw=true)
 
 ###### *Emoji and app switcher widgets take over the scrollable container*
-![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-5.png?raw=true)
-![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-6.png?raw=true)
+![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-5.png?raw=true)
+![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-6.png?raw=true)
 
 ###### *Hold down alt/option to expand the control strip*
-![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-7.png?raw=true)
+![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-7.png?raw=true)
 
 ## Supported apps:
 
@@ -41,7 +41,7 @@ A feature-rich BetterTouchTool preset that makes the MacBook Pro Touch Bar not s
 - Fantastical 2
 - More to come...
 
-## Features:
+## Full feature list:
 
 - Designed to *completely* replace the stock Touch Bar interface
 - Fullscreen button doubles as esc key, *always* stays docked to the left
