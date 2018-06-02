@@ -6,18 +6,18 @@ A feature-rich BetterTouchTool preset that makes the MacBook Pro Touch Bar not s
 # [Download the latest version](https://github.com/GoldenChaos/GoldenChaos-BTT/raw/master/goldenchaos-btt.bttpresetcompressed)
 
 ## Screenshots
-![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-1.png?raw=true)<p align="center">*The default set of keys*</p>
+![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-1.png?raw=true)<p align="center">######*The default set of keys*</p>
 
-![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-2.png?raw=true)<p align="center">*Contextual buttons and widgets appear and disappear as you open/close corresponding apps*</p>
+![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-2.png?raw=true)<p align="center">######*Contextual buttons and widgets appear and disappear as you open/close corresponding apps*</p>
 
-![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-4.png?raw=true)<p align="center">*Critically, the esc/fullscreen key stays docked to the left at all times*</p>
+![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-4.png?raw=true)<p align="center">######*Critically, the esc/fullscreen key stays docked to the left at all times*</p>
 
-![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-3.png?raw=true)<p align="center">*Widgets for Reminders, Fantastical, Things 3, and more apps added on a regular basis*</p>
+![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-3.png?raw=true)<p align="center">######*Widgets for Reminders, Fantastical, Things 3, and more apps added on a regular basis*</p>
 
 ![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-5.png?raw=true)
-![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-6.png?raw=true)<p align="center">*Emoji and app switcher widgets take over the scrollable container*</p>
+![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-6.png?raw=true)<p align="center">######*Emoji and app switcher widgets take over the scrollable container*</p>
 
-![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-7.png?raw=true)<p align="center">*Hold down alt/option to expand the control strip*</p>
+![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-7.png?raw=true)<p align="center">######*Hold down alt/option to expand the control strip*</p>
 
 ## Supported apps:
 
