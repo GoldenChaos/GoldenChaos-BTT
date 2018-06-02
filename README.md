@@ -5,7 +5,7 @@ A feature-rich BetterTouchTool preset that makes the MacBook Pro Touch Bar not s
 
 # [Download the latest version](https://github.com/GoldenChaos/GoldenChaos-BTT/raw/master/goldenchaos-btt.bttpresetcompressed)
 
-# Screenshots
+## Screenshots
 ![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-1.png?raw=true)
 ![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-2.png?raw=true)
 ![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-3.png?raw=true)
@@ -14,7 +14,7 @@ A feature-rich BetterTouchTool preset that makes the MacBook Pro Touch Bar not s
 ![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-6.png?raw=true)
 ![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-7.png?raw=true)
 
-### Supported apps:
+## Supported apps:
 
 - Finder
 - Safari
@@ -30,7 +30,7 @@ A feature-rich BetterTouchTool preset that makes the MacBook Pro Touch Bar not s
 - Fantastical 2
 - More to come...
 
-### Features:
+## Features:
 
 - Designed to *completely* replace the stock Touch Bar interface
 - Fullscreen button doubles as esc key, *always* stays docked to the left
@@ -53,13 +53,13 @@ A feature-rich BetterTouchTool preset that makes the MacBook Pro Touch Bar not s
 - Next Event widget uses [icalBuddy](http://hasseg.org/icalBuddy/) to get just today's upcoming calendar events (requires extra configuration)
 - Tap on any widget to open its parent app
 
-### Required Plugins:
+## Required Plugins:
 
 - [High Sierra Media Key Enabler](http://milgra.com/high-sierra-media-key-enabler.html) with "Pause if no player is running" enabled for media controls
 - [Location Helper](http://www.mousedown.net/mouseware/LocationHelper.html) and [JSON Helper](http://www.mousedown.net/mouseware/JSONHelper.html) for the weather widget
 - [icalBuddy](http://hasseg.org/icalBuddy/) for the calendar widget
 
-### Media Controls Configuration
+## Media Controls Configuration
 
 [High Sierra Media Key Enabler](http://milgra.com/high-sierra-media-key-enabler.html) with "Pause if no player is running" enabled is strongly recommended. Appropriate media controls are displayed conditionally based on the following hierarchy:
 
@@ -69,8 +69,8 @@ A feature-rich BetterTouchTool preset that makes the MacBook Pro Touch Bar not s
 
 If no media player is running, and Safari is open to a YouTube video, only the Play/Pause button will be shown. In any other case, all media controls are available.
 
-### Calendar Widget Configuration
+## Calendar Widget Configuration
 
 For the Calendar widget to work properly, it must first be edited to include the names of calendars you wish to display. Replace my personal defaults with yours, and make sure you've installed [icalBuddy](http://hasseg.org/icalBuddy/). You can also configure the widget to display events for additional days, for example for up to a week, by changing "eventsToday" to "eventsToday+7".
 
-### Uses modified versions of a bunch of widgets from https://github.com/vas3k/btt-touchbar-presets and inspired by [this blog post](http://vas3k.com/blog/touchbar/). Make sure you're using the latest alpha version of BetterTouchTool before importing!
+## Uses modified versions of a bunch of widgets from https://github.com/vas3k/btt-touchbar-presets and inspired by [this blog post](http://vas3k.com/blog/touchbar/). Make sure you're using the latest alpha version of BetterTouchTool before importing!
