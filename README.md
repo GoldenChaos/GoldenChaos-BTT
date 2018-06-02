@@ -32,7 +32,7 @@ Make sure you're using the latest alpha version of BetterTouchTool before import
 <p align="center"><sub><sup>Hold down alt/option to expand the control strip</sup></sub></p>
 
 ![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-7.png?raw=true)
-<br/>
+<br/><br/>
 
 ## Supported apps
 
