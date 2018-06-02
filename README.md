@@ -4,26 +4,26 @@ A complete replacement for the stock Touch Bar interface wrapped up in a nice Be
 ![Photo](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/cool-photo.jpg?raw=true)
 
 # [Download the latest version](https://github.com/GoldenChaos/GoldenChaos-BTT/raw/master/goldenchaos-btt.bttpresetcompressed)
-*Make sure you're using the latest alpha version of BetterTouchTool before importing!*
+Make sure you're using the latest alpha version of BetterTouchTool before importing.
 
 ## Screenshots
-###### *The default set of keys*
+###### *The default set of keys:*
 ![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-1.png?raw=true)
 
-###### *Contextual buttons and widgets appear and disappear as you open/close corresponding apps*
+###### *Contextual buttons and widgets appear and disappear as you open/close corresponding apps:*
 ![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-2.png?raw=true)
 
-###### *Critically, the esc/fullscreen key stays docked to the left at all times*
+###### *Critically, the esc/fullscreen key stays docked to the left at all times:*
 ![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-4.png?raw=true)
 
-###### *New app widgets added on a regular basis; Shown: Reminders, Fantastical, Finder*
+###### *Widgets for Reminders, Fantastical, Carrot, Things and more; new app support added regularly:*
 ![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-3.png?raw=true)
 
-###### *Emoji and app switcher widgets take over the scrollable container*
+###### *Emoji and app switcher widgets take over the scrollable container:*
 ![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-5.png?raw=true)
 ![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-6.png?raw=true)
 
-###### *Hold down alt/option to expand the control strip*
+###### *Hold down alt/option to expand the control strip:*
 ![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-7.png?raw=true)
 
 ## Supported apps
