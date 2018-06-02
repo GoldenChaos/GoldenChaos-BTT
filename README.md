@@ -7,8 +7,9 @@ A complete replacement for the stock Touch Bar interface wrapped up in a nice Be
 Make sure you're using the latest alpha version of BetterTouchTool before importing.
 
 ## Screenshots
-<br/>![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-1.png)
-<p align="center"><sup>The default set of keys if nothing is open; Fullscreen button doubles as escape key and always stays docked to the left</sup></p>
+<p align="center"><sub>The default set of keys if nothing is open; Fullscreen button doubles as escape key and always stays docked to the left</sub></p>
+
+![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-1.png)
 
 <br/>![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-2.png)
 ![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-4.png)
@@ -41,7 +42,7 @@ Make sure you're using the latest alpha version of BetterTouchTool before import
 ## Full feature list
 
 - Designed to *completely* replace the stock Touch Bar interface
-- Fullscreen button doubles as esc key, *always* stays docked to the left
+- Fullscreen button doubles as esc key, always docked to the left
 - Two finger slide on the Touch Bar to change volume
 - Three finger slide on the Touch Bar to change brightness
 - Hold down Volume Down button to mute
