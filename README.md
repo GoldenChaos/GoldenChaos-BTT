@@ -9,14 +9,13 @@ A feature-rich BetterTouchTool preset that makes the MacBook Pro Touch Bar not s
 ###### *The default set of keys*
 ![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-1.png?raw=true)
 
-
 ###### *Contextual buttons and widgets appear and disappear as you open/close corresponding apps*
 ![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-2.png?raw=true)
 
 ###### *Critically, the esc/fullscreen key stays docked to the left at all times*
 ![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-4.png?raw=true)
 
-###### *Shown: Reminders, Fantastical, and more apps added on a regular basis*
+###### *New app widgets added on a regular basis; Shown: Reminders, Fantastical, Finder*
 ![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-3.png?raw=true)
 
 ###### *Emoji and app switcher widgets take over the scrollable container*
