@@ -8,19 +8,16 @@ Make sure you're using the latest alpha version of BetterTouchTool before import
 
 ## Screenshots
 <br/>
-<p align="center"><sub><sup>The default set of keys if nothing is open</sup></sub></p>
+<p align="center"><sub><sup>The default set of keys if nothing is open; Fullscreen button doubles as escape key</sup></sub></p>
 
 ![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-1.png?raw=true)
+![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-4.png?raw=true)
 <br/><br/>
-<p align="center"><sub><sup>Contextual buttons and widgets populate the scrollable container as you open and close corresponding apps</sup></sub></p>
+<p align="center"><sub><sup>Contextual buttons and widgets populate the scrollable container as you open and close corresponding apps; Tap on any widget to open its parent app</sup></sub></p>
 
 ![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-2.png?raw=true)
 <br/><br/>
-<p align="center"><sub><sup>Critically, the esc/fullscreen key stays docked to the left at all times</sup></sub></p>
-
-![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-4.png?raw=true)
-<br/><br/>
-<p align="center"><sub><sup>Tap on any widget to open its parent app</sup></sub></p>
+<p align="center"><sub><sup>Critically, the fullscreen/esc key stays docked to the left at all times</sup></sub></p>
 
 ![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-3.png?raw=true)
 <br/><br/>
@@ -29,7 +26,7 @@ Make sure you're using the latest alpha version of BetterTouchTool before import
 ![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-5.png?raw=true)
 ![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-6.png?raw=true)
 <br/><br/>
-<p align="center"><sub><sup>Hold down alt/option to expand the control strip</sup></sub></p>
+<p align="center"><sub><sup>Hold down alt/option for an expanded control strip</sup></sub></p>
 
 ![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-7.png?raw=true)
 <br/><br/>
