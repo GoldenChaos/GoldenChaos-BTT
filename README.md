@@ -8,28 +8,33 @@ Make sure you're using the latest alpha version of BetterTouchTool before import
 
 ## Screenshots
 ![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-1.png?raw=true)
-<sub><sup>*The default set of keys if nothing is open*</sup></sub>
+<sub><sup>The default set of keys if nothing is open</sup></sub>
+
 
 
 ![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-2.png?raw=true)
-<sub><sup>*Contextual buttons and widgets populate the scrollable container as you open and close corresponding apps*</sup></sub>
+<sub><sup>Contextual buttons and widgets populate the scrollable container as you open and close corresponding apps</sup></sub>
+
 
 
 ![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-4.png?raw=true)
-<sub><sup>*Critically, the esc/fullscreen key stays docked to the left at all times*</sup></sub>
+<sub><sup>Critically, the esc/fullscreen key stays docked to the left at all times</sup></sub>
+
 
 
 ![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-3.png?raw=true)
-<sub><sup>*Tap on any widget to open its parent app*</sup></sub>
+<sub><sup>Tap on any widget to open its parent app</sup></sub>
+
 
 
 ![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-5.png?raw=true)
 ![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-6.png?raw=true)
-<sub><sup>*Emoji and app switcher widgets take over the scrollable container*</sup></sub>
+<sub><sup>Emoji and app switcher widgets take over the scrollable container</sup></sub>
+
 
 
 ![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-7.png?raw=true)
-<sub><sup>*Hold down alt/option to expand the control strip*</sup></sub>
+<sub><sup>Hold down alt/option to expand the control strip</sup></sub>
 
 ## Supported apps
 
