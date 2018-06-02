@@ -15,7 +15,7 @@ Make sure you're using the latest alpha version of BetterTouchTool before import
 <p align="center"><sub><sup>Contextual buttons and widgets populate the scrollable container as you open and close corresponding apps; Tap on any widget to open its parent app</sup></sub></p>
 
 <br/>![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-3.png)
-<p align="center"><sub><sup>Critically, the fullscreen/esc key stays docked to the left at all times</sup></sub></p>
+<p align="center"><sup>Critically, the fullscreen/esc key stays docked to the left at all times</sup></p>
 
 <br/>![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-5.png)
 ![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-6.png)
