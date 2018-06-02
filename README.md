@@ -7,7 +7,7 @@ A feature-rich BetterTouchTool preset that makes the MacBook Pro Touch Bar not s
 
 ## Screenshots
 ![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-1.png?raw=true)
-<p align="center" style="margin:0;">*The default set of keys*</p>
+<p align="center">*The default set of keys*</p>
 
 ![Screenshot](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-2.png?raw=true)
 <p align="center">*Contextual buttons and widgets appear and disappear as you open/close corresponding apps*</p>
