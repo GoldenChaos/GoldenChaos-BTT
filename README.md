@@ -22,7 +22,7 @@ Make sure you're using the latest alpha version of BetterTouchTool before import
 <p align="center"><sup>Emoji and app switcher widgets take over the scrollable container</sup></p>
 
 <br/>![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-7.png)
-<p align="center"><sup>Hold down alt/option for an expanded control strip</sup></p>
+<p align="center"><sup>Hold down alt/option for an expanded control strip</sup></p><br/>
 
 ## Supported apps
 
