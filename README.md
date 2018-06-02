@@ -8,14 +8,12 @@ Make sure you're using the latest alpha version of BetterTouchTool before import
 
 ## Screenshots
 <br/>![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-1.png)
-<p align="center"><sup>The default set of keys if nothing is open; Fullscreen button doubles as escape key</sup></p>
+<p align="center"><sup>The default set of keys if nothing is open; Fullscreen button doubles as escape key and always stays docked to the left</sup></p>
 
 <br/>![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-2.png)
 ![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-4.png)
+![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-3.png)
 <p align="center"><sup>Contextual buttons and widgets populate the scrollable container as you open and close corresponding apps; Tap on any widget to open its parent app</sup></p>
-
-<br/>![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-3.png)
-<p align="center"><sup>Critically, the fullscreen/esc key stays docked to the left at all times</sup></p>
 
 <br/>![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-5.png)
 ![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-6.png)
