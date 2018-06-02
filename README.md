@@ -33,7 +33,7 @@ Make sure you're using the latest alpha version of BetterTouchTool before import
 
 ![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-7.png?raw=true)
 
-<br/><br/>
+<br/>
 
 ## Supported apps
 
