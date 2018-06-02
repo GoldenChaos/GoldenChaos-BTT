@@ -7,24 +7,24 @@ A complete replacement for the stock Touch Bar interface wrapped up in a nice Be
 Make sure you're using the latest alpha version of BetterTouchTool before importing.
 
 ## Screenshots
-###### *The default set of keys:*
 ![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-1.png?raw=true)
+The default set of keys if nothing is open
 
-###### *Contextual buttons and widgets appear and disappear as you open/close corresponding apps:*
 ![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-2.png?raw=true)
+Contextual buttons and widgets populate the scrollable container as you open and close corresponding apps
 
-###### *Critically, the esc/fullscreen key stays docked to the left at all times:*
 ![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-4.png?raw=true)
+Critically, the esc/fullscreen key stays docked to the left at all times
 
-###### *Widgets for Reminders, Fantastical, Carrot, Things and more; new app support added regularly:*
 ![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-3.png?raw=true)
+Tap on any widget to open its parent app
 
-###### *Emoji and app switcher widgets take over the scrollable container:*
 ![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-5.png?raw=true)
 ![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-6.png?raw=true)
+Emoji and app switcher widgets take over the scrollable container
 
-###### *Hold down alt/option to expand the control strip:*
 ![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-7.png?raw=true)
+Hold down alt/option to expand the control strip
 
 ## Supported apps
 
