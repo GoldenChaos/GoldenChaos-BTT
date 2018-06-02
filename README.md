@@ -11,17 +11,20 @@ Make sure you're using the latest alpha version of BetterTouchTool before import
 
 ![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-1.png)
 
-<br/>![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-2.png)
+<p align="center"><sub>Contextual buttons and widgets populate the scrollable container as you open and close corresponding apps; Tap on any widget to open its parent app</sub></p>
+
+![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-2.png)
 ![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-4.png)
 ![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-3.png)
-<p align="center"><sup>Contextual buttons and widgets populate the scrollable container as you open and close corresponding apps; Tap on any widget to open its parent app</sup></p>
 
-<br/>![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-5.png)
+<p align="center"><sub>Emoji and app switcher widgets take over the scrollable container</sub></p>
+
+![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-5.png)
 ![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-6.png)
-<p align="center"><sup>Emoji and app switcher widgets take over the scrollable container</sup></p>
 
-<br/>![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-7.png)
-<p align="center"><sup>Hold down alt/option for an expanded control strip</sup></p><br/>
+<p align="center"><sub>Hold down alt/option for an expanded control strip</sub></p>
+
+![](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/screenshot-7.png)
 
 ## Supported apps
 
