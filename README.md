@@ -3,7 +3,7 @@ A complete replacement for the stock Touch Bar interface wrapped up in a nice Be
 
 ![Photo](https://github.com/GoldenChaos/GoldenChaos-BTT/blob/master/cool-photo.jpg?raw=true)
 
-# [Download the latest version](https://github.com/GoldenChaos/GoldenChaos-BTT/raw/master/goldenchaos-btt.bttpresetcompressed?raw=true) or [view the preset page on share.folivora.ai](https://share.folivora.ai/sharedPreset/97da12ef-3e78-4a6a-a831-87e707f5e043)
+#  [View the preset page on share.folivora.ai](https://share.folivora.ai/sharedPreset/97da12ef-3e78-4a6a-a831-87e707f5e043) or [download the latest version manually](https://github.com/GoldenChaos/GoldenChaos-BTT/raw/master/goldenchaos-btt.bttpresetcompressed?raw=true)
 Make sure you're using the latest alpha version of BetterTouchTool before importing.
 
 ## Screenshot tour
