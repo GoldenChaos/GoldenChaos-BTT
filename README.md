@@ -39,72 +39,68 @@ _Need help or have a feature request? [Visit the GC-BTT thread on the BetterTouc
 ## Modifier Menus
 <small>Hold command, option, or control to access the app switcher, control strip, or window snapping controls.</small>
 
-![21%20AM](upload://qAFP9X0dvSlWlQBoCpHMQPoigZ2.png) 
-![11%20AM](upload://6mxIdGxNiqKROzVBOGZBnqW02B6.png) 
-![03%20PM](upload://d0yzDovqh37GeelrbI4VnpjbeFM.png) 
+![21%20AM](https://community.folivora.ai/uploads/default/original/2X/b/ba5dd2c9134dd70be019a4b24f07a412ffb20198.png) 
+![11%20AM](https://community.folivora.ai/uploads/default/original/2X/2/2c996bf66bd5bcb0a4a97d7c118a4bcce5256ba4.png) 
+![03%20PM](https://community.folivora.ai/uploads/default/original/2X/5/5b2c66353a7d16f3eae1c2a1ed85a4c4bf30504e.png) 
 
 ## Dynamic Menu Bar
 <small>Dynamic Menu Bar with three size options lets you dedicate as much or as little space to widgets as you like.</small>
 
-![18%20PM](upload://idWknlfJOcglGzcUB9IavqXGc0J.jpeg) ![46%20PM](upload://5IXwi10WwjkcdzY32AONqTuYW4R.png) ![15%20PM](upload://c8EGb5b7TaWNvBXHS2r1tdEaFuF.png) 
+![18%20PM](https://community.folivora.ai/uploads/default/original/2X/7/7fba8dccf6bad69c678ce9bc2b29b1afb5f2423d.jpeg)
+![46%20PM](https://community.folivora.ai/uploads/default/original/2X/2/281fef8c5e2fc2c683669e9406dd7b52ba43e935.png)
+![15%20PM](https://community.folivora.ai/uploads/default/original/2X/5/551494d29ac12d0d8d4acba9ed96370fd86dff61.png) 
 
- ![37%20PM](upload://em3116SuTtiUE4Yc3JgrsWj84wC.png) 
-![46%20PM](upload://e5jqdJHQH8RnZ8MQHJRlpnlav8n.png)
- ![30%20PM](upload://qJJ4bqVyYbKHQqHyjzEipX0cfbi.png) 
+![37%20PM](https://community.folivora.ai/uploads/default/original/2X/6/649c7c603adc864cc71de98122bc2c91de173126.png) 
+![46%20PM](https://community.folivora.ai/uploads/default/original/2X/6/62b8314e342d1ae5c20e8d8943f02897a0f83663.png)
+![30%20PM](https://community.folivora.ai/uploads/default/original/2X/b/bb63c80556fbd19e29152f7febd235a68b8c1778.png) 
 
-![30%20PM](upload://yfx7sZf4Ol13H6v0cb4oZcHV0Pt.png) 
-![38%20PM](upload://fk3pC9rQzJU9Pm5aNqjTPeL3FmP.png) 
-![19%20PM](upload://3QkBKOdKR52sur460i8FEs21DXh.png) 
+![30%20PM](https://community.folivora.ai/uploads/default/original/2X/f/f00b72b99951593bd0c060728fde1d535a77d01f.png) 
+![38%20PM](https://community.folivora.ai/uploads/default/original/2X/6/6b64f7e97a990e582166e3d1515d2be4b6b38b83.png) 
+![19%20PM](https://community.folivora.ai/uploads/default/original/2X/1/1af0eea070fb9089e62fd1c542d5644c19e8110f.png) 
 
 ## Widget Groups
 <sub>**Widget Groups** like Emoji Picker, Browser Tabs, and Language Switcher replace the Home Strip, but not the Menu Bar.</sub>
 
-![42%20AM](upload://djPVUYUoAOq36RP3rwc07evP88l.png) 
-![34%20AM](upload://Av44BhxE67ZAMYCRlwBIFb92GwN.png) 
-![34%20PM](upload://r9LnkPORJE66IbgF7SBTbJ9geEx.png) 
+![42%20AM](https://community.folivora.ai/uploads/default/original/2X/5/5d5a5446b4ec0ddf63aa65031e976f573afef37d.png) 
+![34%20AM](https://community.folivora.ai/uploads/default/original/2X/f/ffd14061ad4027cd594bc5c03dc1b9326186ccf9.png) 
+![34%20PM](https://community.folivora.ai/uploads/default/original/2X/b/be554129537fa75084a8d53a72650e81123856b9.png) 
 
 ## Modal Widgets
 <small>Access expanded-view **Modal Widgets** by long-pressing on Weather, Now Playing, Reminders, Calendar, Volume, and more.</small>
 
-![48%20AM](upload://49KdNX82RXPNwD6YGEZohcQ7JWp.png)
-![32%20AM](upload://49qnQLW5Ung8A2cmA55r2zLXwcS.png)
-![40%20PM](upload://nKGHN53cfDuBTdvbcCsFMDKbuMx.png) 
+![48%20AM](https://community.folivora.ai/uploads/default/original/2X/1/1d22b6fa7dde1f1fd98c2e03a5a776e3474975a1.png)
+![32%20AM](https://community.folivora.ai/uploads/default/original/2X/1/1d19749879257cbdfb0b6cf36dad192ee6e83356.png)
+![40%20PM](https://community.folivora.ai/uploads/default/original/2X/a/a679187c2b7e5a2e127b2a626d74e9b46dd60861.png) 
 
 ## Dock Badges
-![01%20PM](upload://jGLVCjjYgBgcM69yLOV7aEjGX0n.png)
-![08%20PM](upload://ua21HD9IoexqXFmhMjFJbWpXtjt.png) 
+![01%20PM](https://community.folivora.ai/uploads/default/original/2X/8/89ff159d2dbf4743dd2d2e64544e223e0c8236e3.png)
+![08%20PM](https://community.folivora.ai/uploads/default/original/2X/d/d3638c5c5739c24d04c180d6b09a9efbe65808e3.png) 
 <sub>Dock Badges appear on the left side of the Touch Bar and remain sticky.</sub>
 
-![42%20PM](upload://5AQIiWINmWQDrtSdyGO3Wctf0K2.png)
+![42%20PM](https://community.folivora.ai/uploads/default/original/2X/2/273540ad2281597b09b81031b0f1d3cea6ad1afe.png)
 <sub>Built-in Dock Badge support for all of your favorite third party apps; enable or disable them in the GC-BTT Settings menu.</sub>
 
-![46%20PM](upload://lBX2OSPi3ztHtq5Qg6rFVGF2P9H.png)
+![46%20PM](https://community.folivora.ai/uploads/default/original/2X/9/9777edea31eaaf646b0017b2caa89a1f0ccafc25.png)
 <sub>Dock Badges also support handoff!</sub>
 
 ## Settings with Seamless Upgrading
 <small>The straightforward GC-BTT Settings panel (⌘⌥⇧P) makes it easy to deeply customize your Touch Bar. Settings transfer seamlessly to new versions of GC-BTT with "Reapply All Settings".</small>
 
-![47%20AM](upload://10uBZE4tKYF5B4USgbliZHh818F.png) 
-
-![07%20AM](upload://mpIxK258jpjA50KtziKlBzD4kP1.png)
-
-![29%20AM](upload://cgfI7HROBdK7ntxubEOJ2CT13J6.png)
-
-![35%20AM](upload://7JbO0IQOCkvRwzaRybxWRW9yr9h.png)
-
-![45%20AM](upload://h6vdPRrO0Xgfs0TSyWwfKG8aapZ.png) 
-
-![00%20AM](upload://xrapFLKjzJ2sLOsDGqggNkB2eI8.png)
-
-![08%20AM](upload://AamOfp9kVDsVEeCyNpfZTBywejE.png)
+![47%20AM](https://community.folivora.ai/uploads/default/original/2X/0/0710765f8084ca0856bf2cccb8e8b51e69ecfdcd.png) 
+![07%20AM](https://community.folivora.ai/uploads/default/original/2X/9/9d18134f72001d48755b443f7395e796e681535b.png)
+![29%20AM](https://community.folivora.ai/uploads/default/original/2X/5/55f06f02eb8d9ac780afb3bece488489b7a7a1a0.png)
+![35%20AM](https://community.folivora.ai/uploads/default/original/2X/3/362af397aeae93a9695058870a56b789069bc12b.png)
+![45%20AM](https://community.folivora.ai/uploads/default/original/2X/7/77e12917ba8697a00ee610c5973cbf680989e563.png) 
+![00%20AM](https://community.folivora.ai/uploads/default/original/2X/e/ea59ef7f9673f53973c38b4ba3ae80f7fd0aeae8.png)
+![08%20AM](https://community.folivora.ai/uploads/default/original/2X/f/fd7a4ae024bdd2d9218a9e110c3c9d35a0aa47ba.png)
 
 <h1 id="heading--touch-bar-settings">General Touch Bar Settings</h1>
 
 GoldenChaos-BTT is designed to completely take over the Touch Bar, escape key and all. Since BetterTouchTool isn't set up this way by default, make sure to match BetterTouchTool's General Touch Bar Settings to the configuration shown below before importing - if you don't, things probably won't look right.
 
-![1|690x470](upload://qN44IjO6cLcZmdeoUZ3oFoztAGP.png) 
+![1](https://community.folivora.ai/uploads/default/original/2X/b/bbc466e121b2c92f9dd11ac22f3d00fe2360db77.png) 
 
-![2|690x470](upload://1gLKu8YqDFHRh2d4oSICKZtqVva.png) 
+![2](https://community.folivora.ai/uploads/default/original/2X/0/08e779414f546c74ebae6019566465bf015f0b50.png) 
 
 <h1 id="heading--upgrading">Upgrading GoldenChaos-BTT</h1>
 
