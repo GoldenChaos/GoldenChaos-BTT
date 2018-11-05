@@ -5,7 +5,7 @@ I _love_ the Touch Bar. That's why I was so upset that Apple just sat on its use
 
 _Want to buy me a coffee? You can donate here: https://paypal.me/GoldenChaos_
 
-_Thinking about buying BetterTouchTool because of this preset? [Use this link and I'll get 40%. 🙂](https://a.paddle.com/v2/click/30842/34667?link=1061)_
+_Thinking about buying BetterTouchTool because of this preset?_ [_Use this link and I'll get 40%._ 🙂](https://a.paddle.com/v2/click/30842/34667?link=1061)
 
 _Need help or have a feature request? [Visit the GC-BTT thread on the BetterTouchTool forums](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281) and make a post!_
 
