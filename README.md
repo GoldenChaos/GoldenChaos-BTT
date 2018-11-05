@@ -1,6 +1,6 @@
 # GoldenChaos-BTT
 
-![641|690x271](upload://k9anUaQDXZ1FBesvJTOh3SjckOt.jpeg) 
+![](https://goldenchaos.net/images/goldenchaos-btt-full.jpg) 
 <br/>
 
 I _love_ the Touch Bar. That's why I was so upset that Apple just sat on its useless user interface. So, inspired by Vas3k's popular [blog post](http://vas3k.com/blog/touchbar/) on the subject, and determined to make good on the promise that Apple broke, I've spent a (ridiculous) amount of time reworking the foundations of the Touch Bar into **GoldenChaos-BTT**: a true general purpose Touch Bar UI with support for tons of apps that's intuitive enough to make you love your Touch Bar again - or, more likely, for the first time.
@@ -27,76 +27,76 @@ _Thinking about buying BetterTouchTool because of this preset? [Use this link an
 # Screenshots
 
 ## Home Strip
-![00%20AM|690x19](upload://uHnRz2QPB7SfN4QUzntADzB2jf9.png) 
+![00%20AM](https://community.folivora.ai/uploads/default/original/2X/d/d728b43605de56b07a485806ceaf8c4f9685db97.png) 
 <sub>The default key set when nothing is open. Fullscreen doubles as escape key; tap for escape, long-press for fullscreen.</sub>
 
-![50%20AM|690x19](upload://bbbZghu4k0NtyG3ohinhSaUGMJx.png) 
+![50%20AM](https://community.folivora.ai/uploads/default/original/2X/4/4e5bd48b854e51480aee9905bb2c8f842423deb7.png) 
 <sub>Open a browser, and browser controls appear in the Home Strip.</sub>
 
-![12%20AM|690x19](upload://tvMnvbRmqLvP4aMkH6ahiHgMSkY.jpeg) 
+![12%20AM](https://community.folivora.ai/uploads/default/original/2X/c/ced6b67da49c9f35bf6801218855b0e61ae06c0c.jpeg) 
 <sub>Open more apps to reveal a wide range of dynamic controls and widgets. Close apps to dismiss their controls.</sub>
 
 ## Modifier Menus
 <small>Hold command, option, or control to access the app switcher, control strip, or window snapping controls.</small>
 
-![21%20AM|690x19](upload://qAFP9X0dvSlWlQBoCpHMQPoigZ2.png) 
-![11%20AM|690x19](upload://6mxIdGxNiqKROzVBOGZBnqW02B6.png) 
-![03%20PM|690x19](upload://d0yzDovqh37GeelrbI4VnpjbeFM.png) 
+![21%20AM](upload://qAFP9X0dvSlWlQBoCpHMQPoigZ2.png) 
+![11%20AM](upload://6mxIdGxNiqKROzVBOGZBnqW02B6.png) 
+![03%20PM](upload://d0yzDovqh37GeelrbI4VnpjbeFM.png) 
 
 ## Dynamic Menu Bar
 <small>Dynamic Menu Bar with three size options lets you dedicate as much or as little space to widgets as you like.</small>
 
-![18%20PM|690x19](upload://idWknlfJOcglGzcUB9IavqXGc0J.jpeg) ![46%20PM|690x19](upload://5IXwi10WwjkcdzY32AONqTuYW4R.png) ![15%20PM|690x19](upload://c8EGb5b7TaWNvBXHS2r1tdEaFuF.png) 
+![18%20PM](upload://idWknlfJOcglGzcUB9IavqXGc0J.jpeg) ![46%20PM](upload://5IXwi10WwjkcdzY32AONqTuYW4R.png) ![15%20PM](upload://c8EGb5b7TaWNvBXHS2r1tdEaFuF.png) 
 
- ![37%20PM|690x19](upload://em3116SuTtiUE4Yc3JgrsWj84wC.png) 
-![46%20PM|690x19](upload://e5jqdJHQH8RnZ8MQHJRlpnlav8n.png)
- ![30%20PM|690x19](upload://qJJ4bqVyYbKHQqHyjzEipX0cfbi.png) 
+ ![37%20PM](upload://em3116SuTtiUE4Yc3JgrsWj84wC.png) 
+![46%20PM](upload://e5jqdJHQH8RnZ8MQHJRlpnlav8n.png)
+ ![30%20PM](upload://qJJ4bqVyYbKHQqHyjzEipX0cfbi.png) 
 
-![30%20PM|690x19](upload://yfx7sZf4Ol13H6v0cb4oZcHV0Pt.png) 
-![38%20PM|690x19](upload://fk3pC9rQzJU9Pm5aNqjTPeL3FmP.png) 
-![19%20PM|690x19](upload://3QkBKOdKR52sur460i8FEs21DXh.png) 
+![30%20PM](upload://yfx7sZf4Ol13H6v0cb4oZcHV0Pt.png) 
+![38%20PM](upload://fk3pC9rQzJU9Pm5aNqjTPeL3FmP.png) 
+![19%20PM](upload://3QkBKOdKR52sur460i8FEs21DXh.png) 
 
 ## Widget Groups
 <sub>**Widget Groups** like Emoji Picker, Browser Tabs, and Language Switcher replace the Home Strip, but not the Menu Bar.</sub>
 
-![42%20AM|690x19](upload://djPVUYUoAOq36RP3rwc07evP88l.png) 
-![34%20AM|690x19](upload://Av44BhxE67ZAMYCRlwBIFb92GwN.png) 
-![34%20PM|690x19](upload://r9LnkPORJE66IbgF7SBTbJ9geEx.png) 
+![42%20AM](upload://djPVUYUoAOq36RP3rwc07evP88l.png) 
+![34%20AM](upload://Av44BhxE67ZAMYCRlwBIFb92GwN.png) 
+![34%20PM](upload://r9LnkPORJE66IbgF7SBTbJ9geEx.png) 
 
 ## Modal Widgets
 <small>Access expanded-view **Modal Widgets** by long-pressing on Weather, Now Playing, Reminders, Calendar, Volume, and more.</small>
 
-![48%20AM|690x19](upload://49KdNX82RXPNwD6YGEZohcQ7JWp.png)
-![32%20AM|690x19](upload://49qnQLW5Ung8A2cmA55r2zLXwcS.png)
-![40%20PM|690x19](upload://nKGHN53cfDuBTdvbcCsFMDKbuMx.png) 
+![48%20AM](upload://49KdNX82RXPNwD6YGEZohcQ7JWp.png)
+![32%20AM](upload://49qnQLW5Ung8A2cmA55r2zLXwcS.png)
+![40%20PM](upload://nKGHN53cfDuBTdvbcCsFMDKbuMx.png) 
 
 ## Dock Badges
-![01%20PM|690x19](upload://jGLVCjjYgBgcM69yLOV7aEjGX0n.png)
-![08%20PM|690x19](upload://ua21HD9IoexqXFmhMjFJbWpXtjt.png) 
+![01%20PM](upload://jGLVCjjYgBgcM69yLOV7aEjGX0n.png)
+![08%20PM](upload://ua21HD9IoexqXFmhMjFJbWpXtjt.png) 
 <sub>Dock Badges appear on the left side of the Touch Bar and remain sticky.</sub>
 
-![42%20PM|690x19](upload://5AQIiWINmWQDrtSdyGO3Wctf0K2.png)
+![42%20PM](upload://5AQIiWINmWQDrtSdyGO3Wctf0K2.png)
 <sub>Built-in Dock Badge support for all of your favorite third party apps; enable or disable them in the GC-BTT Settings menu.</sub>
 
-![46%20PM|690x19](upload://lBX2OSPi3ztHtq5Qg6rFVGF2P9H.png)
+![46%20PM](upload://lBX2OSPi3ztHtq5Qg6rFVGF2P9H.png)
 <sub>Dock Badges also support handoff!</sub>
 
 ## Settings with Seamless Upgrading
 <small>The straightforward GC-BTT Settings panel (⌘⌥⇧P) makes it easy to deeply customize your Touch Bar. Settings transfer seamlessly to new versions of GC-BTT with "Reapply All Settings".</small>
 
-![47%20AM|690x19](upload://10uBZE4tKYF5B4USgbliZHh818F.png) 
+![47%20AM](upload://10uBZE4tKYF5B4USgbliZHh818F.png) 
 
-![07%20AM|690x19](upload://mpIxK258jpjA50KtziKlBzD4kP1.png)
+![07%20AM](upload://mpIxK258jpjA50KtziKlBzD4kP1.png)
 
-![29%20AM|690x19](upload://cgfI7HROBdK7ntxubEOJ2CT13J6.png)
+![29%20AM](upload://cgfI7HROBdK7ntxubEOJ2CT13J6.png)
 
-![35%20AM|690x19](upload://7JbO0IQOCkvRwzaRybxWRW9yr9h.png)
+![35%20AM](upload://7JbO0IQOCkvRwzaRybxWRW9yr9h.png)
 
-![45%20AM|690x19](upload://h6vdPRrO0Xgfs0TSyWwfKG8aapZ.png) 
+![45%20AM](upload://h6vdPRrO0Xgfs0TSyWwfKG8aapZ.png) 
 
-![00%20AM|690x19](upload://xrapFLKjzJ2sLOsDGqggNkB2eI8.png)
+![00%20AM](upload://xrapFLKjzJ2sLOsDGqggNkB2eI8.png)
 
-![08%20AM|690x19](upload://AamOfp9kVDsVEeCyNpfZTBywejE.png)
+![08%20AM](upload://AamOfp9kVDsVEeCyNpfZTBywejE.png)
 
 <h1 id="heading--touch-bar-settings">General Touch Bar Settings</h1>
 
