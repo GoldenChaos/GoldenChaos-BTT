@@ -26,6 +26,8 @@ _Need help or have a feature request? [Visit the GC-BTT thread on the BetterTouc
 > 5. Follow one of the two release links at the top of this post and click "**Direct import to BTT**". BTT will automatically launch and ask to import the preset - say yes to everything.
 > 7. You're all set! Press ⌘⌥⇧P to access the GC-BTT settings menu where you can customize GC-BTT to your liking.
 
+> Need help? Head over to the [GC-BTT Help and Feedback thread](https://community.folivora.ai/t/gc-btt-general-help-and-feedback-thread/5196)!
+
 # Screenshots
 
 ## Home Strip
