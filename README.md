@@ -11,10 +11,12 @@ _Need help or have a feature request? [Visit the GC-BTT thread on the BetterTouc
 
 > # Latest stable version: [GoldenChaos-BTT 2.641](https://share.folivora.ai/sharedPreset/aa7a2d21-4fc4-414f-ad7f-e31dd0f00cc1)
 > <sup>Verified by the BetterTouchTool developer, thoroughly tested by the community.</sup>
+>
 > **(Sep 25 2018 - [Release Notes](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/1043?u=goldenchaos))** No longer requires High Sierra Media Key Enabler! Plus: Settings menu with customization options for esc key, Home Strip keys, Menu Bar icons, Dock badges, Date/Time formatting with 24-Hour Time, and default calendar app selection; Seamless upgrades with just a tap using the "Reapply Settings" button; Fully scriptable, with a simple preset format so you can have multiple GC-BTT's for different occasions; Native Now Playing widget with dramatic CPU usage improvements; Collapsible Menu Bar with three sizes; New Connectivity Actions menu; New Current Language and Language Picker widgets with flags for 47 different languages
 > 
 > # Latest experimental version: [GoldenChaos-BTT 2.706](https://share.folivora.ai/sharedPreset/92efd2e4-6620-4144-ba2c-5b4abbb8d61b)
 > <sup>Unverified, untested alpha builds. Proceed with caution, expect things to be broken, and read the release notes.</sup>
+>
 > **(Feb 2 2019 - [Release Notes](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/1249?u=goldenchaos))** All-new, much more intuitive GC-BTT Settings window; New Visual Window Snapper widget - press ⌘⇧W to invoke; Huge performance and energy efficiency improvements with dramatic reduction of duplicate widgets; New Caffeinate menu bar item; Dock badges now hide when Do Not Disturb is enabled; bug fixes for Back/Forward keys; Dock badges for MailMate, Abstract, Zeplin, and Bodo
 
 > # How to install
