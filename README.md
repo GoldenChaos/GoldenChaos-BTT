@@ -7,8 +7,6 @@ _Want to buy me a coffee? You can donate here: https://paypal.me/GoldenChaos_
 
 _Thinking about buying BetterTouchTool because of this preset?_ [_Use this link and I'll get 40%._ 🙂](https://a.paddle.com/v2/click/30842/34667?link=1061)
 
-_Need help or have a feature request? [Visit the GC-BTT thread on the BetterTouchTool forums](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281) and make a post!_
-
 > # Latest stable version: [GoldenChaos-BTT 2.641](https://share.folivora.ai/sharedPreset/aa7a2d21-4fc4-414f-ad7f-e31dd0f00cc1)
 > <sup>Verified by the BetterTouchTool developer, thoroughly tested by the community.</sup>
 >
@@ -28,6 +26,8 @@ _Need help or have a feature request? [Visit the GC-BTT thread on the BetterTouc
 > 5. Follow one of the two release links at the top of this post and click "**Direct import to BTT**". BTT will automatically launch and ask to import the preset - say yes to everything.
 > 7. You're all set! Press ⌘⌥⇧P to access the GC-BTT settings menu where you can customize GC-BTT to your liking.
 
+
+> Want to be notified of new versions? [Visit the GC-BTT release thread on the BetterTouchTool forums](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281) and subscribe to the thread!
 > Need help? Head over to the [GC-BTT Help and Feedback thread](https://community.folivora.ai/t/gc-btt-general-help-and-feedback-thread/5196)!
 
 # Screenshots
