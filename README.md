@@ -13,10 +13,10 @@ _Thinking about buying BetterTouchTool because of this preset?_ [_Use this link 
 > **(Sep 25 2018 - [Release Notes](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/1043?u=goldenchaos))** No longer requires High Sierra Media Key Enabler! Plus: Settings menu with customization options for esc key, Home Strip keys, Menu Bar icons, Dock badges, Date/Time formatting with 24-Hour Time, and default calendar app selection; Seamless upgrades with just a tap using the "Reapply Settings" button; Fully scriptable, with a simple preset format so you can have multiple GC-BTT's for different occasions; Native Now Playing widget with dramatic CPU usage improvements; Collapsible Menu Bar with three sizes; New Connectivity Actions menu; New Current Language and Language Picker widgets with flags for 47 different languages
 
 
-> # Latest experimental version: [GoldenChaos-BTT 2.723-4](https://share.folivora.ai/sharedPreset/be03a206-10ba-4467-8f93-44ca9f9687b9)
+> # Latest experimental version: [GoldenChaos-BTT 2.723-5](https://share.folivora.ai/sharedPreset/f58ba6b5-ee46-4b39-aff5-b780e4aac0e0)
 > <sup>Unverified, untested alpha builds. Proceed with caution, expect things to be broken, and read the release notes.</sup>
 >
-> **(Mar 2 2019 - [Release Notes](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/1256?u=goldenchaos))** All-new, much more intuitive GC-BTT Settings window; Settings to enable/disable cmd, opt, or ctrl menus individually; New settings for the Home Strip; Make Finder/AirDrop Keys show just icons; Make Now Playing and Media Keys appear persistently; New Visual Window Snapper widget (press ⌘⇧W to invoke); Huge performance and energy efficiency improvements; Near-total elimination of duplicate widgets; New 1Password and Caffeinate menu bar items; Dock badges now hide when Do Not Disturb is enabled; bug fixes for Connect to AirPods, Connect to Beats, Now Playing widgets, and system Back/Forward keys; Updated Slack logo; Dock badges for News, Maps, Superhuman, MailMate, Abstract, Zeplin, and Bodo
+> **(Mar 4 2019 - [Release Notes](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/1257?u=goldenchaos))** All-new, much more intuitive GC-BTT Settings window; Settings to enable/disable cmd, opt, or ctrl menus individually; New settings for the Home Strip; Make Finder/AirDrop Keys show just icons; Make Now Playing and Media Keys appear persistently; New Visual Window Snapper widget (press ⌘⇧W to invoke); Huge performance and energy efficiency improvements; Near-total elimination of duplicate widgets; New Caffeinate, 1Password, Day One, and ColorSnapper menu bar items; Dock badges now hide when Do Not Disturb is enabled; bug fixes for Connect to AirPods, Connect to Beats, Now Playing widgets, and system Back/Forward keys; Updated Slack logo; Dock badges for News, Maps, Superhuman, MailMate, Abstract, Zeplin, and Bodo
 
 > # How to install
 > 1. Make sure you're using the latest stable version of BetterTouchTool.
@@ -26,7 +26,6 @@ _Thinking about buying BetterTouchTool because of this preset?_ [_Use this link 
 > 4. **Upgrading?** [Follow these steps](#heading--upgrading).
 > 5. Follow one of the two release links at the top of this post and click "**Direct import to BTT**". BTT will automatically launch and ask to import the preset - say yes to everything.
 > 7. You're all set! Press ⌘⌥⇧P to access the GC-BTT settings menu where you can customize GC-BTT to your liking.
-
 
 > Want to be notified of new versions? [Visit the GC-BTT release thread on the BetterTouchTool forums](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281) and subscribe to the thread!
 
@@ -132,6 +131,7 @@ Only install the latest version unless you have a specific troubleshooting reaso
 > * <sup>Versions **2.516 and earlier** require [Location Helper](http://www.mousedown.net/mouseware/LocationHelper.html) and [JSON Helper](http://www.mousedown.net/mouseware/JSONHelper.html) for the weather widget to work. **Not compatible with macOS Mojave.**</sup>
 
 ### Version History:
+* [Experimental] [2.723-5](https://share.folivora.ai/sharedPreset/f58ba6b5-ee46-4b39-aff5-b780e4aac0e0) ([Mar 4 2019](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/1257?u=goldenchaos))
 * [Experimental] [2.723-4](https://share.folivora.ai/sharedPreset/be03a206-10ba-4467-8f93-44ca9f9687b9) ([Mar 2 2019](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/1256?u=goldenchaos))
 * [Experimental] [2.723-3](https://share.folivora.ai/sharedPreset/46445942-401b-4a4b-8a58-f4b3f1c033dd) ([Mar 2 2019](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/1255?u=goldenchaos))
 * [Experimental] [2.723-2](https://share.folivora.ai/sharedPreset/07792f06-9629-4138-b5fc-5df591df7b7e) ([Mar 1 2019](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/1254?u=goldenchaos))
