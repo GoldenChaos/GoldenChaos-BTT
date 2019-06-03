@@ -1,0 +1,1596 @@
+<html>
+<head>
+<style>
+    body {
+        color: #fff;
+        padding: 16px;
+        font-family: "SF Pro Text", Helvetica, sans-serif;
+        font-size: 14px;
+        margin: 0;
+        padding: 0 0 2px 0;
+        background: transparent;
+        background: rgba(55, 55, 55, .7);
+        -webkit-backdrop-filter: blur(48px) saturate(200%);
+        -webkit-transform: translate3d(0, 0, 0);
+        display: flex;
+        -webkit-user-select: none;
+        overflow: hidden;
+    }
+    
+    h1 {
+        font-family: "SF Pro Display", Helvetica, sans-serif;
+        font-weight: 600;
+        margin: 0;
+        padding: 44px 16px 12px 16px;
+        font-size: 24px;
+        border-bottom: 1px solid rgba(255,255,255,.15);
+    }
+    
+    h2 {
+        font-family: "SF Pro Display", Helvetica, sans-serif;
+        font-size: 16px;
+        text-align: center;
+        font-weight: 600;
+        margin: 12px 0;
+    }
+    
+    h3 {
+        font-family: "SF Pro Display", Helvetica, sans-serif;
+        text-transform: uppercase;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: .5px;
+        padding: 0 32px;
+        margin: 24px 0 12px 0;
+        color: rgba(180, 179, 178, 1);
+    }
+    
+    h3:first-of-type {
+        margin-top: 0;
+    }
+    
+    small {
+        font-size: 12px;
+        line-height: 16px;
+        margin: -4px 32px 16px 32px;
+        padding: 0;
+        display: block;
+        color: rgba(180, 179, 178, 1);
+    }
+    
+    a {
+        color: #1485FF;
+        text-decoration: none;
+        display: inline;
+    }
+    
+    .null {
+        background-color: rgba(255,0,0,.2);
+        opacity: 0.5;
+        transition: 0.2s;
+    }
+    
+    /* Sidebar Styles */
+    .sidebar {
+        border-bottom-left-radius: 6px;
+        border: 1px solid rgba(119, 118, 116, .5);
+        border-right: none;
+        -webkit-transform: translate3d(0, 0, 0);
+        position: relative;
+    }
+    
+    .sidebar ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        height: calc(100% - 87px);
+    }
+    
+    .tablink {
+        margin: 0 0 -1px 0;
+        padding: 8px 12px 8px 48px;
+        width: 204px;
+        position: relative;
+        line-height: 28px;
+    }
+    
+    .tablink img {
+        height: 28px;
+        margin-right: 12px;
+        margin-left: -36px;
+        float: left;
+    }
+    
+    .tablink::after {
+        content: " ";
+        display: block;
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        bottom: 0;
+        background: rgba(255,255,255,.15);
+    }
+    
+    .tablink.active {
+        background: #1485FF;
+        background-blend-mode: screen;
+    }
+    
+    .tablink.active::after {
+        display: none;
+    }
+    
+    .tablink:last-of-type {
+        position: absolute;
+        bottom: -1px;
+        border-bottom-left-radius: 5px;
+    }
+    
+    .tablink:last-of-type::after {
+        top: 0;
+        bottom: auto;
+    }
+    
+    /* Content Area Styles */
+    .content {
+        background: rgba(70, 68, 67, 1);
+        border-bottom-right-radius: 6px;
+        border: 1px solid rgba(119, 118, 116, .5);
+        border-left: 1px solid rgba(3, 3, 3, 1);
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: scroll;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .tabcontent {
+        padding-top: 66px;
+        display: none;
+        position: relative;
+    }
+    
+    .tabcontent .active {
+        display: block;
+    }
+    
+    .tabcontent ul {
+        list-style-type: none;
+        margin: -16px -16px -16px 0;
+        padding: 0;
+        -webkit-transform: translate3d(0, 0, 0);
+    }
+    
+    .tabcontent ul li {
+        padding: 8px 8px 8px 0;
+        border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+    
+    .tabcontent ul li:last-of-type {
+        border: none;
+    }
+    
+    .tabcontent ul li img,
+    .tabcontent ul li .tbicon {
+        height: 36px;
+        float: left;
+        margin-right: 12px;
+    }
+    
+    .tabcontent ul li .tbicon {
+        background: #000;
+        border-radius: 6px;
+        overflow: hidden;
+        display: inline-block;
+        min-width: 36px;
+        object-position: center center;
+    }
+    
+    .tabcontent ul li .tbicon img {
+        width: auto;
+        max-height: 22px;
+        padding: 7px;
+        margin-right: 0;
+        position: relative;
+        object-position: center center;
+    }
+    
+    img.invert {
+        -webkit-filter: invert();
+    }
+    
+    .tabcontent ul li .form-switch a {
+        line-height: 36px;
+        color: #fff;
+        text-decoration: none;
+        background: none;
+    }
+    
+    header {
+        position: fixed;
+        z-index: 1;
+        top: 1px;
+        left: 266px;
+        right: 1px;
+        background: rgba(83, 81, 79, .8);
+        -webkit-backdrop-filter: blur(24px) saturate(400%) contrast(150%);
+        -webkit-transform: translate3d(0, 0, 0);
+        border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+    
+    section {
+        background: rgba(75, 74, 73, 1);
+        border: 1px solid rgba(95, 94, 93, 1);
+        border-radius: 4px;
+        padding: 16px;
+        margin: 0 16px 16px 16px;
+        position: relative;
+    }
+    
+    section.tokenlist {
+        display: flex;
+        flex-wrap: wrap;
+        padding-bottom: 8px;
+    }
+    
+    .button {
+        background: #1485FF;
+        display: block;
+        text-align: center;
+        border-radius: 4px;
+        margin: 32px 16px;
+        padding: 8px;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+    }
+    
+    .button:active,
+    .token.selected:active {
+        opacity: .8;
+    }
+    
+    .token {
+        color: #1485FF;
+        border: 1px solid #1485FF;
+        color: #fff;
+        padding: 6px 8px;
+        margin: 0;
+        margin-right: 8px;
+        border-radius: 4px;
+        margin-bottom: 8px;
+    }
+    
+    .token.selected {
+        display: inline-block;
+        background: #1485FF;
+        color: #fff;
+    }
+    
+    .token:active,
+    .segmented-control a:active {
+        background: rgba(128, 125, 124, .2);
+    }
+    
+    .token.selected:active {
+        background: #1485FF;
+    }
+    
+    .segmented-control {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        display: flex;
+        min-width: 300px;
+    }
+    
+    .segmented-control button {
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        background: none;
+        font-size: 15px;
+        margin: 0 0 0 -1px;
+        padding: 0 8px;
+        box-sizing: border-box;
+        border: 1px solid #1485FF;
+        height: 26px;
+        white-space: nowrap;
+        width: 100%;
+        min-width: 100px;
+    }
+    
+    .segmented-control button:first-of-type {
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+    }
+    
+    .segmented-control button:last-of-type {
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+    }
+    
+    .fantastical .fantastical,
+    .calendar .calendar,
+    .dynamic .dynamic,
+    .always .always,
+    .never .never,
+    .full .full,
+    .icon .icon,
+    .off .off,
+    .large .large,
+    .medium .medium,
+    .small .small,
+    label[class="12Hour"] button[class="12Hour"],
+    label[class="24Hour"] button[class="24Hour"] {
+        background: #1485FF;
+    }
+    
+    section p {
+        margin: 12px 0;
+    }
+    
+    section p:first-of-type {
+        margin-top: 0;
+    }
+    
+    section p:last-of-type {
+        margin-bottom: 0;
+    }
+    
+    /* Single Page Style Overrides */
+    #about {
+        margin-top: -64px;
+    }
+    
+    #about a {
+        background: none;
+        display: inline;
+        font-size: 13px;
+        color: rgba(16, 133, 255, 1);
+    }
+    
+    /* Toggle Switch Styles */
+    label, .form-switch {
+        display: block;
+        line-height: 36px;
+        position: relative;
+    }
+    
+    .form-switch i {
+        position: absolute;
+        display: inline-block;
+        width: 46px;
+        height: 26px;
+        background-color: rgba(118, 115, 114, 1);
+        border-radius: 23px;
+        transition: all 0.3s linear;
+        right: 5px;
+        top: 5px;
+    }
+    
+    .form-switch i::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 42px;
+        height: 22px;
+        background-color: rgba(118, 115, 114, 1);
+        border-radius: 11px;
+        transform: translate3d(2px, 2px, 0) scale3d(1, 1, 1);
+        transition: all 0.25s linear;
+    }
+    
+    .form-switch i::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 22px;
+        height: 22px;
+        background-color: #fff;
+        border-radius: 11px;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24);
+        transform: translate3d(2px, 2px, 0);
+        transition: all 0.2s ease-in-out;
+    }
+    
+    .form-switch:active i::after {
+        width: 28px;
+        transform: translate3d(2px, 2px, 0);
+    }
+    
+    .form-switch:active .true input + i::after {
+        transform: translate3d(16px, 2px, 0);
+    }
+    
+    .form-switch input {
+        display: none !important;
+    }
+    
+    .form-switch .true input + i {
+        background-color: #4BD763;
+    }
+    
+    .form-switch .true input + i::before {
+        transform: translate3d(18px, 2px, 0) scale3d(0, 0, 0);
+    }
+    
+    .form-switch .true input + i::after {
+        transform: translate3d(22px, 2px, 0);
+    }
+</style>
+<script>
+    var variables = {};
+    
+    function getAllVariablesAndUpdateClasses() {
+        console.log('looping through switches');
+        const buttons = document.querySelectorAll('label');
+        buttons.forEach(function(button, i) {
+            const variable = button.id;
+            window.BTT.callHandler(
+                'get_string_variable',
+                { variableName: variable},
+                function callback(currentVariableValue) {
+                    console.log(
+                        'the variable',
+                        variable,
+                        'is set to: ',
+                        currentVariableValue
+                    );
+                    variables[button.id] = currentVariableValue;
+                    button.className = currentVariableValue;
+                }
+            );
+        });
+    }
+    
+    function trigger_named_async_without_response(actionName) {
+        window.BTT.callHandler('trigger_named_async_without_response', {trigger_name: actionName},
+            function callback(scriptResult) {   
+                console.log('action result', scriptResult);
+            }
+        );
+    }
+    
+    function triggerNamedActionAndRefreshSettingsWindow(actionName) {
+        trigger_named_async_without_response(actionName);
+        event.preventDefault();
+        event.stopPropagation();
+        setTimeout(function () {
+            getAllVariablesAndUpdateClasses();
+        }, 50);
+    }
+    
+    function triggerPresetAndRefreshSettingsWindow(actionName) {
+        trigger_named_async_without_response(actionName);
+        event.preventDefault();
+        event.stopPropagation();
+        setTimeout(function () {
+            getAllVariablesAndUpdateClasses();
+        }, 2000);
+    }
+    
+    function toggleVariable(variable, actionName, event) {
+        var button = document.getElementById(variable);
+        if(variables[variable] === 'true') {
+            button.className = 'false';
+            variables[variable] = 'false';
+            window.BTT.callHandler('set_string_variable', {variableName: variable, to: 'false'});
+            window.BTT.callHandler(
+                'get_string_variable',
+                { variableName: variable},
+                function callback(currentVariableValue) {
+                    console.log(
+                        'the variable',
+                        variable,
+                        'is set to: ',
+                        currentVariableValue
+                    );
+                }
+            );
+        } else {
+            button.className = 'true';
+            variables[variable] = 'true';
+            window.BTT.callHandler('set_string_variable', {variableName: variable, to: 'true'});
+            window.BTT.callHandler(
+                'get_string_variable',
+                { variableName: variable},
+                function callback(currentVariableValue) {
+                    console.log(
+                        'the variable',
+                        variable,
+                        'is set to: ',
+                        currentVariableValue
+                    );
+                }
+            );
+        }
+        trigger_named_async_without_response(actionName);
+        event.preventDefault();
+        event.stopPropagation();
+    }
+    
+    function setVariable(variable, setting, actionName, event) {
+        window.BTT.callHandler('set_string_variable', {variableName: variable, to: setting});
+        trigger_named_async_without_response(actionName);
+        event.preventDefault();
+        event.stopPropagation();
+    }
+    
+    function checkIfFinished() {
+		window.BTT.callHandler('get_string_variable', {variableName: 'init_complete'}, function callback(currentVariableValue) {
+        	if(currentVariableValue === 'complete') {
+                getAllVariablesAndUpdateClasses();
+            	} else {
+                	setTimeout(() => { checkIfFinished() }, 500)
+            	}
+            }
+        );
+	}
+    
+    window.addEventListener(
+        'bttReady',
+        function(BTT) {
+            trigger_named_async_without_response('btt_preset_imported_GoldenChaos-BTT 2.850');
+            checkIfFinished();
+        },
+        false
+    );
+</script>
+</head>
+<body>
+<div class="sidebar">
+    <h1>GC-BTT Settings</h1>
+    <ul>
+        <li id="default" class="tablink" onClick="openTab(event, 'general')">
+            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/watchos-icons/settings.png" />
+            General
+        </li>
+        <li class="tablink" onClick="openTab(event, 'home-strip')">
+            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/watchos-icons/home.png" />
+            Home Strip
+        </li>
+        <li class="tablink" onClick="openTab(event, 'menu-bar')">
+            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/watchos-icons/brightness.png" />
+            Menu Bar
+        </li>
+        <li class="tablink" onClick="openTab(event, 'dock-badges')">
+            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/watchos-icons/notifications.png" />
+            Dock Badges
+        </li>
+        <li class="tablink" onClick="openTab(event, 'about')">
+            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/avatar-round.png" />
+            About GoldenChaos-BTT
+        </li>
+    </ul>
+</div>
+<div class="content">
+    <div class="content-inner">
+            <div id="general" class="tabcontent">
+                <header>
+                    <h2>General</h2>
+                </header>
+                
+                <h3>Escape Key</h3>
+                <section>
+                    <ul>
+                        <li class="form-switch">
+                            <label id="useNormalEscKey" onClick="toggleVariable(this.id, 'Refresh Escape Key',event)">
+                                <div class="tbicon">
+                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/escape.png" />
+                                </div>
+                                Use Normal Escape Key
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                    </ul>
+	            </section>
+                <small>
+                    <p>When enabled, separate fullscreen buttons will be added to the Home Strip and Control Menu.</p>
+                </small>
+                
+                <h3>Modifier Menus</h3>
+                <section>
+                    <ul>
+                        <li class="form-switch">
+                            <label id="showControlMenu" onClick="toggleVariable(this.id, 'Refresh Control Menu',event)">
+                                <div class="tbicon">
+                                    <img class="invert" style="height:13px;width:22px;margin-top:4px;" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/control.png" />
+                                </div>
+                                Control Menu (Control Strip)
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <label id="showOptionMenu" onClick="toggleVariable(this.id, 'Refresh Option Menu',event)">
+                                <div class="tbicon">
+                                    <img class="invert" style="width:22px;height:15px;margin-top:4px;"src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/option.png" />
+                                </div>
+                                Option Menu (Window Snapping)
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <label id="showCommandMenu" onClick="toggleVariable(this.id, 'Refresh Command Menu',event)">
+                                <div class="tbicon">
+                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/command.png" />
+                                </div>
+                                Command Menu (App Switcher)
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                    </ul>
+                </section>
+                <small>
+                    <p>If a modifier menu is disabled, you can hold down that modifier key to quickly shrink the menu bar.</p>
+                </small>
+                
+                <h3>Presets</h3>
+                <section class="tokenlist">
+                    <a style="width:46.8%;display:inline-block;text-align:center;margin-bottom:8px;margin-right:4px;" class="token selected" onClick="triggerPresetAndRefreshSettingsWindow('Default Settings')">Default Settings</a>
+                    <a style="width:46.74%;display:inline-block;text-align:center;margin-bottom:8px;margin-right:0;margin-left:4px;" class="token selected" onClick="triggerPresetAndRefreshSettingsWindow('GC\'s GC-BTT')">GC'S GC-BTT</a><br />
+                </section>
+                
+                <h3>Upgrading</h3>
+                <section class="tokenlist">
+                	<a style="width:100%;text-align:center;margin-bottom:8px;margin-right:0;" class="token selected" onClick="triggerPresetAndRefreshSettingsWindow('Check All Settings');">Restore Settings</a>
+                </section>
+            </div>
+            <div id="home-strip" class="tabcontent">
+                <header>
+                    <h2>Home Strip</h2>
+                </header>
+                
+                <h3>Controls</h3>
+                <section>
+                    <ul>
+                        <li class="form-switch">
+                            <label id="showBackForward" onClick="toggleVariable(this.id, 'Refresh Back/Forward Keys',event)">
+                                <div class="tbicon">
+                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/back.png" style="border-right:1px solid #b4b5b6;" />
+                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/forward.png" />
+                                </div>
+                                Back/Forward
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <label id="showRefresh" onClick="toggleVariable(this.id, 'Refresh Refresh Key',event)">
+                                <div class="tbicon">
+                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/refresh.png" />
+                                </div>
+                                Refresh
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <label id="showNewTab" onClick="toggleVariable(this.id, 'Refresh New Tab Key',event)">
+                                <div class="tbicon">
+                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/new-tab.png" />
+                                </div>
+                                New Tab
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li>
+                            <div class="tbicon">
+                                <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/rewind.png" style="border-right:1px solid #b4b5b6;" />
+                                <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/play.png" style="border-right:1px solid #b4b5b6;" />
+                                <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/fastforward.png" />
+                            </div>
+                            <label id="showMediaControls">
+                                Media Controls
+                                <div class="segmented-control">
+                                    <button class="dynamic" onClick="triggerNamedActionAndRefreshSettingsWindow('Use Dynamic Media Control Keys')">
+                                        Dynamic
+                                    </button>
+                                    <button class="always" onClick="triggerNamedActionAndRefreshSettingsWindow('Always Show Media Control Keys')">
+                                        Always
+                                    </button>
+                                    <button class="never" onClick="triggerNamedActionAndRefreshSettingsWindow('Never Show Media Control Keys')">
+                                        Never
+                                    </button>
+                                </div>
+                            </label>
+                        </li>
+                    </ul>
+                </section>
+                
+                <h3>Widgets</h3>
+                <section>
+                    <ul>
+                        <li>
+                            <div class="tbicon">
+                                <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/watchos-icons/now-playing.png" />
+                            </div>
+                            <label id="showNowPlaying">
+                                Now Playing
+                                <div class="segmented-control">
+                                    <button class="dynamic" onClick="triggerNamedActionAndRefreshSettingsWindow('Use Dynamic Now Playing Widget')">
+                                        Dynamic
+                                    </button>
+                                    <button class="always" onClick="triggerNamedActionAndRefreshSettingsWindow('Always Show Now Playing Widget')">
+                                        Always
+                                    </button>
+                                    <button class="never" onClick="triggerNamedActionAndRefreshSettingsWindow('Never Show Now Playing Widget')">
+                                        Never
+                                    </button>
+                                </div>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <div class="tbicon">
+                                <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/watchos-icons/reminders.png" />
+                            </div>
+                            <label id="showReminders" onClick="toggleVariable(this.id, 'Refresh Reminders Widget',event)">
+                                Reminders (Requires <a href="icalbuddy.com">icalBuddy</a>)
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <div class="tbicon">
+                                <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/watchos-icons/calendar.png" />
+                            </div>
+                            <label id="showCalendar" onClick="toggleVariable(this.id, 'Refresh Calendar Widget',event)">
+                                Calendar (Requires <a href="icalbuddy.com">icalBuddy</a>)
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li>
+                            <label id="calendarApp">
+                                Open calendar items with...
+                                <div class="segmented-control">
+                                    <button class="calendar" type="button" onClick="triggerNamedActionAndRefreshSettingsWindow('Use Apple Calendar')">Calendar</button>
+                                    <button class="fantastical" type="button" onClick="triggerNamedActionAndRefreshSettingsWindow('Use Fantastical')">Fantastical</button>
+                                </div>
+                            </label>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <ul>
+                        <li>
+                            <div class="tbicon">
+                                <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Finder.png" />
+                            </div>
+                            <label id="showShowFinder">
+                                Show Finder
+                                <div class="segmented-control">
+                                    <button class="full" onClick="triggerNamedActionAndRefreshSettingsWindow('Show Full Show Finder Key')">
+                                        Icon & Text
+                                    </button>
+                                    <button class="small" onClick="triggerNamedActionAndRefreshSettingsWindow('Show Small Show Finder Key')">
+                                        Icon Only
+                                    </button>
+                                    <button class="hide" onClick="triggerNamedActionAndRefreshSettingsWindow('Hide Show Finder Key')">
+                                        Off
+                                    </button>
+                                </div>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <div class="tbicon">
+                                <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/airdrop.png" />
+                            </div>
+                            <label id="showAirDrop">
+                                AirDrop
+                                <div class="segmented-control">
+                                    <button class="full" onClick="triggerNamedActionAndRefreshSettingsWindow('Show Full AirDrop Key')">
+                                        Icon & Text
+                                    </button>
+                                    <button class="small" onClick="triggerNamedActionAndRefreshSettingsWindow('Show Small AirDrop Key')">
+                                        Icon Only
+                                    </button>
+                                    <button class="hide" onClick="triggerNamedActionAndRefreshSettingsWindow('Hide AirDrop Key')">
+                                        Off
+                                    </button>
+                                </div>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <div class="tbicon">
+                                <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/snap-left.png" style="border-right:1px solid #b4b5b6;" />
+                                <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/snap-center.png" style="border-right:1px solid #b4b5b6;" />
+                                <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/snap-right.png" />
+                            </div>
+                            <label id="showWindowSnapping" onClick="toggleVariable(this.id, 'Refresh Window Snapping Keys',event)">
+                                Window Snapping
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <ul>
+                        <li class="form-switch">
+                            <div class="tbicon">
+                                <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/watchos-icons/things.png" />
+                            </div>
+                            <label id="showThings" onClick="toggleVariable(this.id, 'Refresh Things Widget',event)">
+                                Things
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+            <div id="menu-bar" class="tabcontent">
+                <header>
+                    <h2>Menu Bar</h2>
+                </header>
+                
+                <h3>Dynamic Menu Bar</h3>
+                <small>
+                    <p>Allows you to switch between large, medium, and small menu bar sizes on the fly.</p>
+                </small>
+                <section>
+                    <ul>
+                        <li class="form-switch">
+                            <label id="showCollapseMenuBar" onClick="toggleVariable(this.id, 'Refresh Collapse Menu Bar Key',event)">
+                                <div class="tbicon">
+                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/collapse-menu-bar.png" />
+                                </div>
+                                Show Collapse/Expand Menu Bar Controls
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                    </ul>
+                </section>
+                
+                <h3>Primary Menu Bar Widgets</h3>
+                <small>
+                    <p>These menu bar widgets stay docked to the right even when holding modifier keys.</p>
+                </small>
+                <section>
+                    <ul>
+                        <li>
+                            <label id="showNotificationCenter">
+                                <div class="tbicon">
+                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/notification-center.png" />
+                                </div>
+                                Notification Center
+                                <div class="segmented-control">
+                                    <button class="dynamic" onClick="triggerNamedActionAndRefreshSettingsWindow('Use Dynamic Notification Center Key')">Dynamic</button>
+                                    <button class="always" onClick="triggerNamedActionAndRefreshSettingsWindow('Always Show Notification Center Key')">Always</button>
+                                    <button class="never" onClick="triggerNamedActionAndRefreshSettingsWindow('Never Show Notification Center Key')">Never</button>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label id="showSiri">
+                                <div class="tbicon">
+                                    <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/siri.png" />
+                                </div>
+                                Siri
+                                <div class="segmented-control">
+                                    <button class="dynamic" onClick="triggerNamedActionAndRefreshSettingsWindow('Use Dynamic Siri Key')">Dynamic</button>
+                                    <button class="always" onClick="triggerNamedActionAndRefreshSettingsWindow('Always Show Siri Key')">Always</button>
+                                    <button class="never" onClick="triggerNamedActionAndRefreshSettingsWindow('Never Show Siri Key')">Never</button>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label id="showSpotlight">
+                                <div class="tbicon">
+                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/spotlight.png" />
+                                </div>
+                                Spotlight
+                                <div class="segmented-control">
+                                    <button class="dynamic" onClick="triggerNamedActionAndRefreshSettingsWindow('Use Dynamic Spotlight Key')">Dynamic</button>
+                                    <button class="always" onClick="triggerNamedActionAndRefreshSettingsWindow('Always Show Spotlight Key')">Always</button>
+                                    <button class="never" onClick="triggerNamedActionAndRefreshSettingsWindow('Never Show Spotlight Key')">Never</button>
+                                </div>
+                            </label>
+                        </li>
+                    </ul>
+                </section>
+                <small>
+                	<p>When set to "Dynamic", these widgets will disappear on medium and small menu bar sizes.</p>
+                </small>
+                <section>
+                    <ul>
+                        <li>
+                            <label id="showBattery">
+                                <div class="tbicon">
+                                    <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/battery.png" />
+                                </div>
+                                Battery
+                                <div class="segmented-control">
+                                    <button class="dynamic" onClick="triggerNamedActionAndRefreshSettingsWindow('Use Dynamic Battery Widget')">Dynamic</button>
+                                    <button class="always" onClick="triggerNamedActionAndRefreshSettingsWindow('Always Show Battery Widget')">Always</button>
+                                    <button class="never" onClick="triggerNamedActionAndRefreshSettingsWindow('Never Show Battery Widget')">Never</button>
+                                </div>
+                            </label>
+                        </li>
+                         <li class="form-switch">
+                            <label id="showBatteryPercentage" onClick="toggleVariable(this.id, 'Refresh Battery Widget',event)">
+                                <div class="tbicon">
+                                    <span style="font-size:12px;display:inline-block;width:100%;text-align:center;">100%</span>
+                                </div>
+                                Show Battery Percentage
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <ul>
+                        <li>
+                            <label id="showWeather">
+                                <div class="tbicon">
+                                    <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/weather.png" />
+                                </div>
+                                Weather
+                                <div class="segmented-control">
+                                    <button class="dynamic" onClick="triggerNamedActionAndRefreshSettingsWindow('Use Dynamic Weather Widget')">Dynamic</button>
+                                    <button class="always" onClick="triggerNamedActionAndRefreshSettingsWindow('Always Show Weather Widget')">Always</button>
+                                    <button class="never" onClick="triggerNamedActionAndRefreshSettingsWindow('Never Show Weather Widget')">Never</button>
+                                </div>
+                            </label>
+                        </li>
+                    </ul>
+                </section>
+                <small>
+                	<p>When set to "Dynamic", the battery and weather widgets will disappear on small menu bar sizes.</p>
+                </small>
+                
+                <h3>Date and Time</h3>
+                <section>
+                    <ul>
+                        <li>
+                            <label id="dateSize">
+                                <div class="tbicon">
+                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/date.png" />
+                                </div>
+                                Date Format
+                                <div class="segmented-control">
+                                    <button class="dynamic" onClick="triggerNamedActionAndRefreshSettingsWindow('Use Dynamic Date/Time Format')">Dynamic</button>
+                                    <button class="large" onClick="triggerNamedActionAndRefreshSettingsWindow('Use Large Date/Time Format')" style="width:140%;">
+                                        Day, Date & Time
+                                    </button>
+                                    <button class="medium" onClick="triggerNamedActionAndRefreshSettingsWindow('Use Medium Date/Time Format')">
+                                        Date & Time
+                                    </button>
+                                    <button class="small" onClick="triggerNamedActionAndRefreshSettingsWindow('Use Small Date/Time Format')">
+                                        Time Only
+                                    </button>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label id="timeFormat">
+                                <div class="tbicon">
+                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/time.png" />
+                                </div>
+                                Time Format
+                                <div class="segmented-control">
+                                    <button class="12Hour" onClick="triggerNamedActionAndRefreshSettingsWindow('Use 12-Hour Time')">12-Hour</button>
+                                    <button class="24Hour" onClick="triggerNamedActionAndRefreshSettingsWindow('Use 24-Hour Time')">24-Hour</button>
+                                </div>
+                            </label>
+                        </li>
+                    </ul>
+                </section>
+                <small>
+                    <p>When set to "Dynamic", the date will automatically switch between<br />large, medium, and small formats when you resize the menu bar.</p>
+                </small>
+                
+                <h3>Volume and Brightness</h3>
+                <section>
+                    <ul>
+                        <li class="form-switch">
+                            <label id="showBrightnessUp" onClick="toggleVariable(this.id, 'Refresh Brightness Up Key',event)">
+                                <div class="tbicon">
+                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/brightness-up.png" />
+                                </div>
+                                Brightness Up
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <label id="showBrightnessDown" onClick="toggleVariable(this.id, 'Refresh Brightness Down Key',event)">
+                                <div class="tbicon">
+                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/brightness-down.png" />
+                                </div>
+                                Brightness Down
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <label id="showVolumeUp" onClick="toggleVariable(this.id, 'Refresh Volume Up Key',event)">
+                                <div class="tbicon">
+                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/volume-up.png" />
+                                </div>
+                                Volume Up
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <label id="showVolumeDown" onClick="toggleVariable(this.id, 'Refresh Volume Down Key',event)">
+                                <div class="tbicon">
+                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/volume-down.png" />
+                                </div>
+                                Volume Down
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <label id="showVolumeMute" onClick="toggleVariable(this.id, 'Refresh Volume Mute Key',event)" >
+                                <div class="tbicon">
+                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/volume-mute.png" />
+                                </div>
+                                Volume Mute
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                    </ul>
+                </section>
+                <small style="margin-bottom: 24px;">Keys for volume and brightness will always appear in the Control Strip,<br />even if you disable them in the menu bar.</small>
+                
+                <h3>Secondary Menu Bar Widgets</h3>
+                <small>
+                	<p>These widgets disappear when holding down modifier keys.</p>
+                </small>
+                <section>
+                    <ul>
+                        <li class="form-switch">
+                            <label id="showMicrophoneMute"  onClick="toggleVariable(this.id, 'Refresh Microphone Mute Key',event)">
+                                <div class="tbicon">
+                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/microphone-mute.png" />
+                                </div>
+                                Microphone Mute
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                    </ul>
+                </section>
+                <small>
+                    <p>Only appears when running apps that use the microphone.</p>
+                </small>
+                <section>
+                    <ul>
+                        <li class="form-switch">
+                            <label id="showWifi" onClick="toggleVariable(this.id, 'Refresh Wi-Fi Toggle Key',event)">
+                                <div class="tbicon">
+                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/wifi.png" />
+                                </div>
+                                Wi-Fi Toggle
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <label id="showBluetooth" onClick="toggleVariable(this.id, 'Refresh Bluetooth Toggle Key',event)">
+                                <div class="tbicon">
+                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/bluetooth.png" />
+                                </div>
+                                Bluetooth Toggle
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+	                <ul>
+                        <li class="form-switch">
+                            <label id="showConnectAirPods" onClick="toggleVariable(this.id, 'Refresh Connect to AirPods Key',event)">
+                                <div class="tbicon">
+                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/airpods.png" />
+                                </div>
+                                Connect to AirPods
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <label id="showConnectBeats" onClick="toggleVariable(this.id, 'Refresh Connect to Beats Key',event)">
+                                <div class="tbicon">
+                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/beats.png" />
+                                </div>
+                                Connect to Beats
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <label id="showConnectBose" onClick="toggleVariable(this.id, 'Refresh Connect to Bose Key',event)">
+                                <div class="tbicon">
+                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/bose.png" />
+                                </div>
+                                Connect to Bose
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <label id="showConnectGamepad" onClick="toggleVariable(this.id, 'Refresh Connect to Gamepad Key',event)">
+                                <div class="tbicon">
+                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/gamepad.png" />
+                                </div>
+                                Connect to Gamepad
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                    </ul>
+                </section>
+                <small>
+                	<p>Automatically looks for and connects to Bluetooth devices containing the words "AirPods", "Beats", "Bose", etc.<br />Requires the Bluetooth menu to be enabled in the macOS menu bar.</p>
+                </small>
+                <section>
+                    <ul>
+                        <li class="form-switch">
+                            <label id="showCaffeinate" onClick="toggleVariable(this.id, 'Refresh Caffeinate Key',event)">
+                                <div class="tbicon">
+                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/caffeinate.png" />
+                                </div>
+                                Caffeinate
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <label id="showAppSwitcher" onClick="toggleVariable(this.id, 'Refresh App Switcher Key',event)">
+                                <div class="tbicon">
+                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/app-switcher.png" />
+                                </div>
+                                App Switcher
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <label id="showCurrentLanguage" onClick="toggleVariable(this.id, 'Refresh Current Language Key',event)">
+                                <div class="tbicon">
+                                    <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/languages.png" />
+                                </div>
+                                Language Switcher
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <label id="showEmojiPicker" onClick="toggleVariable(this.id, 'Refresh Emoji Picker Key',event)">
+                                <div class="tbicon">
+                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/emoji.png" />
+                                </div>
+                                Emoji Picker
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <ul>
+                        <li class="form-switch">
+                            <label id="showBrowserTabs" onClick="toggleVariable(this.id, 'Refresh Browser Tabs Key',event)">
+                                <div class="tbicon">
+                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/browser.png" />
+                                </div>
+                                Browser Tabs
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                    </ul>
+                </section>
+                <small>
+                    <p>Supports Safari, Safari Technology Preview, Google Chrome, and Chrome Canary.</p>
+                </small>
+                <section>
+                    <ul>
+                        <li class="form-switch">
+                            <label id="show1Password" onClick="toggleVariable(this.id, 'Refresh 1Password Key',event)">
+                                <div class="tbicon">
+                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/1password.png" />
+                                </div>
+                                1Password
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <label id="showDayOne" onClick="toggleVariable(this.id, 'Refresh Day One Key',event)">
+                                <div class="tbicon">
+                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/day-one.png" />
+                                </div>
+                                Day One
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <label id="showHazeOver" onClick="toggleVariable(this.id, 'Refresh HazeOver Key',event)">
+                                <div class="tbicon">
+                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/hazeover.png" />
+                                </div>
+                                HazeOver
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <label id="showColorSnapper" onClick="toggleVariable(this.id, 'Refresh ColorSnapper Key',event)">
+                                <div class="tbicon">
+                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/colorsnapper.png" />
+                                </div>
+                                ColorSnapper
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <ul>
+                        <li class="form-switch">
+                            <label id="showSettings" onClick="toggleVariable(this.id, 'Refresh GC-BTT Settings Key',event)">
+                                <div class="tbicon">
+                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/settings.png" />
+                                </div>
+                                Show GC-BTT Settings Window
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+            <div id="dock-badges" class="tabcontent">
+                <header>
+                    <h2>Dock Badges</h2>
+                </header>
+                
+                <small>
+                    <p>Dock Badges allow you to see notification badges from apps in your dock, including from Handoff devices.<br /></p>
+                </small>
+                
+                <h3>Apple Apps</h3>
+                <section>
+                    <ul>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/News.png" />
+                            <label id="showNewsBadge" onClick="toggleVariable(this.id, 'Refresh News Badge',event)">
+                                News
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Maps.png" />
+                            <label id="showMapsBadge" onClick="toggleVariable(this.id, 'Refresh Maps Badge',event)">
+                                Maps
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Safari.png" />
+                            <label id="showSafariBadge" onClick="toggleVariable(this.id, 'Refresh Safari Badge',event)">
+                                Safari
+                                <input type="checkbox"><i></i>
+                            </label>		  
+                        </li>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Safari Technology Preview.png" />
+                            <label id="showSafariPreviewBadge" onClick="toggleVariable(this.id, 'Refresh Safari Preview Badge',event)">
+                                Safari Technology Preview
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/FaceTime.png" />
+                            <label id="showFaceTimeBadge" onClick="toggleVariable(this.id, 'Refresh FaceTime Badge',event)">
+                                FaceTime
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Messages.png" />
+                            <label id="showiMessageBadge" onClick="toggleVariable(this.id, 'Refresh iMessage Badge',event)">
+                                iMessage
+                                <input type="checkbox"><i></i>
+                            </label>		  
+                        </li>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Mail.png" />
+                            <label id="showAppleMailBadge" onClick="toggleVariable(this.id, 'Refresh Apple Mail Badge',event)">
+                                Apple Mail
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                    </ul>
+                </section>
+                
+                <h3>Third-Party Apps</h3>
+                <section>
+                    <ul>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Google Chrome.png" />
+                            <label id="showChromeBadge" onClick="toggleVariable(this.id, 'Refresh Chrome Badge',event)">
+                                Google Chrome
+                                <input type="checkbox"><i></i>
+                            </label> 
+                        </li>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Google Chrome Canary.png" />
+                            <label id="showChromeCanaryBadge" onClick="toggleVariable(this.id, 'Refresh Chrome Canary Badge',event)">
+                                Chrome Canary
+                                <input type="checkbox"><i></i>
+                            </label>	
+                        </li>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Firefox.png" />
+                            <label id="showFirefoxBadge" onClick="toggleVariable(this.id, 'Refresh Firefox Badge',event)">
+                                Firefox
+                                <input type="checkbox"><i></i>
+                            </label>	
+                        </li>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/WhatsApp.png" />
+                            <label id="showWhatsAppBadge" onClick="toggleVariable(this.id, 'Refresh WhatsApp Badge',event)">
+                                WhatsApp
+                                <input type="checkbox"><i></i>
+                            </label>	
+                        </li>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Telegram.png" />
+                            <label id="showTelegramBadge" onClick="toggleVariable(this.id, 'Refresh Telegram Badge',event)">
+                                Telegram
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Franz.png" />
+                            <label id="showFranzBadge" onClick="toggleVariable(this.id, 'Refresh Franz Badge',event)">
+                                Franz
+                                <input type="checkbox"><i></i>
+                            </label>	
+                        </li>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Skype.png" />
+                            <label id="showSkypeBadge" onClick="toggleVariable(this.id, 'Refresh Skype Badge',event)">
+                                Skype
+                                <input type="checkbox"><i></i>
+                            </label>	
+                        </li>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Skype for Business.png" />
+                            <label id="showSkypeBusinessBadge" onClick="toggleVariable(this.id, 'Refresh Skype Business Badge',event)">
+                                Skype for Business
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/YakYak.png" />
+                            <label id="showYakYakBadge" onClick="toggleVariable(this.id, 'Refresh YakYak Badge',event)">
+                                YakYak
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Chatty.png" />
+                            <label id="showChattyBadge" onClick="toggleVariable(this.id, 'Refresh Chatty Badge',event)">
+                                Chatty
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Caprine.png" />
+                            <label id="showCaprineBadge" onClick="toggleVariable(this.id, 'Refresh Caprine Badge',event)">
+                                Caprine
+                                <input type="checkbox"><i></i>
+                            </label>	
+                        </li>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Goofy.png" />
+                            <label id="showGoofyBadge" onClick="toggleVariable(this.id, 'Refresh Goofy Badge',event)">
+                                Goofy
+                                <input type="checkbox"><i></i>
+                            </label>	
+                        </li>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Microsoft Outlook.png" />
+                            <label id="showOutlookBadge" onClick="toggleVariable(this.id, 'Refresh Outlook Badge',event)">
+                                Outlook
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Spark.png" />
+                            <label id="showSparkBadge" onClick="toggleVariable(this.id, 'Refresh Spark Badge',event)">
+                                Spark
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Airmail 3.png" />
+                            <label id="showAirmailBadge" onClick="toggleVariable(this.id, 'Refresh Airmail Badge',event)">
+                                Airmail
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Polymail.png" />
+                            <label id="showPolymailBadge" onClick="toggleVariable(this.id, 'Refresh Polymail Badge',event)">
+                                Polymail
+                                <input type="checkbox"><i></i>
+                            </label>	
+                        </li>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Superhuman.png" />
+                            <label id="showSuperhumanBadge" onClick="toggleVariable(this.id, 'Refresh Superhuman Badge',event)">
+                                Superhuman
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Boxy.png" />
+                            <label id="showBoxyBadge" onClick="toggleVariable(this.id, 'Refresh Boxy Badge',event)">
+                                Boxy
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Mailplane.png" />
+                            <label id="showMailplaneBadge" onClick="toggleVariable(this.id, 'Refresh Mailplane Badge',event)">
+                                Mailplane
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Postbox.png" />
+                            <label id="showPostboxBadge" onClick="toggleVariable(this.id, 'Refresh Postbox Badge',event)">
+                                Postbox
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/MailMate.png" />
+                            <label id="showMailMateBadge" onClick="toggleVariable(this.id, 'Refresh MailMate Badge',event)">
+                                MailMate
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Slack.png" />
+                            <label id="showSlackBadge" onClick="toggleVariable(this.id, 'Refresh Slack Badge',event)">
+                                Slack
+                                <input type="checkbox"><i></i>
+                            </label>	
+                        </li>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Discord.png" />
+                            <label id="showDiscordBadge" onClick="toggleVariable(this.id, 'Refresh Discord Badge',event)">
+                                Discord Canary
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Discord Canary.png" />
+                            <label id="showDiscordCanaryBadge" onClick="toggleVariable(this.id, 'Refresh Discord Canary Badge',event)">
+                                Discord Canary
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Trello.png" />
+                            <label id="showTrelloBadge" onClick="toggleVariable(this.id, 'Refresh Trello Badge',event)">
+                                Trello
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Bodo.png" />
+                            <label id="showBodoBadge" onClick="toggleVariable(this.id, 'Refresh Bodo Badge',event)">
+                                Bodo
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Abstract.png" />
+                            <label id="showAbstractBadge" onClick="toggleVariable(this.id, 'Refresh Abstract Badge',event)">
+                                Abstract
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Zeplin.png" />
+                            <label id="showZeplinBadge" onClick="toggleVariable(this.id, 'Refresh Zeplin Badge',event)">
+                                Zeplin
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Tweetbot.png" />
+                            <label id="showTweetbotBadge" onClick="toggleVariable(this.id, 'Refresh Tweetbot Badge',event)">
+                                Tweetbot
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Twitter.png" />
+                            <label id="showTwitterBadge" onClick="toggleVariable(this.id, 'Refresh Twitter Badge',event)">
+                                Twitter
+                                <input type="checkbox"><i></i>
+                            </label>	
+                        </li>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Twitch.png" />
+                            <label id="showTwitchBadge" onClick="toggleVariable(this.id, 'Refresh Twitch Badge',event)">
+                                Twitch
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Facebook.png" />
+                            <label id="showFacebookBadge" onClick="toggleVariable(this.id, 'Refresh Facebook Badge',event)">
+                                Facebook
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Tumblr.png" />
+                            <label id="showTumblrBadge" onClick="toggleVariable(this.id, 'Refresh Tumblr Badge',event)">
+                                Tumblr
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+            <div id="about" class="tabcontent">
+                <img style="width:100%;height:auto;margin-bottom:12px;z-index:2;position:relative;top:-2px;" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/cool-photo.jpg" alt="" />
+                <small>
+                    <p style="margin-bottom:20px;"><b>Thank you for installing GoldenChaos-BTT!</b> This is the result of many hours of work to make the Touch Bar something worth using. If you enjoy GoldenChaos-BTT, please spread the word! <span style="opacity:.5;">- Jason Rappaport aka GoldenChaos<br /></span>
+                    </p>
+                </small>
+                
+                <style>
+	                .useful-links li {
+		                height: 34px;
+		                line-height: 34px;
+	                }
+	                .useful-links li p {
+		                display: inline-block;
+						vertical-align: middle;
+						line-height: normal;
+	                }
+	            </style>
+	            
+	            <h3>Links</h3>
+                <section>
+                    <ul class="useful-links">
+                        <li>
+                            <a href="#" onClick="trigger_named_async_without_response('Open GC-BTT Release Thread')">Main release thread (subscribe for updates!) ></a>
+                        </li>
+                        <li>
+                            <a href="#" onClick="trigger_named_async_without_response('Open GC-BTT Support Thread')">Support and feedback thread ></a>
+                        </li>
+                        <li>
+                            <p>Want to buy me a coffee? You can donate here: <a  href="#" onClick="trigger_named_async_without_response('Open Donation Link')">https://paypal.me/GoldenChaos</a></p>
+                        </li>
+                        <li>
+                            <p>Thinking of buying BetterTouchTool because of this preset?
+                            <br />Use this link and I'll get 40%! <a href="#" onClick="trigger_named_async_without_response('Open Affiliate Link')">https://a.paddle.com/v2/click/30842/34667?link=1061</a></p>
+                        </li>
+                        <li>
+                            <p>I make other cool things, too! Check them out: <a href="#" onClick="trigger_named_async_without_response('Open Portfolio Link')">https://goldenchaos.net</a></p>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+	</div>
+	<script>
+        function openTab(evt, tabName) {
+            // Declare all variables
+            var i, tabcontent, tablinks;
+        
+            // Get all elements with class="tabcontent" and hide them
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+        
+            // Get all elements with class="tablinks" and remove the class "active"
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+        
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+        
+        // Select the General tab by default
+        document.getElementById("default").click();
+	</script>
+</body>
+</html>
