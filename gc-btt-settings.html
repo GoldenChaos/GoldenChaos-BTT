@@ -532,7 +532,7 @@
     window.addEventListener(
         'bttReady',
         function(BTT) {
-            trigger_named_async_without_response('btt_preset_imported_GoldenChaos-BTT 3.063');
+            trigger_named_async_without_response('btt_preset_imported_GoldenChaos-BTT 3.065');
             checkIfFinished();
         },
         false
@@ -616,7 +616,7 @@
                                 <div class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/command.png">
                                 </div>
-                                Command Menu (App Switcher)
+                                Command Menu (Dock)
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
@@ -1125,11 +1125,11 @@
                             </label>
                         </li>
                         <li class="form-switch">
-                            <label id="showAppSwitcher" onClick="toggleVariable(this.id, 'Refresh App Switcher Key',event)">
+                            <label id="showDock" onClick="toggleVariable(this.id, 'Refresh Dock Key',event)">
                                 <div class="tbicon">
-                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/app-switcher.png">
+                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/dock.png">
                                 </div>
-                                App Switcher
+                                Dock
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
@@ -1312,7 +1312,7 @@
                             </label>
                         </li>
                         <li class="form-switch">
-                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Things 3.png">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Things.png">
                             <label id="showThingsBadge" onClick="toggleVariable(this.id, 'Refresh Things Badge',event)">
                                 Things
                                 <input type="checkbox"><i></i>
@@ -1332,7 +1332,7 @@
                                 <input type="checkbox"><i></i>
                             </label>	
                         </li>
-                        <li class="form-switch">
+                        <li class="form-switch"> 
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Firefox.png">
                             <label id="showFirefoxBadge" onClick="toggleVariable(this.id, 'Refresh Firefox Badge',event)">
                                 Firefox
