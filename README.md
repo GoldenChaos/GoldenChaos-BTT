@@ -7,18 +7,18 @@ _Want to buy me a coffee? You can donate here: https://paypal.me/GoldenChaos_
 
 _Thinking about buying BetterTouchTool because of this preset?_ [_Use this link and I'll get 40%._ 🙂](https://a.paddle.com/v2/click/30842/34667?link=1061)
 
-> # Latest stable version: [GoldenChaos-BTT 2.641](https://share.folivora.ai/sharedPreset/aa7a2d21-4fc4-414f-ad7f-e31dd0f00cc1)
+> # Latest experimental version: [GoldenChaos-BTT 3.065-3](https://share.folivora.ai/sharedPreset/eb4267cb-7ef1-4cfe-bc94-6d59e19b0891)
 > <sup>Verified by the BetterTouchTool developer, thoroughly tested by the community.</sup>
 > <sup>Download link not working? Try the [GitHub mirror](https://github.com/GoldenChaos/GoldenChaos-BTT/raw/master/mirrors/GoldenChaos-BTT%202.641.bttpreset).</sup>
 >
 > **(Sep 25 2018 - [Release Notes](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/1043?u=goldenchaos))** No longer requires High Sierra Media Key Enabler! Plus: Settings menu with customization options for esc key, Home Strip keys, Menu Bar icons, Dock badges, Date/Time formatting with 24-Hour Time, and default calendar app selection; Seamless upgrades with just a tap using the "Reapply Settings" button; Fully scriptable, with a simple preset format so you can have multiple GC-BTT's for different occasions; Native Now Playing widget with dramatic CPU usage improvements; Collapsible Menu Bar with three sizes; New Connectivity Actions menu; New Current Language and Language Picker widgets with flags for 47 different languages
 
 
-> # Latest experimental version: [GoldenChaos-BTT 3.065-2](https://share.folivora.ai/sharedPreset/15a1811d-09fc-497c-a163-321674937a6b)
+> # Latest experimental version: [GoldenChaos-BTT 3.065-3](https://share.folivora.ai/sharedPreset/15a1811d-09fc-497c-a163-321674937a6b)
 > <sup>Unverified, untested alpha builds. Proceed with caution, expect things to be broken, and read the release notes.</sup>
-> <sup>Download link not working? Try the [GitHub mirror](https://github.com/GoldenChaos/GoldenChaos-BTT/raw/master/mirrors/GoldenChaos-BTT%203.065-2.bttpresetcompressed).</sup>
+> <sup>Download link not working? Try the [GitHub mirror](https://github.com/GoldenChaos/GoldenChaos-BTT/raw/master/mirrors/GoldenChaos-BTT%203.065-3.bttpresetcompressed).</sup>
 >
-> **(Jun 8 2019 - [Release Notes](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/1266?u=goldenchaos))** Full support for macOS 10.15 Catalina; Ridiculous performance and energy efficiency improvements; Near-total elimination of duplicate widgets; Settings menu is now a full window with an all-new interface; New settings to enable/disable individual modifier menus, make Finder/AirDrop Keys show just icons, and make Now Playing and Media Keys appear persistently; Improved Apple Music support; Full-height album artwork; New Dock widget replaces the previous App Switcher widget; Long-press Things widget for next 10 tasks; Window snapping grid with multi-monitor support (⌘⇧W); Battery widget with optional percentage display; Caffeinate, 1Password, Day One, HazeOver, ColorSnapper, and Connect to Bose menu bar items; Dock badges hide when Do Not Disturb is enabled; Bug fixes for Connect to AirPods, Connect to Beats, Now Playing widgets, and system Back/Forward keys; Updated Slack logo; New dock badges for Apple Calendar, Fantastical, Reminders, Things, News, Maps, WeChat, QQ, Superhuman, MailMate, Abstract, Zeplin, Bodo, and Maipo
+> **(Jun 8 2019 - [Release Notes](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/1268?u=goldenchaos))** Full support for macOS 10.15 Catalina; Ridiculous performance and energy efficiency improvements; Near-total elimination of duplicate widgets; Settings menu is now a full window with an all-new interface; New settings to enable/disable individual modifier menus, make Finder/AirDrop Keys show just icons, and make Now Playing and Media Keys appear persistently; Improved Apple Music support; Full-height album artwork; New Dock widget replaces the previous App Switcher widget; Long-press Things widget for next 10 tasks; Window snapping grid with multi-monitor support (⌘⇧W); Battery widget with optional percentage display; Caffeinate, 1Password, Day One, HazeOver, ColorSnapper, and Connect to Bose menu bar items; Dock badges hide when Do Not Disturb is enabled; Bug fixes for Connect to AirPods, Connect to Beats, Now Playing widgets, and system Back/Forward keys; Updated Slack logo; New dock badges for Apple Calendar, Fantastical, Reminders, Things, News, Maps, WeChat, QQ, Superhuman, MailMate, Abstract, Zeplin, Bodo, and Maipo
 
 > # How to install
 > 1. Make sure you're using the latest stable version of BetterTouchTool.
@@ -133,6 +133,7 @@ Only install the latest version unless you have a specific troubleshooting reaso
 > * <sup>Versions **2.516 and earlier** require [Location Helper](http://www.mousedown.net/mouseware/LocationHelper.html) and [JSON Helper](http://www.mousedown.net/mouseware/JSONHelper.html) for the weather widget to work. **Not compatible with macOS Mojave.**</sup>
 
 ### Version History:
+* [Experimental] [3.065-3](https://share.folivora.ai/sharedPreset/eb4267cb-7ef1-4cfe-bc94-6d59e19b0891) ([Jun 8 2019](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/1268?u=goldenchaos))
 * [Experimental] [3.065-2](https://share.folivora.ai/sharedPreset/15a1811d-09fc-497c-a163-321674937a6b) ([Jun 8 2019](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/1267?u=goldenchaos))
 * [Experimental] [3.065](https://share.folivora.ai/sharedPreset/5c94e6f0-677d-46b1-8539-8b27b4abbbd7) ([Jun 6 2019](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/1266?u=goldenchaos))
 * [Experimental] [3.063](https://share.folivora.ai/sharedPreset/fa60ae5b-5f93-4cb0-a55d-fcd557b7cf0d) ([Jun 6 2019](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/1265?u=goldenchaos))
