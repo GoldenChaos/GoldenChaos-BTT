@@ -7,7 +7,7 @@ _Want to buy me a coffee? You can donate here: https://paypal.me/GoldenChaos_
 
 _Thinking about buying BetterTouchTool because of this preset?_ [_Use this link and I'll get 40%._ 🙂](https://a.paddle.com/v2/click/30842/34667?link=1061)
 
-> # Latest experimental version: [GoldenChaos-BTT 3.065-3](https://share.folivora.ai/sharedPreset/eb4267cb-7ef1-4cfe-bc94-6d59e19b0891)
+> # Latest stable version: [GoldenChaos-BTT 2.641](https://share.folivora.ai/sharedPreset/aa7a2d21-4fc4-414f-ad7f-e31dd0f00cc1)
 > <sup>Verified by the BetterTouchTool developer, thoroughly tested by the community.</sup>
 > <sup>Download link not working? Try the [GitHub mirror](https://github.com/GoldenChaos/GoldenChaos-BTT/raw/master/mirrors/GoldenChaos-BTT%202.641.bttpreset).</sup>
 >
