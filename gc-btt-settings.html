@@ -532,7 +532,7 @@
     window.addEventListener(
         'bttReady',
         function(BTT) {
-            trigger_named_async_without_response('btt_preset_imported_GoldenChaos-BTT 3.065-4');
+            trigger_named_async_without_response('btt_preset_imported_GoldenChaos-BTT 3.167');
             checkIfFinished();
         },
         false
@@ -1312,9 +1312,30 @@
                             </label>
                         </li>
                         <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Carrot.png">
+                            <label id="showCarrotBadge" onClick="toggleVariable(this.id, 'Refresh Carrot Badge',event)">
+                                Carrot
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Things.png">
                             <label id="showThingsBadge" onClick="toggleVariable(this.id, 'Refresh Things Badge',event)">
                                 Things
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/OmniFocus.png">
+                            <label id="showOmniFocusBadge" onClick="toggleVariable(this.id, 'Refresh OmniFocus Badge',event)">
+                                OmniFocus
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Deliveries.png">
+                            <label id="showDeliveriesBadge" onClick="toggleVariable(this.id, 'Refresh Deliveries Badge',event)">
+                                Deliveries
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
