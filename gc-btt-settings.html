@@ -519,8 +519,8 @@
     }
     
     function checkIfFinished() {
-		window.BTT.callHandler('get_string_variable', {variableName: 'init_complete'}, function callback(currentVariableValue) {
-        	if(currentVariableValue === 'complete') {
+		window.BTT.callHandler('get_string_variable', {variableName: 'gc_version'}, function callback(currentVariableValue) {
+        	if(currentVariableValue === '3.172') {
                 getAllVariablesAndUpdateClasses();
             	} else {
                 	setTimeout(() => { checkIfFinished() }, 500)
@@ -532,7 +532,7 @@
     window.addEventListener(
         'bttReady',
         function(BTT) {
-            trigger_named_async_without_response('btt_preset_imported_GoldenChaos-BTT 3.170');
+            trigger_named_async_without_response('btt_preset_imported_GoldenChaos-BTT 3.172');
             checkIfFinished();
         },
         false
@@ -732,8 +732,8 @@
                             <div class="tbicon">
                                 <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/watchos-icons/calendar.png">
                             </div>
-                            <label id="showCalendar" onClick="toggleVariable(this.id, 'Refresh Calendar Widget',event)">
-                                Calendar (Requires <a href="icalbuddy.com">icalBuddy</a>)
+                            <label id="showCalendar" onClick="toggleVariable(this.id, 'Refresh Calendar',event)">
+                                Calendar
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
