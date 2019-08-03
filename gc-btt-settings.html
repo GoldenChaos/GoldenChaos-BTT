@@ -532,7 +532,7 @@
     window.addEventListener(
         'bttReady',
         function(BTT) {
-            trigger_named_async_without_response('btt_preset_imported_GoldenChaos-BTT 3.167');
+            trigger_named_async_without_response('btt_preset_imported_GoldenChaos-BTT 3.170');
             checkIfFinished();
         },
         false
@@ -1171,6 +1171,15 @@
                 </small>
                 <section>
                     <ul>
+	                    <li class="form-switch">
+                            <label id="showCalculator" onClick="toggleVariable(this.id, 'Refresh Calculator Key',event)">
+                                <div class="tbicon">
+                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/calculator.png">
+                                </div>
+                                Calculator
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
                         <li class="form-switch">
                             <label id="show1Password" onClick="toggleVariable(this.id, 'Refresh 1Password Key',event)">
                                 <div class="tbicon">
@@ -1510,7 +1519,7 @@
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Discord.png">
                             <label id="showDiscordBadge" onClick="toggleVariable(this.id, 'Refresh Discord Badge',event)">
-                                Discord Canary
+                                Discord
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
@@ -1617,10 +1626,10 @@
                 <section>
                     <ul class="useful-links">
                         <li>
-                            <a href="#" onClick="trigger_named_async_without_response('Open GC-BTT Release Thread')">Main release thread (subscribe for updates!) ›</a>
+                            <a href="#" onClick="trigger_named_async_without_response('Open GC-BTT Release Thread')">Main release thread (subscribe for updates!) &rsaquo;</a>
                         </li>
                         <li>
-                            <a href="#" onClick="trigger_named_async_without_response('Open GC-BTT Support Thread')">Support and feedback thread ›</a>
+                            <a href="#" onClick="trigger_named_async_without_response('Open GC-BTT Support Thread')">Support and feedback thread  &rsaquo;</a>
                         </li>
                         <li>
                             <p>Want to buy me a coffee? You can donate here: <a  href="#" onClick="trigger_named_async_without_response('Open Donation Link')">https://paypal.me/GoldenChaos</a></p>
