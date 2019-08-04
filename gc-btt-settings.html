@@ -319,6 +319,7 @@
     .full .full,
     .icon .icon,
     .off .off,
+    .hide .hide,
     .large .large,
     .medium .medium,
     .small .small,
@@ -520,7 +521,7 @@
     
     function checkIfFinished() {
 		window.BTT.callHandler('get_string_variable', {variableName: 'gc_version'}, function callback(currentVariableValue) {
-        	if(currentVariableValue === '3.172') {
+        	if(currentVariableValue === '3.172-2') {
                 getAllVariablesAndUpdateClasses();
             	} else {
                 	setTimeout(() => { checkIfFinished() }, 500)
@@ -532,7 +533,7 @@
     window.addEventListener(
         'bttReady',
         function(BTT) {
-            trigger_named_async_without_response('btt_preset_imported_GoldenChaos-BTT 3.172');
+            trigger_named_async_without_response('btt_preset_imported_GoldenChaos-BTT 3.172-2');
             checkIfFinished();
         },
         false
@@ -634,8 +635,11 @@
                 
                 <h3>Upgrading</h3>
                 <section class="tokenlist">
-                	<a style="width:100%;text-align:center;margin-bottom:8px;margin-right:0;" class="token selected" onClick="triggerPresetAndRefreshSettingsWindow('Check All Settings');">Restore Settings</a>
+                	<a style="width:100%;text-align:center;margin-bottom:8px;margin-right:0;" class="token selected" onClick="triggerPresetAndRefreshSettingsWindow('Check All Settings');">Check For Existing Settings</a>
                 </section>
+                <small>
+                	<p>Run this if your settings did not automatically restore after upgrading.</p>
+                </small>
             </div>
             <div id="home-strip" class="tabcontent">
                 <header>
@@ -685,9 +689,9 @@
                                     <button class="dynamic" onClick="triggerNamedActionAndRefreshSettingsWindow('Use Dynamic Media Control Keys')">
                                         Dynamic
                                     </button>
-                                    <button class="always" onClick="triggerNamedActionAndRefreshSettingsWindow('Always Show Media Control Keys')">
+                                    <!-- <button class="always" onClick="triggerNamedActionAndRefreshSettingsWindow('Always Show Media Control Keys')">
                                         Always
-                                    </button>
+                                    </button> -->
                                     <button class="never" onClick="triggerNamedActionAndRefreshSettingsWindow('Never Show Media Control Keys')">
                                         Never
                                     </button>
@@ -710,9 +714,9 @@
                                     <button class="dynamic" onClick="triggerNamedActionAndRefreshSettingsWindow('Use Dynamic Now Playing Widget')">
                                         Dynamic
                                     </button>
-                                    <button class="always" onClick="triggerNamedActionAndRefreshSettingsWindow('Always Show Now Playing Widget')">
+                                    <!-- <button class="always" onClick="triggerNamedActionAndRefreshSettingsWindow('Always Show Now Playing Widget')">
                                         Always
-                                    </button>
+                                    </button> -->
                                     <button class="never" onClick="triggerNamedActionAndRefreshSettingsWindow('Never Show Now Playing Widget')">
                                         Never
                                     </button>
@@ -725,6 +729,15 @@
                             </div>
                             <label id="showReminders" onClick="toggleVariable(this.id, 'Refresh Reminders Widget',event)">
                                 Reminders (Requires <a href="icalbuddy.com">icalBuddy</a>)
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <div class="tbicon">
+                                <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/watchos-icons/things.png">
+                            </div>
+                            <label id="showThings" onClick="toggleVariable(this.id, 'Refresh Things Widget',event)">
+                                Things
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
@@ -796,19 +809,6 @@
                             </div>
                             <label id="showWindowSnapping" onClick="toggleVariable(this.id, 'Refresh Window Snapping Keys',event)">
                                 Window Snapping
-                                <input type="checkbox"><i></i>
-                            </label>
-                        </li>
-                    </ul>
-                </section>
-                <section>
-                    <ul>
-                        <li class="form-switch">
-                            <div class="tbicon">
-                                <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/watchos-icons/things.png">
-                            </div>
-                            <label id="showThings" onClick="toggleVariable(this.id, 'Refresh Things Widget',event)">
-                                Things
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
