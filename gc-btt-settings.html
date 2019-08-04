@@ -481,7 +481,7 @@
         if(variables[variable] === 'true') {
             button.className = 'false';
             variables[variable] = 'false';
-            window.BTT.callHandler('set_string_variable', {variableName: variable, to: 'false'});
+            window.BTT.callHandler('set_persistent_string_variable', {variableName: variable, to: 'false'});
             window.BTT.callHandler(
                 'get_string_variable',
                 { variableName: variable},
@@ -497,7 +497,7 @@
         } else {
             button.className = 'true';
             variables[variable] = 'true';
-            window.BTT.callHandler('set_string_variable', {variableName: variable, to: 'true'});
+            window.BTT.callHandler('set_persistent_string_variable', {variableName: variable, to: 'true'});
             window.BTT.callHandler(
                 'get_string_variable',
                 { variableName: variable},
@@ -517,15 +517,27 @@
     }
     
     function setVariable(variable, setting, actionName, event) {
-        window.BTT.callHandler('set_string_variable', {variableName: variable, to: setting});
+        window.BTT.callHandler('set_persistent_string_variable', {variableName: variable, to: setting});
         trigger_named_async_without_response(actionName);
         event.preventDefault();
         event.stopPropagation();
     }
-    
-    function checkIfFinished() {
+	
+	function checkVersion() {
 		window.BTT.callHandler('get_string_variable', {variableName: 'gc_version'}, function callback(currentVariableValue) {
-        	if(currentVariableValue === '3.172-2') {
+        	if(currentVariableValue === '3.172-3') {
+                getAllVariablesAndUpdateClasses();
+            	} else {
+                	trigger_named_async_without_response('btt_preset_imported_GoldenChaos-BTT 3.172-3');
+					checkIfFinished();
+            	}
+            }
+        );
+	}
+	
+	function checkIfFinished() {
+		window.BTT.callHandler('get_string_variable', {variableName: 'gc_version'}, function callback(currentVariableValue) {
+        	if(currentVariableValue === '3.172-3') {
                 getAllVariablesAndUpdateClasses();
             	} else {
                 	setTimeout(() => { checkIfFinished() }, 500)
@@ -537,8 +549,7 @@
     window.addEventListener(
         'bttReady',
         function(BTT) {
-            trigger_named_async_without_response('btt_preset_imported_GoldenChaos-BTT 3.172-2');
-            checkIfFinished();
+	        checkVersion();
         },
         false
     );
