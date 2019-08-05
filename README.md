@@ -25,7 +25,7 @@ _Thinking about buying BetterTouchTool because of this preset?_ [_Use this link 
 >    - Feeling brave? Install the latest **alpha** BetterTouchTool to use the experimental versions.
 > 2. **[One time only]** Install [icalBuddy](http://hasseg.org/icalBuddy/).
 > 3. **[One time only]** [Configure BTT's General Touch Bar settings properly](#heading--touch-bar-settings).
-> 4. **Upgrading?** ***Delete your existing GC-BTT first, then continue below.***
+> 4. Upgrading? **Delete your existing GC-BTT first**, then continue below.
 > 5. Follow one of the two release links at the top of this post and click "**Direct import to BTT**". BTT will automatically launch and ask to import the preset - say yes to everything.
 > 7. You're all set! Press ⌘⌥⇧P to access the GC-BTT settings menu where you can customize GC-BTT to your liking.
 
