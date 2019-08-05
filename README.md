@@ -25,7 +25,7 @@ _Thinking about buying BetterTouchTool because of this preset?_ [_Use this link 
 >    - Feeling brave? Install the latest **alpha** BetterTouchTool to use the experimental versions.
 > 2. **[One time only]** Install [icalBuddy](http://hasseg.org/icalBuddy/).
 > 3. **[One time only]** [Configure BTT's General Touch Bar settings properly](#heading--touch-bar-settings).
-> 4. **Upgrading?** [Follow these steps](#heading--upgrading).
+> 4. **Upgrading?** ***Delete your existing GC-BTT first, then continue below.***
 > 5. Follow one of the two release links at the top of this post and click "**Direct import to BTT**". BTT will automatically launch and ask to import the preset - say yes to everything.
 > 7. You're all set! Press ⌘⌥⇧P to access the GC-BTT settings menu where you can customize GC-BTT to your liking.
 
@@ -110,19 +110,6 @@ GoldenChaos-BTT is designed to completely take over the Touch Bar, escape key an
 ![1](https://community.folivora.ai/uploads/default/original/2X/b/bbc466e121b2c92f9dd11ac22f3d00fe2360db77.png) 
 
 ![2](https://community.folivora.ai/uploads/default/original/2X/0/08e779414f546c74ebae6019566465bf015f0b50.png) 
-
-<h1 id="heading--upgrading">Upgrading GoldenChaos-BTT</h1>
-
-GoldenChaos-BTT has a seamless upgrade system that allows your customized settings to transfer from one version to the next by storing your settings inside BTT itself. For it to work, you'll first need to _completely remove_ any existing installations of GoldenChaos-BTT - if you don't, the settings menu won't work.
-
-To remove existing GC-BTT installations and safely upgrade to a new version, follow these steps:
-
-1. Click "Manage Presets" inside of BetterTouchTool
-2. Select and delete _all_ installations of GoldenChaos-BTT. **If you do not remove all GC-BTT installations before upgrading, the settings menu won’t work!**
-3. Navigate to one of the two latest release links at the top of this post and click "Direct import to BTT" to automatically launch BetterTouchTool and import the latest preset.
-3. Open the GC-BTT Settings menu by pressing ⌘⌥⇧P.
-4. Tap “Reapply All Settings” and watch the pretty progress bar.
-5. After it's done running, your previous setup should be restored! I guess that's not really a step. ¯\_(ツ)_/¯ 
 
 # Previous Versions
 Only install the latest version unless you have a specific troubleshooting reason. If you do need to install an older version for whatever reason, make sure the version of BetterTouchTool you're running is greater than or equal to the GoldenChaos-BTT version you're installing.
