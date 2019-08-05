@@ -27,7 +27,7 @@ _Thinking about buying BetterTouchTool because of this preset?_ [_Use this link 
 > 3. **[One time only]** [Configure BTT's General Touch Bar settings properly](#heading--touch-bar-settings).
 > 4. Upgrading? **Delete your existing GC-BTT first**, then continue below.
 > 5. Follow one of the two release links at the top of this post and click "**Direct import to BTT**".
-> 6. Say yes when BTT automatically launches and asks if you want to import the preset.
+> 6. Say yes to BTT when it asks if you want to import the preset.
 > 7. You're all set! Press ⌘⌥⇧P to access the GC-BTT settings menu where you can customize GC-BTT to your liking.
 
 > Want to be notified of new versions? [Visit the GC-BTT release thread on the BetterTouchTool forums](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281) and subscribe to the thread!
