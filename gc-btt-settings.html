@@ -612,7 +612,7 @@
                         <li class="form-switch">
                             <label id="showControlMenu" onClick="toggleVariable(this.id, 'Refresh Control Menu',event)">
                                 <div class="tbicon">
-                                    <img class="invert" style="height:13px;width:22px;margin-top:4px;" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/control.png">
+                                    <img class="invert" style="height:10px;width:18px;margin-top:5px;margin-left:2px;" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/control.png">
                                 </div>
                                 Control Menu (Control Strip)
                                 <input type="checkbox"><i></i>
@@ -621,7 +621,7 @@
                         <li class="form-switch">
                             <label id="showOptionMenu" onClick="toggleVariable(this.id, 'Refresh Option Menu',event)">
                                 <div class="tbicon">
-                                    <img class="invert" style="width:22px;height:15px;margin-top:4px;"src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/option.png">
+                                    <img class="invert" style="width:18px;height:12px;margin-top:5px;margin-left:2px;"src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/option.png">
                                 </div>
                                 Option Menu (Window Snapping)
                                 <input type="checkbox"><i></i>
@@ -630,7 +630,7 @@
                         <li class="form-switch">
                             <label id="showCommandMenu" onClick="toggleVariable(this.id, 'Refresh Command Menu',event)">
                                 <div class="tbicon">
-                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/command.png">
+                                    <img class="invert"  style="width:18px;height:18px;margin-top:2px;margin-left:2px;" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/command.png">
                                 </div>
                                 Command Menu (Dock)
                                 <input type="checkbox"><i></i>
@@ -639,7 +639,7 @@
                     </ul>
                 </section>
                 <small>
-                    <p>Hold down a disabled modifier key to quickly hide a portion of the menu bar.</p>
+                    <p>Hold down any disabled modifier key to temporarily shrink the menu bar.</p>
                 </small>
                 
                 <h3>Window Snapping</h3>
@@ -1245,6 +1245,22 @@
                         </li>
                     </ul>
                 </section>
+                <section>
+                    <ul>
+	                    <li class="form-switch">
+                            <label id="showWindowSnapper" onClick="toggleVariable(this.id, 'Refresh Window Snapper Key',event)">
+                                <div class="tbicon">
+                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/windowsnapper.png">
+                                </div>
+                                Show Floating Window Snapping Grid (&#8984;&#8679;W)
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                    </ul>
+                </section>
+                <small>
+                	<p>Requires the Floating Window Snapping Grid to be enabled in the "General" tab.</p>
+                </small>
                 <section>
                     <ul>
                         <li class="form-switch">
