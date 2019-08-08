@@ -525,7 +525,7 @@
 	
 	function checkVersion() {
 		window.BTT.callHandler('get_string_variable', {variableName: 'gc_version'}, function callback(currentVariableValue) {
-        	if(currentVariableValue === '3.172-3') {
+        	if(currentVariableValue === '3.173') {
                 getAllVariablesAndUpdateClasses();
             	} else {
                 	trigger_named_async_without_response('btt_preset_imported_GoldenChaos-BTT 3.172-3');
@@ -537,7 +537,7 @@
 	
 	function checkIfFinished() {
 		window.BTT.callHandler('get_string_variable', {variableName: 'gc_version'}, function callback(currentVariableValue) {
-        	if(currentVariableValue === '3.172-3') {
+        	if(currentVariableValue === '3.173') {
                 getAllVariablesAndUpdateClasses();
             	} else {
                 	setTimeout(() => { checkIfFinished() }, 500)
@@ -639,21 +639,33 @@
                     </ul>
                 </section>
                 <small>
-                    <p>If a modifier menu is disabled, you can hold down that modifier key to quickly shrink the menu bar.</p>
+                    <p>Hold down a disabled modifier key to quickly hide a portion of the menu bar.</p>
                 </small>
                 
-                <h3>Presets</h3>
+                <h3>Window Snapping</h3>
+                <section>
+	                <ul>
+		                <li class="form-switch">
+		                <label id="enableWindowSnapper" onClick="toggleVariable(this.id, 'Refresh Window Snapper',event)">
+		                <div class="tbicon">
+                            <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/windowsnapper.png">
+                            </div>
+		                	Floating Window Snapping Grid (&#8984;&#8679;W)
+		                	<input type="checkbox"><i></i>
+		                </li>
+	                </ul>
+                </section>
+                
+                <h3>Restore</h3>
                 <section class="tokenlist">
                     <a style="width:46.8%;display:inline-block;text-align:center;margin-bottom:8px;margin-right:4px;" class="token selected" onClick="triggerPresetAndRefreshSettingsWindow('Default Settings')">Default Settings</a>
                     <a style="width:46.74%;display:inline-block;text-align:center;margin-bottom:8px;margin-right:0;margin-left:4px;" class="token selected" onClick="triggerPresetAndRefreshSettingsWindow('GC\'s GC-BTT')">GC'S GC-BTT</a><br>
                 </section>
-                
-                <h3>Upgrading</h3>
                 <section class="tokenlist">
                 	<a style="width:100%;text-align:center;margin-bottom:8px;margin-right:0;" class="token selected" onClick="triggerPresetAndRefreshSettingsWindow('Check All Settings');">Check For Existing Settings</a>
                 </section>
                 <small>
-                	<p>Run this if your settings did not automatically restore after upgrading.</p>
+                	<p>Run "Check For Existing Settings" if your settings did not automatically restore after upgrading.</p>
                 </small>
             </div>
             <div id="home-strip" class="tabcontent">
@@ -947,7 +959,7 @@
                     </ul>
                 </section>
                 <small>
-                	<p>When set to "Dynamic", the battery and weather widgets will disappear on small menu bar sizes.</p>
+                	<p>When set to "Dynamic", the battery and weather widgets will be hidden on small menu bar sizes.</p>
                 </small>
                 
                 <h3>Date and Time</h3>
@@ -1240,7 +1252,7 @@
                                 <div class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/settings.png">
                                 </div>
-                                Show GC-BTT Settings Window
+                                Show GC-BTT Settings Window (&#8984;&#8997;&#8679;P)
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>

@@ -1,385 +1,369 @@
 <!--
-VISUAL WINDOW SNAPPING by the BetterTouchTool community.
+VISUAL WINDOW SNAPPING (Multi-Monitor) by the BetterTouchTool community.
 Forum link: https://community.folivora.ai/t/visual-window-snapping/2863
 
 Authors of this script:
-- panda: The Core Original Workings
-- Jerosh: Highlighting Improvements
-- GoldenChaos: Colouring and Aesthetic Improvements
-- yyuuiko: Multi-Desktop Snapping (removed here) and Code Optimisation
+- panda
+- Jerosh
+- GoldenChaos
+- yyuuiko
 
 Thanks for using it!
 -->
 
 <html>
 <head>
-    <style>
+<style>
+	.main-container { /* MAIN WRAPPER */
+		margin: 50px;
+		left: calc(50% - 165px);
+		top: calc(50% - 130px);
+		position: fixed;
+	}
 
+	.grid-container,
+	.monitor { /* MAIN GRID */
+		display: grid;
+		height: 150px;
+		width: 150px;
+		margin-left: 40px;
+		margin-right: 40px;
+		padding: 1px;
+		background: rgba(179, 178, 177, .5);
+		-webkit-backdrop-filter: blur(48px) saturate(200%);
+		border-radius: 38px;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+		grid-gap: 0px 0px;
+		grid-template-areas: "TopLeft TopRight""BottomLeft BottomRight";
+		box-shadow: rgba(0,0,0,.5) 0 0 0 1px, rgba(0,0,0,.5) 0 12px 50px;
+		overflow: hidden;
+		transition: 0.2s;
+	}
 
+    .monitor { /* MULTI-MONITOR SUPPORT */
+		height: 100px;
+		width: 40px;
+		border-radius: 15px;
+    }
 
-      html { /* background image for aesthetic testing */
-        /* background-image: url('red.png');
-        background-color: #def;
-        background-repeat: no-repeat;
-        background-size: cover; */
+    .monitor-left {
+		position: fixed;
+		left: calc(50% - 180px);
+		top: calc(50% - 55px);
+    }
 
-      /* Image Centering */
-        background-position: 50% 50%;   /* Background Position */
-        width: 100vw;                   /* Body Width (fill viewport width) */
-        height: 100vh;                  /* Body Height (fill viewport height) */
-      }
+    .monitor-right{
+		position: fixed;
+		right: calc(50% - 180px);
+		top: calc(50% - 55px);
+    }
+  
+    .monitor .cell,
+    .monitor .arrow {
+	    position: absolute;
+	    top: 1px;
+	    bottom: 1px;
+	    left: 1px;
+	    right: 1px;
+	    border-radius: 14px;
+    }
+    
+    .monitor .cell .arrow {
+	    background-image: url("https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/back.png");
+		background-position: center center;
+		background-repeat: no-repeat;
+		-webkit-filter: invert();
+    }
+    
+    .monitor-right .cell .arrow {
+	    background-image: url("https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/forward.png");
+    }
+    
+	.monitor:hover {
+		-webkit-backdrop-filter: blur(48px) brightness(100%) saturate(180%);
+		background-color: rgba(255,255,255,.45);
+		transition: 0.1s;
+		transform: scale(1.05);
+	}
+	
+	.monitor:hover .cell {
+		opacity: 0.7;
+		-webkit-backdrop-filter: saturate(100%);
+		transition: 0.01s;
+	}
 
-      .main-container { /* MAIN WRAPPER */
-        margin: 40px;
-        /* left: calc(50% - 17.3em); */
-        position: fixed;
-        overflow: visible;
-        /* margin-left:; */
-      }
+	/* CELL HIGHLIGHTS AND STYLES */
+    .cell {
+		background: rgba(49, 48, 44, .5);
+		-webkit-backdrop-filter: saturate(100%);
+		mix-blend-mode: multiply;
+		transition: 0.01s;
+    }
+    
+	.highlighted { /* REPRESENTATION Style */
+		-webkit-backdrop-filter: brightness(100%) saturate(180%);
+		background-color: rgba(255,255,255,.45);
+		transition: 0.2s;
+	}
 
-      .grid-container { /* MAIN GRID */
-        /* display: grid;
-        height: 150px;
-        width: 150px;
-        padding: 0px;
-        background-color: rgba(255,255,255,0.5);
-        -webkit-backdrop-filter: blur(20px);
-        border-radius: 38px;
-        -webkit-background-clip: padding-box;
-        background-clip: padding-box;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        grid-gap: 0px 0px;
-        grid-template-areas: "TopLeft TopRight""BottomLeft BottomRight";
-        box-shadow: rgba(0,0,0,.5) 0 0 0 1px, rgba(0,0,0,.5) 0 12px 50px;
-        overflow: hidden;
-        border: 1.5px solid rgba(255,255,255,0.7); */
+    .highlightCell { /* BUTTON Style */
+		opacity: .7;
+		-webkit-backdrop-filter: saturate(100%);
+		transition: 0.2s;
+    }
+    
+    .TopLeft {
+		display: grid;
+		grid-area: TopLeft;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+		grid-gap: 1px 1px;
+		grid-template-areas: "TopLeftTopLeft TopLeftTopRight""TopLeftBottomLeft TopLeftBottomRight";
+		border-top-left-radius: 37px;
+    }
 
-        display: grid;
-        height: 150px;
-        width: 150px;
-        margin: 0px;
-        padding: 1px;
-        background: rgba(179, 178, 177, .5);
-        -webkit-backdrop-filter: blur(48px) saturate(200%);
-        border-radius: 38px;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        grid-gap: 0px 0px;
-        grid-template-areas: "TopLeft TopRight""BottomLeft BottomRight";
-        box-shadow: rgba(0,0,0,.5) 0 0 0 1px, rgba(0,0,0,.5) 0 12px 50px;
-        overflow: hidden;
+    .TopLeftTopLeft {
+		grid-area: TopLeftTopLeft;
+		border-top-left-radius: 37px;
+		-webkit-background-clip: padding-box;
+		background-clip: padding-box;
+    }
 
+    .TopLeftBottomLeft {
+		grid-area: TopLeftBottomLeft;
+    }
 
-        -webkit-transition: all 600ms cubic-bezier(0.19, 1, 0.22, 1); /* easeOutExpo */
-        transition: all 600ms cubic-bezier(0.19, 1, 0.22, 1); /* easeOutExpo */
-      }
+    .TopLeftTopRight {
+		grid-area: TopLeftTopRight;
+    }
 
-/* ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ CELL HIGHLIGHTS ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ */
-        .highlighted { /* REPRESENTATION Style */
-          -webkit-backdrop-filter: brightness(100%) saturate(180%);
-          background-color: rgba(255,255,255,.45);
+    .TopLeftBottomRight {
+		grid-area: TopLeftBottomRight;
+    }
 
-          /* opacity: 0.7;
-          -webkit-backdrop-filter: saturate(100%) */
+    .TopRight {
+		display: grid;
+		grid-area: TopRight;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+		grid-gap: 1px 1px;;
+		grid-template-areas: "TopRightTopLeft TopRightTopRight""TopRightBottomLeft TopRightBottomRight";
+		border-top-right-radius: 37px;
+    }
+	
+    .TopRightTopLeft {
+    	grid-area: TopRightTopLeft;
+    }
 
-          -webkit-transition: all 600ms cubic-bezier(0.19, 1, 0.22, 1); /* easeOutExpo */
-          transition: all 600ms cubic-bezier(0.19, 1, 0.22, 1); /* easeOutExpo */
-        }
+    .TopRightTopRight {
+	    grid-area: TopRightTopRight;
+	    border-top-right-radius: 37px;
+	    -webkit-background-clip: padding-box;
+	    background-clip: padding-box;
+    }
 
-        .highlightCell { /* BUTTON Style */
-          /* background-color: rgba(255,0,0,1); */
-          /* -webkit-backdrop-filter: brightness(100%) saturate(100%); */
+    .TopRightBottomLeft {
+    	grid-area: TopRightBottomLeft;
+    }
 
-          opacity: 0.7;
-          -webkit-backdrop-filter: saturate(100%);
+    .TopRightBottomRight {
+    	grid-area: TopRightBottomRight;
+    }
 
-          -webkit-transition: -webkit-backdrop-filter 600ms cubic-bezier(0.19, 1, 0.22, 1);
-          transition: -webkit-backdrop-filter 600ms cubic-bezier(0.19, 1, 0.72, 1);
-        }
+    .BottomLeft {
+	    display: grid;
+	    grid-area: BottomLeft;
+	    grid-template-columns: 1fr 1fr;
+	    grid-template-rows: 1fr 1fr;
+	    grid-gap: 1px 1px;;
+	    grid-template-areas: "BottomLeftTopLeft BottomLeftTopRight""BottomLeftBottomLeft BottomLeftBottomRight";
+	    border-bottom-left-radius: 37px;
+    }
 
-/* ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ FADE (Representation) ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ */
+    .BottomLeftTopLeft {
+    	grid-area: BottomLeftTopLeft;
+    }
 
-        .cell {
-/**/        /* border: solid rgba(255,255,255,0); */
-            /* background-color: rgba(0,0,0,.4); */
-            /* -webkit-backdrop-filter: saturate(180%) brightness(50%);
-            -webkit-background-clip: padding-box;
-            background-clip: padding-box;
-            mix-blend-mode: multiply; */
+    .BottomLeftTopRight {
+    	grid-area: BottomLeftTopRight;
+    }
 
-            background: rgba(49, 48, 44, .5);
-            -webkit-backdrop-filter: saturate(100%);
-            mix-blend-mode: multiply;
-        }
+    .BottomLeftBottomLeft {
+	    grid-area: BottomLeftBottomLeft;
+	    border-bottom-left-radius: 37px;
+	    -webkit-background-clip: padding-box;
+	    background-clip: padding-box;
+    }
 
-/*------------------------------------------------------------------------------------------------------------------------*/
-        .TopLeft {
-            display: grid;
-            grid-area: TopLeft;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
-/**/            grid-gap: 1px 1px;
-            grid-template-areas: "TopLeftTopLeft TopLeftTopRight""TopLeftBottomLeft TopLeftBottomRight";
-            border-top-left-radius: 36px;
-          }
+    .BottomLeftBottomRight {
+    	grid-area: BottomLeftBottomRight;
+    }
+   
+    .BottomRight {
+	    display: grid;
+	    grid-area: BottomRight;
+	    grid-template-columns: 1fr 1fr;
+	    grid-template-rows: 1fr 1fr;
+	    border-bottom-right-radius: 37px;
+	    grid-gap: 1px 1px;;
+	    grid-template-areas: "BottomRightTopLeft BottomRightTopRight""BottomRightBottomLeft BottomRightBottomRight";
+    }
 
-        .TopLeftTopLeft {
-            grid-area: TopLeftTopLeft;
-            border-top-left-radius: 36px;
-/*            border-width: 0px 1px 1px 0px; */
-            -webkit-background-clip: padding-box;
-            background-clip: padding-box;
-        }
+    .BottomRightTopLeft {
+    	grid-area: BottomRightTopLeft;
 
-        .TopLeftBottomLeft {
-            grid-area: TopLeftBottomLeft;
-/*            border-width: 1px 1px 0px 0px; */
-        }
+    }
 
-        .TopLeftTopRight {
-            grid-area: TopLeftTopRight;
-/*            border-width: 0px 0px 1px 1px; */
-        }
+    .BottomRightTopRight {
+	    grid-area: BottomRightTopRight;
+	    -webkit-background-clip: padding-box;
+	    background-clip: padding-box;
+    }
 
-        .TopLeftBottomRight {
-            grid-area: TopLeftBottomRight;
-/*            border-width: 1px 0px 0px 1px; */
-        }
+    .BottomRightBottomLeft {
+    	grid-area: BottomRightBottomLeft;
+    }
 
-/*------------------------------------------------------------------------------------------------------------------------*/
-        .TopRight {
-            display: grid;
-            grid-area: TopRight;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
-/**/            grid-gap: 1px 1px;;
-            grid-template-areas: "TopRightTopLeft TopRightTopRight""TopRightBottomLeft TopRightBottomRight";
-            border-top-right-radius: 36px;
-        }
+    .BottomRightBottomRight {
+	    grid-area: BottomRightBottomRight;
+	    border-bottom-right-radius: 37px;
+    }
+	
+	.TopLeftTopLeft:hover,
+	.TopRightTopRight:hover,
+	.BottomLeftBottomLeft:hover,
+	.BottomRightBottomRight:hover {
+		background: rgba(49, 48, 44, .5);
+	}
+</style>
 
-        .TopRightTopLeft {
-            grid-area: TopRightTopLeft;
-/*            border-width: 0px 1px 1px 0px; */
-        }
+<script>
+    window.currentlyHighlighted = [];
 
-        .TopRightTopRight {
-            grid-area: TopRightTopRight;
-            border-top-right-radius: 36px;
-/*            border-width: 0px 0px 1px 1px; */
-            -webkit-background-clip: padding-box;
-            background-clip: padding-box;
-        }
+    // Add Highlight FX for Representation
+    function addHighlight(classNames) {
+	    for (var i = 0; i < classNames.length; i++) {
+		    window.currentlyHighlighted.push(classNames[i]);
+		    document.getElementsByClassName(classNames[i]).item(0).classList.add('highlighted');
+	    }
+    }
 
-        .TopRightBottomLeft {
-            grid-area: TopRightBottomLeft;
-/*            border-width: 1px 1px 0px 0px; */
-        }
+    // Remove Highlight FX for Representation
+    function removeHighlight(classNames) {
+	    for (var i = 0; i < classNames.length; i++) {
+		   window.currentlyHighlighted = window.currentlyHighlighted.filter(e => e !== classNames[i]);
+		   document.getElementsByClassName(classNames[i]).item(0).classList.remove('highlighted');
+	    }
+    }
 
-        .TopRightBottomRight {
-            grid-area: TopRightBottomRight;
-/*            border-width: 1px 0px 0px 1px; */
-        }
+    // Add Highlight FX for Button
+    function addCellHighlight(classNames) {
+	    for (var i = 0; i < classNames.length; i++) {
+		    window.currentlyHighlighted.push(classNames[i]);
+		    document.getElementsByClassName(classNames[i]).item(0).classList.add('highlightCell');
+	    }
+    }
 
+    // Remove Highlight FX for Button
+    function removeCellHighlight(classNames) {
+	    for (var i = 0; i < classNames.length; i++) {
+			window.currentlyHighlighted = window.currentlyHighlighted.filter(e => e !== classNames[i]);
+			document.getElementsByClassName(classNames[i]).item(0).classList.remove('highlightCell');
+	    }
+    }
 
-        /*------------------------------------------------------------------------------------------------------------------------*/
-        .BottomLeft {
-            display: grid;
-            grid-area: BottomLeft;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
-/**/            grid-gap: 1px 1px;;
-            grid-template-areas: "BottomLeftTopLeft BottomLeftTopRight""BottomLeftBottomLeft BottomLeftBottomRight";
-            border-bottom-left-radius: 36px;
-        }
+	function uniq(a) {
+		var prims = {
+			"boolean": {},
+			"number": {},
+			"string": {}
+		},
+		objs = [];
+		
+		return a.filter(function(item) {
+			var type = typeof item;
+			if (type in prims)
+				return prims[type].hasOwnProperty(item) ? false : (prims[type][item] = true);
+			else
+				return objs.indexOf(item) >= 0 ? false : objs.push(item);
+		});
+	}
 
-        .BottomLeftTopLeft {
-            grid-area: BottomLeftTopLeft;
-/*            border-width: 0px 1px 1px 0px; */
-
-        }
-
-        .BottomLeftTopRight {
-            grid-area: BottomLeftTopRight;
-/*            border-width: 0px 0px 1px 1px; */
-
-        }
-
-        .BottomLeftBottomLeft {
-            grid-area: BottomLeftBottomLeft;
-            border-bottom-left-radius: 36px;
-/*            border-width: 1px 1px 0px 0px; */
-            -webkit-background-clip: padding-box;
-            background-clip: padding-box;
-        }
-
-        .BottomLeftBottomRight {
-            grid-area: BottomLeftBottomRight;
-/*            border-width: 1px 0px 0px 1px; */
-        }
-
-        /*------------------------------------------------------------------------------------------------------------------------*/
-        .BottomRight {
-            display: grid;
-            grid-area: BottomRight;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
-            border-bottom-right-radius: 36px;
-/**/            grid-gap: 1px 1px;;
-            grid-template-areas: "BottomRightTopLeft BottomRightTopRight""BottomRightBottomLeft BottomRightBottomRight";
-        }
-
-        .BottomRightTopLeft {
-            grid-area: BottomRightTopLeft;
-/*            border-width: 0px 1px 1px 0px; */
-
-        }
-
-        .BottomRightTopRight {
-            grid-area: BottomRightTopRight;
-/*            border-width: 0px 0px 1px 1px; */
-            -webkit-background-clip: padding-box;
-            background-clip: padding-box;
-        }
-
-        .BottomRightBottomLeft {
-            grid-area: BottomRightBottomLeft;
-/*            border-width: 1px 1px 0px 0px; */
-        }
-
-        .BottomRightBottomRight {
-            grid-area: BottomRightBottomRight;
-            border-bottom-right-radius: 36px;
-/*            border-width: 1px 0px 0px 1px; */
-        }
-    </style>
-
-    <script>
-        window.currentlyHighlighted = [];
-
-        //████████████████████████████- Add Highlight FX for Representation-██████████████
-        function addHighlight(classNames) {
-            for (var i = 0; i < classNames.length; i++) {
-                window.currentlyHighlighted.push(classNames[i]);
-                document.getElementsByClassName(classNames[i]).item(0).classList.add('highlighted');
-            }
-        }
-
-        //████████████████████████████- Remove Highlight FX for Representation -██████████████
-        function removeHighlight(classNames) {
-            for (var i = 0; i < classNames.length; i++) {
-                window.currentlyHighlighted = window.currentlyHighlighted.filter(e => e !== classNames[i]);
-                document.getElementsByClassName(classNames[i]).item(0).classList.remove('highlighted');
-            }
-        }
-
-        //████████████████████████████- Add Highlight FX for Button -██████████████
-        function addCellHighlight(classNames) {
-            for (var i = 0; i < classNames.length; i++) {
-                window.currentlyHighlighted.push(classNames[i]);
-                document.getElementsByClassName(classNames[i]).item(0).classList.add('highlightCell');
-            }
-        }
-
-        //████████████████████████████- Remove Highlight FX for Button-██████████████
-        function removeCellHighlight(classNames) {
-            for (var i = 0; i < classNames.length; i++) {
-                window.currentlyHighlighted = window.currentlyHighlighted.filter(e => e !== classNames[i]);
-                document.getElementsByClassName(classNames[i]).item(0).classList.remove('highlightCell');
-            }
-        }
-
-        function uniq(a) {
-            var prims = {
-                    "boolean": {},
-                    "number": {},
-                    "string": {}
-                },
-                objs = [];
-
-            return a.filter(function(item) {
-                var type = typeof item;
-                if (type in prims)
-                    return prims[type].hasOwnProperty(item) ? false : (prims[type][item] = true);
-                else
-                    return objs.indexOf(item) >= 0 ? false : objs.push(item);
-            });
-        }
-
-        function performAction() {
-            console.log(uniq(window.currentlyHighlighted));
-            var trigger = '';
-            if (window.currentlyHighlighted.indexOf('TopLeft') !== -1 &&
-                window.currentlyHighlighted.indexOf('TopRight') !== -1 &&
-                window.currentlyHighlighted.indexOf('BottomLeft') !== -1 &&
-                window.currentlyHighlighted.indexOf('BottomRight') !== -1) {
-                trigger = 'maximize';
-            } else if (window.currentlyHighlighted.indexOf('TopLeft') !== -1 &&
-                window.currentlyHighlighted.indexOf('TopRight') !== -1) {
-                trigger = 'tophalf';
-            } else if (window.currentlyHighlighted.indexOf('BottomLeft') !== -1 &&
-                window.currentlyHighlighted.indexOf('BottomRight') !== -1) {
-                trigger = 'bottomhalf';
-            } else if (window.currentlyHighlighted.indexOf('TopLeft') !== -1 &&
-                window.currentlyHighlighted.indexOf('BottomLeft') !== -1) {
-                trigger = 'lefthalf';
-            } else if (window.currentlyHighlighted.indexOf('TopRight') !== -1 &&
-                window.currentlyHighlighted.indexOf('BottomRight') !== -1) {
-                trigger = 'righthalf';
-            } else if (window.currentlyHighlighted.indexOf('TopRight') !== -1) {
-                trigger = 'topright';
-
-            } else if (window.currentlyHighlighted.indexOf('TopLeft') !== -1) {
-                trigger = 'topleft';
-
-            } else if (window.currentlyHighlighted.indexOf('BottomLeft') !== -1) {
-                trigger = 'bottomleft';
-
-            } else if (window.currentlyHighlighted.indexOf('BottomRight') !== -1) {
-                trigger = 'bottomright';
-
-            }
-
-            console.log('trigger', trigger);
-            window.BTT.callHandler('trigger_named', {
-                trigger_name: trigger,
-                closeFloatingHTMLMenu: 1
-            })
-        }
-    </script>
+	function performAction() {
+	    console.log(uniq(window.currentlyHighlighted));
+	    var trigger = '';
+	    
+	    if (window.currentlyHighlighted.indexOf('TopLeft') !== -1 &&
+		window.currentlyHighlighted.indexOf('TopRight') !== -1 &&
+		window.currentlyHighlighted.indexOf('BottomLeft') !== -1 &&
+		window.currentlyHighlighted.indexOf('BottomRight') !== -1) {
+			trigger = 'Maximize';
+	    } else if (window.currentlyHighlighted.indexOf('TopLeft') !== -1 &&
+			window.currentlyHighlighted.indexOf('TopRight') !== -1) {
+			trigger = 'Top Half';
+	    } else if (window.currentlyHighlighted.indexOf('BottomLeft') !== -1 &&
+		    window.currentlyHighlighted.indexOf('BottomRight') !== -1) {
+		    trigger = 'Bottom Half';
+	    } else if (window.currentlyHighlighted.indexOf('TopLeft') !== -1 &&
+			window.currentlyHighlighted.indexOf('BottomLeft') !== -1) {
+			trigger = 'Left Half';
+	    } else if (window.currentlyHighlighted.indexOf('TopRight') !== -1 &&
+			window.currentlyHighlighted.indexOf('BottomRight') !== -1) {
+			trigger = 'Right Half';
+	    } else if (window.currentlyHighlighted.indexOf('TopRight') !== -1) {
+			trigger = 'Top Right Quarter';
+	    } else if (window.currentlyHighlighted.indexOf('TopLeft') !== -1) {
+			trigger = 'Top Left Quarter';
+	    } else if (window.currentlyHighlighted.indexOf('BottomLeft') !== -1) {
+			trigger = 'Bottom Left Quarter';
+	    } else if (window.currentlyHighlighted.indexOf('BottomRight') !== -1) {
+			trigger = 'Bottom Right Quarter';
+	    } else if (window.currentlyHighlighted.indexOf('LeftMonitor') !== -1) {
+			trigger = 'Move to Left Monitor';
+	    } else if (window.currentlyHighlighted.indexOf('RightMonitor') !== -1) {
+			trigger = 'Move to Right Monitor';
+	    }
+	
+		console.log('trigger', trigger);
+		window.BTT.callHandler('trigger_named', {
+			trigger_name: trigger,
+			closeFloatingHTMLMenu: 1
+	    })
+	}
+</script>
 </head>
 <body>
   <div class="main-container">
-
-<!-- Current Monitor Pallete -->
+  	<!-- Current Monitor Pallete -->
     <div class="grid-container" onclick="performAction()">
-      <div class="TopLeft"                         onmouseover="addHighlight(['TopLeft']);" onmouseout="removeHighlight(['TopLeft']);">
-        <div class="TopLeftTopLeft area-overlap cell" onmouseover="addHighlight(['TopLeftTopLeft']); addCellHighlight(['TopLeftTopLeft'])" onmouseout="removeHighlight(['TopLeftTopLeft']); removeCellHighlight(['TopLeftTopLeft'])"></div>
-        <div class="TopLeftBottomLeft cell"           onmouseover="addHighlight(['BottomLeft', 'TopLeft']); addCellHighlight(['TopLeftBottomLeft', 'BottomLeftTopLeft'])" onmouseout="removeHighlight(['BottomLeft', 'TopLeft']); removeCellHighlight([ 'TopLeftBottomLeft', 'BottomLeftTopLeft'])"></div>
-        <div class="TopLeftTopRight cell"             onmouseover="addHighlight(['TopRight', 'TopLeft']); addCellHighlight(['TopLeftTopRight', 'TopRightTopLeft']);" onmouseout="removeHighlight(['TopRight', 'TopLeft']); removeCellHighlight(['TopLeftTopRight', 'TopRightTopLeft'])"></div>
-        <div class="TopLeftBottomRight cell"          onmouseover="addHighlight(['TopRight', 'BottomRight', 'BottomLeft', 'TopLeft']); addCellHighlight(['TopLeftBottomRight', 'TopRightBottomLeft', 'BottomLeftTopRight', 'BottomRightTopLeft'])" onmouseout="removeHighlight(['TopRight', 'BottomRight', 'BottomLeft', 'TopLeft']); removeCellHighlight(['TopLeftBottomRight', 'TopRightBottomLeft', 'BottomLeftTopRight', 'BottomRightTopLeft'])"></div>
-      </div>
-
-      <div class="TopRight"                        onmouseover="addHighlight(['TopRight'])" onmouseout="removeHighlight(['TopRight'])">
-        <div class="TopRightTopLeft area-overlap cell"onmouseover="addHighlight(['TopRight', 'TopLeft']); addCellHighlight([ 'TopLeftTopRight', 'TopRightTopLeft'])" onmouseout="removeHighlight(['TopRight', 'TopLeft']); removeCellHighlight(['TopLeftTopRight', 'TopRightTopLeft'])"></div>
-        <div class="TopRightTopRight cell"            onmouseover="addHighlight(['TopRightTopRight']); addCellHighlight(['TopRightTopRight'])" onmouseout="removeHighlight(['TopRightTopRight']); removeCellHighlight(['TopRightTopRight'])"></div>
-        <div class="TopRightBottomLeft cell"          onmouseover="addHighlight(['TopRight', 'BottomRight', 'BottomLeft', 'TopLeft']); addCellHighlight(['TopLeftBottomRight', 'TopRightBottomLeft', 'BottomLeftTopRight', 'BottomRightTopLeft'])" onmouseout="removeHighlight(['TopRight', 'BottomRight', 'BottomLeft', 'TopLeft']); removeCellHighlight(['TopLeftBottomRight', 'TopRightBottomLeft', 'BottomLeftTopRight', 'BottomRightTopLeft'])"></div>
-        <div class="TopRightBottomRight cell"         onmouseover="addHighlight(['TopRight', 'BottomRight']); addCellHighlight(['TopRightBottomRight', 'BottomRightTopRight'])" onmouseout="removeHighlight(['TopRight', 'BottomRight']); removeCellHighlight(['TopRightBottomRight', 'BottomRightTopRight'])"></div>
-      </div>
-
-      <div class="BottomLeft"                      onmouseover="addHighlight(['BottomLeft'])" onmouseout="removeHighlight(['BottomLeft'])">
-        <div class="BottomLeftTopLeft area-overlap cell" onmouseover="addHighlight(['BottomLeft', 'TopLeft']); addCellHighlight([ 'TopLeftBottomLeft', 'BottomLeftTopLeft'])" onmouseout="removeHighlight(['BottomLeft', 'TopLeft']); removeCellHighlight(['TopLeftBottomLeft', 'BottomLeftTopLeft'])"></div>
-        <div class="BottomLeftTopRight cell"          onmouseover="addHighlight(['TopRight', 'BottomRight', 'BottomLeft', 'TopLeft']); addCellHighlight([ 'TopLeftBottomRight', 'TopRightBottomLeft', 'BottomLeftTopRight', 'BottomRightTopLeft'])" onmouseout="removeHighlight(['TopRight', 'BottomRight', 'BottomLeft', 'TopLeft']); removeCellHighlight(['TopLeftBottomRight', 'TopRightBottomLeft', 'BottomLeftTopRight', 'BottomRightTopLeft'])"></div>
-        <div class="BottomLeftBottomLeft cell"        onmouseover="addHighlight(['BottomLeftBottomLeft']); addCellHighlight(['BottomLeftBottomLeft'])" onmouseout="removeHighlight(['BottomLeftBottomLeft']); removeCellHighlight(['BottomLeftBottomLeft'])"></div>
-        <div class="BottomLeftBottomRight cell"       onmouseover="addHighlight(['BottomLeft', 'BottomRight']); addCellHighlight(['BottomRightBottomLeft', 'BottomLeftBottomRight'])" onmouseout="removeHighlight(['BottomLeft', 'BottomRight']); removeCellHighlight([ 'BottomRightBottomLeft', 'BottomLeftBottomRight'])"></div>
-      </div>
-
-      <div class="BottomRight"                      onmouseover="addHighlight(['BottomRight'])" onmouseout="removeHighlight(['BottomRight'])">
-        <div class="BottomRightTopLeft cell" onmouseover="addHighlight(['TopRight', 'BottomRight', 'BottomLeft', 'TopLeft']); addCellHighlight([ 'TopLeftBottomRight', 'TopRightBottomLeft', 'BottomLeftTopRight', 'BottomRightTopLeft'])" onmouseout="removeHighlight(['TopRight', 'BottomRight', 'BottomLeft', 'TopLeft']); removeCellHighlight(['TopLeftBottomRight', 'TopRightBottomLeft', 'BottomLeftTopRight', 'BottomRightTopLeft'])"></div>
-        <div class="BottomRightTopRight cell"          onmouseover="addHighlight(['BottomRight', 'TopRight']); addCellHighlight(['TopRightBottomRight', 'BottomRightTopRight'])" onmouseout="removeHighlight(['BottomRight', 'TopRight']); removeCellHighlight(['TopRightBottomRight', 'BottomRightTopRight'])"></div>
-        <div class="BottomRightBottomLeft cell"        onmouseover="addHighlight(['BottomLeft', 'BottomRight']); addCellHighlight(['BottomRightBottomLeft', 'BottomLeftBottomRight'])" onmouseout="removeHighlight(['BottomLeft', 'BottomRight']); removeCellHighlight([ 'BottomRightBottomLeft', 'BottomLeftBottomRight'])"></div>
-        <div class="BottomRightBottomRight cell"       onmouseover="addHighlight(['BottomRightBottomRight']); addCellHighlight(['BottomRightBottomRight'])" onmouseout="removeHighlight(['BottomRightBottomRight']); removeCellHighlight(['BottomRightBottomRight'])"></div>
-      </div>
+		<div class="TopLeft"    onmouseover="addHighlight(['TopLeft']);" onmouseout="removeHighlight(['TopLeft']);">
+			<div class="TopLeftTopLeft area-overlap cell" onmouseover="addHighlight(['TopLeftTopLeft']); addCellHighlight(['TopLeftTopLeft'])" onmouseout="removeHighlight(['TopLeftTopLeft']); removeCellHighlight(['TopLeftTopLeft'])"></div>
+			<div class="TopLeftBottomLeft cell"   onmouseover="addHighlight(['BottomLeft', 'TopLeft']); addCellHighlight(['TopLeftBottomLeft', 'BottomLeftTopLeft'])" onmouseout="removeHighlight(['BottomLeft', 'TopLeft']); removeCellHighlight([ 'TopLeftBottomLeft', 'BottomLeftTopLeft'])"></div>
+			<div class="TopLeftTopRight cell"     onmouseover="addHighlight(['TopRight', 'TopLeft']); addCellHighlight(['TopLeftTopRight', 'TopRightTopLeft']);" onmouseout="removeHighlight(['TopRight', 'TopLeft']); removeCellHighlight(['TopLeftTopRight', 'TopRightTopLeft'])"></div>
+			<div class="TopLeftBottomRight cell"  onmouseover="addHighlight(['TopRight', 'BottomRight', 'BottomLeft', 'TopLeft']); addCellHighlight(['TopLeftBottomRight', 'TopRightBottomLeft', 'BottomLeftTopRight', 'BottomRightTopLeft'])" onmouseout="removeHighlight(['TopRight', 'BottomRight', 'BottomLeft', 'TopLeft']); removeCellHighlight(['TopLeftBottomRight', 'TopRightBottomLeft', 'BottomLeftTopRight', 'BottomRightTopLeft'])"></div>
+		</div>
+		
+		<div class="TopRight" onmouseover="addHighlight(['TopRight'])" onmouseout="removeHighlight(['TopRight'])">
+			<div class="TopRightTopLeft area-overlap cell" onmouseover="addHighlight(['TopRight', 'TopLeft']); addCellHighlight([ 'TopLeftTopRight', 'TopRightTopLeft'])" onmouseout="removeHighlight(['TopRight', 'TopLeft']); removeCellHighlight(['TopLeftTopRight', 'TopRightTopLeft'])"></div>
+			<div class="TopRightTopRight cell" onmouseover="addHighlight(['TopRightTopRight']); addCellHighlight(['TopRightTopRight'])" onmouseout="removeHighlight(['TopRightTopRight']); removeCellHighlight(['TopRightTopRight'])"></div>
+			<div class="TopRightBottomLeft cell" onmouseover="addHighlight(['TopRight', 'BottomRight', 'BottomLeft', 'TopLeft']); addCellHighlight(['TopLeftBottomRight', 'TopRightBottomLeft', 'BottomLeftTopRight', 'BottomRightTopLeft'])" onmouseout="removeHighlight(['TopRight', 'BottomRight', 'BottomLeft', 'TopLeft']); removeCellHighlight(['TopLeftBottomRight', 'TopRightBottomLeft', 'BottomLeftTopRight', 'BottomRightTopLeft'])"></div>
+			<div class="TopRightBottomRight cell" onmouseover="addHighlight(['TopRight', 'BottomRight']); addCellHighlight(['TopRightBottomRight', 'BottomRightTopRight'])" onmouseout="removeHighlight(['TopRight', 'BottomRight']); removeCellHighlight(['TopRightBottomRight', 'BottomRightTopRight'])"></div>
+		</div>
+		
+		<div class="BottomLeft" onmouseover="addHighlight(['BottomLeft'])" onmouseout="removeHighlight(['BottomLeft'])">
+		<div class="BottomLeftTopLeft area-overlap cell" onmouseover="addHighlight(['BottomLeft', 'TopLeft']); addCellHighlight([ 'TopLeftBottomLeft', 'BottomLeftTopLeft'])" onmouseout="removeHighlight(['BottomLeft', 'TopLeft']); removeCellHighlight(['TopLeftBottomLeft', 'BottomLeftTopLeft'])"></div>
+		<div class="BottomLeftTopRight cell"  onmouseover="addHighlight(['TopRight', 'BottomRight', 'BottomLeft', 'TopLeft']); addCellHighlight([ 'TopLeftBottomRight', 'TopRightBottomLeft', 'BottomLeftTopRight', 'BottomRightTopLeft'])" onmouseout="removeHighlight(['TopRight', 'BottomRight', 'BottomLeft', 'TopLeft']); removeCellHighlight(['TopLeftBottomRight', 'TopRightBottomLeft', 'BottomLeftTopRight', 'BottomRightTopLeft'])"></div>
+		<div class="BottomLeftBottomLeft cell"   onmouseover="addHighlight(['BottomLeftBottomLeft']); addCellHighlight(['BottomLeftBottomLeft'])" onmouseout="removeHighlight(['BottomLeftBottomLeft']); removeCellHighlight(['BottomLeftBottomLeft'])"></div>
+		<div class="BottomLeftBottomRight cell"  onmouseover="addHighlight(['BottomLeft', 'BottomRight']); addCellHighlight(['BottomRightBottomLeft', 'BottomLeftBottomRight'])" onmouseout="removeHighlight(['BottomLeft', 'BottomRight']); removeCellHighlight([ 'BottomRightBottomLeft', 'BottomLeftBottomRight'])"></div>
+		</div>
+		
+		<div class="BottomRight" onmouseover="addHighlight(['BottomRight'])" onmouseout="removeHighlight(['BottomRight'])">
+		<div class="BottomRightTopLeft cell" onmouseover="addHighlight(['TopRight', 'BottomRight', 'BottomLeft', 'TopLeft']); addCellHighlight([ 'TopLeftBottomRight', 'TopRightBottomLeft', 'BottomLeftTopRight', 'BottomRightTopLeft'])" onmouseout="removeHighlight(['TopRight', 'BottomRight', 'BottomLeft', 'TopLeft']); removeCellHighlight(['TopLeftBottomRight', 'TopRightBottomLeft', 'BottomLeftTopRight', 'BottomRightTopLeft'])"></div>
+		<div class="BottomRightTopRight cell"  onmouseover="addHighlight(['BottomRight', 'TopRight']); addCellHighlight(['TopRightBottomRight', 'BottomRightTopRight'])" onmouseout="removeHighlight(['BottomRight', 'TopRight']); removeCellHighlight(['TopRightBottomRight', 'BottomRightTopRight'])"></div>
+		<div class="BottomRightBottomLeft cell"   onmouseover="addHighlight(['BottomLeft', 'BottomRight']); addCellHighlight(['BottomRightBottomLeft', 'BottomLeftBottomRight'])" onmouseout="removeHighlight(['BottomLeft', 'BottomRight']); removeCellHighlight([ 'BottomRightBottomLeft', 'BottomLeftBottomRight'])"></div>
+		<div class="BottomRightBottomRight cell"  onmouseover="addHighlight(['BottomRightBottomRight']); addCellHighlight(['BottomRightBottomRight'])" onmouseout="removeHighlight(['BottomRightBottomRight']); removeCellHighlight(['BottomRightBottomRight'])"></div>
+		</div>
     </div>
 
   </div>
