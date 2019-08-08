@@ -123,7 +123,7 @@ Only install the latest version unless you have a specific troubleshooting reaso
 
 ### Version History:
 * **[Verified]** [Experimental] [3.173](https://share.folivora.ai/sharedPreset/a2f373b6-b128-454c-a1d6-9264ed702422) ([Aug 8 2019](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/1274))
-* [Experimental] [3.172-3](https://share.folivora.ai/sharedPreset/fbdde32f-a116-4fc2-a70b-6e637371f31d) ([Aug 3 2019](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/1273))
+* **[Verified]** [Experimental] [3.172-3](https://share.folivora.ai/sharedPreset/fbdde32f-a116-4fc2-a70b-6e637371f31d) ([Aug 3 2019](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/1273))
 * [Experimental] [3.172-2](https://share.folivora.ai/sharedPreset/41d25893-edee-4007-a9c5-d59910b9c821) ([Aug 3 2019](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/1272))
 * [Experimental] [3.172](https://share.folivora.ai/sharedPreset/a055d075-e698-46b7-a12f-d7dfb95d1abb) ([Aug 3 2019](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/1271))
 * [Experimental] [3.167](https://share.folivora.ai/sharedPreset/a7f345de-9b02-4bce-89c6-337228b57159) ([Jul 24 2019](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/1270))
