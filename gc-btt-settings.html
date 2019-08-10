@@ -525,10 +525,10 @@
 	
 	function checkVersion() {
 		window.BTT.callHandler('get_string_variable', {variableName: 'gc_version'}, function callback(currentVariableValue) {
-        	if(currentVariableValue === '3.173') {
+        	if(currentVariableValue === '3.176') {
                 getAllVariablesAndUpdateClasses();
             	} else {
-                	trigger_named_async_without_response('btt_preset_imported_GoldenChaos-BTT 3.173');
+                	trigger_named_async_without_response('btt_preset_imported_GoldenChaos-BTT 3.176');
 					checkIfFinished();
             	}
             }
@@ -537,7 +537,7 @@
 	
 	function checkIfFinished() {
 		window.BTT.callHandler('get_string_variable', {variableName: 'gc_version'}, function callback(currentVariableValue) {
-        	if(currentVariableValue === '3.173') {
+        	if(currentVariableValue === '3.176') {
                 getAllVariablesAndUpdateClasses();
             	} else {
                 	setTimeout(() => { checkIfFinished() }, 500)
