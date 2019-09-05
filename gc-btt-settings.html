@@ -525,10 +525,10 @@
 	
 	function checkVersion() {
 		window.BTT.callHandler('get_string_variable', {variableName: 'gc_version'}, function callback(currentVariableValue) {
-        	if(currentVariableValue === '3.186') {
+        	if(currentVariableValue === '3.186-2') {
                 getAllVariablesAndUpdateClasses();
             	} else {
-                	trigger_named_async_without_response('btt_preset_imported_GoldenChaos-BTT 3.186');
+                	trigger_named_async_without_response('btt_preset_imported_GoldenChaos-BTT 3.186-2');
 					checkIfFinished();
             	}
             }
@@ -537,7 +537,7 @@
 	
 	function checkIfFinished() {
 		window.BTT.callHandler('get_string_variable', {variableName: 'gc_version'}, function callback(currentVariableValue) {
-        	if(currentVariableValue === '3.186') {
+        	if(currentVariableValue === '3.186-2') {
                 getAllVariablesAndUpdateClasses();
             	} else {
                 	setTimeout(() => { checkIfFinished() }, 500)
@@ -612,7 +612,7 @@
                         <li class="form-switch">
                             <label id="showControlMenu" onClick="toggleVariable(this.id, 'Refresh Control Menu',event)">
                                 <div class="tbicon">
-                                    <img class="invert" style="height:10px;width:18px;margin-top:5px;margin-left:2px;" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/control.png">
+                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/control.png">
                                 </div>
                                 Control Menu (Control Strip)
                                 <input type="checkbox"><i></i>
@@ -621,7 +621,7 @@
                         <li class="form-switch">
                             <label id="showOptionMenu" onClick="toggleVariable(this.id, 'Refresh Option Menu',event)">
                                 <div class="tbicon">
-                                    <img class="invert" style="width:18px;height:12px;margin-top:5px;margin-left:2px;"src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/option.png">
+                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/option.png">
                                 </div>
                                 Option Menu (Window Snapping)
                                 <input type="checkbox"><i></i>
@@ -630,7 +630,7 @@
                         <li class="form-switch">
                             <label id="showCommandMenu" onClick="toggleVariable(this.id, 'Refresh Command Menu',event)">
                                 <div class="tbicon">
-                                    <img class="invert"  style="width:18px;height:18px;margin-top:2px;margin-left:2px;" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/command.png">
+                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/command.png">
                                 </div>
                                 Command Menu (Dock)
                                 <input type="checkbox"><i></i>
@@ -639,7 +639,7 @@
                     </ul>
                 </section>
                 <small>
-                    <p>Hold down any disabled modifier key to temporarily shrink the menu bar.</p>
+                    <p>Holding down disabled modifier keys will temporarily shrink the menu bar.</p>
                 </small>
                 
                 <h3>Window Snapping</h3>
@@ -755,7 +755,7 @@
                                 <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/watchos-icons/reminders.png">
                             </div>
                             <label id="showReminders" onClick="toggleVariable(this.id, 'Refresh Reminders Widget',event)">
-                                Reminders (Requires <a href="icalbuddy.com">icalBuddy</a>)
+                                Reminders
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
