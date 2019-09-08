@@ -525,10 +525,10 @@
 	
 	function checkVersion() {
 		window.BTT.callHandler('get_string_variable', {variableName: 'gc_version'}, function callback(currentVariableValue) {
-        	if(currentVariableValue === '3.186-2') {
+        	if(currentVariableValue === '3.187') {
                 getAllVariablesAndUpdateClasses();
             	} else {
-                	trigger_named_async_without_response('btt_preset_imported_GoldenChaos-BTT 3.186-2');
+                	trigger_named_async_without_response('btt_preset_imported_GoldenChaos-BTT 3.187');
 					checkIfFinished();
             	}
             }
@@ -537,7 +537,7 @@
 	
 	function checkIfFinished() {
 		window.BTT.callHandler('get_string_variable', {variableName: 'gc_version'}, function callback(currentVariableValue) {
-        	if(currentVariableValue === '3.186-2') {
+        	if(currentVariableValue === '3.187') {
                 getAllVariablesAndUpdateClasses();
             	} else {
                 	setTimeout(() => { checkIfFinished() }, 500)
@@ -638,9 +638,6 @@
                         </li>
                     </ul>
                 </section>
-                <small>
-                    <p>Holding down disabled modifier keys will temporarily shrink the menu bar.</p>
-                </small>
                 
                 <h3>Window Snapping</h3>
                 <section>
@@ -830,9 +827,9 @@
                         </li>
                         <li class="form-switch">
                             <div class="tbicon">
-                                <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/snap-left.png" style="border-right:1px solid #b4b5b6;">
-                                <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/snap-center.png" style="border-right:1px solid #b4b5b6;">
-                                <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/snap-right.png">
+                                <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/snap-left-half.png" style="border-right:1px solid #b4b5b6;">
+                                <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/snap-maximize.png" style="border-right:1px solid #b4b5b6;">
+                                <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/snap-right-half.png">
                             </div>
                             <label id="showWindowSnapping" onClick="toggleVariable(this.id, 'Refresh Window Snapping Keys',event)">
                                 Window Snapping
