@@ -14,7 +14,7 @@ _Thinking about buying BetterTouchTool because of this preset?_ [_Use this link 
 > **(Sep 25 2018 - [Release Notes](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/1043))** No longer requires High Sierra Media Key Enabler! Plus: Settings menu with customization options for esc key, Home Strip keys, Menu Bar icons, Dock badges, Date/Time formatting with 24-Hour Time, and default calendar app selection; Seamless upgrades with just a tap using the "Reapply Settings" button; Fully scriptable, with a simple preset format so you can have multiple GC-BTT's for different occasions; Native Now Playing widget with dramatic CPU usage improvements; Collapsible Menu Bar with three sizes; New Connectivity Actions menu; New Current Language and Language Picker widgets with flags for 47 different languages
 
 
-> # Latest experimental version: [GoldenChaos-BTT 3.187 Stable RC1](https://share.folivora.ai/sharedPreset/9d904caf-e19c-4767-a057-f3c295754048)
+> # Latest experimental version: <br>[GoldenChaos-BTT 3.187 (Stable RC1)](https://share.folivora.ai/sharedPreset/9d904caf-e19c-4767-a057-f3c295754048)
 > <sup>Newer features, but less tested. Generally stable, but read the release notes first.</sup>
 > <sup>Download link not working? Try the [GitHub mirror](https://github.com/GoldenChaos/GoldenChaos-BTT/raw/master/mirrors/GoldenChaos-BTT%203.187.bttpresetcompressed).</sup>
 >
