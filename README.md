@@ -7,18 +7,17 @@ _Want to buy me a coffee? You can donate here: https://paypal.me/GoldenChaos_
 
 _Thinking about buying BetterTouchTool because of this preset?_ [_Use this link and I'll get 40%._ 🙂](https://a.paddle.com/v2/click/30842/34667?link=1061)
 
-> # Latest stable version: [GoldenChaos-BTT 2.641](https://share.folivora.ai/sharedPreset/aa7a2d21-4fc4-414f-ad7f-e31dd0f00cc1)
+> # Latest stable version: [GoldenChaos-BTT 3.200](https://share.folivora.ai/sharedPreset/6e0aad04-3428-4032-9ecc-1cd1dd73e08a)
 > <sup>Verified by the BetterTouchTool developer, thoroughly tested by the community.</sup>
-> <sup>Download link not working? Try the [GitHub mirror](https://github.com/GoldenChaos/GoldenChaos-BTT/raw/master/mirrors/GoldenChaos-BTT%202.641.bttpreset).</sup>
+> <sup>Download link not working? Try the [GitHub mirror](https://github.com/GoldenChaos/GoldenChaos-BTT/raw/master/mirrors/GoldenChaos-BTT%203.200.bttpresetcompressed).</sup>
 >
-> **(Sep 25 2018 - [Release Notes](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/1043))** No longer requires High Sierra Media Key Enabler! Plus: Settings menu with customization options for esc key, Home Strip keys, Menu Bar icons, Dock badges, Date/Time formatting with 24-Hour Time, and default calendar app selection; Seamless upgrades with just a tap using the "Reapply Settings" button; Fully scriptable, with a simple preset format so you can have multiple GC-BTT's for different occasions; Native Now Playing widget with dramatic CPU usage improvements; Collapsible Menu Bar with three sizes; New Connectivity Actions menu; New Current Language and Language Picker widgets with flags for 47 different languages
+> **(Sep 13 2019 - [Release Notes](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/1279))** One-click upgrades straight from the sharing site; Native calendar and reminders widgets; Full support for macOS 10.15 Catalina; Significant performance and energy improvements; Window snapping grid with multi-monitor support (⌘⇧W); All-new settings window; Enable/disable modifier menus individually; Make Finder/AirDrop Keys just icons; Full-height album artwork; Dock widgets replace the App Switcher; System Information, Clipboard History, and Things Actions widget groups; Battery menu bar item with optional percentage; Calculator, Caffeinate, Show Paste, 1Password, Day One, HazeOver, ColorSnapper, and Connect to Bose menu bar items; Dock badges hide when Do Not Disturb is enabled; Dock badges for Carrot, Apple Calendar, Fantastical, Reminders, Things, OmniFocus, News, Maps, Deliveries, WeChat, QQ, Superhuman, MailMate, Abstract, Zeplin, Bodo, and Maipo
 
 
-> # Latest experimental version: <br>[GoldenChaos-BTT 3.194 (Stable RC2)](https://share.folivora.ai/sharedPreset/1860293b-e005-49a7-896d-140c06cc2e6c)
+> # Latest experimental version: None!
 > <sup>Newer features, but less tested. Generally stable, but read the release notes first.</sup>
-> <sup>Download link not working? Try the [GitHub mirror](https://github.com/GoldenChaos/GoldenChaos-BTT/raw/master/mirrors/GoldenChaos-BTT%203.187.bttpresetcompressed).</sup>
 >
-> **(Sep 9 2019 - [Release Notes](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/1278))** One-click upgrades straight from the sharing site; Native calendar and reminders widgets; Full support for macOS 10.15 Catalina; Significant performance and energy improvements; Elimination of all duplicate widgets; Settings menu is now a settings *window* with an all-new interface and new settings; Enable/disable individual modifier menus; Make Finder/AirDrop Keys just icons; Improved Apple Music support; Full-height album artwork; Dock widget replaces the App Switcher; New System Information, Clipboard History, and Things Actions widget groups; Window snapping grid with multi-monitor support (⌘⇧W); Battery widget with optional percentage display; Calculator, Caffeinate, 1Password, Day One, HazeOver, ColorSnapper, and Connect to Bose menu bar items; Dock badges hide when Do Not Disturb is enabled; Bug fixes for Connect to AirPods, Connect to Beats, Now Playing widgets, and system Back/Forward keys; Updated Slack logo; New dock badges for Carrot, Apple Calendar, Fantastical, Reminders, Things, OmniFocus, News, Maps, Deliveries, WeChat, QQ, Superhuman, MailMate, Abstract, Zeplin, Bodo, and Maipo
+> Don't worry, that won't last long.
 
 > # How to install
 > 1. Make sure you're using the latest version of BetterTouchTool.
@@ -121,6 +120,7 @@ Only install the latest version unless you have a specific troubleshooting reaso
 > * <sup>Versions **2.516 and earlier** require [Location Helper](http://www.mousedown.net/mouseware/LocationHelper.html) and [JSON Helper](http://www.mousedown.net/mouseware/JSONHelper.html) for the weather widget to work. **Not compatible with macOS Mojave.**</sup>
 
 ### Version History:
+* **[Verified]** [Stable] [3.200](https://share.folivora.ai/sharedPreset/6e0aad04-3428-4032-9ecc-1cd1dd73e08a) ([Sep 13 2019](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/1279))
 * [Stable RC2] [3.194](https://share.folivora.ai/sharedPreset/1860293b-e005-49a7-896d-140c06cc2e6c) ([Sep 9 2019](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/1278))
 * [Stable RC1] [3.187](https://share.folivora.ai/sharedPreset/9d904caf-e19c-4767-a057-f3c295754048) ([Sep 8 2019](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/1277))
 * **[Verified]** [Experimental] [3.186](https://share.folivora.ai/sharedPreset/385a2dcf-1886-4ea9-8a0f-97a18e0ee148) ([Aug 23 2019](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/1276))
