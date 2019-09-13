@@ -211,6 +211,16 @@
         background: none;
     }
     
+    .form-switch .description {
+	    position: relative;
+	    top: -8px;
+	    margin-bottom: -8px;
+    }
+    
+    .form-switch .description small {
+	    margin-top: -8px;
+    }
+    
     header {
         position: fixed;
         z-index: 1;
@@ -342,6 +352,10 @@
     
     section p:last-of-type {
         margin-bottom: 0;
+    }
+    
+    section small {
+	    margin-bottom: 0;
     }
     
     /* Single Page Style Overrides */
@@ -525,10 +539,10 @@
 	
 	function checkVersion() {
 		window.BTT.callHandler('get_string_variable', {variableName: 'gc_version'}, function callback(currentVariableValue) {
-        	if(currentVariableValue === '3.194') {
+        	if(currentVariableValue === '3.200') {
                 getAllVariablesAndUpdateClasses();
             	} else {
-                	trigger_named_async_without_response('btt_preset_imported_GoldenChaos-BTT 3.194');
+                	trigger_named_async_without_response('btt_preset_imported_GoldenChaos-BTT 3.200');
 					checkIfFinished();
             	}
             }
@@ -537,7 +551,7 @@
 	
 	function checkIfFinished() {
 		window.BTT.callHandler('get_string_variable', {variableName: 'gc_version'}, function callback(currentVariableValue) {
-        	if(currentVariableValue === '3.194') {
+        	if(currentVariableValue === '3.200') {
                 getAllVariablesAndUpdateClasses();
             	} else {
                 	setTimeout(() => { checkIfFinished() }, 500)
@@ -596,15 +610,15 @@
                                 <div class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/escape.png">
                                 </div>
-                                Use Normal Escape Key
+                                <div class="description">
+	                                Use Normal Escape Key
+					                <small>When enabled, separate fullscreen buttons will be added to the Home Strip and Option Menu.</small>
+                                </div>
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
                     </ul>
 	            </section>
-                <small>
-                    <p>When enabled, separate fullscreen buttons will be added to the Home Strip and Option Menu.</p>
-                </small>
                 
                 <h3>Modifier Menus</h3>
                 <section>
@@ -845,9 +859,6 @@
                 </header>
                 
                 <h3>Dynamic Menu Bar</h3>
-                <small>
-                    <p>Allows you to switch between large, medium, and small menu bar sizes on the fly.</p>
-                </small>
                 <section>
                     <ul>
                         <li class="form-switch">
@@ -855,7 +866,10 @@
                                 <div class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/collapse-menu-bar.png">
                                 </div>
-                                Show Collapse/Expand Menu Bar Controls
+                                <div class="description">
+	                                Show Collapse/Expand Menu Bar Control
+					                <small>Allows you to switch between large, medium, and small menu bar sizes on the fly.</small>
+					            </div>
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
@@ -864,7 +878,7 @@
                 
                 <h3>Primary Menu Bar Widgets</h3>
                 <small>
-                    <p>These menu bar widgets stay docked to the right even when holding modifier keys.</p>
+                    <p>Also appear in the Control Strip.</p>
                 </small>
                 <section>
                     <ul>
@@ -910,7 +924,7 @@
                     </ul>
                 </section>
                 <small>
-                	<p>When set to "Dynamic", these widgets will disappear on medium and small menu bar sizes.</p>
+                	<p>Will hide on the medium and small menu bar sizes when set to Dynamic.</p>
                 </small>
                 <section>
                     <ul>
@@ -936,10 +950,6 @@
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
-                    </ul>
-                </section>
-                <section>
-                    <ul>
                         <li>
                             <label id="showWeather">
                                 <div class="tbicon">
@@ -956,7 +966,7 @@
                     </ul>
                 </section>
                 <small>
-                	<p>When set to "Dynamic", the battery and weather widgets will be hidden on small menu bar sizes.</p>
+                	<p>Will hide on the small menu bar size when set to Dynamic.</p>
                 </small>
                 
                 <h3>Date and Time</h3>
@@ -997,7 +1007,7 @@
                     </ul>
                 </section>
                 <small>
-                    <p>When set to "Dynamic", the date will automatically switch between<br>large, medium, and small formats when you resize the menu bar.</p>
+                    <p>Automatically switches date formats between menu bar sizes when set to Dynamic.</p>
                 </small>
                 
                 <h3>Volume and Brightness</h3>
@@ -1050,11 +1060,11 @@
                         </li>
                     </ul>
                 </section>
-                <small style="margin-bottom: 24px;">Keys for volume and brightness will always appear in the Control Strip,<br>even if you disable them in the menu bar.</small>
+                <small style="margin-bottom: 24px;">Keys for volume and brightness will always appear in the Control Strip, even if you disable them in the menu bar.</small>
                 
                 <h3>Secondary Menu Bar Widgets</h3>
                 <small>
-                	<p>These widgets disappear when holding down modifier keys.</p>
+                	<p>Don't appear in the Control Strip.</p>
                 </small>
                 <section>
                     <ul>
@@ -1063,15 +1073,16 @@
                                 <div class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/microphone-mute.png">
                                 </div>
-                                Microphone Mute
+                                <div class="description">
+	                                Microphone Mute
+									<small>Only appears when running apps that use the microphone.</small>
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
                     </ul>
                 </section>
-                <small>
-                    <p>Only appears when running apps that use the microphone.</p>
-                </small>
+                
+                <h3>Networking</h3>
                 <section>
                     <ul>
                         <li class="form-switch">
@@ -1094,6 +1105,8 @@
                         </li>
                     </ul>
                 </section>
+                
+                <h3>Bluetooth Quick-Connect Keys</h3>
                 <section>
 	                <ul>
                         <li class="form-switch">
@@ -1135,8 +1148,10 @@
                     </ul>
                 </section>
                 <small>
-                	<p>Automatically looks for and connects to Bluetooth devices containing the words "AirPods", "Beats", "Bose", etc. Requires the Bluetooth menu to be enabled in the macOS menu bar.</p>
+                	<p>Automatically looks for and connects to Bluetooth devices containing the words "AirPods", "Beats", "Bose", etc.<br>Requires the Bluetooth menu to be enabled in the macOS menu bar.</p>
                 </small>
+                
+                <h3>Utilities</h3>
                 <section>
                     <ul>
                         <li class="form-switch">
@@ -1144,10 +1159,28 @@
                                 <div class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/caffeinate.png">
                                 </div>
-                                Caffeinate
+                                <div class="description">
+	                                Caffeinate
+	                                <small>Prevents your Mac from going to sleep, and disables automatic display dimming.</small>
+                                </div>
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
+	                    <li class="form-switch">
+                            <label id="showCalculator" onClick="toggleVariable(this.id, 'Refresh Calculator Key',event)">
+                                <div class="tbicon">
+                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/calculator.png">
+                                </div>
+                                Calculator
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                    </ul>
+                </section>
+                
+                <h3>Widget Groups</h3>
+                <section>
+                    <ul>
                         <li class="form-switch">
                             <label id="showDock" onClick="toggleVariable(this.id, 'Refresh Dock Key',event)">
                                 <div class="tbicon">
@@ -1162,7 +1195,10 @@
                                 <div class="tbicon">
                                     <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/languages.png">
                                 </div>
-                                Language Switcher
+                                <div class="description">
+                                	Language Switcher
+                                	<small>Requires the Input menu to be enabled in the macOS menu bar.</small>
+                                </div>
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
@@ -1184,35 +1220,24 @@
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
-                    </ul>
-                </section>
-                <section>
-                    <ul>
                         <li class="form-switch">
                             <label id="showBrowserTabs" onClick="toggleVariable(this.id, 'Refresh Browser Tabs Key',event)">
                                 <div class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/browser.png">
                                 </div>
-                                Browser Tabs
+                                <div class="description">
+                                	Browser Tabs
+					                <small>Supports Safari, Safari Technology Preview, Google Chrome, and Chrome Canary.</small>
+                                </div>
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
                     </ul>
                 </section>
-                <small>
-                    <p>Supports Safari, Safari Technology Preview, Google Chrome, and Chrome Canary.</p>
-                </small>
+                
+                <h3>Third-Party Apps</h3>
                 <section>
                     <ul>
-	                    <li class="form-switch">
-                            <label id="showCalculator" onClick="toggleVariable(this.id, 'Refresh Calculator Key',event)">
-                                <div class="tbicon">
-                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/calculator.png">
-                                </div>
-                                Calculator
-                                <input type="checkbox"><i></i>
-                            </label>
-                        </li>
                         <li class="form-switch">
                             <label id="showShowPaste" onClick="toggleVariable(this.id, 'Refresh Show Paste Key',event)">
                                 <div class="tbicon">
@@ -1260,6 +1285,11 @@
                         </li>
                     </ul>
                 </section>
+                <small>
+                	<p>Only appear when running the specified app or its helpers.</p>
+                </small>
+                
+                <h3>GC-BTT Controls</h3>
                 <section>
                     <ul>
 	                    <li class="form-switch">
@@ -1267,17 +1297,13 @@
                                 <div class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/windowsnapper.png">
                                 </div>
-                                Show Floating Window Snapping Grid (&#8984;&#8679;W)
+                                <div class="description">
+	                                Show Floating Window Snapping Grid (&#8984;&#8679;W)
+					                <small>Requires the Floating Window Snapping Grid to be enabled in the "General" tab.</small>
+                                </div>
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
-                    </ul>
-                </section>
-                <small>
-                	<p>Requires the Floating Window Snapping Grid to be enabled in the "General" tab.</p>
-                </small>
-                <section>
-                    <ul>
                         <li class="form-switch">
                             <label id="showSettings" onClick="toggleVariable(this.id, 'Refresh GC-BTT Settings Key',event)">
                                 <div class="tbicon">
