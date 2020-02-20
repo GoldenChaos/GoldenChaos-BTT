@@ -539,10 +539,10 @@
 	
 	function checkVersion() {
 		window.BTT.callHandler('get_string_variable', {variableName: 'gc_version'}, function callback(currentVariableValue) {
-        	if(currentVariableValue === '3.202') {
+        	if(currentVariableValue === '3.335') {
                 getAllVariablesAndUpdateClasses();
             	} else {
-                	trigger_named_async_without_response('btt_preset_imported_GoldenChaos-BTT 3.202');
+                	trigger_named_async_without_response('btt_preset_imported_GoldenChaos-BTT 3.335');
 					checkIfFinished();
             	}
             }
@@ -551,7 +551,7 @@
 	
 	function checkIfFinished() {
 		window.BTT.callHandler('get_string_variable', {variableName: 'gc_version'}, function callback(currentVariableValue) {
-        	if(currentVariableValue === '3.202') {
+        	if(currentVariableValue === '3.335') {
                 getAllVariablesAndUpdateClasses();
             	} else {
                 	setTimeout(() => { checkIfFinished() }, 500)
@@ -1157,9 +1157,9 @@
                         <li class="form-switch">
                             <label id="showConnectGamepad" onClick="toggleVariable(this.id, 'Refresh Connect to Gamepad Key',event)">
                                 <div class="tbicon">
-                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/gamepad.png">
+                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/game-controller.png">
                                 </div>
-                                Connect to Gamepad
+                                Connect to Game Controllers
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
@@ -1520,13 +1520,6 @@
                             </label>
                         </li>
                         <li class="form-switch">
-                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Microsoft Teams.png">
-                            <label id="showMicrosoftTeamsBadge" onClick="toggleVariable(this.id, 'Refresh Microsoft Teams Badge',event)">
-                                Microsoft Teams
-                                <input type="checkbox"><i></i>
-                            </label>
-                        </li>
-                        <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/YakYak.png">
                             <label id="showYakYakBadge" onClick="toggleVariable(this.id, 'Refresh YakYak Badge',event)">
                                 YakYak
@@ -1637,6 +1630,13 @@
                                 Slack
                                 <input type="checkbox"><i></i>
                             </label>	
+                        </li>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Microsoft Teams.png">
+                            <label id="showMicrosoftTeamsBadge" onClick="toggleVariable(this.id, 'Refresh Microsoft Teams Badge',event)">
+                                Microsoft Teams
+                                <input type="checkbox"><i></i>
+                            </label>
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Discord.png">
