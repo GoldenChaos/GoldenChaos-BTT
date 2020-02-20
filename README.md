@@ -12,7 +12,7 @@ _Thinking about buying BetterTouchTool because of this preset?_ [_Use this link 
 > <sup>Download link not working? Try the [GitHub mirror](https://github.com/GoldenChaos/GoldenChaos-BTT/raw/master/mirrors/GoldenChaos-BTT%203.202.bttpresetcompressed).</sup>
 >
 > **(Sep 18 2019 - [Release Notes](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/1281))** One-click upgrades straight from the sharing site; Native calendar and reminders widgets; Full support for macOS 10.15 Catalina; Significant performance and energy improvements; Window snapping grid with multi-monitor support (⌘⇧W); All-new settings window; Enable/disable modifier menus individually; Make Finder/AirDrop Keys just icons; Full-height album artwork; Dock widgets replace the App Switcher; System Information, Clipboard History, and Things Actions widget groups; Battery menu bar item with optional percentage; Calculator, Caffeinate, Show Paste, 1Password, Day One, HazeOver, ColorSnapper, and Connect to Bose menu bar items; Dock badges hide when Do Not Disturb is enabled; Dock badges for Carrot, Apple Calendar, Fantastical, Reminders, Things, OmniFocus, News, Maps, Deliveries, WeChat, QQ, Superhuman, MailMate, Abstract, Zeplin, Bodo, and Maipo
-
+>
 > # Latest experimental version: [GoldenChaos-BTT 3.335](https://share.folivora.ai/sharedPreset/7dad368b-d796-484b-bd75-d7536baf5a83)
 > <sup>Newer features, but less tested. Generally stable, but read the release notes first.</sup>
 > <sup>Download link not working? Try the [GitHub mirror](https://github.com/GoldenChaos/GoldenChaos-BTT/raw/master/mirrors/GoldenChaos-BTT%203.335.bttpresetcompressed).</sup>
