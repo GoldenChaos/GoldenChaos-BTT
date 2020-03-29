@@ -539,7 +539,7 @@
 	
 	function checkVersion() {
 		window.BTT.callHandler('get_string_variable', {variableName: 'gc_version'}, function callback(currentVariableValue) {
-        	if(currentVariableValue === '3.346') {
+        	if(currentVariableValue === '3.352') {
                 getAllVariablesAndUpdateClasses();
             	} else {
                 	trigger_named_async_without_response('btt_preset_imported_GoldenChaos-BTT 3.346');
@@ -551,7 +551,7 @@
 	
 	function checkIfFinished() {
 		window.BTT.callHandler('get_string_variable', {variableName: 'gc_version'}, function callback(currentVariableValue) {
-        	if(currentVariableValue === '3.346') {
+        	if(currentVariableValue === '3.352') {
                 getAllVariablesAndUpdateClasses();
             	} else {
                 	setTimeout(() => { checkIfFinished() }, 500)
