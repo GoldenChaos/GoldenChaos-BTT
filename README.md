@@ -8,8 +8,8 @@ _Want to buy me a coffee? You can donate here: https://paypal.me/GoldenChaos_
 _Thinking about buying BetterTouchTool because of this preset?_ [_Use this link and I'll get 40%._ 🙂](https://a.paddle.com/v2/click/30842/34667?link=1061)
 
 > # Latest stable version: [GoldenChaos-BTT 3.368](https://share.folivora.ai/sharedPreset/c6391e3f-e539-45f5-9ce7-3d311a0dd625)
-> <sup>Verified by the BetterTouchTool developer, thoroughly tested by the community.</sup>
-> <sup>Download link not working? Try the [GitHub mirror](https://github.com/GoldenChaos/GoldenChaos-BTT/raw/master/mirrors/GoldenChaos-BTT%203.368.bttpresetcompressed).</sup>
+> <small>Verified by the BetterTouchTool developer, thoroughly tested by the community.</small>
+> <small>Download link not working? Try the [GitHub mirror](https://github.com/GoldenChaos/GoldenChaos-BTT/raw/master/mirrors/GoldenChaos-BTT%203.368.bttpresetcompressed).</small>
 > **(May 2 2020 - [Release Notes](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/1286))** Fixes for disappearing icons; Fixes for dock badges and headphone battery displays; Support for Fantastical 3; AirPods Pro and Sony headphones quick-connect keys; Microphone Mute widget support for Microsoft Teams; Improved Home Strip calendar widget design; New dock badges for Microsoft Teams, Station, and Ferdi
 >
 > # Latest experimental version: None
