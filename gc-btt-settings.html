@@ -539,7 +539,7 @@
 	
 	function checkVersion() {
 		window.BTT.callHandler('get_string_variable', {variableName: 'gc_version'}, function callback(currentVariableValue) {
-        	if(currentVariableValue === '3.358') {
+        	if(currentVariableValue === '3.368') {
                 getAllVariablesAndUpdateClasses();
             	} else {
                 	trigger_named_async_without_response('btt_preset_imported_GoldenChaos-BTT 3.346');
@@ -551,7 +551,7 @@
 	
 	function checkIfFinished() {
 		window.BTT.callHandler('get_string_variable', {variableName: 'gc_version'}, function callback(currentVariableValue) {
-        	if(currentVariableValue === '3.358') {
+        	if(currentVariableValue === '3.368') {
                 getAllVariablesAndUpdateClasses();
             	} else {
                 	setTimeout(() => { checkIfFinished() }, 500)
@@ -1208,7 +1208,7 @@
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
-                        <!-- <li class="form-switch">
+                        <li class="form-switch">
                             <label id="showCurrentLanguage" onClick="toggleVariable(this.id, 'Refresh Current Language Key',event)">
                                 <div class="tbicon">
                                     <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/languages.png">
@@ -1219,7 +1219,7 @@
                                 </div>
                                 <input type="checkbox"><i></i>
                             </label>
-                        </li> -->
+                        </li>
                         <li class="form-switch">
                             <label id="showClipboardHistory" onClick="toggleVariable(this.id, 'Refresh Clipboard History Key',event)">
                                 <div class="tbicon">
@@ -1502,6 +1502,13 @@
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Franz.png">
                             <label id="showFranzBadge" onClick="toggleVariable(this.id, 'Refresh Franz Badge',event)">
                                 Franz
+                                <input type="checkbox"><i></i>
+                            </label>	
+                        </li>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Ferdi.png">
+                            <label id="showFerdiBadge" onClick="toggleVariable(this.id, 'Refresh Ferdi Badge',event)">
+                                Ferdi
                                 <input type="checkbox"><i></i>
                             </label>	
                         </li>
