@@ -1,31 +1,39 @@
 <html>
 <head>
 <style>
-    body {
+	body {
         color: #fff;
-        padding: 16px;
         font-family: "SF Pro Text", Helvetica, sans-serif;
         font-size: 14px;
-        margin: 0;
-        padding: 0 0 2px 0;
+        margin: 24px 48px 64px 48px;
+        padding: 0;
         background: transparent;
-        background: rgba(55, 55, 55, .7);
-        -webkit-backdrop-filter: blur(48px) saturate(200%);
         -webkit-transform: translate3d(0, 0, 0);
         display: flex;
         -webkit-user-select: none;
-        overflow: hidden;
+        border-radius: 11px;
+        box-shadow: rgba(0,0,0,.52) 0 18px 50px, rgba(0,0,0,.65) 0 0 0 .5px;
+        overflow: hidden;         
     }
     
     .element::-webkit-scrollbar {
-	    width: 0 !important
+	    width: 0 !important;
 	}
+    
+    .padding-close-control {
+	    position: absolute;
+	    z-index: -1;
+	    top: -12px;
+	    bottom: -64px;
+	    left: -48px;
+	    right: -48px;
+    }
     
     h1 {
         font-family: "SF Pro Display", Helvetica, sans-serif;
         font-weight: 600;
         margin: 0;
-        padding: 44px 16px 12px 16px;
+        padding: 56px 16px 12px 16px;
         font-size: 24px;
         border-bottom: 1px solid rgba(255,255,255,.15);
     }
@@ -76,19 +84,27 @@
     
     /* Sidebar Styles */
     .sidebar {
-        border-bottom-left-radius: 6px;
-        border: 1px solid rgba(119, 118, 116, .5);
+        -webkit-backdrop-filter: blur(36px) saturate(200%);
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, .2);
         border-right: none;
         -webkit-transform: translate3d(0, 0, 0);
+        background: rgba(56, 56, 56, 0.75);
         position: relative;
+        box-shadow: inset rgba(255,255,255,.4) 0 1px 0;
     }
+    
+	.traffic-lights { position: absolute; top: 20px; left: 20px; } .focus .traffic-lights > .traffic-light-close, .traffic-lights:hover > .traffic-light-close, .traffic-lights:active > .traffic-light-close { background-color: #ff6159; } .focus .traffic-lights > .traffic-light-close:active:hover, .traffic-lights:hover > .traffic-light-close:active:hover, .traffic-lights:active > .traffic-light-close:active:hover { background-color: #ff8d85; } .focus .traffic-lights > .traffic-light-minimize, .traffic-lights:hover > .traffic-light-minimize, .traffic-lights:active > .traffic-light-minimize { background-color: #ffbd2e; } .focus .traffic-lights > .traffic-light-minimize:active:hover, .traffic-lights:hover > .traffic-light-minimize:active:hover, .traffic-lights:active > .traffic-light-minimize:active:hover { background-color: #bf8e22; } .focus .traffic-lights > .traffic-light-maximize, .traffic-lights:hover > .traffic-light-maximize, .traffic-lights:active > .traffic-light-maximize { background-color: #28c941; } .focus .traffic-lights > .traffic-light-maximize:active:hover, .traffic-lights:hover > .traffic-light-maximize:active:hover, .traffic-lights:active > .traffic-light-maximize:active:hover { background-color: #1d9730; } .traffic-lights > .traffic-light:before, .traffic-lights > .traffic-light:after { visibility: hidden; } .traffic-lights:hover > .traffic-light:before, .traffic-lights:hover > .traffic-light:after, .traffic-lights:active > .traffic-light:before, .traffic-lights:active > .traffic-light:after { visibility: visible; }
+
+	.traffic-light { border-radius: 100%; padding: 0; height: 12px; width: 12px; border: 1px solid rgba(0, 0, 0, 0.06); box-sizing: border-box; margin-right: 3.5px; background-color: #ff6159; position: relative; outline: none; } .traffic-light:before, .traffic-light:after { content: ''; position: absolute; border-radius: 1px; left: 0; top: 0; right: 0; bottom: 0; margin: auto; } .traffic-light-close:before, .traffic-light-close:after { background-color: #4d0000; width: 8px; height: 1px; } .traffic-light-close:before { transform: rotate(45deg); } .traffic-light-close:after { transform: rotate(-45deg); } .traffic-light-close:active:hover:before, .traffic-light-close:active:hover:after { background-color: #190000; } .traffic-light-minimize:before { background-color: #995700; width: 8px; height: 1px; } .traffic-light-minimize:active:hover:before { background-color: #592800; } .traffic-light-maximize:before { background-color: #006500; width: 6px; height: 6px; } .traffic-light-maximize:after { background-color: #28c941; width: 10px; height: 2px; transform: rotate(45deg); } .traffic-light-maximize:active:hover:before { background-color: #003200; } .traffic-light-maximize:active:hover:after { background-color: #1d9730; }
     
     .sidebar ul {
         list-style-type: none;
         margin: 0;
         padding: 0;
         position: relative;
-        height: calc(100% - 87px);
+        height: calc(100% - 98px);
     }
     
     .tablink {
@@ -127,8 +143,8 @@
     
     .tablink:last-of-type {
         position: absolute;
-        bottom: -1px;
-        border-bottom-left-radius: 5px;
+        bottom: 1px;
+        border-bottom-left-radius: 10px;
     }
     
     .tablink:last-of-type::after {
@@ -139,8 +155,9 @@
     /* Content Area Styles */
     .content {
         background: rgba(70, 68, 67, 1);
-        border-bottom-right-radius: 6px;
-        border: 1px solid rgba(119, 118, 116, .5);
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, .2);
         border-left: 1px solid rgba(3, 3, 3, 1);
         position: relative;
         width: 100%;
@@ -228,9 +245,11 @@
         left: 266px;
         right: 1px;
         background: rgba(83, 81, 79, .8);
-        -webkit-backdrop-filter: blur(24px) saturate(400%) contrast(150%);
+        -webkit-backdrop-filter: blur(16px) saturate(400%) contrast(150%);
         -webkit-transform: translate3d(0, 0, 0);
         border-bottom: 1px solid rgba(255,255,255,.1);
+        box-shadow: inset rgba(255,255,255,.4) 0 1px 0;
+        border-top-right-radius: 10px;
     }
     
     section {
@@ -539,7 +558,7 @@
 	
 	function checkVersion() {
 		window.BTT.callHandler('get_string_variable', {variableName: 'gc_version'}, function callback(currentVariableValue) {
-        	if(currentVariableValue === '3.368') {
+        	if(currentVariableValue === '3.390') {
                 getAllVariablesAndUpdateClasses();
             	} else {
                 	trigger_named_async_without_response('btt_preset_imported_GoldenChaos-BTT 3.346');
@@ -551,7 +570,7 @@
 	
 	function checkIfFinished() {
 		window.BTT.callHandler('get_string_variable', {variableName: 'gc_version'}, function callback(currentVariableValue) {
-        	if(currentVariableValue === '3.368') {
+        	if(currentVariableValue === '3.390') {
                 getAllVariablesAndUpdateClasses();
             	} else {
                 	setTimeout(() => { checkIfFinished() }, 500)
@@ -570,9 +589,13 @@
 </script>
 </head>
 <body>
+<div class="padding-close-control" onClick="trigger_named_async_without_response('Show GC-BTT Settings')"></div>
 <div class="sidebar">
-    <h1>GC-BTT Settings</h1>
-    <ul>
+	 <div class="traffic-lights">
+      <button class="traffic-light traffic-light-close" id="close" onClick="trigger_named_async_without_response('Show GC-BTT Settings')"></button>
+	 </div>
+    <h1 class="BTTDraggable">GC-BTT Settings</h1>
+    <ul class="BTTDraggable">
         <li id="default" class="tablink" onClick="openTab(event, 'general')">
             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/watchos-icons/settings.png">
             General
@@ -589,7 +612,7 @@
             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/watchos-icons/notifications.png">
             Dock Badges
         </li>
-        <li class="tablink" onClick="openTab(event, 'about')">
+        <li class="tablink" onClick="trigger_named_async_without_response('Show About GC-BTT')">
             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/avatar-round.png">
             About GoldenChaos-BTT
         </li>
@@ -598,8 +621,8 @@
 <div class="content">
     <div class="content-inner">
             <div id="general" class="tabcontent">
-                <header>
-                    <h2>General</h2>
+                <header class="BTTDraggable">
+                    <h2 class="BTTDraggable">General</h2>
                 </header>
                 
                 <h3>Escape Key</h3>
@@ -680,7 +703,7 @@
                 </small>
             </div>
             <div id="home-strip" class="tabcontent">
-                <header>
+                <header class="BTTDraggable">
                     <h2>Home Strip</h2>
                 </header>
                 
@@ -854,7 +877,7 @@
                 </section>
             </div>
             <div id="menu-bar" class="tabcontent">
-                <header>
+                <header class="BTTDraggable">
                     <h2>Menu Bar</h2>
                 </header>
                 
@@ -1193,10 +1216,22 @@
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
+                        <li class="form-switch">
+                            <label id="showCurrentLanguage" onClick="toggleVariable(this.id, 'Refresh Current Language Key',event)">
+                                <div class="tbicon">
+                                    <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/languages.png">
+                                </div>
+                                <div class="description">
+                                	Current Language
+                                	<small>Requires the Input menu to be enabled in the macOS menu bar.</small>
+                                </div>
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
                     </ul>
                 </section>
                 
-                <h3>Widget Groups</h3>
+                <h3>Widget Strips</h3>
                 <section>
                     <ul>
                         <li class="form-switch">
@@ -1205,18 +1240,6 @@
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/dock.png">
                                 </div>
                                 Dock
-                                <input type="checkbox"><i></i>
-                            </label>
-                        </li>
-                        <li class="form-switch">
-                            <label id="showCurrentLanguage" onClick="toggleVariable(this.id, 'Refresh Current Language Key',event)">
-                                <div class="tbicon">
-                                    <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/languages.png">
-                                </div>
-                                <div class="description">
-                                	Language Switcher
-                                	<small>Requires the Input menu to be enabled in the macOS menu bar.</small>
-                                </div>
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
@@ -1341,7 +1364,7 @@
                 </section>
             </div>
             <div id="dock-badges" class="tabcontent">
-                <header>
+                <header class="BTTDraggable">
                     <h2>Dock Badges</h2>
                 </header>
                 
@@ -1728,47 +1751,6 @@
                                 Tumblr
                                 <input type="checkbox"><i></i>
                             </label>
-                        </li>
-                    </ul>
-                </section>
-            </div>
-            <div id="about" class="tabcontent">
-                <img style="width:100%;height:auto;margin-bottom:12px;z-index:2;position:relative;top:-2px;" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/cool-photo.jpg" alt="">
-                <small>
-                    <p style="margin-bottom:20px;"><b>Thank you for installing GoldenChaos-BTT!</b> This is the result of many hours of work to make the Touch Bar something worth using. If you enjoy GoldenChaos-BTT, please spread the word! <span style="opacity:.5;">- Jason Rappaport aka GoldenChaos<br></span>
-                    </p>
-                </small>
-                
-                <style>
-	                .useful-links li {
-		                height: 34px;
-		                line-height: 34px;
-	                }
-	                .useful-links li p {
-		                display: inline-block;
-						vertical-align: middle;
-						line-height: normal;
-	                }
-	            </style>
-	            
-	            <h3>Links</h3>
-                <section>
-                    <ul class="useful-links">
-                        <li>
-                            <a href="#" onClick="trigger_named_async_without_response('Open GC-BTT Release Thread')">Main release thread (subscribe for updates!) &rsaquo;</a>
-                        </li>
-                        <li>
-                            <a href="#" onClick="trigger_named_async_without_response('Open GC-BTT Support Thread')">Support and feedback thread  &rsaquo;</a>
-                        </li>
-                        <li>
-                            <p>Want to buy me a coffee? You can donate here: <a  href="#" onClick="trigger_named_async_without_response('Open Donation Link')">https://paypal.me/GoldenChaos</a></p>
-                        </li>
-                        <li>
-                            <p>Thinking of buying BetterTouchTool because of this preset?
-                            <br>Use this link and I'll get 40%! <a href="#" onClick="trigger_named_async_without_response('Open Affiliate Link')">https://a.paddle.com/v2/click/30842/34667?link=1061</a></p>
-                        </li>
-                        <li>
-                            <p>I make other cool things, too! Check them out: <a href="#" onClick="trigger_named_async_without_response('Open Portfolio Link')">https://goldenchaos.net</a></p>
                         </li>
                     </ul>
                 </section>

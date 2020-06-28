@@ -1,0 +1,336 @@
+<html>
+<head>
+<style>
+	body {
+        color: #fff;
+        font-family: "SF Pro Text", Helvetica, sans-serif;
+        font-size: 14px;
+        margin: 24px 48px 64px 48px;
+        padding: 0;
+        background: transparent;
+        -webkit-transform: translate3d(0, 0, 0);
+        display: flex;
+        -webkit-user-select: none;
+        border-radius: 11px;
+        box-shadow: rgba(0,0,0,.52) 0 18px 50px, rgba(0,0,0,.65) 0 0 0 .5px;
+        overflow: hidden;
+    }
+    
+    .element::-webkit-scrollbar {
+	    width: 0 !important;
+	}
+    
+    .padding-close-control {
+	    position: absolute;
+	    z-index: -1;
+	    top: -12px;
+	    bottom: -64px;
+	    left: -48px;
+	    right: -48px;
+    }
+    
+    h1 {
+        font-family: "SF Pro Display", Helvetica, sans-serif;
+        font-weight: 600;
+        margin: 0;
+        padding: 56px 16px 12px 16px;
+        font-size: 24px;
+        border-bottom: 1px solid rgba(255,255,255,.15);
+    }
+    
+    h2 {
+        font-family: "SF Pro Display", Helvetica, sans-serif;
+        font-size: 16px;
+        text-align: center;
+        font-weight: 600;
+        margin: 12px 0;
+    }
+    
+    h3 {
+        font-family: "SF Pro Display", Helvetica, sans-serif;
+        text-transform: uppercase;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: .5px;
+        padding: 0 32px;
+        margin: 24px 0 12px 0;
+        color: rgba(180, 179, 178, 1);
+    }
+    
+    h3:first-of-type {
+        margin-top: 0;
+    }
+    
+    small {
+        font-size: 12px;
+        line-height: 16px;
+        margin: -4px 32px 16px 32px;
+        padding: 0;
+        display: block;
+        color: rgba(180, 179, 178, 1);
+    }
+    
+    a {
+        color: #1485FF;
+        text-decoration: none;
+        display: inline;
+    }
+    
+    /* Content Styles */
+    .content {
+        -webkit-backdrop-filter: blur(36px) saturate(200%);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, .2);
+        -webkit-transform: translate3d(0, 0, 0);
+        background: rgba(56, 56, 56, 0.75);
+        position: relative;
+        box-shadow: inset rgba(255,255,255,.4) 0 1px 0;
+    }
+    
+	.traffic-lights { position: absolute; top: 20px; left: 20px; z-index: 1000; } .focus .traffic-lights > .traffic-light-close, .traffic-lights:hover > .traffic-light-close, .traffic-lights:active > .traffic-light-close { background-color: #ff6159; } .focus .traffic-lights > .traffic-light-close:active:hover, .traffic-lights:hover > .traffic-light-close:active:hover, .traffic-lights:active > .traffic-light-close:active:hover { background-color: #ff8d85; } .focus .traffic-lights > .traffic-light-minimize, .traffic-lights:hover > .traffic-light-minimize, .traffic-lights:active > .traffic-light-minimize { background-color: #ffbd2e; } .focus .traffic-lights > .traffic-light-minimize:active:hover, .traffic-lights:hover > .traffic-light-minimize:active:hover, .traffic-lights:active > .traffic-light-minimize:active:hover { background-color: #bf8e22; } .focus .traffic-lights > .traffic-light-maximize, .traffic-lights:hover > .traffic-light-maximize, .traffic-lights:active > .traffic-light-maximize { background-color: #28c941; } .focus .traffic-lights > .traffic-light-maximize:active:hover, .traffic-lights:hover > .traffic-light-maximize:active:hover, .traffic-lights:active > .traffic-light-maximize:active:hover { background-color: #1d9730; } .traffic-lights > .traffic-light:before, .traffic-lights > .traffic-light:after { visibility: hidden; } .traffic-lights:hover > .traffic-light:before, .traffic-lights:hover > .traffic-light:after, .traffic-lights:active > .traffic-light:before, .traffic-lights:active > .traffic-light:after { visibility: visible; }
+
+	.traffic-light { border-radius: 100%; padding: 0; height: 12px; width: 12px; border: 1px solid rgba(0, 0, 0, 0.06); box-sizing: border-box; margin-right: 3.5px; background-color: #ff6159; position: relative; outline: none; } .traffic-light:before, .traffic-light:after { content: ''; position: absolute; border-radius: 1px; left: 0; top: 0; right: 0; bottom: 0; margin: auto; } .traffic-light-close:before, .traffic-light-close:after { background-color: #4d0000; width: 8px; height: 1px; } .traffic-light-close:before { transform: rotate(45deg); } .traffic-light-close:after { transform: rotate(-45deg); } .traffic-light-close:active:hover:before, .traffic-light-close:active:hover:after { background-color: #190000; } .traffic-light-minimize:before { background-color: #995700; width: 8px; height: 1px; } .traffic-light-minimize:active:hover:before { background-color: #592800; } .traffic-light-maximize:before { background-color: #006500; width: 6px; height: 6px; } .traffic-light-maximize:after { background-color: #28c941; width: 10px; height: 2px; transform: rotate(45deg); } .traffic-light-maximize:active:hover:before { background-color: #003200; } .traffic-light-maximize:active:hover:after { background-color: #1d9730; }
+    
+    .cool-photo {
+	    width: 100%;
+	    margin-bottom: 24px;
+	    border-top-right-radius: 10px;
+	    border-top-left-radius: 10px;
+	    overflow: hidden;
+	    position: relative;
+    }
+    
+    .cool-photo div {
+	    position: absolute;
+	    top: 0;
+	    bottom: 0;
+	    left: 0;
+	    right: 0;
+	    box-shadow: inset rgba(255,255,255,.4) 0 1px 0;
+	    border-top-right-radius: 9px;
+	    border-top-left-radius: 9px;
+    }
+    
+    .cool-photo img {
+	    width: 100%;
+	    height: auto;
+	    border-top-right-radius: 10px;
+	    border-top-left-radius: 10px;
+    }
+    
+    section {
+		background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, .2);
+        border-radius: 4px;
+        padding: 16px;
+        margin: 0 16px 16px 16px;
+        position: relative;
+    }
+    
+    section p:first-of-type {
+	    margin-top: 0;
+    }
+    
+    section p:last-of-type {
+	    margin-bottom: 0;
+    }
+    
+    section.tokenlist {
+        display: flex;
+        flex-wrap: wrap;
+        padding-bottom: 8px;
+    }
+    
+    .button {
+        background: #1485FF;
+        display: block;
+        text-align: center;
+        border-radius: 4px;
+        margin: 32px 16px;
+        padding: 8px;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+    }
+    
+    .button:active,
+    .token.selected:active {
+        opacity: .8;
+    }
+    
+    .token {
+        color: #1485FF;
+        border: 1px solid #1485FF;
+        color: #fff;
+        padding: 6px 8px;
+        margin: 0;
+        margin-right: 8px;
+        border-radius: 4px;
+        margin-bottom: 8px;
+    }
+    
+    .token.selected {
+        display: inline-block;
+        background: #1485FF;
+        color: #fff;
+    }
+    
+    .token:active,
+    .segmented-control a:active {
+        background: rgba(128, 125, 124, .2);
+    }
+    
+    .token.selected:active {
+        background: #1485FF;
+    }
+    
+    .segmented-control {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        display: flex;
+        min-width: 300px;
+    }
+    
+    .segmented-control button {
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        background: none;
+        font-size: 15px;
+        margin: 0 0 0 -1px;
+        padding: 0 8px;
+        box-sizing: border-box;
+        border: 1px solid #1485FF;
+        height: 26px;
+        white-space: nowrap;
+        width: 100%;
+        min-width: 100px;
+    }
+    
+    .segmented-control button:first-of-type {
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+    }
+    
+    .segmented-control button:last-of-type {
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+    }
+    
+    .links {
+	    display: flex;
+	    margin-left: 16px;
+    }
+	
+	.links a {
+		display: block;
+		width: 100%;
+		margin-right: 16px;
+		border-radius: 4px;
+		overflow: hidden;
+	}
+	
+	.links a div {
+		padding: 12px;
+		color: #fff;
+		text-align: center;
+		border: 1px solid rgba(255,255,255,.2);
+		font-size: 12px;
+		position: relative;
+		border-radius: 4px;
+		background: rgba(255, 255, 255, 0.1);
+	}
+	
+	.links a:hover {
+		background: rgba(255, 255, 255, 0.2);
+	}
+	
+	.links a img:first-of-type {
+		width: 100%;
+		margin-bottom: 12px;
+		border-radius: 1000px;
+		box-shadow: rgba(0,0,0,.2) 0 8px 32px;
+		border: 0.5px solid rgba(0,0,0,.2);
+	}
+	
+	.links a img:last-of-type {
+		display: inline;
+		width: 10px;
+		height: 10px;
+		position: relative;
+		top: 1px;
+		opacity: 0.5;
+	}
+</style>
+</head>
+<script>
+    function trigger_named_async_without_response(actionName) {
+        window.BTT.callHandler('trigger_named_async_without_response', {trigger_name: actionName},
+            function callback(scriptResult) {   
+                console.log('action result', scriptResult);
+            }
+        );
+    }
+</script>
+<body>
+<div class="content">
+<div class="padding-close-control" onClick="triggerNamedActionAndRefreshSettingsWindow('Show About GC-BTT')"></div>
+	<div class="traffic-lights">
+    	<button class="traffic-light traffic-light-close" id="close" onClick="trigger_named_async_without_response('Show About GC-BTT')"></button>
+	</div>
+    <div id="about">
+	    <div class="cool-photo">
+		    <div></div>
+			<img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/cool-photo.jpg">
+		</div>
+		<h2 style="margin-bottom:8px;">GoldenChaos-BTT 3.390</h2>
+		<h3 style="text-align:center;">
+			Stable Release &bull; Jun 28, 2020 &bull;
+			<a href="#" onClick="trigger_named_async_without_response('Show About GC-BTT')">
+				<span href="#" onClick="trigger_named_async_without_response('View Latest Release Notes')">
+					Release Notes <img src="external-link-blue.svg">
+				</span>
+			</a>
+		</h3>
+		<h3>Special Thanks</h3>
+		<section style="font-size:12px;">
+			<p>&bull; <b>@Vas3k</b> &mdash; Initial inspiration for project</p>
+			<p>&bull; <b>Andreas Hegenberg</b> &mdash; Developer of BetterTouchTool</p>
+			<p>&bull; <b>@oldgreydog</b> &mdash; Settings and dock badges implementation, performance testing</p>
+			<p>&bull; <b>@yuuiko</b> and <b>@panda</b> &mdash; Majority of the window snapping grid code</p>
+		</section>
+        
+        <h3>More by GoldenChaos</h3>
+        <div class="links">
+	        <a href="#" onClick="trigger_named_async_without_response('Show About GC-BTT')">
+		        <div onClick="trigger_named_async_without_response('Open Portfolio Link')">
+		        	<img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/goldenchaos.png">
+		        	Portfolio <img src="external-link.svg">
+		        </div>
+		    </a>
+	        <a href="#" onClick="trigger_named_async_without_response('Show About GC-BTT')">
+		        <div onClick="trigger_named_async_without_response('Open Zelda Universe Link')">
+			        <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/zelda-universe.png">
+			        Zelda Universe <img src="external-link.svg">
+		        </div>
+		    </a>
+	        <a href="#" onClick="trigger_named_async_without_response('Show About GC-BTT')">
+		        <div onClick="trigger_named_async_without_response('Open Zelda Maps Link')">
+			        <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/zelda-maps.png">
+			        Zelda Maps <img src="external-link.svg">
+		        </div>
+		    </a>
+	        <a href="#" onClick="trigger_named_async_without_response('Show About GC-BTT')">
+		        <div onClick="trigger_named_async_without_response('Open Zelda Wiki Link')">
+		        	<img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/zelda-wiki.png">
+					Zelda Wiki <img src="external-link.svg">
+		        </div>
+		    </a>
+        </div>
+        <a>
+        </section>
+    </div>
+</div>
+</body>
+</html>
