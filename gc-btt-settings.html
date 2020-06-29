@@ -344,8 +344,9 @@
         border-bottom-right-radius: 4px;
     }
     
-    .fantastical .fantastical,
     .calendar .calendar,
+    .fantastical .fantastical,
+    .busycal .busycal,
     .dynamic .dynamic,
     .always .always,
     .never .never,
@@ -816,7 +817,8 @@
                                 Open calendar items with...
                                 <div class="segmented-control">
                                     <button class="calendar" type="button" onClick="triggerNamedActionAndRefreshSettingsWindow('Use Apple Calendar')">Calendar</button>
-                                    <button class="fantastical" type="button" onClick="triggerNamedActionAndRefreshSettingsWindow('Use Fantastical')">Fantastical 3</button>
+                                    <button class="fantastical" type="button" onClick="triggerNamedActionAndRefreshSettingsWindow('Use Fantastical')">Fantastical</button>
+                                    <button class="busycal" type="button" onClick="triggerNamedActionAndRefreshSettingsWindow('Use BusyCal')">BusyCal</button>
                                 </div>
                             </label>
                         </li>
@@ -1445,9 +1447,16 @@
                 <section>
                     <ul>
                         <li class="form-switch">
-                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Fantastical 2.png">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Fantastical.png">
                             <label id="showFantasticalBadge" onClick="toggleVariable(this.id, 'Refresh Fantastical Badge',event)">
                                 Fantastical
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/BusyCal.png">
+                            <label id="showBusyCalBadge" onClick="toggleVariable(this.id, 'Refresh BusyCal Badge',event)">
+                                BusyCal
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
