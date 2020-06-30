@@ -559,7 +559,7 @@
 	
 	function checkVersion() {
 		window.BTT.callHandler('get_string_variable', {variableName: 'gc_version'}, function callback(currentVariableValue) {
-        	if(currentVariableValue === '3.390') {
+        	if(currentVariableValue === '3.392') {
                 getAllVariablesAndUpdateClasses();
             	} else {
                 	trigger_named_async_without_response('btt_preset_imported_GoldenChaos-BTT 3.346');
@@ -571,7 +571,7 @@
 	
 	function checkIfFinished() {
 		window.BTT.callHandler('get_string_variable', {variableName: 'gc_version'}, function callback(currentVariableValue) {
-        	if(currentVariableValue === '3.390') {
+        	if(currentVariableValue === '3.392') {
                 getAllVariablesAndUpdateClasses();
             	} else {
                 	setTimeout(() => { checkIfFinished() }, 500)
@@ -751,9 +751,9 @@
                                     <button class="dynamic" onClick="triggerNamedActionAndRefreshSettingsWindow('Use Dynamic Media Control Keys')">
                                         Dynamic
                                     </button>
-                                    <!-- <button class="always" onClick="triggerNamedActionAndRefreshSettingsWindow('Always Show Media Control Keys')">
+                                    <button class="always" onClick="triggerNamedActionAndRefreshSettingsWindow('Always Show Media Control Keys')">
                                         Always
-                                    </button> -->
+                                    </button>
                                     <button class="never" onClick="triggerNamedActionAndRefreshSettingsWindow('Never Show Media Control Keys')">
                                         Never
                                     </button>
