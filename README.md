@@ -7,7 +7,7 @@ _Want to buy me a coffee? You can donate here: https://paypal.me/GoldenChaos_
 
 _Thinking about buying BetterTouchTool because of this preset?_ [_Use this link and I'll get 40%._ 🙂](https://a.paddle.com/v2/click/30842/34667?link=1061)
 
-> # Latest stable version: [GoldenChaos-BTT 3.392](https://share.folivora.ai/sharedPreset/0d0c9d7a-e576-42a4-8e9a-4af48340c663)
+> # Latest stable version: [GoldenChaos-BTT 3.392](https://share.folivora.ai/sharedPreset/eac9d835-c61a-4669-b2c6-dd4ad05ca53f)
 > <sup>Verified by the BetterTouchTool developer, thoroughly tested by the community.</sup><br>
 > <sup>Download link not working? Try the [GitHub mirror](https://github.com/GoldenChaos/GoldenChaos-BTT/raw/master/mirrors/GoldenChaos-BTT%203.392.bttpresetcompressed).</sup><br>
 > **(Jun 30 2020 - [Release Notes](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/1287))** New GC macOS menu bar item, context menu, and about window; Support for Fantastical 3 and BusyCal; AirPods Pro and Sony headphones quick-connect keys; Always show media controls; Microphone Mute widget support for Microsoft Teams; Improved Home Strip calendar widget design; New dock badges for Microsoft Teams, Station, and Ferdi; Bug fixes for disappearing icons, dock badges, and headphone battery displays; Improvements to running app detection performance
@@ -105,7 +105,7 @@ Only install the latest version unless you have a specific troubleshooting reaso
 > * <sup>Versions **2.516 and earlier** require [Location Helper](http://www.mousedown.net/mouseware/LocationHelper.html) and [JSON Helper](http://www.mousedown.net/mouseware/JSONHelper.html) for the weather widget to work. **Not compatible with macOS Mojave.**</sup>
 
 ### Version History:
-* **[Verified]** [Stable] [3.392](https://share.folivora.ai/sharedPreset/0d0c9d7a-e576-42a4-8e9a-4af48340c663) ([Jun 30 2020](https://community.folivora.ai/t/goldenchaos-btt-the-complete-touch-bar-ui-replacement/1281/1287))
+* **[Verified]** [Stable] [3.392](https://share.folivora.ai/sharedPreset/eac9d835-c61a-4669-b2c6-dd4ad05ca53f) ([Jun 30 2020](https://community.folivora.ai/t/goldenchaos-btt-the-complete-touch-bar-ui-replacement/1281/1287))
 * **[Verified]** [Stable] [3.368](https://share.folivora.ai/sharedPreset/c6391e3f-e539-45f5-9ce7-3d311a0dd625) ([May 2 2020](https://community.folivora.ai/t/goldenchaos-btt-the-complete-touch-bar-ui-replacement/1281/1286))
 * [Experimental] [3.358](https://share.folivora.ai/sharedPreset/fe22eb10-f48d-4019-8c61-104d186b5c9c) ([Apr 16 2020](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/1285))
 * [Experimental] [3.352](https://share.folivora.ai/sharedPreset/5148e4a8-dcda-4746-8df8-c770ccc108aa) ([Mar 29 2020](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/1284))
