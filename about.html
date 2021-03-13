@@ -1,5 +1,7 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+<title>About GoldenChaos-BTT 3.560</title>
 <style>
 	body {
         color: #fff;
@@ -76,6 +78,11 @@
         display: inline;
     }
     
+    a:hover, h1:hover, h2:hover, h3:hover, small:hover, span:hover, div:hover {
+        cursor: default;
+    }
+    
+    
     /* Content Styles */
     .content {
         -webkit-backdrop-filter: blur(36px) saturate(200%);
@@ -84,7 +91,7 @@
         -webkit-transform: translate3d(0, 0, 0);
         background: rgba(56, 56, 56, 0.75);
         position: relative;
-        box-shadow: inset rgba(255,255,255,.4) 0 1px 0;
+        box-shadow: inset rgba(255,255,255,.4) 0 0 0;
     }
     
 	.traffic-lights { position: absolute; top: 20px; left: 20px; z-index: 1000; } .focus .traffic-lights > .traffic-light-close, .traffic-lights:hover > .traffic-light-close, .traffic-lights:active > .traffic-light-close { background-color: #ff6159; } .focus .traffic-lights > .traffic-light-close:active:hover, .traffic-lights:hover > .traffic-light-close:active:hover, .traffic-lights:active > .traffic-light-close:active:hover { background-color: #ff8d85; } .focus .traffic-lights > .traffic-light-minimize, .traffic-lights:hover > .traffic-light-minimize, .traffic-lights:active > .traffic-light-minimize { background-color: #ffbd2e; } .focus .traffic-lights > .traffic-light-minimize:active:hover, .traffic-lights:hover > .traffic-light-minimize:active:hover, .traffic-lights:active > .traffic-light-minimize:active:hover { background-color: #bf8e22; } .focus .traffic-lights > .traffic-light-maximize, .traffic-lights:hover > .traffic-light-maximize, .traffic-lights:active > .traffic-light-maximize { background-color: #28c941; } .focus .traffic-lights > .traffic-light-maximize:active:hover, .traffic-lights:hover > .traffic-light-maximize:active:hover, .traffic-lights:active > .traffic-light-maximize:active:hover { background-color: #1d9730; } .traffic-lights > .traffic-light:before, .traffic-lights > .traffic-light:after { visibility: hidden; } .traffic-lights:hover > .traffic-light:before, .traffic-lights:hover > .traffic-light:after, .traffic-lights:active > .traffic-light:before, .traffic-lights:active > .traffic-light:after { visibility: visible; }
@@ -263,7 +270,6 @@
 		opacity: 0.5;
 	}
 </style>
-</head>
 <script>
     function trigger_named_async_without_response(actionName) {
         window.BTT.callHandler('trigger_named_async_without_response', {trigger_name: actionName},
@@ -273,6 +279,7 @@
         );
     }
 </script>
+</head>
 <body>
 <div class="content">
 <div class="padding-close-control" onClick="triggerNamedActionAndRefreshSettingsWindow('Show About GC-BTT')"></div>
@@ -282,14 +289,14 @@
     <div id="about">
 	    <div class="cool-photo">
 		    <div></div>
-			<img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/cool-photo.jpg">
+			<img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/cool-photo.jpg" alt="">
 		</div>
-		<h2 style="margin-bottom:8px;">GoldenChaos-BTT 3.392</h2>
+		<h2 style="margin-bottom:8px;">GoldenChaos-BTT 3.560</h2>
 		<h3 style="text-align:center;">
-			Stable Release &bull; Jun 30, 2020 &bull;
-			<a href="#" onClick="trigger_named_async_without_response('Show About GC-BTT')">
-				<span href="#" onClick="trigger_named_async_without_response('View Latest Release Notes')">
-					Release Notes <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/external-link-blue.svg">
+			Stable Release &bull; Mar 13, 2021 &bull;
+			<a onClick="trigger_named_async_without_response('Show About GC-BTT')">
+				<span onClick="trigger_named_async_without_response('View Latest Release Notes')">
+					Release Notes <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/external-link-blue.svg" alt="">
 				</span>
 			</a>
 		</h3>
@@ -303,32 +310,31 @@
         
         <h3>More by GoldenChaos</h3>
         <div class="links">
-	        <a href="#" onClick="trigger_named_async_without_response('Show About GC-BTT')">
+	        <a onClick="trigger_named_async_without_response('Show About GC-BTT')">
 		        <div onClick="trigger_named_async_without_response('Open Portfolio Link')">
-		        	<img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/goldenchaos.png">
-		        	Portfolio <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/external-link.svg">
+		        	<img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/goldenchaos.png" alt="">
+		        	Portfolio <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/external-link.svg" alt="">
 		        </div>
 		    </a>
-	        <a href="#" onClick="trigger_named_async_without_response('Show About GC-BTT')">
+	        <a onClick="trigger_named_async_without_response('Show About GC-BTT')">
 		        <div onClick="trigger_named_async_without_response('Open Zelda Universe Link')">
-			        <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/zelda-universe.png">
-			        Zelda Universe <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/external-link.svg">
+			        <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/zelda-universe.png" alt="">
+			        Zelda Universe <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/external-link.svg" alt="">
 		        </div>
 		    </a>
-	        <a href="#" onClick="trigger_named_async_without_response('Show About GC-BTT')">
+	        <a onClick="trigger_named_async_without_response('Show About GC-BTT')">
 		        <div onClick="trigger_named_async_without_response('Open Zelda Maps Link')">
-			        <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/zelda-maps.png">
-			        Zelda Maps <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/external-link.svg">
+			        <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/zelda-maps.png" alt="">
+			        Zelda Maps <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/external-link.svg" alt="">
 		        </div>
 		    </a>
-	        <a href="#" onClick="trigger_named_async_without_response('Show About GC-BTT')">
+	        <a onClick="trigger_named_async_without_response('Show About GC-BTT')">
 		        <div onClick="trigger_named_async_without_response('Open Zelda Wiki Link')">
-		        	<img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/zelda-wiki.png">
-					Zelda Wiki <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/external-link.svg">
+		        	<img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/zelda-wiki.png" alt="">
+					Zelda Wiki <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/external-link.svg" alt="">
 		        </div>
 		    </a>
         </div>
-        <a>
         </section>
     </div>
 </div>
