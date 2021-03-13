@@ -10,7 +10,7 @@ _Thinking about buying BetterTouchTool because of this preset?_ [_Use this link 
 > # Latest stable version: [GoldenChaos-BTT 3.392](https://share.folivora.ai/sharedPreset/6f5af8fc-5f94-49f0-8665-23703c087ffd)
 > <sup>Verified by the BetterTouchTool developer, thoroughly tested by the community.</sup><br>
 > <sup>Download link not working? Try the [GitHub mirror](https://github.com/GoldenChaos/GoldenChaos-BTT/raw/master/mirrors/GoldenChaos-BTT%203.392.bttpresetcompressed).</sup><br>
-> **(Jun 30 2020 - [Release Notes](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/1287))** New GC macOS menu bar item, context menu, and about window; Support for Fantastical 3 and BusyCal; AirPods Pro and Sony headphones quick-connect keys; Always show media controls; Microphone Mute widget support for Microsoft Teams; Improved Home Strip calendar widget design; New dock badges for Microsoft Teams, Station, and Ferdi; Bug fixes for disappearing icons, dock badges, and headphone battery displays; Improvements to running app detection performance
+> **(Jun 30 2020 - [Release Notes](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/1287))** Fully tested on macOS Big Sur; New GC macOS menu bar item, context menu, and about window; Support for BusyCal; Always show media controls; Support for more Sony headphones; Improvements to running app detection performance
 >
 > # Latest experimental version: None
 > <sup>Newer features, but less tested. Generally stable, but read the release notes first.</sup>
