@@ -263,10 +263,14 @@
         object-position: center center;
     }
     
-    .tabcontent ul li .tbscreenshot img  {
-        width: calc(100% - 8px);
-        height: auto;
+    .tabcontent ul li .tbscreenshot {
+        width: calc(100% - 83px);
         padding: 4px;
+    }
+    
+    .tabcontent ul li .tbscreenshot img  {
+        width: 100%;
+        height: auto;
     }
     
     .invert {
@@ -455,6 +459,23 @@
     .form-switch .true input + i::after {
         transform: translate3d(22px, 2px, 0);
     }
+    
+    
+    /* Radio Switch Styles */
+    .radio-switch label {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+    
+    .radio-switch small {
+        margin-left: 0;
+    }
+    
+    .radio-switch input + i {
+        position: absolute;
+        top: 50%;
+        margin-top: -13px;
+    }
 </style>
 <script>
     var variables = {};
@@ -611,7 +632,7 @@
             Dock Badges
         </li>
         <li class="tablink" onClick="openTab(event, 'presets')">
-            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/watchos-icons/notifications.png" alt="">
+            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/watchos-icons/presets.png" alt="">
             Presets
         </li>
         <li class="tablink" onClick="trigger_named_async_without_response('Show About GC-BTT')">
@@ -630,13 +651,13 @@
                     <h3>System Menu Bar</h3>
                     <ul>
                         <li class="form-switch">
-                            <label id="useSystemMenuBarItem" onClick="toggleVariable(this.id, 'Refresh System Menu Bar Item',event)">
+                            <label id="showSystemMenuBarItem" onClick="toggleVariable(this.id, 'Refresh System Menu Bar Item',event)">
                                 <span class="tbicon">
                                     <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/menu-bar-icon.png" alt="">
                                 </span>
                                 <span class="description">
-                                    Show GoldenChaos-BTT in the system menu bar
-                                    <small>Press &#8984;&#8997;&#8679;P to open settings when disabled.</small>
+                                    Show GoldenChaos-BTT in the macOS Menu Bar
+                                    <small>Press &#8984;&#8997;&#8679;P to open settings when disabled. Requires a BTT restart to take effect.</small>
                                 </span>
                                 <input type="checkbox"><i></i>
                             </label>
@@ -1445,6 +1466,13 @@
                             </label>
                         </li>
                         <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Boxy%20for%20Calendar.png" alt="">
+                            <label id="showBoxyforCalendarBadge" onClick="toggleVariable(this.id, 'Refresh Boxy for Calendar Badge',event)">
+                                Boxy for Calendar
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Carrot.png" alt="">
                             <label id="showCarrotBadge" onClick="toggleVariable(this.id, 'Refresh Carrot Badge',event)">
                                 Carrot
@@ -1493,12 +1521,12 @@
                                 <input type="checkbox"><i></i>
                             </label>	
                         </li>
-                        <li class="form-switch"> 
-                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Station.png" alt="">
-                            <label id="showStationBadge" onClick="toggleVariable(this.id, 'Refresh Station Badge',event)">
-                                Station
+                        <li class="form-switch">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Facebook%20Messenger.png" alt="">
+                            <label id="showFacebookMessengerBadge" onClick="toggleVariable(this.id, 'Refresh Facebook Messenger Badge',event)">
+                                Facebook Messenger
                                 <input type="checkbox"><i></i>
-                            </label>	
+                            </label>
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/WhatsApp.png" alt="">
@@ -1550,27 +1578,6 @@
                             </label>
                         </li>
                         <li class="form-switch">
-                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Chatty.png" alt="">
-                            <label id="showChattyBadge" onClick="toggleVariable(this.id, 'Refresh Chatty Badge',event)">
-                                Chatty
-                                <input type="checkbox"><i></i>
-                            </label>
-                        </li>
-                        <li class="form-switch">
-                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Caprine.png" alt="">
-                            <label id="showCaprineBadge" onClick="toggleVariable(this.id, 'Refresh Caprine Badge',event)">
-                                Caprine
-                                <input type="checkbox"><i></i>
-                            </label>
-                        </li>
-                        <li class="form-switch">
-                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Goofy.png" alt="">
-                            <label id="showGoofyBadge" onClick="toggleVariable(this.id, 'Refresh Goofy Badge',event)">
-                                Goofy
-                                <input type="checkbox"><i></i>
-                            </label>
-                        </li>
-                        <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/WeChat.png" alt="">
                             <label id="showWeChatBadge" onClick="toggleVariable(this.id, 'Refresh WeChat Badge',event)">
                                 WeChat
@@ -1599,7 +1606,7 @@
                             </label>
                         </li>
                         <li class="form-switch">
-                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Airmail%203.png" alt="">
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Airmail.png" alt="">
                             <label id="showAirmailBadge" onClick="toggleVariable(this.id, 'Refresh Airmail Badge',event)">
                                 Airmail
                                 <input type="checkbox"><i></i>
@@ -1620,9 +1627,9 @@
                             </label>
                         </li>
                         <li class="form-switch">
-                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Boxy.png" alt="">
-                            <label id="showBoxyBadge" onClick="toggleVariable(this.id, 'Refresh Boxy Badge',event)">
-                                Boxy
+                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Boxy%20for%20Gmail.png" alt="">
+                            <label id="showBoxyforGmailBadge" onClick="toggleVariable(this.id, 'Refresh Boxy for Gmail Badge',event)">
+                                Boxy for Gmail
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
@@ -1738,13 +1745,6 @@
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
-                        <li class="form-switch">
-                            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Tumblr.png" alt="">
-                            <label id="showTumblrBadge" onClick="toggleVariable(this.id, 'Refresh Tumblr Badge',event)">
-                                Tumblr
-                                <input type="checkbox"><i></i>
-                            </label>
-                        </li>
                     </ul>
                 </section>
             </div>
@@ -1753,9 +1753,9 @@
                     <h2>Presets</h2>
                 </header>
                 <section>
-                    <h3>Presets</h3>
+                    <h3>Factory Reset</h3>
                     <ul>
-                        <li class="form-switch">
+                        <li class="form-switch radio-switch">
                             <label onClick="triggerPresetAndRefreshSettingsWindow('Default Settings')">
                                 <span class="tbscreenshot">
                                     <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/presets/default.png" alt="">
@@ -1767,14 +1767,14 @@
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
-                        <li class="form-switch">
+                        <li class="form-switch radio-switch">
                             <label onClick="triggerPresetAndRefreshSettingsWindow('GC\'s GC-BTT')">
                                 <span class="tbscreenshot">
-                                    <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/collapse-menu-bar.png" alt="">
+                                    <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/presets/gcs-gc-btt.png" alt="">
                                 </span>
                                 <span class="description">
                                     GC'S GC-BTT
-                                    <small>GoldenChaos's personal daily driver configuration.</small>
+                                    <small>GoldenChaos's personal configuration with custom medium date size.</small>
                                 </span>
                                 <input type="checkbox"><i></i>
                             </label>
