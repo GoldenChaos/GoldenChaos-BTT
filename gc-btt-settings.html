@@ -201,7 +201,7 @@
         -webkit-backdrop-filter: blur(16px) saturate(400%) contrast(150%);
         -webkit-transform: translate3d(0, 0, 0);
         border-bottom: 1px solid rgba(255,255,255,.1);
-        box-shadow: inset rgba(255,255,255,.4) 0 .1px 0;
+        box-shadow: inset rgba(255,255,255,.4) 0 0 0;
         border-top-right-radius: 10px;
     }
     
@@ -279,7 +279,11 @@
     
     li.form-switch a {
         line-height: 36px;
-        color: #fff;
+        text-align: right;
+        display: block;
+        width: 100%;
+        right: 5px;
+        position: relative;
         text-decoration: none;
         background: none;
     }
@@ -316,14 +320,11 @@
         border: 1px solid #1485FF;
         color: #fff;
         padding: 6px 8px;
-        margin: 0;
-        margin-right: 8px;
+        margin: 8px;
         border-radius: 4px;
-        margin-bottom: 8px;
     }
     
     .token.selected {
-        display: inline-block;
         background: #1485FF;
         color: #fff;
     }
@@ -682,14 +683,17 @@
                     </ul>
                 </section>
                 <section>
-                    <h3>Modifier Menus</h3>
+                    <h3>Modifier Strips</h3>
                     <ul>
                         <li class="form-switch">
                             <label id="showControlMenu" onClick="toggleVariable(this.id, 'Refresh Control Menu',event)">
                                 <span class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/control.png" alt="">
                                 </span>
-                                Control Menu (Control Strip)
+                                <span class="description">
+                                    Control Strip
+                                    <small>Hold Command (^) to access a variety of important system controls.</small>
+                                </span>
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
@@ -698,7 +702,10 @@
                                 <span class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/option.png" alt="">
                                 </span>
-                                Option Menu (Window Snapping)
+                                <span class="description">
+                                    Option Strip (Window Snapping)
+                                    <small>Hold Option (&#8997;) to access quick window snapping controls.</small>
+                                </span>
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
@@ -707,7 +714,10 @@
                                 <span class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/command.png" alt="">
                                 </span>
-                                Command Menu (Dock)
+                                <span class="description">
+                                    Command Strip (Dock)
+                                    <small>Hold Command (&#8984;) to show the macOS dock on your Touch Bar.</small>
+                                </span>
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
@@ -721,7 +731,10 @@
                                 <span class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/windowsnapper.png" alt="">
                                 </span>
-                                Floating Window Snapping Grid (&#8984;&#8679;W)
+                                <span class="description">
+                                    Floating Window Snapping Grid
+                                    <small>Press &#8984;&#8679;W to summon a nifty window snapping widget under your cursor.</small>
+                                </span>
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
@@ -730,11 +743,11 @@
                 <section>
                     <h3>Restore</h3>
                     <ul>
-                        <li>
-                            <span class="token selected" onClick="triggerPresetAndRefreshSettingsWindow('Check All Settings');">Check For Existing Settings</span>
+                        <li class="form-switch" style="display:flex;">
+                            <small style="flex-grow: 1;margin:8px 8px 0 0;">Run "Check For Existing Settings" if your settings did not automatically<br>restore after upgrading.</small>
+                            <span style="line-height:normal;white-space:nowrap;" class="token selected" onClick="triggerPresetAndRefreshSettingsWindow('Check All Settings');">Check For Existing Settings</span>
                         </li>
                     </ul>
-                    <small>Run "Check For Existing Settings" if your settings did not automatically restore after upgrading.</small>
                 </section>
             </div>
             <div id="home-strip" class="tabcontent">
