@@ -61,7 +61,7 @@
         color: rgba(180, 179, 178, 1);
     }
     
-    h3:first-of-type {
+    section:first-of-type h3 {
         margin-top: 0;
     }
     
@@ -206,12 +206,15 @@
     }
     
     section {
-        margin-top: 24px;
         position: relative;
     }
     
-    section:first-of-type {
-        margin-top: 0;
+    section small:last-of-type {
+        margin-bottom: 0;
+    }
+    
+    #dock-badges small:first-of-type {
+        margin-bottom: 16px;
     }
     
     .tabcontent ul {
@@ -225,7 +228,8 @@
     }
     
     .tabcontent ul li {
-        padding: 8px;
+        padding: 8px 8px 8px 0;
+        margin: 0 0 0 16px;
         border-bottom: 1px solid rgba(255,255,255,.1);
     }
     
@@ -240,13 +244,13 @@
         margin-right: 12px;
     }
     
-    .tabcontent ul li .tbicon {
+    .tabcontent ul li .tbicon,
+    .tabcontent ul li .tbscreenshot {
         background: #000;
         border-radius: 6px;
         overflow: hidden;
         display: inline-block;
         min-width: 36px;
-        margin-left: 8px;
         object-position: center center;
     }
     
@@ -258,35 +262,31 @@
         position: relative;
         object-position: center center;
     }
-    .tabcontent ul li .tbscreenshot {
-        background: #000;
-        border-radius: 6px;
+    
+    .tabcontent ul li .tbscreenshot img  {
+        width: calc(100% - 8px);
+        height: auto;
+        padding: 4px;
     }
     
-    img.invert {
+    .invert {
         filter: invert();
     }
     
-    .tokenlist {
-        display: flex;
-        flex-wrap: wrap;
-        padding-bottom: 8px;
-    }
-    
-    .form-switch a {
+    li.form-switch a {
         line-height: 36px;
         color: #fff;
         text-decoration: none;
         background: none;
     }
     
-    .form-switch .description {
+    li.form-switch .description {
         position: relative;
         top: -8px;
         margin-bottom: -8px;
     }
     
-    .form-switch .description small {
+    li.form-switch .description small {
         margin-top: -8px;
     }
     
@@ -386,33 +386,6 @@
         background: #1485FF;
     }
     
-    section p {
-        margin: 12px 0;
-    }
-    
-    section p:first-of-type {
-        margin-top: 0;
-    }
-    
-    section p:last-of-type {
-        margin-bottom: 0;
-    }
-    
-    section small {
-        margin-bottom: 0;
-    }
-    
-    /* Single Page Style Overrides */
-    #about {
-        margin-top: -64px;
-    }
-    
-    #about a {
-        background: none;
-        display: inline;
-        font-size: 13px;
-        color: rgba(16, 133, 255, 1);
-    }
     
     /* Toggle Switch Styles */
     label, .form-switch {
@@ -734,10 +707,10 @@
                     </ul>
                 </section>
                 <section>
-                    <h3>Advanced</h3>
-                    <ul class="tokenlist">
+                    <h3>Restore</h3>
+                    <ul>
                         <li>
-                            <span style="width:100%;text-align:center;margin-bottom:8px;margin-right:0;" class="token selected" onClick="triggerPresetAndRefreshSettingsWindow('Check All Settings');">Check For Existing Settings</span>
+                            <span class="token selected" onClick="triggerPresetAndRefreshSettingsWindow('Check All Settings');">Check For Existing Settings</span>
                         </li>
                     </ul>
                     <small>Run "Check For Existing Settings" if your settings did not automatically restore after upgrading.</small>
