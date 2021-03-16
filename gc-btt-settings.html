@@ -209,12 +209,12 @@
         position: relative;
     }
     
-    section small:last-of-type {
-        margin-bottom: 0;
+    section small {
+        margin-bottom: 16px;
     }
     
-    #dock-badges small:first-of-type {
-        margin-bottom: 16px;
+    label small {
+        margin-bottom: 0;
     }
     
     .tabcontent ul {
@@ -264,7 +264,7 @@
     }
     
     .tabcontent ul li .tbscreenshot {
-        width: calc(100% - 83px);
+        width: calc(100% - 16px);
         padding: 4px;
     }
     
@@ -296,6 +296,7 @@
     
     li.form-switch .description small {
         margin-top: -8px;
+        margin-bottom: 0;
     }
     
     .button {
@@ -472,9 +473,11 @@
         margin-left: 0;
     }
     
-    .radio-switch input + i {
+    .radio-switch .token.selected {
         position: absolute;
-        top: 50%;
+        line-height: normal;
+        bottom: 0;
+        right: 0;
         margin-top: -13px;
     }
 </style>
@@ -1766,30 +1769,73 @@
                     <h2>Presets</h2>
                 </header>
                 <section>
-                    <h3>Factory Reset</h3>
+                    <small>Quickly change your entire Touch Bar. These don't affect Dock Badge selections.</small>
                     <ul>
-                        <li class="form-switch radio-switch">
-                            <label onClick="triggerPresetAndRefreshSettingsWindow('Default Settings')">
+                        <li class="radio-switch">
+                            <label class="activePreset_Default">
                                 <span class="tbscreenshot">
                                     <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/presets/default.png" alt="">
                                 </span>
                                 <span class="description">
-                                    Default
+                                    Default Settings
                                     <small>The stock configuration of GoldenChaos-BTT.</small>
                                 </span>
-                                <input type="checkbox"><i></i>
+                                <span class="token selected" onClick="triggerPresetAndRefreshSettingsWindow('Default Settings')">
+                                    Apply
+                                </span>
                             </label>
                         </li>
+                        <li class="radio-switch">
+                            <label class="activePreset_Default">
+                                <span class="tbscreenshot">
+                                    <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/presets/minimalist.png" alt="">
+                                </span>
+                                <span class="description">
+                                    Minimalist
+                                    <small>Out of the way.</small>
+                                </span>
+                                <span class="token selected" onClick="triggerPresetAndRefreshSettingsWindow('Minimalist')">
+                                    Apply
+                                </span>
+                            </label>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Community Presets</h3>
+                    <small>Configurations made by users of GoldenChaos-BTT.</small>
+                    <ul>
                         <li class="form-switch radio-switch">
-                            <label onClick="triggerPresetAndRefreshSettingsWindow('GC\'s GC-BTT')">
+                            <label class="activePreset_GCs-GC-BTT">
                                 <span class="tbscreenshot">
                                     <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/presets/gcs-gc-btt.png" alt="">
                                 </span>
                                 <span class="description">
-                                    GC'S GC-BTT
-                                    <small>GoldenChaos's personal configuration with custom medium date size.</small>
+                                    GC's Daily Driver
+                                    <small>Jason's personal configuration with custom medium date size.</small>
                                 </span>
-                                <input type="checkbox"><i></i>
+                                <span class="token selected" onClick="triggerPresetAndRefreshSettingsWindow('GC\'s GC-BTT')">
+                                    Apply
+                                </span>
+                            </label>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Factory Reset</h3>
+                    <ul style="border-color:#ff0000;">
+                        <li class="radio-switch">
+                            <label>
+                                <span class="tbscreenshot">
+                                    <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/presets/default.png" alt="">
+                                </span>
+                                <span class="description">
+                                    Factory Reset
+                                    <small>Applies the Default preset and <b>restores the default set of dock badges</b>.</small>
+                                </span>
+                                <span class="token selected" onClick="triggerPresetAndRefreshSettingsWindow('Factory Reset')">
+                                    Apply
+                                </span>
                             </label>
                         </li>
                     </ul>
