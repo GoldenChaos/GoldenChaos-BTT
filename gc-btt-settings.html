@@ -9,8 +9,8 @@
         font-size: 14px;
         margin: 24px 48px 64px 48px;
         padding: 0;
-        height: 703px;
-        width: 1000px;
+        height: 693px;
+        width: 980px;
         background: transparent;
         -webkit-transform: translate3d(0, 0, 0);
         display: flex;
@@ -37,9 +37,8 @@
         font-family: "SF Pro Display", Helvetica, sans-serif;
         font-weight: 600;
         margin: 0;
-        padding: 56px 16px 12px 16px;
+        padding: 56px 16px 16px 16px;
         font-size: 24px;
-        border-bottom: 1px solid rgba(255,255,255,.15);
     }
     
     h2 {
@@ -57,7 +56,7 @@
         font-weight: 600;
         letter-spacing: .5px;
         padding: 0 32px;
-        margin: 24px 0 12px 0;
+        margin: 20px 0 10px 0;
         color: rgba(180, 179, 178, 1);
     }
     
@@ -119,11 +118,12 @@
     }
     
     .tablink {
-        margin: 0 0 -1px 0;
         padding: 8px 12px 8px 48px;
-        width: 204px;
+        margin: 0 10px;
+        width: 184px;
         position: relative;
         line-height: 28px;
+        background: rgba(255,255,255,.1);
     }
     
     .tablink:hover {
@@ -140,10 +140,11 @@
     .tablink::after {
         content: " ";
         display: block;
-        width: 100%;
+        width: calc(100% - 52px);
         height: 1px;
         position: absolute;
         bottom: 0;
+        right: 0;
         background: rgba(255,255,255,.15);
     }
     
@@ -156,15 +157,30 @@
         display: none;
     }
     
-    .tablink:last-of-type {
-        position: fixed;
-        bottom: 1px;
-        border-bottom-left-radius: 10px;
+    .tablink.start {
+        margin-top: 21px;
+        border-top-right-radius: 6px;
+        border-top-left-radius: 6px;
     }
     
+    .tablink.start:first-of-type {
+        margin-top: 0;
+    }
+    
+    .tablink.end {
+        border-bottom-right-radius: 6px;
+        border-bottom-left-radius: 6px;
+    }
+    
+    .tablink:last-of-type {
+        position: fixed;
+        bottom: 10px;
+        border-radius: 6px;
+    }
+    
+    .tablink.end::after,
     .tablink:last-of-type::after {
-        top: 0;
-        bottom: auto;
+        display: none;
     }
     
     /* Content Area Styles */
@@ -465,38 +481,112 @@
     
     /* Radio Switch Styles */
     .radio-switch label {
-        padding-top: 8px;
-        padding-bottom: 8px;
+        padding-top: 4px;
+        padding-bottom: 4px;
     }
     
     .radio-switch small {
         margin-left: 0;
     }
     
-    .radio-switch .token.selected {
-        position: absolute;
+    .radio-switch .token {
+        position: relative;
         line-height: normal;
         bottom: 0;
         right: 0;
-        margin-top: -13px;
+        left: 0;
+        top: 0;
+        width: auto;
+        white-space: nowrap;
     }
+    
+    .radio-switch .token .active {
+        display: none;
+    }
+    
+    .radio-switch .token .inactive {
+        display: block;
+    }
+    
+    .active-preset-display .form-switch label {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .active-preset-display .form-switch label .description {
+        flex-grow: 1;
+    }
+    
+    .active-preset-display .form-switch label .action .token {
+        margin-top: 13px;
+    }
+    
+    .active-preset-display .radio-switch .description span,
+    .active-preset-display .radio-switch .description small,
+    .active-preset-display .radio-switch .token {
+        display: none;
+    }
+    
+    .active-preset-display .radio-switch .description small {
+        margin-top: -4px;
+    }
+    
+    .active-preset-display .radio-switch .description small a {
+        position: relative;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: auto;
+        line-height: 16px;
+        text-align: left;
+        margin-top: 4px;
+    }
+        
+    .active-preset-display .radio-switch .loading .loading,
+    .active-preset-display .radio-switch .custom .custom,
+    .active-preset-display .radio-switch .default .default,
+    .active-preset-display .radio-switch .minimalist .minimalist,
+    .active-preset-display .radio-switch .gcs-daily-driver .gcs-daily-driver {
+        display: block;
+    }
+    
+    ul:not(.active-preset-display) .radio-switch .default .token.default,
+    ul:not(.active-preset-display) .radio-switch .minimalist .token.minimalist,
+    ul:not(.active-preset-display) .radio-switch .gcs-daily-driver .token.gcs-daily-driver {
+        background: limegreen;
+        border-color: limegreen;
+    }
+    
+    .radio-switch .default .token.default .inactive,
+    .radio-switch .minimalist .token.minimalist .inactive,
+    .radio-switch .gcs-daily-driver .token.gcs-daily-driver .inactive {
+        display: none;
+    }
+    
+    .radio-switch .default .token.default .active,
+    .radio-switch .minimalist .token.minimalist .active,
+    .radio-switch .gcs-daily-driver .token.gcs-daily-driver .active {
+        display: block;
+    }
+    
 </style>
 <script>
     var variables = {};
     
     function getAllVariablesAndUpdateClasses() {
-        console.log('looping through switches');
+        console.log('Looping through switches...');
         const buttons = document.querySelectorAll('label');
         buttons.forEach(function(button, i) {
             const variable = button.id;
             window.BTT.callHandler(
                 'get_string_variable',
-                { variableName: variable},
+                {variableName: variable},
                 function callback(currentVariableValue) {
                     console.log(
-                        'the variable',
+                        'The variable',
                         variable,
-                        'is set to: ',
+                        'is set to',
                         currentVariableValue
                     );
                     variables[button.id] = currentVariableValue;
@@ -506,7 +596,25 @@
         });
     }
     
-    function trigger_named_async_without_response(actionName) {
+    function setVariable(variable, setting, event) {
+        window.BTT.callHandler('set_persistent_string_variable', {variableName: variable, to: setting});
+        window.BTT.callHandler(
+            'get_string_variable',
+            {variableName: variable},
+            function callback(currentVariableValue) {
+                console.log(
+                    'The variable',
+                    variable,
+                    'is set to',
+                    currentVariableValue
+                );
+            }
+        );
+        event.preventDefault();
+        event.stopPropagation();
+    }
+    
+    function triggerNamedActionWithoutResponse(actionName) {
         window.BTT.callHandler('trigger_named_async_without_response', {trigger_name: actionName},
             function callback(scriptResult) {   
                 console.log('action result', scriptResult);
@@ -514,8 +622,11 @@
         );
     }
     
-    function triggerNamedActionAndRefreshSettingsWindow(actionName) {
-        trigger_named_async_without_response(actionName);
+    function triggerNamedActionAndRefreshSettingsWindow(actionName, affectsPreset) {
+        triggerNamedActionWithoutResponse(actionName);
+        if(affectsPreset === true) {
+            setVariable('activePreset','custom',event);
+        }
         event.preventDefault();
         event.stopPropagation();
         setTimeout(function () {
@@ -523,68 +634,45 @@
         }, 50);
     }
     
-    function triggerPresetAndRefreshSettingsWindow(actionName) {
-        trigger_named_async_without_response(actionName);
+    function applyPreset(actionName) {
+        triggerNamedActionWithoutResponse(actionName);
         event.preventDefault();
         event.stopPropagation();
         setTimeout(function () {
             getAllVariablesAndUpdateClasses();
-        }, 2000);
+        }, 3000);
     }
     
-    function toggleVariable(variable, actionName, event) {
+    function toggleVariable(variable, actionName, event, affectsPreset) {
         var button = document.getElementById(variable);
         if(variables[variable] === 'true') {
             button.className = 'false';
             variables[variable] = 'false';
-            window.BTT.callHandler('set_persistent_string_variable', {variableName: variable, to: 'false'});
-            window.BTT.callHandler(
-                'get_string_variable',
-                { variableName: variable},
-                function callback(currentVariableValue) {
-                    console.log(
-                        'the variable',
-                        variable,
-                        'is set to: ',
-                        currentVariableValue
-                    );
-                }
-            );
+            setVariable(variable,'false',event);
         } else {
             button.className = 'true';
             variables[variable] = 'true';
-            window.BTT.callHandler('set_persistent_string_variable', {variableName: variable, to: 'true'});
-            window.BTT.callHandler(
-                'get_string_variable',
-                { variableName: variable},
-                function callback(currentVariableValue) {
-                    console.log(
-                        'the variable',
-                        variable,
-                        'is set to: ',
-                        currentVariableValue
-                    );
-                }
-            );
+            setVariable(variable,'true',event);
         }
-        trigger_named_async_without_response(actionName);
+        if(affectsPreset === true) {
+            triggerNamedActionAndRefreshSettingsWindow(actionName,true);
+        } else {
+            triggerNamedActionWithoutResponse(actionName);
+        }
         event.preventDefault();
         event.stopPropagation();
     }
     
-    function setVariable(variable, setting, actionName, event) {
-        window.BTT.callHandler('set_persistent_string_variable', {variableName: variable, to: setting});
-        trigger_named_async_without_response(actionName);
-        event.preventDefault();
-        event.stopPropagation();
+    function clickElement(id) {
+        document.getElementById(id).click();
     }
     
     function checkVersion() {
         window.BTT.callHandler('get_string_variable', {variableName: 'gc_version'}, function callback(currentVariableValue) {
-            if(currentVariableValue === '3.392') {
+            if(currentVariableValue === '3.560') {
                 getAllVariablesAndUpdateClasses();
                 } else {
-                    trigger_named_async_without_response('btt_preset_imported_GoldenChaos-BTT 3.346');
+                    triggerNamedActionWithoutResponse('btt_preset_imported_GoldenChaos-BTT 3.560');
                     checkIfFinished();
                 }
             }
@@ -593,7 +681,7 @@
     
     function checkIfFinished() {
         window.BTT.callHandler('get_string_variable', {variableName: 'gc_version'}, function callback(currentVariableValue) {
-            if(currentVariableValue === '3.392') {
+            if(currentVariableValue === '3.560') {
                 getAllVariablesAndUpdateClasses();
                 } else {
                     setTimeout(() => { checkIfFinished() }, 500)
@@ -612,34 +700,34 @@
 </script>
 </head>
 <body>
-<div class="padding-close-control" onClick="trigger_named_async_without_response('Show GC-BTT Settings')"></div>
+<div class="padding-close-control" onClick="triggerNamedActionWithoutResponse('Show GC-BTT Settings')"></div>
 <div class="sidebar">
      <div class="traffic-lights">
-      <button class="traffic-light traffic-light-close" id="close" onClick="trigger_named_async_without_response('Show GC-BTT Settings')"></button>
+         <button class="traffic-light traffic-light-close" id="close" onClick="triggerNamedActionWithoutResponse('Show GC-BTT Settings')"></button>
      </div>
     <h1 class="BTTDraggable">GC-BTT Settings</h1>
     <ul>
-        <li id="default" class="tablink" onClick="openTab(event, 'general')">
+        <li id="default" class="tablink start" onClick="openTab(event, 'general')">
             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/watchos-icons/settings.png" alt="">
             General
         </li>
-        <li class="tablink" onClick="openTab(event, 'home-strip')">
-            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/watchos-icons/home.png" alt="">
-            Home Strip
-        </li>
-        <li class="tablink" onClick="openTab(event, 'menu-bar')">
-            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/watchos-icons/brightness.png" alt="">
-            Menu Bar
-        </li>
-        <li class="tablink" onClick="openTab(event, 'dock-badges')">
-            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/watchos-icons/notifications.png" alt="">
-            Dock Badges
-        </li>
-        <li class="tablink" onClick="openTab(event, 'presets')">
+        <li id="presets-tab" class="tablink end" onClick="openTab(event, 'presets')">
             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/watchos-icons/presets.png" alt="">
             Presets
         </li>
-        <li class="tablink" onClick="trigger_named_async_without_response('Show About GC-BTT')">
+        <li id="home-strip-tab" class="tablink start" onClick="openTab(event, 'home-strip')">
+            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/watchos-icons/home.png" alt="">
+            Home Strip
+        </li>
+        <li id="menu-bar-tab" class="tablink end" onClick="openTab(event, 'menu-bar')">
+            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/watchos-icons/brightness.png" alt="">
+            Menu Bar
+        </li>
+        <li id="dock-badges-tab" class="tablink start end" onClick="openTab(event, 'dock-badges')">
+            <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/watchos-icons/notifications.png" alt="">
+            Dock Badges
+        </li>
+        <li id="about-tab" class="tablink" onClick="triggerNamedActionWithoutResponse('Show About GC-BTT')">
             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/avatar-round.png" alt="">
             About GoldenChaos-BTT
         </li>
@@ -652,10 +740,56 @@
                     <h2 class="BTTDraggable">General</h2>
                 </header>
                 <section>
+                    <h3>Current Preset</h3>
+                    <ul class="active-preset-display">
+                        <li class="form-switch radio-switch">
+                            <label id="activePreset" class="loading">
+                                <span class="description">
+                                    <span class="loading">
+                                        &nbsp;
+                                    </span>
+                                    <span class="custom">
+                                        Custom Settings
+                                    </span>
+                                    <span class="default">
+                                        Default Settings
+                                    </span>
+                                    <span class="minimalist">
+                                        Minimalist
+                                    </span>
+                                    <span class="gcs-daily-driver">
+                                        GC's Daily Driver
+                                    </span>
+                                    <small class="custom">You're using your own custom settings for GC-BTT.<br>Run "Reapply Settings" if your settings didn't reapply correctly after upgrading.</small>
+                                    <small class="loading default minimalist gcs-daily-driver">Run "Reapply Preset" if this preset didn't apply correctly.</small>
+                                    <small class="loading default minimalist gcs-daily-driver"><a onClick="clickElement('presets-tab');">More Presets &rsaquo;</a></small>
+                                </span>
+                                <span class="action">
+                                    <span class="token selected loading" onClick="applyPreset('Check All Settings')">
+                                        Reapply Preset
+                                    </span>
+                                    <span class="token selected custom" onClick="applyPreset('Check All Settings')">
+                                        Reapply Settings
+                                    </span>
+                                    <span class="token selected default" onClick="applyPreset('Default Settings')">
+                                        Reapply Preset
+                                    </span>
+                                    <span class="token selected minimalist" onClick="applyPreset('Minimalist')">
+                                        Reapply Preset
+                                    </span>
+                                    <span class="token selected gcs-daily-driver" onClick="applyPreset('GC\'s Daily Driver')">
+                                        Reapply Preset
+                                    </span>
+                                </span>
+                            </label>
+                        </li>
+                    </ul>
+                </section>
+                <section>
                     <h3>System Menu Bar</h3>
                     <ul>
                         <li class="form-switch">
-                            <label id="showSystemMenuBarItem" onClick="toggleVariable(this.id, 'Refresh System Menu Bar Item',event)">
+                            <label id="showSystemMenuBarItem" onClick="toggleVariable(this.id,'Refresh System Menu Bar Item',event)">
                                 <span class="tbicon">
                                     <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/menu-bar-icon.png" alt="">
                                 </span>
@@ -669,10 +803,10 @@
                     </ul>
                 </section>
                 <section>
-                    <h3>Escape Key</h3>
+                    <h3>Escape Key Style</h3>
                     <ul>
                         <li class="form-switch">
-                            <label id="useNormalEscKey" onClick="toggleVariable(this.id, 'Refresh Escape Key',event)">
+                            <label id="useNormalEscKey" onClick="toggleVariable(this.id,'Refresh Escape Key',event)">
                                 <span class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/escape.png" alt="">
                                 </span>
@@ -689,7 +823,7 @@
                     <h3>Modifier Strips</h3>
                     <ul>
                         <li class="form-switch">
-                            <label id="showControlMenu" onClick="toggleVariable(this.id, 'Refresh Control Menu',event)">
+                            <label id="showControlMenu" onClick="toggleVariable(this.id,'Refresh Control Menu',event)">
                                 <span class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/control.png" alt="">
                                 </span>
@@ -701,7 +835,7 @@
                             </label>
                         </li>
                         <li class="form-switch">
-                            <label id="showOptionMenu" onClick="toggleVariable(this.id, 'Refresh Option Menu',event)">
+                            <label id="showOptionMenu" onClick="toggleVariable(this.id,'Refresh Option Menu',event)">
                                 <span class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/option.png" alt="">
                                 </span>
@@ -713,7 +847,7 @@
                             </label>
                         </li>
                         <li class="form-switch">
-                            <label id="showCommandMenu" onClick="toggleVariable(this.id, 'Refresh Command Menu',event)">
+                            <label id="showCommandMenu" onClick="toggleVariable(this.id,'Refresh Command Menu',event)">
                                 <span class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/command.png" alt="">
                                 </span>
@@ -727,10 +861,10 @@
                     </ul>
                 </section>
                 <section>
-                    <h3>Window Snapping</h3>
+                    <h3>Extras</h3>
                     <ul>
                         <li class="form-switch">
-                            <label id="enableWindowSnapper" onClick="toggleVariable(this.id, 'Refresh Window Snapper',event)">
+                            <label id="enableWindowSnapper" onClick="toggleVariable(this.id,'Refresh Window Snapper',event)">
                                 <span class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/windowsnapper.png" alt="">
                                 </span>
@@ -743,15 +877,6 @@
                         </li>
                     </ul>
                 </section>
-                <section>
-                    <h3>Restore</h3>
-                    <ul>
-                        <li class="form-switch" style="display:flex;">
-                            <small style="flex-grow: 1;margin:8px 8px 0 0;">Run "Check For Existing Settings" if your settings did not automatically<br>restore after upgrading.</small>
-                            <span style="line-height:normal;white-space:nowrap;" class="token selected" onClick="triggerPresetAndRefreshSettingsWindow('Check All Settings');">Check For Existing Settings</span>
-                        </li>
-                    </ul>
-                </section>
             </div>
             <div id="home-strip" class="tabcontent">
                 <header class="BTTDraggable">
@@ -761,7 +886,7 @@
                     <h3>Controls</h3>
                     <ul>
                         <li class="form-switch">
-                            <label id="showBackForward" onClick="toggleVariable(this.id, 'Refresh Back/Forward Keys',event)">
+                            <label id="showBackForward" onClick="toggleVariable(this.id,'Refresh Back/Forward Keys',event,true)">
                                 <span class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/back.png" alt="" style="border-right:1px solid #b4b5b6;">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/forward.png" alt="">
@@ -771,7 +896,7 @@
                             </label>
                         </li>
                         <li class="form-switch">
-                            <label id="showRefresh" onClick="toggleVariable(this.id, 'Refresh Refresh Key',event)">
+                            <label id="showRefresh" onClick="toggleVariable(this.id,'Refresh Refresh Key',event,true)">
                                 <span class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/refresh.png" alt="">
                                 </span>
@@ -780,7 +905,7 @@
                             </label>
                         </li>
                         <li class="form-switch">
-                            <label id="showNewTab" onClick="toggleVariable(this.id, 'Refresh New Tab Key',event)">
+                            <label id="showNewTab" onClick="toggleVariable(this.id,'Refresh New Tab Key',event,true)">
                                 <span class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/new-tab.png" alt="">
                                 </span>
@@ -797,13 +922,13 @@
                             <label id="showMediaControls">
                                 Media Controls
                                 <span class="segmented-control">
-                                    <span class="dynamic" onClick="triggerNamedActionAndRefreshSettingsWindow('Use Dynamic Media Control Keys')">
+                                    <span class="dynamic" onClick="triggerNamedActionAndRefreshSettingsWindow('Use Dynamic Media Control Keys',true)">
                                         Dynamic
                                     </span>
-                                    <span class="always" onClick="triggerNamedActionAndRefreshSettingsWindow('Always Show Media Control Keys')">
+                                    <span class="always" onClick="triggerNamedActionAndRefreshSettingsWindow('Always Show Media Control Keys',true)">
                                         Always
                                     </span>
-                                    <span class="never" onClick="triggerNamedActionAndRefreshSettingsWindow('Never Show Media Control Keys')">
+                                    <span class="never" onClick="triggerNamedActionAndRefreshSettingsWindow('Never Show Media Control Keys',true)">
                                         Never
                                     </span>
                                 </span>
@@ -821,13 +946,13 @@
                             <label id="showNowPlaying">
                                 Now Playing
                                 <span class="segmented-control">
-                                    <span class="dynamic" onClick="triggerNamedActionAndRefreshSettingsWindow('Use Dynamic Now Playing Widget')">
+                                    <span class="dynamic" onClick="triggerNamedActionAndRefreshSettingsWindow('Use Dynamic Now Playing Widget',true)">
                                         Dynamic
                                     </span>
-                                    <!-- <span class="always" onClick="triggerNamedActionAndRefreshSettingsWindow('Always Show Now Playing Widget')">
+                                    <!-- <span class="always" onClick="triggerNamedActionAndRefreshSettingsWindow('Always Show Now Playing Widget',true)">
                                         Always
                                     </span> -->
-                                    <span class="never" onClick="triggerNamedActionAndRefreshSettingsWindow('Never Show Now Playing Widget')">
+                                    <span class="never" onClick="triggerNamedActionAndRefreshSettingsWindow('Never Show Now Playing Widget',true)">
                                         Never
                                     </span>
                                 </span>
@@ -837,7 +962,7 @@
                             <span class="tbicon">
                                 <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/watchos-icons/reminders.png" alt="">
                             </span>
-                            <label id="showReminders" onClick="toggleVariable(this.id, 'Refresh Reminders Widget',event)">
+                            <label id="showReminders" onClick="toggleVariable(this.id,'Refresh Reminders Widget',event,true)">
                                 Reminders
                                 <input type="checkbox"><i></i>
                             </label>
@@ -846,7 +971,7 @@
                             <span class="tbicon">
                                 <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/watchos-icons/things.png" alt="">
                             </span>
-                            <label id="showThings" onClick="toggleVariable(this.id, 'Refresh Things Widget',event)">
+                            <label id="showThings" onClick="toggleVariable(this.id,'Refresh Things Widget',event,true)">
                                 Things
                                 <input type="checkbox"><i></i>
                             </label>
@@ -855,7 +980,7 @@
                             <span class="tbicon">
                                 <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/watchos-icons/calendar.png" alt="">
                             </span>
-                            <label id="showCalendar" onClick="toggleVariable(this.id, 'Refresh Calendar',event)">
+                            <label id="showCalendar" onClick="toggleVariable(this.id,'Refresh Calendar',event,true)">
                                 Calendar
                                 <input type="checkbox"><i></i>
                             </label>
@@ -885,13 +1010,13 @@
                             <label id="showShowFinder">
                                 Show Finder
                                 <span class="segmented-control">
-                                    <span class="full" onClick="triggerNamedActionAndRefreshSettingsWindow('Show Full Show Finder Key')">
+                                    <span class="full" onClick="triggerNamedActionAndRefreshSettingsWindow('Show Full Show Finder Key',true)">
                                         Icon & Text
                                     </span>
-                                    <span class="small" onClick="triggerNamedActionAndRefreshSettingsWindow('Show Small Show Finder Key')">
+                                    <span class="small" onClick="triggerNamedActionAndRefreshSettingsWindow('Show Small Show Finder Key',true)">
                                         Icon Only
                                     </span>
-                                    <span class="hide" onClick="triggerNamedActionAndRefreshSettingsWindow('Hide Show Finder Key')">
+                                    <span class="hide" onClick="triggerNamedActionAndRefreshSettingsWindow('Hide Show Finder Key',true)">
                                         Off
                                     </span>
                                 </span>
@@ -904,13 +1029,13 @@
                             <label id="showAirDrop">
                                 AirDrop
                                 <span class="segmented-control">
-                                    <span class="full" onClick="triggerNamedActionAndRefreshSettingsWindow('Show Full AirDrop Key')">
+                                    <span class="full" onClick="triggerNamedActionAndRefreshSettingsWindow('Show Full AirDrop Key',true)">
                                         Icon & Text
                                     </span>
-                                    <span class="small" onClick="triggerNamedActionAndRefreshSettingsWindow('Show Small AirDrop Key')">
+                                    <span class="small" onClick="triggerNamedActionAndRefreshSettingsWindow('Show Small AirDrop Key',true)">
                                         Icon Only
                                     </span>
-                                    <span class="hide" onClick="triggerNamedActionAndRefreshSettingsWindow('Hide AirDrop Key')">
+                                    <span class="hide" onClick="triggerNamedActionAndRefreshSettingsWindow('Hide AirDrop Key',true)">
                                         Off
                                     </span>
                                 </span>
@@ -922,7 +1047,7 @@
                                 <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/snap-maximize.png" alt="" style="border-right:1px solid #b4b5b6;">
                                 <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/snap-right-half.png" alt="">
                             </span>
-                            <label id="showWindowSnapping" onClick="toggleVariable(this.id, 'Refresh Window Snapping Keys',event)">
+                            <label id="showWindowSnapping" onClick="toggleVariable(this.id,'Refresh Window Snapping Keys',event,true)">
                                 Window Snapping
                                 <input type="checkbox"><i></i>
                             </label>
@@ -938,7 +1063,7 @@
                     <h3>Dynamic Menu Bar</h3>
                     <ul>
                         <li class="form-switch">
-                            <label id="showCollapseMenuBar" onClick="toggleVariable(this.id, 'Refresh Collapse Menu Bar Key',event)">
+                            <label id="showCollapseMenuBar" onClick="toggleVariable(this.id,'Refresh Collapse Menu Bar Key',event,true)">
                                 <span class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/collapse-menu-bar.png" alt="">
                                 </span>
@@ -962,9 +1087,9 @@
                                 </span>
                                 Notification Center
                                 <span class="segmented-control">
-                                    <span class="dynamic" onClick="triggerNamedActionAndRefreshSettingsWindow('Use Dynamic Notification Center Key')">Dynamic</span>
-                                    <span class="always" onClick="triggerNamedActionAndRefreshSettingsWindow('Always Show Notification Center Key')">Always</span>
-                                    <span class="never" onClick="triggerNamedActionAndRefreshSettingsWindow('Never Show Notification Center Key')">Never</span>
+                                    <span class="dynamic" onClick="triggerNamedActionAndRefreshSettingsWindow('Use Dynamic Notification Center Key',true)">Dynamic</span>
+                                    <span class="always" onClick="triggerNamedActionAndRefreshSettingsWindow('Always Show Notification Center Key',true)">Always</span>
+                                    <span class="never" onClick="triggerNamedActionAndRefreshSettingsWindow('Never Show Notification Center Key',true)">Never</span>
                                 </span>
                             </label>
                         </li>
@@ -975,9 +1100,9 @@
                                 </span>
                                 Siri
                                 <span class="segmented-control">
-                                    <span class="dynamic" onClick="triggerNamedActionAndRefreshSettingsWindow('Use Dynamic Siri Key')">Dynamic</span>
-                                    <span class="always" onClick="triggerNamedActionAndRefreshSettingsWindow('Always Show Siri Key')">Always</span>
-                                    <span class="never" onClick="triggerNamedActionAndRefreshSettingsWindow('Never Show Siri Key')">Never</span>
+                                    <span class="dynamic" onClick="triggerNamedActionAndRefreshSettingsWindow('Use Dynamic Siri Key',true)">Dynamic</span>
+                                    <span class="always" onClick="triggerNamedActionAndRefreshSettingsWindow('Always Show Siri Key',true)">Always</span>
+                                    <span class="never" onClick="triggerNamedActionAndRefreshSettingsWindow('Never Show Siri Key',true)">Never</span>
                                 </span>
                             </label>
                         </li>
@@ -988,9 +1113,9 @@
                                 </span>
                                 Spotlight
                                 <span class="segmented-control">
-                                    <span class="dynamic" onClick="triggerNamedActionAndRefreshSettingsWindow('Use Dynamic Spotlight Key')">Dynamic</span>
-                                    <span class="always" onClick="triggerNamedActionAndRefreshSettingsWindow('Always Show Spotlight Key')">Always</span>
-                                    <span class="never" onClick="triggerNamedActionAndRefreshSettingsWindow('Never Show Spotlight Key')">Never</span>
+                                    <span class="dynamic" onClick="triggerNamedActionAndRefreshSettingsWindow('Use Dynamic Spotlight Key',true)">Dynamic</span>
+                                    <span class="always" onClick="triggerNamedActionAndRefreshSettingsWindow('Always Show Spotlight Key',true)">Always</span>
+                                    <span class="never" onClick="triggerNamedActionAndRefreshSettingsWindow('Never Show Spotlight Key',true)">Never</span>
                                 </span>
                             </label>
                         </li>
@@ -1004,14 +1129,14 @@
                                 </span>
                                 Battery
                                 <span class="segmented-control">
-                                    <span class="dynamic" onClick="triggerNamedActionAndRefreshSettingsWindow('Use Dynamic Battery Widget')">Dynamic</span>
-                                    <span class="always" onClick="triggerNamedActionAndRefreshSettingsWindow('Always Show Battery Widget')">Always</span>
-                                    <span class="never" onClick="triggerNamedActionAndRefreshSettingsWindow('Never Show Battery Widget')">Never</span>
+                                    <span class="dynamic" onClick="triggerNamedActionAndRefreshSettingsWindow('Use Dynamic Battery Widget',true)">Dynamic</span>
+                                    <span class="always" onClick="triggerNamedActionAndRefreshSettingsWindow('Always Show Battery Widget',true)">Always</span>
+                                    <span class="never" onClick="triggerNamedActionAndRefreshSettingsWindow('Never Show Battery Widget',true)">Never</span>
                                 </span>
                             </label>
                         </li>
                          <li class="form-switch">
-                            <label id="showBatteryPercentage" onClick="toggleVariable(this.id, 'Refresh Battery Widget',event)">
+                            <label id="showBatteryPercentage" onClick="toggleVariable(this.id,'Refresh Battery Widget',true,event)">
                                 <span class="tbicon">
                                     <span style="font-size:12px;display:inline-block;width:100%;text-align:center;">100%</span>
                                 </span>
@@ -1026,9 +1151,9 @@
                                 </span>
                                 Weather
                                 <span class="segmented-control">
-                                    <span class="dynamic" onClick="triggerNamedActionAndRefreshSettingsWindow('Use Dynamic Weather Widget')">Dynamic</span>
-                                    <span class="always" onClick="triggerNamedActionAndRefreshSettingsWindow('Always Show Weather Widget')">Always</span>
-                                    <span class="never" onClick="triggerNamedActionAndRefreshSettingsWindow('Never Show Weather Widget')">Never</span>
+                                    <span class="dynamic" onClick="triggerNamedActionAndRefreshSettingsWindow('Use Dynamic Weather Widget',true)">Dynamic</span>
+                                    <span class="always" onClick="triggerNamedActionAndRefreshSettingsWindow('Always Show Weather Widget',true)">Always</span>
+                                    <span class="never" onClick="triggerNamedActionAndRefreshSettingsWindow('Never Show Weather Widget',true)">Never</span>
                                 </span>
                             </label>
                         </li>
@@ -1045,16 +1170,16 @@
                                 </span>
                                 Date Format
                                 <span class="segmented-control">
-                                    <span class="dynamic" onClick="triggerNamedActionAndRefreshSettingsWindow('Use Dynamic Date/Time Format')">
+                                    <span class="dynamic" onClick="triggerNamedActionAndRefreshSettingsWindow('Use Dynamic Date/Time Format',true)">
                                         Dynamic
                                     </span>
-                                    <span class="large" onClick="triggerNamedActionAndRefreshSettingsWindow('Use Large Date/Time Format')" style="width:140%;">
+                                    <span class="large" onClick="triggerNamedActionAndRefreshSettingsWindow('Use Large Date/Time Format',true)" style="width:140%;">
                                         Day, Date & Time
                                     </span>
-                                    <span class="medium" onClick="triggerNamedActionAndRefreshSettingsWindow('Use Medium Date/Time Format')">
+                                    <span class="medium" onClick="triggerNamedActionAndRefreshSettingsWindow('Use Medium Date/Time Format',true)">
                                         Date & Time
                                     </span>
-                                    <span class="small" onClick="triggerNamedActionAndRefreshSettingsWindow('Use Small Date/Time Format')">
+                                    <span class="small" onClick="triggerNamedActionAndRefreshSettingsWindow('Use Small Date/Time Format',true)">
                                         Time Only
                                     </span>
                                 </span>
@@ -1067,8 +1192,8 @@
                                 </span>
                                 Time Format
                                 <span class="segmented-control">
-                                    <span class="12Hour" onClick="triggerNamedActionAndRefreshSettingsWindow('Use 12-Hour Time')">12-Hour</span>
-                                    <span class="24Hour" onClick="triggerNamedActionAndRefreshSettingsWindow('Use 24-Hour Time')">24-Hour</span>
+                                    <span class="12Hour" onClick="triggerNamedActionAndRefreshSettingsWindow('Use 12-Hour Time',true)">12-Hour</span>
+                                    <span class="24Hour" onClick="triggerNamedActionAndRefreshSettingsWindow('Use 24-Hour Time',true)">24-Hour</span>
                                 </span>
                             </label>
                         </li>
@@ -1079,7 +1204,7 @@
                     <h3>Volume and Brightness</h3>
                     <ul>
                         <li class="form-switch">
-                            <label id="showBrightnessUp" onClick="toggleVariable(this.id, 'Refresh Brightness Up Key',event)">
+                            <label id="showBrightnessUp" onClick="toggleVariable(this.id,'Refresh Brightness Up Key',event,true)">
                                 <span class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/brightness-up.png" alt="">
                                 </span>
@@ -1088,7 +1213,7 @@
                             </label>
                         </li>
                         <li class="form-switch">
-                            <label id="showBrightnessDown" onClick="toggleVariable(this.id, 'Refresh Brightness Down Key',event)">
+                            <label id="showBrightnessDown" onClick="toggleVariable(this.id,'Refresh Brightness Down Key',event,true)">
                                 <span class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/brightness-down.png" alt="">
                                 </span>
@@ -1097,7 +1222,7 @@
                             </label>
                         </li>
                         <li class="form-switch">
-                            <label id="showVolumeUp" onClick="toggleVariable(this.id, 'Refresh Volume Up Key',event)">
+                            <label id="showVolumeUp" onClick="toggleVariable(this.id,'Refresh Volume Up Key',event,true)">
                                 <span class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/volume-up.png" alt="">
                                 </span>
@@ -1106,7 +1231,7 @@
                             </label>
                         </li>
                         <li class="form-switch">
-                            <label id="showVolumeDown" onClick="toggleVariable(this.id, 'Refresh Volume Down Key',event)">
+                            <label id="showVolumeDown" onClick="toggleVariable(this.id,'Refresh Volume Down Key',event,true)">
                                 <span class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/volume-down.png" alt="">
                                 </span>
@@ -1115,7 +1240,7 @@
                             </label>
                         </li>
                         <li class="form-switch">
-                            <label id="showVolumeMute" onClick="toggleVariable(this.id, 'Refresh Volume Mute Key',event)" >
+                            <label id="showVolumeMute" onClick="toggleVariable(this.id,'Refresh Volume Mute Key',event,true)" >
                                 <span class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/volume-mute.png" alt="">
                                 </span>
@@ -1131,7 +1256,7 @@
                     <small>Secondary menu bar widgets don't appear in the Control Strip.</small>
                     <ul>
                         <li class="form-switch">
-                            <label id="showMicrophoneMute"  onClick="toggleVariable(this.id, 'Refresh Microphone Mute Key',event)">
+                            <label id="showMicrophoneMute"  onClick="toggleVariable(this.id,'Refresh Microphone Mute Key',event,true)">
                                 <span class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/microphone-mute.png" alt="">
                                 </span>
@@ -1148,7 +1273,7 @@
                     <h3>Networking</h3>
                     <ul>
                         <li class="form-switch">
-                            <label id="showWifi" onClick="toggleVariable(this.id, 'Refresh Wi-Fi Toggle Key',event)">
+                            <label id="showWifi" onClick="toggleVariable(this.id,'Refresh Wi-Fi Toggle Key',event,true)">
                                 <span class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/wifi.png" alt="">
                                 </span>
@@ -1157,7 +1282,7 @@
                             </label>
                         </li>
                         <li class="form-switch">
-                            <label id="showBluetooth" onClick="toggleVariable(this.id, 'Refresh Bluetooth Toggle Key',event)">
+                            <label id="showBluetooth" onClick="toggleVariable(this.id,'Refresh Bluetooth Toggle Key',event,true)">
                                 <span class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/bluetooth.png" alt="">
                                 </span>
@@ -1171,7 +1296,7 @@
                     <h3>Bluetooth Quick-Connect Keys</h3>
                     <ul>
                         <li class="form-switch">
-                            <label id="showConnectAirPods" onClick="toggleVariable(this.id, 'Refresh Connect to AirPods Key',event)">
+                            <label id="showConnectAirPods" onClick="toggleVariable(this.id,'Refresh Connect to AirPods Key',event,true)">
                                 <span class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/airpods.png" alt="">
                                 </span>
@@ -1180,7 +1305,7 @@
                             </label>
                         </li>
                         <li class="form-switch">
-                            <label id="showConnectAirPodsPro" onClick="toggleVariable(this.id, 'Refresh Connect to AirPods Pro Key',event)">
+                            <label id="showConnectAirPodsPro" onClick="toggleVariable(this.id,'Refresh Connect to AirPods Pro Key',event,true)">
                                 <span class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/airpods-pro.png" alt="">
                                 </span>
@@ -1189,7 +1314,7 @@
                             </label>
                         </li>
                         <li class="form-switch">
-                            <label id="showConnectBeats" onClick="toggleVariable(this.id, 'Refresh Connect to Beats Key',event)">
+                            <label id="showConnectBeats" onClick="toggleVariable(this.id,'Refresh Connect to Beats Key',event,true)">
                                 <span class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/beats.png" alt="">
                                 </span>
@@ -1198,7 +1323,7 @@
                             </label>
                         </li>
                         <li class="form-switch">
-                            <label id="showConnectBose" onClick="toggleVariable(this.id, 'Refresh Connect to Bose Key',event)">
+                            <label id="showConnectBose" onClick="toggleVariable(this.id,'Refresh Connect to Bose Key',event,true)">
                                 <span class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/bose.png" alt="">
                                 </span>
@@ -1207,7 +1332,7 @@
                             </label>
                         </li>
                         <li class="form-switch">
-                            <label id="showConnectSony" onClick="toggleVariable(this.id, 'Refresh Connect to Sony Key',event)">
+                            <label id="showConnectSony" onClick="toggleVariable(this.id,'Refresh Connect to Sony Key',event,true)">
                                 <span class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/sony.png" alt="">
                                 </span>
@@ -1216,7 +1341,7 @@
                             </label>
                         </li>
                         <li class="form-switch">
-                            <label id="showConnectGamepad" onClick="toggleVariable(this.id, 'Refresh Connect to Gamepad Key',event)">
+                            <label id="showConnectGamepad" onClick="toggleVariable(this.id,'Refresh Connect to Gamepad Key',event,true)">
                                 <span class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/game-controller.png" alt="">
                                 </span>
@@ -1231,7 +1356,7 @@
                     <h3>Utilities</h3>
                     <ul>
                         <li class="form-switch">
-                            <label id="showCaffeinate" onClick="toggleVariable(this.id, 'Refresh Caffeinate Key',event)">
+                            <label id="showCaffeinate" onClick="toggleVariable(this.id,'Refresh Caffeinate Key',event,true)">
                                 <span class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/caffeinate.png" alt="">
                                 </span>
@@ -1243,7 +1368,7 @@
                             </label>
                         </li>
                         <li class="form-switch">
-                            <label id="showCalculator" onClick="toggleVariable(this.id, 'Refresh Calculator Key',event)">
+                            <label id="showCalculator" onClick="toggleVariable(this.id,'Refresh Calculator Key',event,true)">
                                 <span class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/calculator.png" alt="">
                                 </span>
@@ -1252,7 +1377,7 @@
                             </label>
                         </li>
                         <li class="form-switch">
-                            <label id="showCurrentLanguage" onClick="toggleVariable(this.id, 'Refresh Current Language Key',event)">
+                            <label id="showCurrentLanguage" onClick="toggleVariable(this.id,'Refresh Current Language Key',event,true)">
                                 <span class="tbicon">
                                     <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/languages.png" alt="">
                                 </span>
@@ -1269,7 +1394,7 @@
                     <h3>Widget Strips</h3>
                     <ul>
                         <li class="form-switch">
-                            <label id="showDock" onClick="toggleVariable(this.id, 'Refresh Dock Key',event)">
+                            <label id="showDock" onClick="toggleVariable(this.id,'Refresh Dock Key',event,true)">
                                 <span class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/dock.png" alt="">
                                 </span>
@@ -1278,7 +1403,7 @@
                             </label>
                         </li>
                         <li class="form-switch">
-                            <label id="showClipboardHistory" onClick="toggleVariable(this.id, 'Refresh Clipboard History Key',event)">
+                            <label id="showClipboardHistory" onClick="toggleVariable(this.id,'Refresh Clipboard History Key',event,true)">
                                 <span class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/clipboard.png" alt="">
                                 </span>
@@ -1290,7 +1415,7 @@
                             </label>
                         </li>
                         <li class="form-switch">
-                            <label id="showEmojiPicker" onClick="toggleVariable(this.id, 'Refresh Emoji Picker Key',event)">
+                            <label id="showEmojiPicker" onClick="toggleVariable(this.id,'Refresh Emoji Picker Key',event,true)">
                                 <span class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/emoji.png" alt="">
                                 </span>
@@ -1299,7 +1424,7 @@
                             </label>
                         </li>
                         <li class="form-switch">
-                            <label id="showBrowserTabs" onClick="toggleVariable(this.id, 'Refresh Browser Tabs Key',event)">
+                            <label id="showBrowserTabs" onClick="toggleVariable(this.id,'Refresh Browser Tabs Key',event,true)">
                                 <span class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/browser.png" alt="">
                                 </span>
@@ -1317,7 +1442,7 @@
                     <h3>Third-Party Apps</h3>
                     <ul>
                         <li class="form-switch">
-                            <label id="showShowPaste" onClick="toggleVariable(this.id, 'Refresh Show Paste Key',event)">
+                            <label id="showShowPaste" onClick="toggleVariable(this.id,'Refresh Show Paste Key',event,true)">
                                 <span class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/show-paste.png" alt="">
                                 </span>
@@ -1326,7 +1451,7 @@
                             </label>
                         </li>
                         <li class="form-switch">
-                            <label id="show1Password" onClick="toggleVariable(this.id, 'Refresh 1Password Key',event)">
+                            <label id="show1Password" onClick="toggleVariable(this.id,'Refresh 1Password Key',event,true)">
                                 <span class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/1password.png" alt="">
                                 </span>
@@ -1335,7 +1460,7 @@
                             </label>
                         </li>
                         <li class="form-switch">
-                            <label id="showDayOne" onClick="toggleVariable(this.id, 'Refresh Day One Key',event)">
+                            <label id="showDayOne" onClick="toggleVariable(this.id,'Refresh Day One Key',event,true)">
                                 <span class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/day-one.png" alt="">
                                 </span>
@@ -1344,7 +1469,7 @@
                             </label>
                         </li>
                         <li class="form-switch">
-                            <label id="showHazeOver" onClick="toggleVariable(this.id, 'Refresh HazeOver Key',event)">
+                            <label id="showHazeOver" onClick="toggleVariable(this.id,'Refresh HazeOver Key',event,true)">
                                 <span class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/hazeover.png" alt="">
                                 </span>
@@ -1353,7 +1478,7 @@
                             </label>
                         </li>
                         <li class="form-switch">
-                            <label id="showColorSnapper" onClick="toggleVariable(this.id, 'Refresh ColorSnapper Key',event)">
+                            <label id="showColorSnapper" onClick="toggleVariable(this.id,'Refresh ColorSnapper Key',event,true)">
                                 <span class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/colorsnapper.png" alt="">
                                 </span>
@@ -1368,7 +1493,7 @@
                     <h3>GC-BTT Controls</h3>
                     <ul>
                         <li class="form-switch">
-                            <label id="showWindowSnapper" onClick="toggleVariable(this.id, 'Refresh Window Snapper Key',event)">
+                            <label id="showWindowSnapper" onClick="toggleVariable(this.id,'Refresh Window Snapper Key',event,true)">
                                 <span class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/windowsnapper.png" alt="">
                                 </span>
@@ -1380,7 +1505,7 @@
                             </label>
                         </li>
                         <li class="form-switch">
-                            <label id="showSettings" onClick="toggleVariable(this.id, 'Refresh GC-BTT Settings Key',event)">
+                            <label id="showSettings" onClick="toggleVariable(this.id,'Refresh GC-BTT Settings Key',event,true)">
                                 <span class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/settings.png" alt="">
                                 </span>
@@ -1401,63 +1526,63 @@
                     <ul>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Calendar.png" alt="">
-                            <label id="showAppleCalendarBadge" onClick="toggleVariable(this.id, 'Refresh Apple Calendar Badge',event)">
+                            <label id="showAppleCalendarBadge" onClick="toggleVariable(this.id,'Refresh Apple Calendar Badge',event)">
                                 Apple Calendar
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Reminders.png" alt="">
-                            <label id="showRemindersBadge" onClick="toggleVariable(this.id, 'Refresh Reminders Badge',event)">
+                            <label id="showRemindersBadge" onClick="toggleVariable(this.id,'Refresh Reminders Badge',event)">
                                 Reminders
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/News.png" alt="">
-                            <label id="showNewsBadge" onClick="toggleVariable(this.id, 'Refresh News Badge',event)">
+                            <label id="showNewsBadge" onClick="toggleVariable(this.id,'Refresh News Badge',event)">
                                 News
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Maps.png" alt="">
-                            <label id="showMapsBadge" onClick="toggleVariable(this.id, 'Refresh Maps Badge',event)">
+                            <label id="showMapsBadge" onClick="toggleVariable(this.id,'Refresh Maps Badge',event)">
                                 Maps
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Safari.png" alt="">
-                            <label id="showSafariBadge" onClick="toggleVariable(this.id, 'Refresh Safari Badge',event)">
+                            <label id="showSafariBadge" onClick="toggleVariable(this.id,'Refresh Safari Badge',event)">
                                 Safari
                                 <input type="checkbox"><i></i>
                             </label>		  
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Safari%20Technology%20Preview.png" alt="">
-                            <label id="showSafariPreviewBadge" onClick="toggleVariable(this.id, 'Refresh Safari Preview Badge',event)">
+                            <label id="showSafariPreviewBadge" onClick="toggleVariable(this.id,'Refresh Safari Preview Badge',event)">
                                 Safari Technology Preview
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/FaceTime.png" alt="">
-                            <label id="showFaceTimeBadge" onClick="toggleVariable(this.id, 'Refresh FaceTime Badge',event)">
+                            <label id="showFaceTimeBadge" onClick="toggleVariable(this.id,'Refresh FaceTime Badge',event)">
                                 FaceTime
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Messages.png" alt="">
-                            <label id="showiMessageBadge" onClick="toggleVariable(this.id, 'Refresh iMessage Badge',event)">
+                            <label id="showiMessageBadge" onClick="toggleVariable(this.id,'Refresh iMessage Badge',event)">
                                 iMessage
                                 <input type="checkbox"><i></i>
                             </label>		  
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Mail.png" alt="">
-                            <label id="showAppleMailBadge" onClick="toggleVariable(this.id, 'Refresh Apple Mail Badge',event)">
+                            <label id="showAppleMailBadge" onClick="toggleVariable(this.id,'Refresh Apple Mail Badge',event)">
                                 Apple Mail
                                 <input type="checkbox"><i></i>
                             </label>
@@ -1469,294 +1594,294 @@
                     <ul>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Fantastical.png" alt="">
-                            <label id="showFantasticalBadge" onClick="toggleVariable(this.id, 'Refresh Fantastical Badge',event)">
+                            <label id="showFantasticalBadge" onClick="toggleVariable(this.id,'Refresh Fantastical Badge',event)">
                                 Fantastical
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/BusyCal.png" alt="">
-                            <label id="showBusyCalBadge" onClick="toggleVariable(this.id, 'Refresh BusyCal Badge',event)">
+                            <label id="showBusyCalBadge" onClick="toggleVariable(this.id,'Refresh BusyCal Badge',event)">
                                 BusyCal
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Boxy%20for%20Calendar.png" alt="">
-                            <label id="showBoxyforCalendarBadge" onClick="toggleVariable(this.id, 'Refresh Boxy for Calendar Badge',event)">
+                            <label id="showBoxyforCalendarBadge" onClick="toggleVariable(this.id,'Refresh Boxy for Calendar Badge',event)">
                                 Boxy for Calendar
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Carrot.png" alt="">
-                            <label id="showCarrotBadge" onClick="toggleVariable(this.id, 'Refresh Carrot Badge',event)">
+                            <label id="showCarrotBadge" onClick="toggleVariable(this.id,'Refresh Carrot Badge',event)">
                                 Carrot
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Things.png" alt="">
-                            <label id="showThingsBadge" onClick="toggleVariable(this.id, 'Refresh Things Badge',event)">
+                            <label id="showThingsBadge" onClick="toggleVariable(this.id,'Refresh Things Badge',event)">
                                 Things
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/OmniFocus.png" alt="">
-                            <label id="showOmniFocusBadge" onClick="toggleVariable(this.id, 'Refresh OmniFocus Badge',event)">
+                            <label id="showOmniFocusBadge" onClick="toggleVariable(this.id,'Refresh OmniFocus Badge',event)">
                                 OmniFocus
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Deliveries.png" alt="">
-                            <label id="showDeliveriesBadge" onClick="toggleVariable(this.id, 'Refresh Deliveries Badge',event)">
+                            <label id="showDeliveriesBadge" onClick="toggleVariable(this.id,'Refresh Deliveries Badge',event)">
                                 Deliveries
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Google%20Chrome.png" alt="">
-                            <label id="showChromeBadge" onClick="toggleVariable(this.id, 'Refresh Chrome Badge',event)">
+                            <label id="showChromeBadge" onClick="toggleVariable(this.id,'Refresh Chrome Badge',event)">
                                 Google Chrome
                                 <input type="checkbox"><i></i>
                             </label> 
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Google%20Chrome%20Canary.png" alt="">
-                            <label id="showChromeCanaryBadge" onClick="toggleVariable(this.id, 'Refresh Chrome Canary Badge',event)">
+                            <label id="showChromeCanaryBadge" onClick="toggleVariable(this.id,'Refresh Chrome Canary Badge',event)">
                                 Chrome Canary
                                 <input type="checkbox"><i></i>
                             </label>	
                         </li>
                         <li class="form-switch"> 
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Firefox.png" alt="">
-                            <label id="showFirefoxBadge" onClick="toggleVariable(this.id, 'Refresh Firefox Badge',event)">
+                            <label id="showFirefoxBadge" onClick="toggleVariable(this.id,'Refresh Firefox Badge',event)">
                                 Firefox
                                 <input type="checkbox"><i></i>
                             </label>	
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Facebook%20Messenger.png" alt="">
-                            <label id="showFacebookMessengerBadge" onClick="toggleVariable(this.id, 'Refresh Facebook Messenger Badge',event)">
+                            <label id="showFacebookMessengerBadge" onClick="toggleVariable(this.id,'Refresh Facebook Messenger Badge',event)">
                                 Facebook Messenger
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/WhatsApp.png" alt="">
-                            <label id="showWhatsAppBadge" onClick="toggleVariable(this.id, 'Refresh WhatsApp Badge',event)">
+                            <label id="showWhatsAppBadge" onClick="toggleVariable(this.id,'Refresh WhatsApp Badge',event)">
                                 WhatsApp
                                 <input type="checkbox"><i></i>
                             </label>	
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Telegram.png" alt="">
-                            <label id="showTelegramBadge" onClick="toggleVariable(this.id, 'Refresh Telegram Badge',event)">
+                            <label id="showTelegramBadge" onClick="toggleVariable(this.id,'Refresh Telegram Badge',event)">
                                 Telegram
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Franz.png" alt="">
-                            <label id="showFranzBadge" onClick="toggleVariable(this.id, 'Refresh Franz Badge',event)">
+                            <label id="showFranzBadge" onClick="toggleVariable(this.id,'Refresh Franz Badge',event)">
                                 Franz
                                 <input type="checkbox"><i></i>
                             </label>	
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Ferdi.png" alt="">
-                            <label id="showFerdiBadge" onClick="toggleVariable(this.id, 'Refresh Ferdi Badge',event)">
+                            <label id="showFerdiBadge" onClick="toggleVariable(this.id,'Refresh Ferdi Badge',event)">
                                 Ferdi
                                 <input type="checkbox"><i></i>
                             </label>	
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Skype.png" alt="">
-                            <label id="showSkypeBadge" onClick="toggleVariable(this.id, 'Refresh Skype Badge',event)">
+                            <label id="showSkypeBadge" onClick="toggleVariable(this.id,'Refresh Skype Badge',event)">
                                 Skype
                                 <input type="checkbox"><i></i>
                             </label>	
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Skype%20for%20Business.png" alt="">
-                            <label id="showSkypeBusinessBadge" onClick="toggleVariable(this.id, 'Refresh Skype Business Badge',event)">
+                            <label id="showSkypeBusinessBadge" onClick="toggleVariable(this.id,'Refresh Skype Business Badge',event)">
                                 Skype for Business
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/YakYak.png" alt="">
-                            <label id="showYakYakBadge" onClick="toggleVariable(this.id, 'Refresh YakYak Badge',event)">
+                            <label id="showYakYakBadge" onClick="toggleVariable(this.id,'Refresh YakYak Badge',event)">
                                 YakYak
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/WeChat.png" alt="">
-                            <label id="showWeChatBadge" onClick="toggleVariable(this.id, 'Refresh WeChat Badge',event)">
+                            <label id="showWeChatBadge" onClick="toggleVariable(this.id,'Refresh WeChat Badge',event)">
                                 WeChat
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/QQ.png" alt="">
-                            <label id="showQQBadge" onClick="toggleVariable(this.id, 'Refresh QQ Badge',event)">
+                            <label id="showQQBadge" onClick="toggleVariable(this.id,'Refresh QQ Badge',event)">
                                 QQ
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Microsoft%20Outlook.png" alt="">
-                            <label id="showOutlookBadge" onClick="toggleVariable(this.id, 'Refresh Outlook Badge',event)">
+                            <label id="showOutlookBadge" onClick="toggleVariable(this.id,'Refresh Outlook Badge',event)">
                                 Outlook
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Spark.png" alt="">
-                            <label id="showSparkBadge" onClick="toggleVariable(this.id, 'Refresh Spark Badge',event)">
+                            <label id="showSparkBadge" onClick="toggleVariable(this.id,'Refresh Spark Badge',event)">
                                 Spark
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Airmail.png" alt="">
-                            <label id="showAirmailBadge" onClick="toggleVariable(this.id, 'Refresh Airmail Badge',event)">
+                            <label id="showAirmailBadge" onClick="toggleVariable(this.id,'Refresh Airmail Badge',event)">
                                 Airmail
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Polymail.png" alt="">
-                            <label id="showPolymailBadge" onClick="toggleVariable(this.id, 'Refresh Polymail Badge',event)">
+                            <label id="showPolymailBadge" onClick="toggleVariable(this.id,'Refresh Polymail Badge',event)">
                                 Polymail
                                 <input type="checkbox"><i></i>
                             </label>	
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Superhuman.png" alt="">
-                            <label id="showSuperhumanBadge" onClick="toggleVariable(this.id, 'Refresh Superhuman Badge',event)">
+                            <label id="showSuperhumanBadge" onClick="toggleVariable(this.id,'Refresh Superhuman Badge',event)">
                                 Superhuman
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Boxy%20for%20Gmail.png" alt="">
-                            <label id="showBoxyforGmailBadge" onClick="toggleVariable(this.id, 'Refresh Boxy for Gmail Badge',event)">
+                            <label id="showBoxyforGmailBadge" onClick="toggleVariable(this.id,'Refresh Boxy for Gmail Badge',event)">
                                 Boxy for Gmail
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Mailplane.png" alt="">
-                            <label id="showMailplaneBadge" onClick="toggleVariable(this.id, 'Refresh Mailplane Badge',event)">
+                            <label id="showMailplaneBadge" onClick="toggleVariable(this.id,'Refresh Mailplane Badge',event)">
                                 Mailplane
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Postbox.png" alt="">
-                            <label id="showPostboxBadge" onClick="toggleVariable(this.id, 'Refresh Postbox Badge',event)">
+                            <label id="showPostboxBadge" onClick="toggleVariable(this.id,'Refresh Postbox Badge',event)">
                                 Postbox
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/MailMate.png" alt="">
-                            <label id="showMailMateBadge" onClick="toggleVariable(this.id, 'Refresh MailMate Badge',event)">
+                            <label id="showMailMateBadge" onClick="toggleVariable(this.id,'Refresh MailMate Badge',event)">
                                 MailMate
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Slack.png" alt="">
-                            <label id="showSlackBadge" onClick="toggleVariable(this.id, 'Refresh Slack Badge',event)">
+                            <label id="showSlackBadge" onClick="toggleVariable(this.id,'Refresh Slack Badge',event)">
                                 Slack
                                 <input type="checkbox"><i></i>
                             </label>	
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Microsoft%20Teams.png" alt="">
-                            <label id="showMicrosoftTeamsBadge" onClick="toggleVariable(this.id, 'Refresh Microsoft Teams Badge',event)">
+                            <label id="showMicrosoftTeamsBadge" onClick="toggleVariable(this.id,'Refresh Microsoft Teams Badge',event)">
                                 Microsoft Teams
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Discord.png" alt="">
-                            <label id="showDiscordBadge" onClick="toggleVariable(this.id, 'Refresh Discord Badge',event)">
+                            <label id="showDiscordBadge" onClick="toggleVariable(this.id,'Refresh Discord Badge',event)">
                                 Discord
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Discord%20Canary.png" alt="">
-                            <label id="showDiscordCanaryBadge" onClick="toggleVariable(this.id, 'Refresh Discord Canary Badge',event)">
+                            <label id="showDiscordCanaryBadge" onClick="toggleVariable(this.id,'Refresh Discord Canary Badge',event)">
                                 Discord Canary
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Trello.png" alt="">
-                            <label id="showTrelloBadge" onClick="toggleVariable(this.id, 'Refresh Trello Badge',event)">
+                            <label id="showTrelloBadge" onClick="toggleVariable(this.id,'Refresh Trello Badge',event)">
                                 Trello
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Bodo.png" alt="">
-                            <label id="showBodoBadge" onClick="toggleVariable(this.id, 'Refresh Bodo Badge',event)">
+                            <label id="showBodoBadge" onClick="toggleVariable(this.id,'Refresh Bodo Badge',event)">
                                 Bodo
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Abstract.png" alt="">
-                            <label id="showAbstractBadge" onClick="toggleVariable(this.id, 'Refresh Abstract Badge',event)">
+                            <label id="showAbstractBadge" onClick="toggleVariable(this.id,'Refresh Abstract Badge',event)">
                                 Abstract
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Zeplin.png" alt="">
-                            <label id="showZeplinBadge" onClick="toggleVariable(this.id, 'Refresh Zeplin Badge',event)">
+                            <label id="showZeplinBadge" onClick="toggleVariable(this.id,'Refresh Zeplin Badge',event)">
                                 Zeplin
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Tweetbot.png" alt="">
-                            <label id="showTweetbotBadge" onClick="toggleVariable(this.id, 'Refresh Tweetbot Badge',event)">
+                            <label id="showTweetbotBadge" onClick="toggleVariable(this.id,'Refresh Tweetbot Badge',event)">
                                 Tweetbot
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Twitter.png" alt="">
-                            <label id="showTwitterBadge" onClick="toggleVariable(this.id, 'Refresh Twitter Badge',event)">
+                            <label id="showTwitterBadge" onClick="toggleVariable(this.id,'Refresh Twitter Badge',event)">
                                 Twitter
                                 <input type="checkbox"><i></i>
                             </label>	
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Maipo.png" alt="">
-                            <label id="showMaipoBadge" onClick="toggleVariable(this.id, 'Refresh Maipo Badge',event)">
+                            <label id="showMaipoBadge" onClick="toggleVariable(this.id,'Refresh Maipo Badge',event)">
                                 Maipo
                                 <input type="checkbox"><i></i>
                             </label>	
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Twitch.png" alt="">
-                            <label id="showTwitchBadge" onClick="toggleVariable(this.id, 'Refresh Twitch Badge',event)">
+                            <label id="showTwitchBadge" onClick="toggleVariable(this.id,'Refresh Twitch Badge',event)">
                                 Twitch
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Facebook.png" alt="">
-                            <label id="showFacebookBadge" onClick="toggleVariable(this.id, 'Refresh Facebook Badge',event)">
+                            <label id="showFacebookBadge" onClick="toggleVariable(this.id,'Refresh Facebook Badge',event)">
                                 Facebook
                                 <input type="checkbox"><i></i>
                             </label>
@@ -1770,9 +1895,10 @@
                 </header>
                 <section>
                     <small>Quickly change your entire Touch Bar. These don't affect Dock Badge selections.</small>
+                    <h3>Standard Presets</h3>
                     <ul>
-                        <li class="radio-switch">
-                            <label class="activePreset_Default">
+                        <li class="form-switch radio-switch">
+                            <label id="activePreset">
                                 <span class="tbscreenshot">
                                     <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/presets/default.png" alt="">
                                 </span>
@@ -1780,22 +1906,24 @@
                                     Default Settings
                                     <small>The stock configuration of GoldenChaos-BTT.</small>
                                 </span>
-                                <span class="token selected" onClick="triggerPresetAndRefreshSettingsWindow('Default Settings')">
-                                    Apply
+                                <span class="token selected default" onClick="applyPreset('Default Settings')">
+                                    <span class="inactive">Apply</span>
+                                    <span class="active">Current Preset</span>
                                 </span>
                             </label>
                         </li>
-                        <li class="radio-switch">
-                            <label class="activePreset_Default">
+                        <li class="form-switch radio-switch">
+                            <label id="activePreset">
                                 <span class="tbscreenshot">
                                     <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/presets/minimalist.png" alt="">
                                 </span>
                                 <span class="description">
                                     Minimalist
-                                    <small>Out of the way.</small>
+                                    <small>Just two menu bar sizes - expand for weather and battery info.<br>Home Strip only shows Now Playing controls.</small>
                                 </span>
-                                <span class="token selected" onClick="triggerPresetAndRefreshSettingsWindow('Minimalist')">
-                                    Apply
+                                <span class="token selected minimalist" onClick="applyPreset('Minimalist')">
+                                    <span class="inactive">Apply</span>
+                                    <span class="active">Current Preset</span>
                                 </span>
                             </label>
                         </li>
@@ -1806,35 +1934,36 @@
                     <small>Configurations made by users of GoldenChaos-BTT.</small>
                     <ul>
                         <li class="form-switch radio-switch">
-                            <label class="activePreset_GCs-GC-BTT">
+                            <label id="activePreset">
                                 <span class="tbscreenshot">
-                                    <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/presets/gcs-gc-btt.png" alt="">
+                                    <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/presets/gcs-daily-driver.png" alt="">
                                 </span>
                                 <span class="description">
                                     GC's Daily Driver
-                                    <small>Jason's personal configuration with custom medium date size.</small>
+                                    <small>GC's personal configuration with custom medium date size. &bull; <em>By GoldenChaos</em></small>
                                 </span>
-                                <span class="token selected" onClick="triggerPresetAndRefreshSettingsWindow('GC\'s GC-BTT')">
-                                    Apply
+                                <span class="token selected gcs-daily-driver" onClick="applyPreset('GC\'s Daily Driver')">
+                                    <span class="inactive">Apply</span>
+                                    <span class="active">Current Preset</span>
                                 </span>
                             </label>
                         </li>
                     </ul>
                 </section>
                 <section>
-                    <h3>Factory Reset</h3>
-                    <ul style="border-color:#ff0000;">
-                        <li class="radio-switch">
-                            <label>
+                    <h3 style="color:#ff0000">Factory Reset</h3>
+                    <ul style="border-color:#ff0000;background-color:rgba(255,0,0,.2);">
+                        <li class="form-switch radio-switch">
+                            <label id="activePreset">
                                 <span class="tbscreenshot">
                                     <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/presets/default.png" alt="">
                                 </span>
                                 <span class="description">
                                     Factory Reset
-                                    <small>Applies the Default preset and <b>restores the default set of dock badges</b>.</small>
+                                    <small>Applies the Default preset and restores the default set of dock badges.</small>
                                 </span>
-                                <span class="token selected" onClick="triggerPresetAndRefreshSettingsWindow('Factory Reset')">
-                                    Apply
+                                <span class="token selected" onClick="applyPreset('Factory Reset')">
+                                    Factory Reset
                                 </span>
                             </label>
                         </li>
