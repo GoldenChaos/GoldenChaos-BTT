@@ -480,37 +480,63 @@
     
     
     /* Radio Switch Styles */
+    #presets .radio-switch:active:after {
+        position: absolute;
+        content: " ";
+        top: 0;
+        bottom: 0;
+        left: -16px;
+        right: 0;
+        background: rgba(255,255,255,.03);
+    }
+    
     .radio-switch label {
         padding-top: 4px;
         padding-bottom: 4px;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .form-switch.radio-switch .description {
+        top: 0;
+        margin-bottom: 0;
+        z-index: 2;
     }
     
     .radio-switch small {
         margin-left: 0;
     }
     
-    .radio-switch .token {
+    .radio-switch .active {
+        color: #1384fe;
+        line-height: 36px;
+        width: 200px;
+        font-size: 21px;
+        font-weight: bold;
+        text-align: right;
+    }
+    
+    .radio-switch .active span {
+        display: none;
         position: relative;
-        line-height: normal;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        top: 0;
-        width: auto;
+        top: 50%;
+        margin-top: -18px;
+        vertical-align: center;
         white-space: nowrap;
     }
     
-    .radio-switch .token .active {
-        display: none;
-    }
-    
-    .radio-switch .token .inactive {
+    .radio-switch .default .active.default span,
+    .radio-switch .minimalist .active.minimalist span,
+    .radio-switch .gcs-daily-driver .active.gcs-daily-driver span {
         display: block;
     }
     
+    
+    /* Active preset display box */
     .active-preset-display .form-switch label {
         display: flex;
         flex-direction: row;
+        padding: 4px 0;
     }
     
     .active-preset-display .form-switch label .description {
@@ -519,19 +545,21 @@
     
     .active-preset-display .form-switch label .action .token {
         margin-top: 13px;
+        line-height: normal;
     }
     
-    .active-preset-display .radio-switch .description span,
-    .active-preset-display .radio-switch .description small,
-    .active-preset-display .radio-switch .token {
+    .active-preset-display .form-switch .description span,
+    .active-preset-display .form-switch .description small,
+    .active-preset-display .form-switch .token {
         display: none;
     }
     
-    .active-preset-display .radio-switch .description small {
+    .active-preset-display .form-switch .description small {
+        margin: 0;
         margin-top: -4px;
     }
     
-    .active-preset-display .radio-switch .description small a {
+    .active-preset-display .form-switch .description small a {
         position: relative;
         top: 0;
         bottom: 0;
@@ -543,33 +571,32 @@
         margin-top: 4px;
     }
         
-    .active-preset-display .radio-switch .loading .loading,
-    .active-preset-display .radio-switch .custom .custom,
-    .active-preset-display .radio-switch .default .default,
-    .active-preset-display .radio-switch .minimalist .minimalist,
-    .active-preset-display .radio-switch .gcs-daily-driver .gcs-daily-driver {
+    .active-preset-display .form-switch .loading .loading,
+    .active-preset-display .form-switch .custom .custom,
+    .active-preset-display .form-switch .default .default,
+    .active-preset-display .form-switch .minimalist .minimalist,
+    .active-preset-display .form-switch .gcs-daily-driver .gcs-daily-driver {
         display: block;
     }
     
-    ul:not(.active-preset-display) .radio-switch .default .token.default,
-    ul:not(.active-preset-display) .radio-switch .minimalist .token.minimalist,
-    ul:not(.active-preset-display) .radio-switch .gcs-daily-driver .token.gcs-daily-driver {
-        background: limegreen;
-        border-color: limegreen;
+    #general .active-preset-display #activePreset.loading:before,
+    #general .active-preset-display #activePreset.custom:before,
+    #general .active-preset-display #activePreset.default:before,
+    #general .active-preset-display #activePreset.minimalist:before,
+    #general .active-preset-display #activePreset.gcs-daily-driver:before {
+        content: " ";
+        position: absolute;
+        top: -9px;
+        bottom: -9px;
+        left: -17px;
+        right: -9px;
+        border: 1px solid #1384fe;
+        border-radius: 4px;
     }
     
-    .radio-switch .default .token.default .inactive,
-    .radio-switch .minimalist .token.minimalist .inactive,
-    .radio-switch .gcs-daily-driver .token.gcs-daily-driver .inactive {
-        display: none;
+    #general .active-preset-display #activePreset.custom:before {
+        border-color: #fe9e0b;
     }
-    
-    .radio-switch .default .token.default .active,
-    .radio-switch .minimalist .token.minimalist .active,
-    .radio-switch .gcs-daily-driver .token.gcs-daily-driver .active {
-        display: block;
-    }
-    
 </style>
 <script>
     var variables = {};
@@ -742,7 +769,7 @@
                 <section>
                     <h3>Current Preset</h3>
                     <ul class="active-preset-display">
-                        <li class="form-switch radio-switch">
+                        <li class="form-switch">
                             <label id="activePreset" class="loading">
                                 <span class="description">
                                     <span class="loading">
@@ -1897,33 +1924,31 @@
                     <small>Quickly change your entire Touch Bar. These don't affect Dock Badge selections.</small>
                     <h3>Standard Presets</h3>
                     <ul>
-                        <li class="form-switch radio-switch">
+                        <li class="form-switch radio-switch" onClick="applyPreset('Default Settings')">
                             <label id="activePreset">
-                                <span class="tbscreenshot">
-                                    <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/presets/default.png" alt="">
-                                </span>
                                 <span class="description">
+                                    <span class="tbscreenshot">
+                                        <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/presets/default.png" alt="">
+                                    </span>
                                     Default Settings
                                     <small>The stock configuration of GoldenChaos-BTT.</small>
                                 </span>
-                                <span class="token selected default" onClick="applyPreset('Default Settings')">
-                                    <span class="inactive">Apply</span>
-                                    <span class="active">Current Preset</span>
+                                <span class="active default">
+                                    <span>&#10003;</span>
                                 </span>
                             </label>
                         </li>
-                        <li class="form-switch radio-switch">
+                        <li class="form-switch radio-switch" onClick="applyPreset('Minimalist')">
                             <label id="activePreset">
-                                <span class="tbscreenshot">
-                                    <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/presets/minimalist.png" alt="">
-                                </span>
                                 <span class="description">
+                                    <span class="tbscreenshot">
+                                        <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/presets/minimalist.png" alt="">
+                                    </span>
                                     Minimalist
                                     <small>Just two menu bar sizes - expand for weather and battery info.<br>Home Strip only shows Now Playing controls.</small>
                                 </span>
-                                <span class="token selected minimalist" onClick="applyPreset('Minimalist')">
-                                    <span class="inactive">Apply</span>
-                                    <span class="active">Current Preset</span>
+                                <span class="active minimalist">
+                                    <span>&#10003;</span>
                                 </span>
                             </label>
                         </li>
@@ -1933,36 +1958,32 @@
                     <h3>Community Presets</h3>
                     <small>Configurations made by users of GoldenChaos-BTT.</small>
                     <ul>
-                        <li class="form-switch radio-switch">
+                        <li class="form-switch radio-switch" onClick="applyPreset('GC\'s Daily Driver')">
                             <label id="activePreset">
-                                <span class="tbscreenshot">
-                                    <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/presets/gcs-daily-driver.png" alt="">
-                                </span>
                                 <span class="description">
+                                    <span class="tbscreenshot">
+                                        <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/presets/gcs-daily-driver.png" alt="">
+                                    </span>
                                     GC's Daily Driver
                                     <small>GC's personal configuration with custom medium date size. &bull; <em>By GoldenChaos</em></small>
                                 </span>
-                                <span class="token selected gcs-daily-driver" onClick="applyPreset('GC\'s Daily Driver')">
-                                    <span class="inactive">Apply</span>
-                                    <span class="active">Current Preset</span>
+                                <span class="active gcs-daily-driver">
+                                    <span>&#10003;</span>
                                 </span>
                             </label>
                         </li>
                     </ul>
                 </section>
                 <section>
-                    <h3 style="color:#ff0000">Factory Reset</h3>
-                    <ul style="border-color:#ff0000;background-color:rgba(255,0,0,.2);">
-                        <li class="form-switch radio-switch">
+                    <h3 style="color:#ff3a30">Reset</h3>
+                    <ul style="border-color:#ff3a30;" class="active-preset-display">
+                        <li class="form-switch">
                             <label id="activePreset">
-                                <span class="tbscreenshot">
-                                    <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/presets/default.png" alt="">
-                                </span>
-                                <span class="description">
+                                <span class="description" style="top:-5px;">
                                     Factory Reset
-                                    <small>Applies the Default preset and restores the default set of dock badges.</small>
+                                    <small style="display:block;">Applies the Default preset and restores the default set of dock badges.</small>
                                 </span>
-                                <span class="token selected" onClick="applyPreset('Factory Reset')">
+                                <span style="display:block;line-height:normal;background:#ff3a30;border-color:#ff3a30;" class="token selected" onClick="applyPreset('Factory Reset')">
                                     Factory Reset
                                 </span>
                             </label>
