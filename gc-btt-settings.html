@@ -5,11 +5,11 @@
 <style>
     body {
         color: #fff;
-        font-family: "SF Pro Text", Helvetica, sans-serif;
+        font-family: -apple-system, "SF Pro", Helvetica, sans-serif;
         font-size: 14px;
         margin: 24px 48px 64px 48px;
         padding: 0;
-        height: 693px;
+        height: 688px;
         width: 980px;
         background: transparent;
         -webkit-transform: translate3d(0, 0, 0);
@@ -34,34 +34,33 @@
     }
     
     h1 {
-        font-family: "SF Pro Display", Helvetica, sans-serif;
+        font-family: -apple-system, "SF Pro Display", Helvetica, sans-serif;
         font-weight: 600;
         margin: 0;
-        padding: 56px 16px 16px 16px;
+        padding: 47px 16px 16px 16px;
         font-size: 24px;
     }
     
     h2 {
-        font-family: "SF Pro Display", Helvetica, sans-serif;
+        font-family: -apple-system, "SF Pro Display", Helvetica, sans-serif;
         font-size: 16px;
         text-align: center;
-        font-weight: 600;
+        font-weight: 500;
         margin: 12px 0;
     }
     
     h3 {
-        font-family: "SF Pro Display", Helvetica, sans-serif;
+        font-family: -apple-system, "SF Pro Display", Helvetica, sans-serif;
         text-transform: uppercase;
         font-size: 13px;
-        font-weight: 600;
-        letter-spacing: .5px;
+        font-weight: 500;
         padding: 0 32px;
-        margin: 20px 0 10px 0;
+        margin: 18px 0 10px 0;
         color: rgba(180, 179, 178, 1);
     }
     
     section:first-of-type h3 {
-        margin-top: 0;
+        margin-top: -3px;
     }
     
     span {
@@ -108,7 +107,7 @@
     
     .traffic-lights { position: absolute; top: 20px; left: 20px; } .focus .traffic-lights > .traffic-light-close, .traffic-lights:hover > .traffic-light-close, .traffic-lights:active > .traffic-light-close { background-color: #ff6159; } .focus .traffic-lights > .traffic-light-close:active:hover, .traffic-lights:hover > .traffic-light-close:active:hover, .traffic-lights:active > .traffic-light-close:active:hover { background-color: #ff8d85; } .focus .traffic-lights > .traffic-light-minimize, .traffic-lights:hover > .traffic-light-minimize, .traffic-lights:active > .traffic-light-minimize { background-color: #ffbd2e; } .focus .traffic-lights > .traffic-light-minimize:active:hover, .traffic-lights:hover > .traffic-light-minimize:active:hover, .traffic-lights:active > .traffic-light-minimize:active:hover { background-color: #bf8e22; } .focus .traffic-lights > .traffic-light-maximize, .traffic-lights:hover > .traffic-light-maximize, .traffic-lights:active > .traffic-light-maximize { background-color: #28c941; } .focus .traffic-lights > .traffic-light-maximize:active:hover, .traffic-lights:hover > .traffic-light-maximize:active:hover, .traffic-lights:active > .traffic-light-maximize:active:hover { background-color: #1d9730; } .traffic-lights > .traffic-light:before, .traffic-lights > .traffic-light:after { visibility: hidden; } .traffic-lights:hover > .traffic-light:before, .traffic-lights:hover > .traffic-light:after, .traffic-lights:active > .traffic-light:before, .traffic-lights:active > .traffic-light:after { visibility: visible; }
 
-    .traffic-light { border-radius: 100%; padding: 0; height: 12px; width: 12px; border: 1px solid rgba(0, 0, 0, 0.06); box-sizing: border-box; margin-right: 3.5px; background-color: #ff6159; position: relative; outline: none; } .traffic-light:before, .traffic-light:after { content: ''; position: absolute; border-radius: 1px; left: 0; top: 0; right: 0; bottom: 0; margin: auto; } .traffic-light-close:before, .traffic-light-close:after { background-color: #4d0000; width: 8px; height: 1px; } .traffic-light-close:before { transform: rotate(45deg); } .traffic-light-close:after { transform: rotate(-45deg); } .traffic-light-close:active:hover:before, .traffic-light-close:active:hover:after { background-color: #190000; } .traffic-light-minimize:before { background-color: #995700; width: 8px; height: 1px; } .traffic-light-minimize:active:hover:before { background-color: #592800; } .traffic-light-maximize:before { background-color: #006500; width: 6px; height: 6px; } .traffic-light-maximize:after { background-color: #28c941; width: 10px; height: 2px; transform: rotate(45deg); } .traffic-light-maximize:active:hover:before { background-color: #003200; } .traffic-light-maximize:active:hover:after { background-color: #1d9730; }
+    .traffic-light { border-radius: 100%; padding: 0; height: 12px; width: 12px; border: 1px solid rgba(0, 0, 0, 0.06); box-sizing: border-box; background-color: #ff6159; position: relative; outline: none; } .traffic-light:before, .traffic-light:after { content: ''; position: absolute; border-radius: 1px; left: 0; top: 0; right: 0; bottom: 0; margin: auto; } .traffic-light-close:before, .traffic-light-close:after { background-color: #4d0000; width: 8px; height: 1px; } .traffic-light-close:before { transform: rotate(45deg); } .traffic-light-close:after { transform: rotate(-45deg); } .traffic-light-close:active:hover:before, .traffic-light-close:active:hover:after { background-color: #190000; } .traffic-light-minimize:before { background-color: #995700; width: 8px; height: 1px; } .traffic-light-minimize:active:hover:before { background-color: #592800; } .traffic-light-maximize:before { background-color: #006500; width: 6px; height: 6px; } .traffic-light-maximize:after { background-color: #28c941; width: 10px; height: 2px; transform: rotate(45deg); } .traffic-light-maximize:active:hover:before { background-color: #003200; } .traffic-light-maximize:active:hover:after { background-color: #1d9730; }
     
     .sidebar ul {
         list-style-type: none;
@@ -118,7 +117,7 @@
     }
     
     .tablink {
-        padding: 8px 12px 8px 48px;
+        padding: 6px 12px 6px 48px;
         margin: 0 10px;
         width: 184px;
         position: relative;
@@ -132,15 +131,15 @@
     
     .tablink img {
         height: 28px;
-        margin-right: 12px;
-        margin-left: -36px;
+        margin-right: 10px;
+        margin-left: -38px;
         float: left;
     }
     
     .tablink::after {
         content: " ";
         display: block;
-        width: calc(100% - 52px);
+        width: calc(100% - 48px);
         height: 1px;
         position: absolute;
         bottom: 0;
@@ -159,8 +158,8 @@
     
     .tablink.start {
         margin-top: 21px;
-        border-top-right-radius: 6px;
-        border-top-left-radius: 6px;
+        border-top-right-radius: 8px;
+        border-top-left-radius: 8px;
     }
     
     .tablink.start:first-of-type {
@@ -168,8 +167,8 @@
     }
     
     .tablink.end {
-        border-bottom-right-radius: 6px;
-        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 8px;
+        border-bottom-left-radius: 8px;
     }
     
     .tablink:last-of-type {
@@ -216,7 +215,7 @@
         background: rgba(83, 81, 79, .8);
         -webkit-backdrop-filter: blur(16px) saturate(400%) contrast(150%);
         -webkit-transform: translate3d(0, 0, 0);
-        border-bottom: 1px solid rgba(255,255,255,.1);
+        border-bottom: 1px solid rgba(0,0,0,1);
         box-shadow: inset rgba(255,255,255,.4) 0 0 0;
         border-top-right-radius: 10px;
     }
@@ -238,9 +237,8 @@
         padding: 0;
         margin: 0 16px 16px 16px;
         -webkit-transform: translate3d(0, 0, 0);
-        background: rgba(75, 74, 73, 1);
-        border: 1px solid rgba(95, 94, 93, 1);
-        border-radius: 4px;
+        background: rgba(85, 84, 83, 1);
+        border-radius: 8px;
     }
     
     .tabcontent ul li {
@@ -280,8 +278,10 @@
     }
     
     .tabcontent ul li .tbscreenshot {
-        width: calc(100% - 16px);
+        width: calc(100% - 86px);
         padding: 4px;
+        display: block;
+        margin-top: 12px;
     }
     
     .tabcontent ul li .tbscreenshot img  {
@@ -480,59 +480,85 @@
     
     
     /* Radio Switch Styles */
-    #presets .radio-switch:active:after {
-        position: absolute;
-        content: " ";
-        top: 0;
-        bottom: 0;
-        left: -16px;
-        right: 0;
-        background: rgba(255,255,255,.03);
-    }
     
     .radio-switch label {
         padding-top: 4px;
         padding-bottom: 4px;
-        display: flex;
-        flex-direction: row;
-    }
-    
-    .form-switch.radio-switch .description {
-        top: 0;
-        margin-bottom: 0;
-        z-index: 2;
     }
     
     .radio-switch small {
         margin-left: 0;
     }
     
-    .radio-switch .active {
-        color: #1384fe;
-        line-height: 36px;
-        width: 200px;
-        font-size: 21px;
-        font-weight: bold;
-        text-align: right;
+    .radio-switch .description {
+        top: 0;
+        margin-bottom: 0;
+        z-index: 2;
     }
     
-    .radio-switch .active span {
-        display: none;
-        position: relative;
-        top: 50%;
-        margin-top: -18px;
-        vertical-align: center;
-        white-space: nowrap;
+    .radio-switch .radio {
+        position: absolute;
+        top: calc(50% - 9px);
+        right: 6px;
+        margin: 0;
+        padding: 0;
+        display: block !important;
+        width: 18px;
+        height: 18px;
+        border-radius: 100%;
+        background-color: #767272;
+        background-image: linear-gradient(#606062,#767272);
+        box-shadow: inset 0 1px 1px rgba(255,255,255,.15), inset 0 -1px 1px rgba(0,0,0,.15), 0 0 0 1px rgba(0,0,0,.05);
+        transition: all .15s ease;
     }
     
-    .radio-switch .default .active.default span,
-    .radio-switch .minimalist .active.minimalist span,
-    .radio-switch .gcs-daily-driver .active.gcs-daily-driver span {
+    .radio-switch:active .radio {
+        background-image: linear-gradient(#787572,#787572);
+    }
+    
+    .radio-switch .radio:after {
+        content: "";
+        position: absolute;
         display: block;
+        top: 6px;
+        left: 6px;
+        width: 6px;
+        height: 6px;
+        border-radius: 100%;
+        background: white;
+        opacity: 0;
+        transform: scale(0);
+    }
+    
+    .radio-switch input[type="radio"] {
+        position: absolute;
+        opacity: 0;
+    }
+    
+    .radio-switch input[type="radio"]:checked + .radio {
+        background-color: #767272;
+        background-image: linear-gradient(#1669e4,#135fce);
+    }
+    
+    .radio-switch:active input[type="radio"]:checked + .radio {
+        background-color: #767272;
+        background-image: linear-gradient(#1d71e6,#2379f2);
+    }
+    
+    .radio-switch input[type="radio"]:checked + .radio:after {
+          opacity: 1;
+          transform: scale(1);
+          transition: all .15s ease;
     }
     
     
     /* Active preset display box */
+    ul.active-preset-display {
+        border: none;
+        border-radius: 8px;
+        background: #5f5d5c;
+    }
+    
     .active-preset-display .form-switch label {
         display: flex;
         flex-direction: row;
@@ -557,6 +583,7 @@
     .active-preset-display .form-switch .description small {
         margin: 0;
         margin-top: -4px;
+        color: #eee;
     }
     
     .active-preset-display .form-switch .description small a {
@@ -569,6 +596,7 @@
         line-height: 16px;
         text-align: left;
         margin-top: 4px;
+        color: #007aff;
     }
         
     .active-preset-display .form-switch .loading .loading,
@@ -592,6 +620,7 @@
         right: -9px;
         border: 1px solid #1384fe;
         border-radius: 4px;
+        display: none;
     }
     
     #general .active-preset-display #activePreset.custom:before {
@@ -650,10 +679,10 @@
     }
     
     function triggerNamedActionAndRefreshSettingsWindow(actionName, affectsPreset) {
-        triggerNamedActionWithoutResponse(actionName);
         if(affectsPreset === true) {
             setVariable('activePreset','custom',event);
         }
+        triggerNamedActionWithoutResponse(actionName);
         event.preventDefault();
         event.stopPropagation();
         setTimeout(function () {
@@ -662,6 +691,15 @@
     }
     
     function applyPreset(actionName) {
+        triggerNamedActionWithoutResponse(actionName);
+        event.preventDefault();
+        event.stopPropagation();
+        setTimeout(function () {
+            getAllVariablesAndUpdateClasses();
+        }, 3000);
+    }
+    
+    function checkAndApplyPreset(presetName, actionName) {
         triggerNamedActionWithoutResponse(actionName);
         event.preventDefault();
         event.stopPropagation();
@@ -698,23 +736,21 @@
         window.BTT.callHandler('get_string_variable', {variableName: 'gc_version'}, function callback(currentVariableValue) {
             if(currentVariableValue === '3.560') {
                 getAllVariablesAndUpdateClasses();
-                } else {
-                    triggerNamedActionWithoutResponse('btt_preset_imported_GoldenChaos-BTT 3.560');
-                    checkIfFinished();
-                }
+            } else {
+                triggerNamedActionWithoutResponse('btt_preset_imported_GoldenChaos-BTT 3.560');
+                checkIfFinished();
             }
-        );
+        });
     }
     
     function checkIfFinished() {
         window.BTT.callHandler('get_string_variable', {variableName: 'gc_version'}, function callback(currentVariableValue) {
             if(currentVariableValue === '3.560') {
                 getAllVariablesAndUpdateClasses();
-                } else {
-                    setTimeout(() => { checkIfFinished() }, 500)
-                }
+            } else {
+                setTimeout(() => { checkIfFinished() }, 500)
             }
-        );
+        });
     }
     
     window.addEventListener(
@@ -730,7 +766,7 @@
 <div class="padding-close-control" onClick="triggerNamedActionWithoutResponse('Show GC-BTT Settings')"></div>
 <div class="sidebar">
      <div class="traffic-lights">
-         <button class="traffic-light traffic-light-close" id="close" onClick="triggerNamedActionWithoutResponse('Show GC-BTT Settings')"></button>
+         <div class="traffic-light traffic-light-close" id="close" onClick="triggerNamedActionWithoutResponse('Show GC-BTT Settings')"></div>
      </div>
     <h1 class="BTTDraggable">GC-BTT Settings</h1>
     <ul>
@@ -795,7 +831,7 @@
                                     <span class="token selected loading" onClick="applyPreset('Check All Settings')">
                                         Reapply Preset
                                     </span>
-                                    <span class="token selected custom" onClick="applyPreset('Check All Settings')">
+                                    <span class="token selected custom" onClick="applyPreset('Restore Custom Settings')">
                                         Reapply Settings
                                     </span>
                                     <span class="token selected default" onClick="applyPreset('Default Settings')">
@@ -1920,62 +1956,72 @@
                 <header class="BTTDraggable">
                     <h2>Presets</h2>
                 </header>
+                <small>Quickly change your entire Touch Bar. These don't affect Dock Badge selections.</small>
                 <section>
-                    <small>Quickly change your entire Touch Bar. These don't affect Dock Badge selections.</small>
+                    <ul>
+                        <li class="form-switch radio-switch">
+                            <label id="activePreset" for="radio_custom">
+                                <span class="description">
+                                    Custom Settings
+                                    <small style="display:block;">Restores the settings you had before applying your current preset.</small>
+                                </span>
+                                <input type="radio" name="preset" id="radio_custom">
+                                <span class="radio"></span>
+                            </label>
+                        </li>
+                    </ul>
+                </section>
+                <section>
                     <h3>Standard Presets</h3>
                     <ul>
-                        <li class="form-switch radio-switch" onClick="applyPreset('Default Settings')">
-                            <label id="activePreset">
+                        <li class="form-switch radio-switch">
+                            <label id="activePreset" for="radio_default">
                                 <span class="description">
+                                    Default Settings
+                                    <small>The stock configuration of GoldenChaos-BTT.</small>
                                     <span class="tbscreenshot">
                                         <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/presets/default.png" alt="">
                                     </span>
-                                    Default Settings
-                                    <small>The stock configuration of GoldenChaos-BTT.</small>
                                 </span>
-                                <span class="active default">
-                                    <span>&#10003;</span>
-                                </span>
+                                <input type="radio" name="preset" id="radio_default" onClick="applyPreset('Default Settings')">
+                                <span class="radio default"></span>
                             </label>
                         </li>
-                        <li class="form-switch radio-switch" onClick="applyPreset('Minimalist')">
-                            <label id="activePreset">
+                        <li class="form-switch radio-switch">
+                            <label id="activePreset" for="radio_minimalist">
                                 <span class="description">
+                                    Minimalist
+                                    <small>Just two menu bar sizes - expand for weather and battery info.<br>Home Strip only shows Now Playing controls.</small>
                                     <span class="tbscreenshot">
                                         <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/presets/minimalist.png" alt="">
                                     </span>
-                                    Minimalist
-                                    <small>Just two menu bar sizes - expand for weather and battery info.<br>Home Strip only shows Now Playing controls.</small>
                                 </span>
-                                <span class="active minimalist">
-                                    <span>&#10003;</span>
-                                </span>
+                                <input type="radio" name="preset" id="radio_minimalist" onClick="applyPreset('Minimalist')">
+                                <span class="radio minimalist"></label>
                             </label>
                         </li>
                     </ul>
                 </section>
                 <section>
                     <h3>Community Presets</h3>
-                    <small>Configurations made by users of GoldenChaos-BTT.</small>
                     <ul>
-                        <li class="form-switch radio-switch" onClick="applyPreset('GC\'s Daily Driver')">
-                            <label id="activePreset">
+                        <li class="form-switch radio-switch">
+                            <label id="activePreset" for="radio_gcs-daily-driver">
                                 <span class="description">
+                                    GC's Daily Driver
+                                    <small>GC's personal configuration with custom medium date size. &bull; <em>By GoldenChaos</em></small>
                                     <span class="tbscreenshot">
                                         <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/presets/gcs-daily-driver.png" alt="">
                                     </span>
-                                    GC's Daily Driver
-                                    <small>GC's personal configuration with custom medium date size. &bull; <em>By GoldenChaos</em></small>
                                 </span>
-                                <span class="active gcs-daily-driver">
-                                    <span>&#10003;</span>
-                                </span>
+                                <input type="radio" name="preset" id="radio_gcs-daily-driver" onClick="applyPreset('GC\'s Daily Driver')">
+                                <span class="radio gcs-daily-driver"></span>
                             </label>
                         </li>
                     </ul>
                 </section>
                 <section>
-                    <h3 style="color:#ff3a30">Reset</h3>
+                    <h3>Reset</h3>
                     <ul style="border-color:#ff3a30;" class="active-preset-display">
                         <li class="form-switch">
                             <label id="activePreset">
