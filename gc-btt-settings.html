@@ -9,7 +9,7 @@
         font-size: 14px;
         margin: 24px 48px 64px 48px;
         padding: 0;
-        height: 692px;
+        height: 695px;
         width: 980px;
         background: transparent;
         -webkit-transform: translate3d(0, 0, 0);
@@ -228,7 +228,6 @@
         margin-bottom: 16px;
     }
     
-    
     section h3 + small {
         margin-bottom: 6px;
     }
@@ -283,8 +282,8 @@
     }
     
     .tabcontent ul li .tbscreenshot {
-        width: calc(100% - 86px);
-        padding: 4px;
+        width: calc(100% - 82px);
+        padding: 3px;
         display: block;
         margin-top: 12px;
     }
@@ -320,6 +319,17 @@
         margin-bottom: 0;
     }
     
+    li.form-switch .description .kbshortcut {
+        display: inline-block;
+        margin-left: 8px;
+        color: rgba(255,255,255,.25);
+    }
+    
+    li.form-switch .description small .kbshortcut {
+        margin: 0;
+        color: rgba(255,255,255,.35);
+    }
+    
     .button {
         height: 26px;
         line-height: 26px;
@@ -328,6 +338,9 @@
         padding: 0 8px;
         margin: 8px;
         border-radius: 6px;
+        box-shadow: inset 0 0 0 1px #1485FF;
+        position: relative;
+        overflow: hidden;
     }
     
     .button.selected {
@@ -335,14 +348,43 @@
         color: #fff;
     }
     
-    .button.selected:active {
-        opacity: .8 !important;
+    .button.red {
+        box-shadow: inset 0 0 0 1px #ff453a;
+    }
+    
+    .button.red.selected {
+        background: #ff453a;
+    }
+    
+    .button.yellow {
+        box-shadow: inset 0 0 0 1px #fd9e0a;
+    }
+    
+    .button.yellow.selected {
+        background: #fd9e0a;
+    }
+    
+    .button.purple {
+        box-shadow: inset 0 0 0 1px #5e5ce5;
+    }
+    
+    .button.purple.selected {
+        background: #5e5ce5;
+    }
+    
+    .button:active:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(255,255,255,.15);
     }
     
     .segmented-control span:active {
         background: #1485FF;
     }
-    
     
     .segmented-control {
         position: absolute;
@@ -576,23 +618,32 @@
     .radio-switch .custom input[type="radio"] + .radio.custom,
     .radio-switch .default input[type="radio"] + .radio.default,
     .radio-switch .minimalist input[type="radio"] + .radio.minimalist,
-    .radio-switch .gcs-daily-driver input[type="radio"] + .radio.gcs-daily-driver {
+    .radio-switch .gcs-daily-driver input[type="radio"] + .radio.gcs-daily-driver,
+    .radio-switch .default_edited input[type="radio"] + .radio.default_edited,
+    .radio-switch .minimalist_edited input[type="radio"] + .radio.minimalist_edited,
+    .radio-switch .gcs-daily-driver_edited input[type="radio"] + .radio.gcs-daily-driver_edited {
         background-color: #767272;
         background-image: linear-gradient(#1669e4,#135fce);
     }
     
     .radio-switch:active .custom input[type="radio"] + .radio.custom,
     .radio-switch:active .default input[type="radio"] + .radio.default,
+    .radio-switch:active .default_edited input[type="radio"] + .radio.default_edited,
     .radio-switch:active .minimalist input[type="radio"] + .radio.minimalist,
-    .radio-switch:active .gcs-daily-driver input[type="radio"] + .radio.gcs-daily-driver {
+    .radio-switch:active .minimalist_edited input[type="radio"] + .radio.minimalist_edited,
+    .radio-switch:active .gcs-daily-driver input[type="radio"] + .radio.gcs-daily-driver,
+    .radio-switch:active .gcs-daily-driver_edited input[type="radio"] + .radio.gcs-daily-driver_edited {
         background-color: #767272;
         background-image: linear-gradient(#1d71e6,#2379f2);
     }
     
     .radio-switch .custom input[type="radio"] + .radio.custom:after,
     .radio-switch .default input[type="radio"] + .radio.default:after,
+    .radio-switch .default_edited input[type="radio"] + .radio.default_edited:after,
     .radio-switch .minimalist input[type="radio"] + .radio.minimalist:after,
-    .radio-switch .gcs-daily-driver input[type="radio"] + .radio.gcs-daily-driver:after {
+    .radio-switch .minimalist_edited input[type="radio"] + .radio.minimalist_edited:after,
+    .radio-switch .gcs-daily-driver input[type="radio"] + .radio.gcs-daily-driver:after,
+    .radio-switch .gcs-daily-driver_edited input[type="radio"] + .radio.gcs-daily-driver_edited:after {
           opacity: 1;
           transform: scale(1);
           transition: all .15s ease;
@@ -608,7 +659,7 @@
     .active-preset-display .form-switch label {
         display: flex;
         flex-direction: row;
-        padding: 6px 0;
+        padding: 5px 0;
         height: 100%;
     }
     
@@ -620,11 +671,60 @@
         line-height: normal;
     }
     
+    .active-preset-display .form-switch label .action {
+        display: flex;
+        margin-right: 5px;
+        flex-direction: row;
+    }
+    
     .active-preset-display .form-switch label .action .button {
+        position: relative;
+        margin: 0;
+        padding: 0 7px;
+        font-size: 10px;
+        box-sizing: border-box;
+        line-height: normal;
+        text-align: center;
+        height: 58px;
+        width: auto;
+        border-radius: 6px;
+        flex-direction: column;
+    }
+    
+    .active-preset-display .form-switch label .action .button span:first-of-type {
+        flex-grow: 1;
+        position: relative;
+    }
+    
+    .active-preset-display .form-switch label .action .button span:last-of-type {
+        margin-bottom: 5.5px;
+        white-space: nowrap;
+    }
+    
+    .active-preset-display .form-switch label .action .button img {
+        float: none;
+        margin: 0;
+        padding: 0;
+        height: 22px;
         position: absolute;
         top: 50%;
-        right: 0;
-        margin-top: -13px;
+        left: 50%;
+        margin-top: -11px;
+        margin-left: -11px;
+    }
+    
+    .active-preset-display .form-switch label .action .button.red {
+        width: 77.5px;
+        margin-right: 2px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+    }
+    
+    .active-preset-display .form-switch label .action .button.yellow {
+        width: 77.5px;
+        margin: 0 6px 0 0;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
     }
     
     .active-preset-display .form-switch .description span,
@@ -644,7 +744,7 @@
     
     .active-preset-display .form-switch .description a {
         position: relative;
-        top: 0;
+        top: -0.5px;
         bottom: 0;
         left: 0;
         right: 0;
@@ -662,32 +762,49 @@
     .active-preset-display .form-switch .description a:active {
         background: rgba(255,255,255,.2);
     }
-     
-    .active-preset-display .form-switch .loading .loading,
-    .active-preset-display .form-switch .custom .custom,
-    .active-preset-display .form-switch .default .default,
-    .active-preset-display .form-switch .minimalist .minimalist,
-    .active-preset-display .form-switch .gcs-daily-driver .gcs-daily-driver {
-        display: inline-block;
-    }
     
     #general .active-preset-display .description {
-        height: 58px;
+        height: auto;
     }
     
     #general .active-preset-display .description span.loading,
     #general .active-preset-display .description span.default,
     #general .active-preset-display .description span.minimalist,
     #general .active-preset-display .description span.gcs-daily-driver {
-        margin-top: 9px;
+        margin-top: 10px;
     }
-       
+    
+    
+    .active-preset-display .form-switch .loading .loading,
+    .active-preset-display .form-switch .custom .custom,
+    .active-preset-display .form-switch .default .default,
+    .active-preset-display .form-switch .minimalist .minimalist,
+    .active-preset-display .form-switch .gcs-daily-driver .gcs-daily-driver,
+    .active-preset-display .form-switch .default_edited .default_edited,
+    .active-preset-display .form-switch .minimalist_edited .minimalist_edited,
+    .active-preset-display .form-switch .gcs-daily-driver_edited .gcs-daily-driver_edited {
+        display: inline-block;
+    }
+    
+    .active-preset-display .form-switch .loading .button.loading,
+    .active-preset-display .form-switch .custom .button.custom,
+    .active-preset-display .form-switch .default .button.default,
+    .active-preset-display .form-switch .minimalist .button.minimalist,
+    .active-preset-display .form-switch .gcs-daily-driver .button.gcs-daily-driver,
+    .active-preset-display .form-switch .default_edited .button.default_edited,
+    .active-preset-display .form-switch .minimalist_edited .button.minimalist_edited,
+    .active-preset-display .form-switch .gcs-daily-driver_edited .button.gcs-daily-driver_edited {
+        display: flex;
+    }
     
     #general .active-preset-display #activePreset.loading:before,
     #general .active-preset-display #activePreset.custom:before,
     #general .active-preset-display #activePreset.default:before,
     #general .active-preset-display #activePreset.minimalist:before,
-    #general .active-preset-display #activePreset.gcs-daily-driver:before {
+    #general .active-preset-display #activePreset.gcs-daily-driver:before,
+    #general .active-preset-display #activePreset.default_edited:before,
+    #general .active-preset-display #activePreset.minimalist_edited:before,
+    #general .active-preset-display #activePreset.gcs-daily-driver_edited:before {
         content: "";
         position: absolute;
         top: -8px;
@@ -697,10 +814,12 @@
         border: 1px solid #1485FF;
         border-radius: 8px;
         box-shadow: 0 2px 24px rgba(0, 122, 255,.2);
-        
     }
     
-    #general .active-preset-display #activePreset.custom:before {
+    #general .active-preset-display #activePreset.custom:before,
+    #general .active-preset-display #activePreset.default_edited:before,
+    #general .active-preset-display #activePreset.minimalist_edited:before,
+    #general .active-preset-display #activePreset.gcs-daily-driver_edited:before {
         border-color: #fe9e0b;
         box-shadow: 0 2px 24px rgba(255, 159, 11,.2);
     }
@@ -748,6 +867,12 @@
         event.stopPropagation();
     }
     
+    function getVariable(variable) {
+        window.BTT.callHandler('get_string_variable', {variableName: variable}, function callback(currentVariableValue) {
+            return currentVariableValue;
+        });
+    }
+    
     function triggerNamedActionWithoutResponse(actionName) {
         window.BTT.callHandler('trigger_named_async_without_response', {trigger_name: actionName},
             function callback(scriptResult) {   
@@ -758,7 +883,15 @@
     
     function triggerNamedActionAndRefreshSettingsWindow(actionName, affectsPreset) {
         if(affectsPreset === true) {
-            setVariable('modifiedPreset','true',event);
+            window.BTT.callHandler('get_string_variable', {variableName: 'activePreset'}, function callback(currentVariableValue) {
+                if(currentVariableValue === 'default') {
+                    setVariable('activePreset','default_edited',event);
+                } else if(currentVariableValue === 'minimalist') {
+                    setVariable('activePreset','minimalist_edited',event);
+                } else if(currentVariableValue === 'gcs-daily-driver') {
+                    setVariable('activePreset','gcs-daily-driver_edited',event);
+                }
+            });
         }
         triggerNamedActionWithoutResponse(actionName);
         event.preventDefault();
@@ -781,7 +914,9 @@
         window.BTT.callHandler('get_string_variable', {variableName: 'activePreset'},
             function callback(currentVariableValue) {
                 if(currentVariableValue === presetName) {
-                    
+                    // Do nothing
+                } else if(currentVariableValue === presetName + '_edited') {
+                    // Do nothing
                 } else {
                     triggerNamedActionWithoutResponse(actionName);
                     setTimeout(function () {
@@ -820,15 +955,20 @@
     
     function showFactoryResetConfirmation() {
         document.getElementById("factory-reset").style.display = "none";
-        document.getElementById("factory-reset-dialog").style.display = "block";
+        document.getElementById("factory-reset-dialog").style.display = "flex";
+    }
+    
+    function hideFactoryResetConfirmation() {
+        document.getElementById("factory-reset-dialog").style.display = "none";
+        document.getElementById("factory-reset").style.display = "flex";
     }
     
     function checkVersion() {
         window.BTT.callHandler('get_string_variable', {variableName: 'gc_version'}, function callback(currentVariableValue) {
-            if(currentVariableValue === '3.560') {
+            if(currentVariableValue === '3.561') {
                 getAllVariablesAndUpdateClasses();
             } else {
-                triggerNamedActionWithoutResponse('btt_preset_imported_GoldenChaos-BTT 3.560');
+                triggerNamedActionWithoutResponse('btt_preset_imported_GoldenChaos-BTT 3.561');
                 checkIfFinished();
             }
         });
@@ -836,7 +976,7 @@
     
     function checkIfFinished() {
         window.BTT.callHandler('get_string_variable', {variableName: 'gc_version'}, function callback(currentVariableValue) {
-            if(currentVariableValue === '3.560') {
+            if(currentVariableValue === '3.561') {
                 getAllVariablesAndUpdateClasses();
             } else {
                 setTimeout(() => { checkIfFinished() }, 500)
@@ -906,31 +1046,99 @@
                                     <span class="default">
                                         Default Settings
                                     </span>
+                                    <span class="default_edited">
+                                        Default Settings*
+                                    </span>
                                     <span class="minimalist">
                                         Minimalist
+                                    </span>
+                                    <span class="minimalist_edited">
+                                        Minimalist*
                                     </span>
                                     <span class="gcs-daily-driver">
                                         GC's Daily Driver
                                     </span>
-                                    <a onClick="clickElement('presets-tab');">Change &rsaquo;</a><br>
-                                    <small class="custom">You're using your own custom settings for GC-BTT.<br>Run "Reapply Settings" if your settings didn't reapply correctly after upgrading.</small>
-                                    <small class="loading default minimalist gcs-daily-driver">Run "Reapply Preset" if this preset didn't apply correctly.</small>
+                                    <span class="gcs-daily-driver_edited">
+                                        GC's Daily Driver*
+                                    </span>
+                                    <a onClick="clickElement('presets-tab');">Change &rsaquo;</a>
+                                    <br>
+                                    <small class="custom">
+                                        You're using your own custom settings for GC-BTT.<br>
+                                        Run "Check Settings" if any settings don't apply correctly after upgrading.
+                                    </small>
+                                    <small class="loading default minimalist gcs-daily-driver">
+                                        Run "Check Settings" if this preset didn't apply correctly.
+                                    </small>
+                                    <small class="default_edited minimalist_edited gcs-daily-driver_edited">
+                                        You've customized this preset.<br>
+                                        Run "Check Settings" if any settings didn't apply correctly.
+                                    </small>
                                 </span>
                                 <span class="action">
-                                    <span class="button selected loading" onClick="applyPreset('Check All Settings')">
-                                        Reapply Preset
+                                    <span class="button red selected default_edited"
+                                        onClick="applyPreset('Default Settings')">
+                                        <span>
+                                            <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/refresh.png" alt="">
+                                        </span>
+                                        <span>Reset Preset</span>
                                     </span>
-                                    <span class="button selected custom" onClick="applyPreset('Restore Custom Settings')">
-                                        Reapply Settings
+                                    <span class="button red selected minimalist_edited" 
+                                        onClick="applyPreset('Minimalist')">
+                                        <span>
+                                            <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/refresh.png" alt="">
+                                        </span>
+                                        <span>Reset Preset</span>
                                     </span>
-                                    <span class="button selected default" onClick="applyPreset('Default Settings')">
-                                        Reapply Preset
+                                    <span class="button red selected gcs-daily-driver_edited" 
+                                        onClick="applyPreset('GC\'s Daily Driver')">
+                                        <span>
+                                            <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/refresh.png" alt="">
+                                        </span>
+                                        <span>Reset Preset</span>
                                     </span>
-                                    <span class="button selected minimalist" onClick="applyPreset('Minimalist')">
-                                        Reapply Preset
+                                    
+                                    <span class="button yellow selected default_edited minimalist_edited gcs-daily-driver_edited" onClick="applyPreset('Save Custom Settings')">
+                                        <span>
+                                            <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/new-tab.png" alt="">
+                                        </span>
+                                        <span>Save Custom</span>
                                     </span>
-                                    <span class="button selected gcs-daily-driver" onClick="applyPreset('GC\'s Daily Driver')">
-                                        Reapply Preset
+                                    
+                                    <span class="button selected loading default_edited minimalist_edited gcs-daily-driver_edited"
+                                        onClick="applyPreset('Check All Settings')">
+                                        <span>
+                                            <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/notification-center.png" alt="">
+                                        </span>
+                                        <span>Check Settings</span>
+                                    </span>
+                                    <span class="button selected custom"
+                                        onClick="applyPreset('Restore Custom Settings')">
+                                        <span>
+                                            <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/notification-center.png" alt="">
+                                        </span>
+                                        <span>Check Settings</span>
+                                    </span>
+                                    <span class="button selected default"
+                                        onClick="applyPreset('Default Settings')">
+                                        <span>
+                                            <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/notification-center.png" alt="">
+                                        </span>
+                                        <span>Check Settings</span>
+                                    </span>
+                                    <span class="button selected minimalist"
+                                        onClick="applyPreset('Minimalist')">
+                                        <span>
+                                            <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/notification-center.png" alt="">
+                                        </span>
+                                        <span>Check Settings</span>
+                                    </span>
+                                    <span class="button selected gcs-daily-driver"
+                                        onClick="applyPreset('GC\'s Daily Driver')">
+                                        <span>
+                                            <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/notification-center.png" alt="">
+                                        </span>
+                                        <span>Check Settings</span>
                                     </span>
                                 </span>
                             </label>
@@ -947,7 +1155,7 @@
                                 </span>
                                 <span class="description">
                                     Show GoldenChaos-BTT in the macOS Menu Bar
-                                    <small>Press &#8984;&#8997;&#8679;P to open settings when disabled. Requires a BTT restart to take effect.</small>
+                                    <small>Use <span class="kbshortcut">&#8984;&#8997;&#8679;P</span> to open settings when disabled. Requires a BTT restart to take effect.</small>
                                 </span>
                                 <input type="checkbox"><i></i>
                             </label>
@@ -964,7 +1172,7 @@
                                 </span>
                                 <span class="description">
                                     Use Normal Escape Key
-                                    <small>When enabled, separate fullscreen buttons will be added to the Home Strip and Option Menu.</small>
+                                    <small>When enabled, separate fullscreen buttons will be added to the Home and Snap Strips.</small>
                                 </span>
                                 <input type="checkbox"><i></i>
                             </label>
@@ -981,31 +1189,31 @@
                                 </span>
                                 <span class="description">
                                     Control Strip
-                                    <small>Hold control (&#8963;) to access a variety of important system controls.</small>
+                                    <small>Hold <span class="kbshortcut">&#8963;</span> Control to access a variety of important system controls.</small>
                                 </span>
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
                         <li class="form-switch">
-                            <label id="showOptionMenu" onClick="toggleVariable(this.id,'Refresh Option Menu',event)">
+                            <label id="showOptionMenu" onClick="toggleVariable(this.id,'Refresh Option Menu',event,true)">
                                 <span class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/option.png" alt="">
                                 </span>
                                 <span class="description">
-                                    Option Strip (Window Snapping)
-                                    <small>Hold option (&#8997;) to access quick window snapping controls.</small>
+                                    Snap Strip
+                                    <small>Hold <span class="kbshortcut">&#8997;</span> Option to access quick window snapping controls.</small>
                                 </span>
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
                         <li class="form-switch">
-                            <label id="showCommandMenu" onClick="toggleVariable(this.id,'Refresh Command Menu',event)">
+                            <label id="showCommandMenu" onClick="toggleVariable(this.id,'Refresh Command Menu',event,true)">
                                 <span class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/command.png" alt="">
                                 </span>
                                 <span class="description">
-                                    Command Strip (Dock)
-                                    <small>Hold command (&#8984;) to show the macOS dock on your Touch Bar.</small>
+                                    Dock Strip
+                                    <small>Hold <span class="kbshortcut">&#8984;</span> Command to show the macOS dock on your Touch Bar.</small>
                                 </span>
                                 <input type="checkbox"><i></i>
                             </label>
@@ -1021,8 +1229,8 @@
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/windowsnapper.png" alt="">
                                 </span>
                                 <span class="description">
-                                    Floating Window Snapping Grid
-                                    <small>Press &#8984;&#8679;W to summon a nifty window snapping widget under your cursor.</small>
+                                    Floating Window Snapping Grid <span class="kbshortcut">&#8984;&#8679;W</span>
+                                    <small>Summon a nifty window snapping widget under your cursor.</small>
                                 </span>
                                 <input type="checkbox"><i></i>
                             </label>
@@ -1032,14 +1240,14 @@
             </div>
             <div id="presets" class="tabcontent">
                 <header class="BTTDraggable">Presets</header>
-                <small>Quickly change your entire Touch Bar. Unless specified, these don't affect Dock Badge settings.</small>
+                <small>Quickly customize your Touch Bar UI. Does not affect dock badges.</small>
                 <section>
                     <ul>
                         <li class="form-switch radio-switch">
                             <label id="activePreset">
                                 <span class="description">
                                     Custom Settings
-                                    <small style="display:block;">Restores the settings you had before applying your current preset.</small>
+                                    <small>Stores your Dock Badge selections.</small>
                                 </span>
                                 <input type="radio" name="preset" onClick="checkAndApplyPreset('custom','Restore Custom Settings')">
                                 <span class="radio custom"></span>
@@ -1056,11 +1264,11 @@
                                     Default Settings
                                     <small>The stock configuration of GoldenChaos-BTT.</small>
                                     <span class="tbscreenshot">
-                                        <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/presets/default.png" alt="">
+                                        <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/screenshots/default.png" alt="">
                                     </span>
                                 </span>
                                 <input type="radio" name="preset" onClick="checkAndApplyPreset('default','Default Settings')">
-                                <span class="radio default"></span>
+                                <span class="radio default default_edited"></span>
                             </label>
                         </li>
                         <li class="form-switch radio-switch">
@@ -1069,11 +1277,11 @@
                                     Minimalist
                                     <small>Just two menu bar sizes - expand for weather and battery info.<br>Home Strip only shows Now Playing controls.</small>
                                     <span class="tbscreenshot">
-                                        <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/presets/minimalist.png" alt="">
+                                        <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/screenshots/minimalist.png" alt="">
                                     </span>
                                 </span>
                                 <input type="radio" name="preset" onClick="checkAndApplyPreset('minimalist','Minimalist')">
-                                <span class="radio minimalist"></span>
+                                <span class="radio minimalist minimalist_edited"></span>
                             </label>
                         </li>
                     </ul>
@@ -1087,11 +1295,11 @@
                                     GC's Daily Driver
                                     <small>GC's personal configuration with custom medium date size. &bull; <em>By GoldenChaos</em></small>
                                     <span class="tbscreenshot">
-                                        <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/presets/gcs-daily-driver.png" alt="">
+                                        <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/screenshots/gcs-daily-driver.png" alt="">
                                     </span>
                                 </span>
                                 <input type="radio" name="preset" onClick="checkAndApplyPreset('gcs-daily-driver','GC\'s Daily Driver')">
-                                <span class="radio gcs-daily-driver"></span>
+                                <span class="radio gcs-daily-driver gcs-daily-driver_edited"></span>
                             </label>
                         </li>
                     </ul>
@@ -1103,22 +1311,24 @@
                             <label id="activePreset">
                                 <span id="factory-reset" style="display:flex;width:100%;">
                                     <span class="description">
-                                        <span style="display:block;margin-top:2px;">Factory Reset</span>
-                                        <small style="display:block;">Restores <em>all</em> settings to their defaults, including Dock Badges.<br>Does not erase stored Custom Settings.</small>
+                                        <span style="display:block;">Full Reset</span>
+                                        <small style="display:block;">Restores all settings to their defaults, including Dock Badges.<br>Does not affect saved Custom Settings.</small>
                                     </span>
-                                    <span style="display:block;background:#ff3a30;border-color:#ff3a30;" class="button selected" onClick="showFactoryResetConfirmation()">
-                                        Factory Reset
+                                    <span style="display:block;margin-top:14.5px;text-align:center;margin-right:4px;width:80px;" class="button red selected" onClick="showFactoryResetConfirmation()">
+                                        Full Reset
                                     </span>
                                 </span>
-                                <span id="factory-reset-dialog" style="display:none;">
-                                    <span class="description">
-                                        <span style="display:block;margin-top:2px;">Are you sure?</span>
-                                        <small style="display:block;"></small>
+                                <span id="factory-reset-dialog" style="display:none;width:100%;">
+                                    <span class="description" style="height:55px;">
+                                        <span style="display:block;margin-top:9px;">
+                                            Are you sure?
+                                        </span>
+                                        <small style="display:block;">Your current Dock Badge selection will remain in Custom Settings.</small>
                                     </span>
-                                    <span style="display:block;background:#ff3a30;border-color:#ff3a30;" class="button selected" onClick="applyPreset('Factory Reset')">
-                                        Factory Reset
+                                    <span style="display:block;margin-right:0;width:80px;text-align:center;margin-top:14.5px;" class="button red selected" onClick="applyPreset('Factory Reset')">
+                                        Full Reset
                                     </span>
-                                    <span style="display:block;" class="button selected" onClick="showFactoryResetConfirmation()">
+                                    <span style="display:block;width:80px;text-align:center;margin-top:14.5px;margin-right:4px;" class="button selected" onClick="hideFactoryResetConfirmation()">
                                         Cancel
                                     </span>
                                 </span>
@@ -1437,8 +1647,8 @@
                                 </span>
                                 Time Format
                                 <span class="segmented-control">
-                                    <span class="twelveHour" onClick="triggerNamedActionAndRefreshSettingsWindow('Use 12-Hour Time',true)">12-Hour</span>
-                                    <span class="twentyFourHour" onClick="triggerNamedActionAndRefreshSettingsWindow('Use 24-Hour Time',true)">24-Hour</span>
+                                    <span class="twelveHour" onClick="triggerNamedActionAndRefreshSettingsWindow('Use 12-Hour Time')">12-Hour</span>
+                                    <span class="twentyFourHour" onClick="triggerNamedActionAndRefreshSettingsWindow('Use 24-Hour Time')">24-Hour</span>
                                 </span>
                             </label>
                         </li>
@@ -1743,7 +1953,8 @@
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/windowsnapper.png" alt="">
                                 </span>
                                 <span class="description">
-                                    Show Floating Window Snapping Grid (&#8984;&#8679;W)
+                                    Show Floating Window Snapping Grid
+                                    <span class="kbshortcut">&#8984;&#8679;W</span>
                                     <small>Requires the Floating Window Snapping Grid to be enabled in the "General" tab.</small>
                                 </span>
                                 <input type="checkbox"><i></i>
@@ -1754,7 +1965,10 @@
                                 <span class="tbicon">
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/settings.png" alt="">
                                 </span>
-                                Show GC-BTT Settings Window (&#8984;&#8997;&#8679;P)
+                                <span class="description" style="top:0;margin-bottom:0;">
+                                    Show GC-BTT Settings Window
+                                    <span class="kbshortcut">&#8984;&#8997;&#8679;P</span>
+                                </span>
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
@@ -1763,11 +1977,18 @@
             </div>
             <div id="dock-badges" class="tabcontent">
                 <header class="BTTDraggable">Dock Badges</header>
-                <section>
-                    <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/screenshots/dock-badges.png" alt="">
-                    <small>Notification badges on your Touch Bar for apps running in your dock, including from Handoff.</small>
-                    <h3>Apple Apps</h3>
+                <section style="overflow:hidden;">
                     <ul>
+                        <li class="form-switch" style="padding:0;margin:0;">
+                            <span class="tbscreenshot" style="width:1085px;padding:5px;margin:0 0 24px 0;border-radius:9px;">
+                                <span style="position:absolute;top:0;right:-16px;width:80%;height:100%;background-image:linear-gradient(to left, #1e1e1e, rgba(30,30,30,.8), rgba(30,30,30,0) 100%);"></span>
+                                <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/screenshots/dock-badges.png" alt="">
+                            </span>
+                        </li>
+                    </ul>
+                    <small style="margin-bottom:20px;">Notification badges on your Touch Bar for apps running in your dock, including from Handoff.</small>
+                    <h3>Apple Apps</h3>
+                    <ul style="margin-bottom:0;">
                         <li class="form-switch">
                             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/app-icons/Calendar.png" alt="">
                             <label id="showAppleCalendarBadge" onClick="toggleVariable(this.id,'Refresh Apple Calendar Badge',event)">
@@ -2156,6 +2377,9 @@
             // Show the current tab, and add an "active" class to the button that opened the tab
             document.getElementById(tabName).style.display = "block";
             evt.currentTarget.className += " active";
+            
+            // Reset any confirmation dialogs when switching tabs
+            hideFactoryResetConfirmation();
         }
         
         // Select the General tab by default

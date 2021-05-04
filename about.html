@@ -5,7 +5,7 @@
 <style>
 	body {
         color: #fff;
-        font-family: "SF Pro Text", Helvetica, sans-serif;
+        font-family: -apple-system, "SF Pro", Helvetica Neue, sans-serif;
         font-size: 14px;
         margin: 24px 48px 64px 48px;
         padding: 0;
@@ -32,7 +32,7 @@
     }
     
     h1 {
-        font-family: "SF Pro Display", Helvetica, sans-serif;
+        font-family: -apple-system, "SF Pro Display", Helvetica Neue, sans-serif;
         font-weight: 600;
         margin: 0;
         padding: 56px 16px 12px 16px;
@@ -41,7 +41,7 @@
     }
     
     h2 {
-        font-family: "SF Pro Display", Helvetica, sans-serif;
+        font-family: -apple-system, "SF Pro Display", Helvetica Neue, sans-serif;
         font-size: 16px;
         text-align: center;
         font-weight: 600;
@@ -49,13 +49,12 @@
     }
     
     h3 {
-        font-family: "SF Pro Display", Helvetica, sans-serif;
+        font-family: -apple-system, "SF Pro Display", Helvetica Neue, sans-serif;
         text-transform: uppercase;
         font-size: 13px;
-        font-weight: 600;
-        letter-spacing: .5px;
+        font-weight: 500;
         padding: 0 32px;
-        margin: 24px 0 12px 0;
+        margin: 18px 0 10px 0;
         color: rgba(180, 179, 178, 1);
     }
     
@@ -89,12 +88,13 @@
         border-radius: 10px;
         border: 1px solid rgba(255, 255, 255, .2);
         -webkit-transform: translate3d(0, 0, 0);
-        background: rgba(56, 56, 56, 0.75);
+        background: rgba(47, 44, 40, 0.75);
         position: relative;
         box-shadow: inset rgba(255,255,255,.4) 0 0 0;
+        padding-bottom: 16px;
     }
     
-	.traffic-lights { position: absolute; top: 20px; left: 20px; z-index: 1000; } .focus .traffic-lights > .traffic-light-close, .traffic-lights:hover > .traffic-light-close, .traffic-lights:active > .traffic-light-close { background-color: #ff6159; } .focus .traffic-lights > .traffic-light-close:active:hover, .traffic-lights:hover > .traffic-light-close:active:hover, .traffic-lights:active > .traffic-light-close:active:hover { background-color: #ff8d85; } .focus .traffic-lights > .traffic-light-minimize, .traffic-lights:hover > .traffic-light-minimize, .traffic-lights:active > .traffic-light-minimize { background-color: #ffbd2e; } .focus .traffic-lights > .traffic-light-minimize:active:hover, .traffic-lights:hover > .traffic-light-minimize:active:hover, .traffic-lights:active > .traffic-light-minimize:active:hover { background-color: #bf8e22; } .focus .traffic-lights > .traffic-light-maximize, .traffic-lights:hover > .traffic-light-maximize, .traffic-lights:active > .traffic-light-maximize { background-color: #28c941; } .focus .traffic-lights > .traffic-light-maximize:active:hover, .traffic-lights:hover > .traffic-light-maximize:active:hover, .traffic-lights:active > .traffic-light-maximize:active:hover { background-color: #1d9730; } .traffic-lights > .traffic-light:before, .traffic-lights > .traffic-light:after { visibility: hidden; } .traffic-lights:hover > .traffic-light:before, .traffic-lights:hover > .traffic-light:after, .traffic-lights:active > .traffic-light:before, .traffic-lights:active > .traffic-light:after { visibility: visible; }
+	.traffic-lights { position: absolute; top: 12px; left: 20px; z-index: 1000; } .focus .traffic-lights > .traffic-light-close, .traffic-lights:hover > .traffic-light-close, .traffic-lights:active > .traffic-light-close { background-color: #ff6159; } .focus .traffic-lights > .traffic-light-close:active:hover, .traffic-lights:hover > .traffic-light-close:active:hover, .traffic-lights:active > .traffic-light-close:active:hover { background-color: #ff8d85; } .focus .traffic-lights > .traffic-light-minimize, .traffic-lights:hover > .traffic-light-minimize, .traffic-lights:active > .traffic-light-minimize { background-color: #ffbd2e; } .focus .traffic-lights > .traffic-light-minimize:active:hover, .traffic-lights:hover > .traffic-light-minimize:active:hover, .traffic-lights:active > .traffic-light-minimize:active:hover { background-color: #bf8e22; } .focus .traffic-lights > .traffic-light-maximize, .traffic-lights:hover > .traffic-light-maximize, .traffic-lights:active > .traffic-light-maximize { background-color: #28c941; } .focus .traffic-lights > .traffic-light-maximize:active:hover, .traffic-lights:hover > .traffic-light-maximize:active:hover, .traffic-lights:active > .traffic-light-maximize:active:hover { background-color: #1d9730; } .traffic-lights > .traffic-light:before, .traffic-lights > .traffic-light:after { visibility: hidden; } .traffic-lights:hover > .traffic-light:before, .traffic-lights:hover > .traffic-light:after, .traffic-lights:active > .traffic-light:before, .traffic-lights:active > .traffic-light:after { visibility: visible; }
 
 	.traffic-light { border-radius: 100%; padding: 0; height: 12px; width: 12px; border: 1px solid rgba(0, 0, 0, 0.06); box-sizing: border-box; margin-right: 3.5px; background-color: #ff6159; position: relative; outline: none; } .traffic-light:before, .traffic-light:after { content: ''; position: absolute; border-radius: 1px; left: 0; top: 0; right: 0; bottom: 0; margin: auto; } .traffic-light-close:before, .traffic-light-close:after { background-color: #4d0000; width: 8px; height: 1px; } .traffic-light-close:before { transform: rotate(45deg); } .traffic-light-close:after { transform: rotate(-45deg); } .traffic-light-close:active:hover:before, .traffic-light-close:active:hover:after { background-color: #190000; } .traffic-light-minimize:before { background-color: #995700; width: 8px; height: 1px; } .traffic-light-minimize:active:hover:before { background-color: #592800; } .traffic-light-maximize:before { background-color: #006500; width: 6px; height: 6px; } .traffic-light-maximize:after { background-color: #28c941; width: 10px; height: 2px; transform: rotate(45deg); } .traffic-light-maximize:active:hover:before { background-color: #003200; } .traffic-light-maximize:active:hover:after { background-color: #1d9730; }
     
@@ -113,7 +113,6 @@
 	    bottom: 0;
 	    left: 0;
 	    right: 0;
-	    box-shadow: inset rgba(255,255,255,.4) 0 1px 0;
 	    border-top-right-radius: 9px;
 	    border-top-left-radius: 9px;
     }
@@ -127,11 +126,13 @@
     
     section {
 		background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, .2);
         border-radius: 4px;
         padding: 16px;
         margin: 0 16px 16px 16px;
         position: relative;
+        -webkit-transform: translate3d(0, 0, 0);
+        background: rgba(255,255,255,.12);
+        border-radius: 8px;
     }
     
     section p:first-of-type {
@@ -285,9 +286,9 @@
 		    <div></div>
 			<img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/cool-photo.jpg" alt="">
 		</div>
-		<h2 style="margin-bottom:8px;">GoldenChaos-BTT 3.560</h2>
+		<h2 style="margin-bottom:8px;">GoldenChaos-BTT 3.561</h2>
 		<h3 style="text-align:center;">
-			Stable Release &bull; Mar 13, 2021 &bull;
+			Stable Release &bull; May 4, 2021 &bull;
 			<a onClick="trigger_named_async_without_response('Show About GC-BTT')">
 				<span onClick="trigger_named_async_without_response('View Latest Release Notes')">
 					Release Notes <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/external-link-blue.svg" alt="">
@@ -310,6 +311,12 @@
 		        	Portfolio <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/external-link.svg" alt="">
 		        </div>
 		    </a>
+            <a onClick="trigger_named_async_without_response('Show About GC-BTT')">
+                <div onClick="trigger_named_async_without_response('Open FacePorts Link')">
+                    <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/faceports.png" alt="">
+                    FacePorts <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/external-link.svg" alt="">
+                </div>
+            </a>
 	        <a onClick="trigger_named_async_without_response('Show About GC-BTT')">
 		        <div onClick="trigger_named_async_without_response('Open Zelda Universe Link')">
 			        <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/zelda-universe.png" alt="">
@@ -320,12 +327,6 @@
 		        <div onClick="trigger_named_async_without_response('Open Zelda Maps Link')">
 			        <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/zelda-maps.png" alt="">
 			        Zelda Maps <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/external-link.svg" alt="">
-		        </div>
-		    </a>
-	        <a onClick="trigger_named_async_without_response('Show About GC-BTT')">
-		        <div onClick="trigger_named_async_without_response('Open Zelda Wiki Link')">
-		        	<img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/zelda-wiki.png" alt="">
-					Zelda Wiki <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/external-link.svg" alt="">
 		        </div>
 		    </a>
         </div>
