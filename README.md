@@ -7,10 +7,10 @@ _Want to buy me a coffee? You can donate here: https://paypal.me/GoldenChaos_
 
 _Thinking about buying BetterTouchTool because of this preset?_ [_Use this link and I'll get 40%._ 🙂](https://a.paddle.com/v2/click/30842/34667?link=1061)
 
-> # Latest stable version: [GoldenChaos-BTT 3.562](https://share.folivora.ai/sharedPreset/1febf4d0-0d3a-4cb6-9348-d9751ff88bac)
+> # Latest stable version: [GoldenChaos-BTT 3.563](https://share.folivora.ai/sharedPreset/79b0aba7-3c70-42c5-a8c1-9cef0c1075fc)
 > <sup>Verified by the BetterTouchTool developer, thoroughly tested by the community.</sup><br>
 > <sup>Download link not working? Try the [GitHub mirror](https://github.com/GoldenChaos/GoldenChaos-BTT/raw/master/mirrors/GoldenChaos-BTT%203.562.bttpresetcompressed).</sup><br>
-> **(May 4 2021 - [Release Notes](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/1288))** Option to disable GC-BTT menu bar item; Fixes for settings window rendering issues; new Presets functionality for multi-config management; fixes for AirPods battery display issues; Fixes for Things widget and dock badge issues; New dock badges for Boxy Suite and Facebook Messenger
+> **(May 29 2021 - [Release Notes](https://community.folivora.ai/t/goldenchaos-btt-a-complete-touch-bar-ui-replacement-preset/1281/1289))** Option to disable GC-BTT menu bar item; Fixes for settings window rendering issues; New Presets functionality for multi-config management; Support for AirPods Max; Fixes for AirPods battery display issues; Fixes for Battery Percentage display; New dock badges for Boxy Suite and Facebook Messenger
 >
 > # Latest experimental version: None
 > <sup>Newer features, but less tested. Generally stable, but read the release notes first.</sup>
@@ -102,6 +102,7 @@ Only install the latest version unless you have a specific troubleshooting reaso
 > * <sup>Versions **2.516 and earlier** require [Location Helper](http://www.mousedown.net/mouseware/LocationHelper.html) and [JSON Helper](http://www.mousedown.net/mouseware/JSONHelper.html) for the weather widget to work. **Not compatible with macOS Mojave.**</sup>
 
 ### Version History:
+* **[Verified]** [Stable] [3.563](https://share.folivora.ai/sharedPreset/79b0aba7-3c70-42c5-a8c1-9cef0c1075fc) ([May 29 2021](https://community.folivora.ai/t/goldenchaos-btt-the-complete-touch-bar-ui-replacement/1281/1289))
 * **[Verified]** [Stable] [3.562](https://share.folivora.ai/sharedPreset/1febf4d0-0d3a-4cb6-9348-d9751ff88bac) ([May 4 2021](https://community.folivora.ai/t/goldenchaos-btt-the-complete-touch-bar-ui-replacement/1281/1288))
 * **[Verified]** [Stable] [3.392](https://share.folivora.ai/sharedPreset/6f5af8fc-5f94-49f0-8665-23703c087ffd) ([Jun 30 2020](https://community.folivora.ai/t/goldenchaos-btt-the-complete-touch-bar-ui-replacement/1281/1287))
 * **[Verified]** [Stable] [3.368](https://share.folivora.ai/sharedPreset/c6391e3f-e539-45f5-9ce7-3d311a0dd625) ([May 2 2020](https://community.folivora.ai/t/goldenchaos-btt-the-complete-touch-bar-ui-replacement/1281/1286))
