@@ -165,7 +165,6 @@
     .tablink:last-of-type {
         position: fixed;
         bottom: 10px;
-        border-radius: 6px;
     }
     
     .tablink.end::after,
@@ -965,10 +964,10 @@
     
     function checkVersion() {
         window.BTT.callHandler('get_string_variable', {variableName: 'gc_version'}, function callback(currentVariableValue) {
-            if(currentVariableValue === '3.562') {
+            if(currentVariableValue === '3.563') {
                 getAllVariablesAndUpdateClasses();
             } else {
-                triggerNamedActionWithoutResponse('btt_preset_imported_GoldenChaos-BTT 3.562');
+                triggerNamedActionWithoutResponse('btt_preset_imported_GoldenChaos-BTT 3.563');
                 checkIfFinished();
             }
         });
@@ -976,7 +975,7 @@
     
     function checkIfFinished() {
         window.BTT.callHandler('get_string_variable', {variableName: 'gc_version'}, function callback(currentVariableValue) {
-            if(currentVariableValue === '3.562') {
+            if(currentVariableValue === '3.563') {
                 getAllVariablesAndUpdateClasses();
             } else {
                 setTimeout(() => { checkIfFinished() }, 500)
@@ -1021,7 +1020,7 @@
             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/watchos-icons/notifications.png" alt="">
             Dock Badges
         </li>
-        <li id="about-tab" class="tablink" onClick="triggerNamedActionWithoutResponse('Show About GC-BTT')">
+        <li id="about-tab" class="tablink start end" onClick="triggerNamedActionWithoutResponse('Show About GC-BTT')">
             <img src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/avatar-round.png" alt="">
             About GoldenChaos-BTT
         </li>
@@ -1098,7 +1097,7 @@
                                         <span>Reset Preset</span>
                                     </span>
                                     
-                                    <span class="button yellow selected default_edited minimalist_edited gcs-daily-driver_edited" onClick="applyPreset('Save Custom Settings')">
+                                    <span class="button yellow selected default_edited minimalist_edited gcs-daily-driver_edited" onClick="applyPreset('Replace Custom Settings')">
                                         <span>
                                             <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/new-tab.png" alt="">
                                         </span>
@@ -1240,14 +1239,14 @@
             </div>
             <div id="presets" class="tabcontent">
                 <header class="BTTDraggable">Presets</header>
-                <small>Quickly customize your Touch Bar UI. Does not affect dock badges.</small>
+                <small>Quickly customize your Touch Bar UI. These don't affect your Dock Badge selections.</small>
                 <section>
                     <ul>
                         <li class="form-switch radio-switch">
                             <label id="activePreset">
                                 <span class="description">
                                     Custom Settings
-                                    <small>Stores your Dock Badge selections.</small>
+                                    <small>Your previous settings before applying any presets.</small>
                                 </span>
                                 <input type="radio" name="preset" onClick="checkAndApplyPreset('custom','Restore Custom Settings')">
                                 <span class="radio custom"></span>
@@ -1318,7 +1317,7 @@
                                 <span id="factory-reset" style="display:flex;width:100%;">
                                     <span class="description">
                                         <span style="display:block;">Full Reset</span>
-                                        <small style="display:block;">Restores all settings to their defaults, including Dock Badges.<br>Does not affect saved Custom Settings.</small>
+                                        <small style="display:block;">Sets the Default preset <b>and restores the default dock badges</b>.<br>Does not erase Custom Settings.</small>
                                     </span>
                                     <span style="display:block;margin-top:14.5px;text-align:center;margin-right:4px;width:80px;" class="button red selected" onClick="showFactoryResetConfirmation()">
                                         Full Reset
@@ -1329,7 +1328,7 @@
                                         <span style="display:block;margin-top:9px;">
                                             Are you sure?
                                         </span>
-                                        <small style="display:block;">Your current Dock Badge selection will remain in Custom Settings.</small>
+                                        <small style="display:block;">Your will lose your current Dock Badge selections.</small>
                                     </span>
                                     <span style="display:block;margin-right:0;width:80px;text-align:center;margin-top:14.5px;" class="button red selected" onClick="applyPreset('Factory Reset')">
                                         Full Reset
@@ -1596,8 +1595,8 @@
                                 </span>
                             </label>
                         </li>
-                         <li class="form-switch">
-                            <label id="showBatteryPercentage" onClick="toggleVariable(this.id,'Refresh Battery Widget',true,event)">
+                        <li class="form-switch">
+                            <label id="showBatteryPercentage" onClick="toggleVariable(this.id,'Refresh Battery Widget',event,true)">
                                 <span class="tbicon">
                                     <span style="font-size:12px;display:inline-block;width:100%;text-align:center;">100%</span>
                                 </span>
@@ -1771,6 +1770,15 @@
                                     <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/airpods-pro.png" alt="">
                                 </span>
                                 Connect to AirPods Pro
+                                <input type="checkbox"><i></i>
+                            </label>
+                        </li>
+                        <li class="form-switch">
+                            <label id="showConnectAirPodsMax" onClick="toggleVariable(this.id,'Refresh Connect to AirPods Max Key',event,true)">
+                                <span class="tbicon">
+                                    <img class="invert" src="https://raw.githubusercontent.com/GoldenChaos/GoldenChaos-BTT/master/touchbar-icons/airpods-max.png" alt="">
+                                </span>
+                                Connect to AirPods Max
                                 <input type="checkbox"><i></i>
                             </label>
                         </li>
